@@ -1,0 +1,7 @@
+# Configuração de build da Netlify — garante pasta de saída e versão do Node.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
