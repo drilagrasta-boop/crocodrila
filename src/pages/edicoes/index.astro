@@ -1,0 +1,74 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const fmt = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'short', year: 'numeric', timeZone: 'UTC' });
+const pad = (n: number) => String(n).padStart(3, '0');
+
+const edicoes = (await getCollection('edicoes'))
+  .filter((e) => !e.data.rascunho)
+  .sort((a, b) => b.data.numero - a.data.numero);
+
+// agrupa por ano
+const porAno = new Map<number, typeof edicoes>();
+for (const e of edicoes) {
+  const ano = e.data.data.getFullYear();
+  if (!porAno.has(ano)) porAno.set(ano, []);
+  porAno.get(ano)!.push(e);
+}
+const anos = [...porAno.keys()].sort((a, b) => b - a);
+---
+<Base title="Edições" description="Todas as edições da newsletter Condenados à Atualização em IA.">
+  <section class="wrap head rise">
+    <span class="label eyebrow">O arquivo completo</span>
+    <h1>Edições</h1>
+    <p class="measure lead">Toda quarta uma nova. Aqui ficam todas — numeradas como autos, pra você folhear de trás pra frente ou caçar aquela que perdeu.</p>
+    <p class="mono total">{edicoes.length} {edicoes.length === 1 ? 'edição publicada' : 'edições publicadas'}</p>
+  </section>
+
+  {edicoes.length === 0 && (
+    <section class="wrap"><p class="muted">Nenhuma edição publicada ainda. Volte em breve.</p></section>
+  )}
+
+  {anos.map((ano) => (
+    <section class="wrap ano-bloco">
+      <div class="ano-head"><span class="ano-num mono">{ano}</span><hr class="rule ano-rule" /></div>
+      <ul class="ed-list">
+        {porAno.get(ano)!.map((e) => (
+          <li class="ed-row">
+            <a href={`/edicoes/${e.id}`} class="ed-link">
+              <span class="ed-num mono">Nº {pad(e.data.numero)}</span>
+              <span class="ed-info">
+                <span class="ed-title">{e.data.titulo}</span>
+                <span class="ed-resumo muted">{e.data.resumo}</span>
+              </span>
+              <time class="ed-date mono" datetime={e.data.data.toISOString()}>{fmt.format(e.data.data)}</time>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+</Base>
+
+<style>
+  .head { padding-top: clamp(2.5rem, 6vw, 4.5rem); }
+  .lead { margin-top: 1rem; font-size: 1.2rem; color: var(--ink-soft); }
+  .total { margin-top: 1.4rem; font-size: 0.74rem; color: var(--jacare); letter-spacing: 0.1em; text-transform: uppercase; }
+
+  .ano-bloco { margin-top: clamp(2.6rem, 6vw, 4rem); }
+  .ano-head { display: flex; align-items: center; gap: 1.2rem; margin-bottom: 0.6rem; }
+  .ano-num { font-size: 1.6rem; font-weight: 500; color: var(--ink); }
+  .ano-rule { flex: 1; }
+
+  .ed-list { list-style: none; padding: 0; border-top: 1px solid var(--line-strong); }
+  .ed-row { border-bottom: 1px solid var(--line); }
+  .ed-link { display: grid; grid-template-columns: auto 1fr auto; gap: clamp(0.8rem, 3vw, 2rem); align-items: baseline; padding: 1.2rem 0.4rem; text-decoration: none; color: inherit; transition: background .15s ease, padding .15s ease; }
+  .ed-link:hover { background: var(--paper-deep); padding-inline: 1rem; }
+  .ed-num { font-size: 0.95rem; color: var(--jacare); font-weight: 500; white-space: nowrap; }
+  .ed-info { display: flex; flex-direction: column; gap: 0.25rem; }
+  .ed-title { font-family: var(--display); font-size: 1.3rem; }
+  .ed-resumo { font-size: 0.95rem; max-width: 62ch; }
+  .ed-date { font-size: 0.72rem; color: var(--ink-faint); white-space: nowrap; }
+  @media (max-width: 600px) { .ed-link { grid-template-columns: auto 1fr; } .ed-date { display: none; } }
+</style>

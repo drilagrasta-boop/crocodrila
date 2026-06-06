@@ -1,0 +1,66 @@
+---
+import Crocodrila from './Crocodrila.astro';
+const path = Astro.url.pathname;
+const isActive = (p: string) => path === p || (p !== '/' && path.startsWith(p));
+const nav = [
+  { href: '/edicoes', label: 'Edições' },
+  { href: '/entrevistas', label: 'Entrevistas' },
+  { href: '/hobbies', label: 'Habemos Hobby' },
+  { href: '/crocodrila', label: 'Crocodrila' },
+  { href: '/sobre', label: 'Sobre' },
+];
+---
+<header class="masthead">
+  <div class="wrap bar">
+    <a href="/" class="brand" aria-label="Página inicial">
+      <Crocodrila size={30} class="brand-croc" />
+      <span class="brand-text">
+        <span class="brand-line1">Condenados</span>
+        <span class="brand-line2">à atualização em <b>IA</b></span>
+      </span>
+    </a>
+    <nav class="nav" aria-label="Principal">
+      {nav.map((item) => (
+        <a href={item.href} class:list={['nav-link', { active: isActive(item.href) }]}>
+          {item.label}
+        </a>
+      ))}
+      <a href="/rss.xml" class="nav-link rss" aria-label="RSS">RSS</a>
+    </nav>
+  </div>
+  <hr class="rule" />
+</header>
+
+<style>
+  .masthead { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--paper) 88%, transparent); backdrop-filter: blur(8px); }
+  .bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 0.85rem; }
+  .brand { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; }
+  .brand-croc { flex: none; transition: transform .3s cubic-bezier(.2,.7,.2,1); }
+  .brand:hover .brand-croc { transform: rotate(-8deg) scale(1.06); }
+  .brand-text { display: flex; flex-direction: column; line-height: 1; }
+  .brand-line1 { font-family: var(--display); font-weight: 600; font-size: 1.18rem; letter-spacing: -0.02em; }
+  .brand-line2 { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-faint); margin-top: 3px; }
+  .brand-line2 b { color: var(--jacare); }
+
+  .nav { display: flex; align-items: center; flex-wrap: wrap; justify-content: flex-end; gap: clamp(0.5rem, 1.6vw, 1.4rem); }
+  .nav-link {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    color: var(--ink-soft);
+    padding: 0.3em 0;
+    position: relative;
+    transition: color .15s ease;
+  }
+  .nav-link::after { content: ''; position: absolute; left: 0; bottom: -2px; height: 2px; width: 0; background: var(--jacare); transition: width .2s ease; }
+  .nav-link:hover { color: var(--ink); }
+  .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+  .nav-link.active { color: var(--ink); }
+  .rss { color: var(--ink-faint); }
+
+  @media (max-width: 540px) {
+    .brand-text { display: none; }
+    .nav { gap: 1rem; }
+  }
+</style>

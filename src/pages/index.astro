@@ -1,0 +1,315 @@
+---
+import Base from '../layouts/Base.astro';
+import Crocodrila from '../components/Crocodrila.astro';
+import { getCollection } from 'astro:content';
+
+const fmt = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'long', year: 'numeric', timeZone: 'UTC' });
+const pad = (n: number) => String(n).padStart(3, '0');
+
+const edicoes = (await getCollection('edicoes'))
+  .filter((e) => !e.data.rascunho)
+  .sort((a, b) => b.data.numero - a.data.numero);
+
+const ultima = edicoes[0];
+const anteriores = edicoes.slice(1, 6);
+
+const projetos = (await getCollection('crocodrila'))
+  .sort((a, b) => a.data.ordem - b.data.ordem);
+const destaques = projetos.filter((p) => p.data.destaque).slice(0, 3);
+const vitrine = destaques.length ? destaques : projetos.slice(0, 3);
+
+const entrevistas = (await getCollection('entrevistas'))
+  .filter((e) => !e.data.rascunho)
+  .sort((a, b) => b.data.data.getTime() - a.data.data.getTime());
+const entrevistaDestaque = entrevistas[0];
+
+const hobbies = (await getCollection('hobbies'))
+  .filter((h) => !h.data.rascunho)
+  .sort((a, b) => b.data.data.getTime() - a.data.data.getTime());
+const hobbyDestaque = hobbies[0];
+const mesFmt = new Intl.DateTimeFormat('pt-BR', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+const iniciais = (nome: string) => nome.split(/\s+/).slice(0, 2).map((p) => p[0]).join('').toUpperCase();
+---
+<Base>
+  <!-- ================= HERO ================= -->
+  <section class="hero wrap rise">
+    <div class="hero-grid">
+      <div class="hero-main">
+        <span class="label eyebrow">Newsletter semanal · fontes primárias</span>
+        <h1 class="hero-title">
+          Acompanhar IA virou<br />
+          <span class="hero-em">trabalho de detetive.</span>
+        </h1>
+        <p class="hero-lead measure">
+          É muita informação e, junto, muito ruído. Toda semana a gente garimpa as
+          novidades que realmente importam — direto da fonte — e entrega filtrado.
+          Você lê em dez minutos o que levaria a semana inteira pra rastrear.
+        </p>
+        <div class="hero-cta">
+          <a href="#ultima" class="btn btn--jacare">Ler a última edição →</a>
+          <a href="/sobre" class="btn btn--ghost">Como nasceu</a>
+        </div>
+      </div>
+      <aside class="hero-side" aria-hidden="true">
+        <div class="dossie-mark">
+          <Crocodrila size={50} />
+          <span class="stamp">Autos · Vol. {ultima ? ultima.data.numero : 1}</span>
+          <p class="dossie-meta mono">CONDENADOS À<br />ATUALIZAÇÃO<br />EM I.A.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <hr class="rule-thick wrap-rule" />
+
+  <!-- ================= ÚLTIMA EDIÇÃO ================= -->
+  {ultima && (
+    <section id="ultima" class="wrap feature">
+      <div class="feature-tag"><span class="label">Edição mais recente</span></div>
+      <a href={`/edicoes/${ultima.id}`} class="feature-card">
+        <div class="feature-num mono">Nº {pad(ultima.data.numero)}<span class="feature-year">/{ultima.data.data.getFullYear()}</span></div>
+        <div class="feature-body">
+          <time class="label" datetime={ultima.data.data.toISOString()}>{fmt.format(ultima.data.data)}</time>
+          <h2 class="feature-title">{ultima.data.titulo}</h2>
+          <p class="feature-resumo">{ultima.data.resumo}</p>
+          {ultima.data.destaques.length > 0 && (
+            <ul class="feature-bullets">
+              {ultima.data.destaques.slice(0, 4).map((d) => <li>{d}</li>)}
+            </ul>
+          )}
+          <span class="feature-go mono">Abrir a edição completa →</span>
+        </div>
+      </a>
+    </section>
+  )}
+
+  {!ultima && (
+    <section class="wrap feature">
+      <p class="muted">A primeira edição entra no ar em breve. Enquanto isso, dá uma olhada na <a class="tlink" href="/crocodrila">Crocodrila</a>.</p>
+    </section>
+  )}
+
+  <!-- ================= EDIÇÕES ANTERIORES ================= -->
+  {anteriores.length > 0 && (
+    <section class="wrap arquivo">
+      <div class="sec-head">
+        <h2>No arquivo</h2>
+        <a href="/edicoes" class="tlink mono sec-link">ver todas →</a>
+      </div>
+      <ul class="ed-list">
+        {anteriores.map((e) => (
+          <li class="ed-row">
+            <a href={`/edicoes/${e.id}`} class="ed-link">
+              <span class="ed-num mono">{pad(e.data.numero)}</span>
+              <span class="ed-info">
+                <span class="ed-title">{e.data.titulo}</span>
+                <span class="ed-resumo muted">{e.data.resumo}</span>
+              </span>
+              <time class="ed-date mono" datetime={e.data.data.toISOString()}>{fmt.format(e.data.data)}</time>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  <!-- ================= ENTREVISTA DO MÊS ================= -->
+  {entrevistaDestaque && (
+    <section class="wrap entrevista-home">
+      <div class="sec-head">
+        <h2>O Outro Lado da Tela</h2>
+        <a href="/entrevistas" class="tlink mono sec-link">todas as entrevistas →</a>
+      </div>
+      <a href={`/entrevistas/${entrevistaDestaque.id}`} class="eh-card">
+        <span class="eh-avatar" aria-hidden="true">
+          {entrevistaDestaque.data.foto
+            ? <img src={entrevistaDestaque.data.foto} alt={entrevistaDestaque.data.convidado} />
+            : <span>{iniciais(entrevistaDestaque.data.convidado)}</span>}
+        </span>
+        <div class="eh-body">
+          <span class="label">{mesFmt.format(entrevistaDestaque.data.data)}</span>
+          <h3 class="eh-titulo">{entrevistaDestaque.data.titulo}</h3>
+          <p class="eh-quem mono"><b>{entrevistaDestaque.data.convidado}</b> · {entrevistaDestaque.data.papel}</p>
+          <p class="eh-resumo muted">{entrevistaDestaque.data.resumo}</p>
+        </div>
+      </a>
+    </section>
+  )}
+
+  <!-- ================= CROCODRILA ================= -->
+  {vitrine.length > 0 && (
+    <section class="croco-strip">
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="croco-head">
+            <Crocodrila size={34} class="croco-head-icon" />
+            <div>
+              <span class="label eyebrow">A toca da Crocodrila</span>
+              <h2>Coisas que a gente construiu</h2>
+            </div>
+          </div>
+          <a href="/crocodrila" class="tlink mono sec-link">ver a toca →</a>
+        </div>
+        <div class="croco-grid">
+          {vitrine.map((p) => (
+            <a href={`/crocodrila/${p.id}`} class="croco-card">
+              <span class="croco-status mono">{p.data.status}</span>
+              <h3 class="croco-title">{p.data.titulo}</h3>
+              <p class="croco-sub muted">{p.data.subtitulo}</p>
+              <div class="croco-tags">
+                {p.data.tags.slice(0, 3).map((t) => <span class="tag mono">{t}</span>)}
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- ================= HABEAS HOBBY ================= -->
+  {hobbyDestaque && (
+    <section class="wrap hobby-home">
+      <a href={`/hobbies/${hobbyDestaque.id}`} class="hh-card">
+        <div class="hh-left">
+          <span class="label eyebrow">Habemos Hobby · o contrapeso humano</span>
+          <h2 class="hh-titulo">{hobbyDestaque.data.titulo}</h2>
+          <p class="hh-resumo muted">{hobbyDestaque.data.resumo}</p>
+        </div>
+        <div class="hh-right">
+          {hobbyDestaque.data.categoria && <span class="hh-cat mono">{hobbyDestaque.data.categoria}</span>}
+          <span class="hh-mes mono">{mesFmt.format(hobbyDestaque.data.data)}</span>
+          <span class="hh-go mono">o hobby do mês →</span>
+        </div>
+      </a>
+    </section>
+  )}
+
+  <!-- ================= ASSINAR ================= -->
+  <section class="wrap subscribe">
+    <div class="sub-box">
+      <h2 class="sub-title">Não perca nenhuma sentença semanal</h2>
+      <p class="measure">Acompanhe pelo RSS — cola o endereço no seu leitor favorito e a edição chega assim que sai. Sem rastreador, sem algoritmo, sem ruído.</p>
+      <div class="hero-cta">
+        <a href="/rss.xml" class="btn btn--jacare">Assinar via RSS</a>
+        <a href="/edicoes" class="btn btn--ghost">Folhear o arquivo</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .wrap-rule { max-width: var(--wide); margin-inline: auto; margin-block: clamp(2.5rem, 6vw, 4.5rem); }
+
+  /* HERO */
+  .hero { padding-top: clamp(2.5rem, 7vw, 5.5rem); }
+  .hero-grid { display: grid; grid-template-columns: 1fr auto; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+  .hero-title { margin-top: 1.1rem; }
+  .hero-em { color: var(--jacare); font-style: italic; }
+  .hero-lead { margin-top: 1.6rem; font-size: clamp(1.1rem, 1rem + 0.6vw, 1.35rem); color: var(--ink-soft); }
+  .hero-cta { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 2rem; }
+
+  .hero-side { display: flex; justify-content: center; }
+  .dossie-mark {
+    display: flex; flex-direction: column; align-items: center; gap: 0.9rem;
+    padding: 1.8rem 2rem; border: 1.5px solid var(--line-strong); border-radius: var(--radius);
+    background: linear-gradient(160deg, #fffdf6, var(--paper-deep));
+    box-shadow: var(--shadow-doc); position: relative;
+  }
+  .dossie-mark::before { content: ''; position: absolute; inset: 6px; border: 1px dashed var(--line-strong); border-radius: var(--radius); pointer-events: none; }
+  .dossie-meta { font-size: 0.6rem; letter-spacing: 0.22em; text-align: center; color: var(--ink-faint); line-height: 1.5; }
+
+  /* FEATURE / última edição */
+  .feature { margin-top: 1rem; }
+  .feature-tag { margin-bottom: 1.1rem; }
+  .feature-card {
+    display: grid; grid-template-columns: auto 1fr; gap: clamp(1.2rem, 4vw, 3rem);
+    text-decoration: none; color: inherit;
+    border: 1.5px solid var(--ink); border-radius: var(--radius);
+    background: #fffdf6; padding: clamp(1.4rem, 4vw, 2.6rem);
+    box-shadow: var(--shadow-doc);
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .feature-card:hover { transform: translateY(-3px); box-shadow: 0 1px 0 var(--ink), 0 26px 50px -30px rgba(27,26,22,.6); }
+  .feature-num { font-size: clamp(2.6rem, 2rem + 4vw, 5rem); font-weight: 500; line-height: 0.9; color: var(--gold-deep); border-right: 1px solid var(--line-strong); padding-right: clamp(1rem, 3vw, 2.4rem); align-self: start; }
+  .feature-year { display: block; font-size: 0.9rem; color: var(--ink-faint); letter-spacing: 0.1em; margin-top: 0.4rem; }
+  .feature-title { margin-top: 0.5rem; font-size: clamp(1.8rem, 1.4rem + 1.8vw, 2.8rem); }
+  .feature-resumo { margin-top: 0.9rem; font-size: 1.15rem; color: var(--ink-soft); max-width: 54ch; }
+  .feature-bullets { margin-top: 1.2rem; display: flex; flex-direction: column; gap: 0.4rem; list-style: none; padding: 0; }
+  .feature-bullets li { padding-left: 1.4em; position: relative; color: var(--ink-soft); font-size: 1rem; }
+  .feature-bullets li::before { content: '§'; position: absolute; left: 0; color: var(--jacare); font-family: var(--mono); }
+  .feature-go { display: inline-block; margin-top: 1.5rem; color: var(--jacare-deep); font-size: 0.85rem; }
+  .feature-card:hover .feature-go { text-decoration: underline; }
+
+  @media (max-width: 680px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-side { order: -1; justify-content: flex-start; }
+    .feature-card { grid-template-columns: 1fr; }
+    .feature-num { border-right: 0; border-bottom: 1px solid var(--line-strong); padding-right: 0; padding-bottom: 0.8rem; display: flex; align-items: baseline; gap: 0.8rem; }
+    .feature-year { margin-top: 0; }
+  }
+
+  /* seção genérica */
+  .sec-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; margin-bottom: 1.6rem; }
+  .sec-link { white-space: nowrap; font-size: 0.8rem; }
+  .arquivo { margin-top: clamp(3.5rem, 8vw, 6rem); }
+
+  /* lista de edições */
+  .ed-list { list-style: none; padding: 0; border-top: 1px solid var(--line-strong); }
+  .ed-row { border-bottom: 1px solid var(--line); }
+  .ed-link { display: grid; grid-template-columns: auto 1fr auto; gap: clamp(0.8rem, 3vw, 2rem); align-items: baseline; padding: 1.1rem 0.4rem; text-decoration: none; color: inherit; transition: background .15s ease, padding .15s ease; }
+  .ed-link:hover { background: var(--paper-deep); padding-inline: 1rem; }
+  .ed-num { font-size: 1.1rem; color: var(--jacare); font-weight: 500; }
+  .ed-info { display: flex; flex-direction: column; gap: 0.2rem; }
+  .ed-title { font-family: var(--display); font-size: 1.25rem; }
+  .ed-resumo { font-size: 0.95rem; max-width: 60ch; }
+  .ed-date { font-size: 0.72rem; color: var(--ink-faint); white-space: nowrap; }
+  @media (max-width: 600px) { .ed-link { grid-template-columns: auto 1fr; } .ed-date { display: none; } }
+
+  /* entrevista do mês */
+  .entrevista-home { margin-top: clamp(3.5rem, 8vw, 6rem); }
+  .eh-card { display: grid; grid-template-columns: auto 1fr; gap: clamp(1.2rem, 3vw, 2rem); align-items: center; text-decoration: none; color: inherit; border: 1px solid var(--line-strong); border-left: 3px solid var(--jacare); border-radius: var(--radius); background: #fffdf6; padding: clamp(1.3rem, 3vw, 2rem); transition: transform .2s ease, box-shadow .2s ease; }
+  .eh-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-doc); }
+  .eh-avatar { width: 88px; height: 88px; border-radius: 50%; overflow: hidden; background: linear-gradient(150deg, var(--jacare), var(--jacare-deep)); display: grid; place-items: center; color: var(--paper); font-family: var(--display); font-size: 1.8rem; font-weight: 600; flex: none; }
+  .eh-avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .eh-titulo { font-size: clamp(1.4rem, 1.1rem + 1.2vw, 2rem); margin-top: 0.2rem; }
+  .eh-quem { margin-top: 0.5rem; font-size: 0.78rem; color: var(--ink-faint); }
+  .eh-quem b { color: var(--jacare-deep); }
+  .eh-resumo { margin-top: 0.6rem; font-size: 1rem; max-width: 60ch; }
+  @media (max-width: 560px) { .eh-card { grid-template-columns: 1fr; text-align: left; } .eh-avatar { width: 64px; height: 64px; } }
+
+  /* CROCODRILA strip */
+  .croco-strip { margin-top: clamp(4rem, 9vw, 7rem); padding-block: clamp(2.6rem, 6vw, 4rem); background: var(--ink); color: var(--paper); }
+  .croco-strip .label { color: var(--gold); }
+  .croco-strip h2 { color: var(--paper); }
+  .croco-strip .sec-link { color: var(--gold); background-image: linear-gradient(var(--gold), var(--gold)); }
+  .croco-strip .sec-link:hover { color: var(--ink); }
+  .croco-head { display: flex; align-items: center; gap: 1rem; }
+  .croco-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+  .croco-card { display: flex; flex-direction: column; gap: 0.5rem; padding: 1.4rem; border: 1px solid rgba(243,239,227,.22); border-radius: var(--radius); text-decoration: none; color: inherit; background: rgba(243,239,227,.03); transition: transform .2s ease, border-color .2s ease, background .2s ease; }
+  .croco-card:hover { transform: translateY(-4px); border-color: var(--gold); background: rgba(196,154,58,.10); }
+  .croco-status { font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
+  .croco-title { font-size: 1.35rem; color: var(--paper); }
+  .croco-sub { font-size: 0.95rem; color: rgba(243,239,227,.66); }
+  .croco-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.4rem; }
+  .tag { font-size: 0.62rem; padding: 0.25em 0.6em; border: 1px solid rgba(243,239,227,.25); border-radius: 99px; color: rgba(243,239,227,.7); }
+  @media (max-width: 760px) { .croco-grid { grid-template-columns: 1fr; } }
+
+  /* habeas hobby */
+  .hobby-home { margin-top: clamp(3.5rem, 8vw, 6rem); }
+  .hh-card { display: grid; grid-template-columns: 1fr auto; gap: clamp(1.2rem, 4vw, 3rem); align-items: center; text-decoration: none; color: inherit; border: 1.5px dashed var(--line-strong); border-radius: var(--radius); padding: clamp(1.4rem, 4vw, 2.4rem); transition: border-color .2s ease, background .2s ease; }
+  .hh-card:hover { border-color: var(--gold); background: #fffdf6; }
+  .hh-titulo { margin-top: 0.4rem; font-size: clamp(1.5rem, 1.2rem + 1.4vw, 2.2rem); }
+  .hh-resumo { margin-top: 0.6rem; font-size: 1.05rem; max-width: 56ch; }
+  .hh-right { display: flex; flex-direction: column; align-items: flex-end; gap: 0.4rem; text-align: right; white-space: nowrap; }
+  .hh-cat { font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-deep); }
+  .hh-mes { font-size: 0.72rem; color: var(--ink-faint); }
+  .hh-go { margin-top: 0.4rem; font-size: 0.8rem; color: var(--jacare-deep); }
+  .hh-card:hover .hh-go { text-decoration: underline; }
+  @media (max-width: 600px) { .hh-card { grid-template-columns: 1fr; } .hh-right { align-items: flex-start; text-align: left; } }
+
+  /* assinar */
+  .subscribe { margin-top: clamp(4rem, 9vw, 7rem); }
+  .sub-box { border: 1.5px solid var(--line-strong); border-radius: var(--radius); padding: clamp(1.8rem, 5vw, 3.2rem); background: #fffdf6; text-align: left; }
+  .sub-title { font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.4rem); }
+  .sub-box p { margin-top: 0.8rem; color: var(--ink-soft); }
+</style>

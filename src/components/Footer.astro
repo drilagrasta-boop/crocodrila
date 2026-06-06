@@ -1,0 +1,37 @@
+---
+const ano = new Date().getFullYear();
+---
+<footer class="foot">
+  <hr class="rule" />
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <p class="foot-name">Condenados à Atualização em IA</p>
+      <p class="muted foot-tag">
+        Uma captura semanal das novidades em IA, a partir de fontes primárias.
+        Nascida no grupo homônimo — gente condenada a se atualizar, e que decidiu dividir o trabalho.
+      </p>
+    </div>
+    <nav class="foot-nav" aria-label="Rodapé">
+      <a href="/edicoes" class="tlink">Edições</a>
+      <a href="/entrevistas" class="tlink">Entrevistas</a>
+      <a href="/hobbies" class="tlink">Habemos Hobby</a>
+      <a href="/crocodrila" class="tlink">Crocodrila</a>
+      <a href="/sobre" class="tlink">Sobre</a>
+      <a href="/rss.xml" class="tlink">Assinar (RSS)</a>
+    </nav>
+  </div>
+  <div class="wrap foot-base">
+    <span class="label">© {ano} · Condenados à Atualização em IA</span>
+    <span class="label">Feito a quatro mãos — humanas e de jacaré 🐊</span>
+  </div>
+</footer>
+
+<style>
+  .foot { margin-top: clamp(4rem, 10vw, 8rem); }
+  .foot-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 2rem; padding-block: 2.6rem 1.6rem; }
+  .foot-name { font-family: var(--display); font-size: 1.3rem; font-weight: 600; }
+  .foot-tag { max-width: 38ch; margin-top: 0.5rem; font-size: 0.95rem; }
+  .foot-nav { display: flex; flex-direction: column; gap: 0.6rem; align-items: flex-start; font-family: var(--mono); font-size: 0.82rem; }
+  .foot-base { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding-bottom: 2.4rem; }
+  @media (max-width: 640px) { .foot-grid { grid-template-columns: 1fr; gap: 1.6rem; } }
+</style>

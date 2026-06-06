@@ -1,0 +1,76 @@
+---
+import Base from '../../layouts/Base.astro';
+import Crocodrila from '../../components/Crocodrila.astro';
+import { getCollection } from 'astro:content';
+
+const projetos = (await getCollection('crocodrila'))
+  .sort((a, b) => a.data.ordem - b.data.ordem);
+---
+<Base title="Crocodrila" description="A toca onde guardamos os projetos que construímos no caminho — conversores, MCPs de jurisprudência, pipelines e outros bichos.">
+  <section class="croco-hero">
+    <div class="wrap rise">
+      <div class="ch-grid">
+        <div>
+          <span class="label eyebrow">A toca</span>
+          <h1 class="ch-title">Crocodrila</h1>
+          <p class="ch-lead measure">
+            Ler sobre IA é metade. A outra metade é meter a mão. Aqui ficam os bichos
+            que a gente construiu enquanto se atualizava — ferramentas que usamos de
+            verdade no dia a dia. Algumas nasceram de uma conversa no grupo às onze da noite.
+          </p>
+        </div>
+        <div class="ch-mascote" aria-hidden="true">
+          <Crocodrila size={120} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    {projetos.length === 0 && <p class="muted">Os primeiros projetos entram na toca em breve.</p>}
+    <div class="proj-grid">
+      {projetos.map((p) => (
+        <a href={`/crocodrila/${p.id}`} class="proj-card">
+          <div class="proj-top">
+            <span class:list={['proj-status mono', `st-${p.data.status.replace(/\s+/g, '-')}`]}>{p.data.status}</span>
+            <span class="proj-ano mono">{p.data.data.getFullYear()}</span>
+          </div>
+          <h2 class="proj-title">{p.data.titulo}</h2>
+          <p class="proj-sub muted">{p.data.subtitulo}</p>
+          <div class="proj-tags">
+            {p.data.tags.map((t) => <span class="tag mono">{t}</span>)}
+          </div>
+          <span class="proj-go mono">abrir →</span>
+        </a>
+      ))}
+    </div>
+  </section>
+</Base>
+
+<style>
+  .croco-hero { background: var(--ink); color: var(--paper); padding-block: clamp(2.6rem, 7vw, 5rem); margin-bottom: clamp(2.5rem, 6vw, 4rem); }
+  .croco-hero .label { color: var(--gold); }
+  .ch-grid { display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center; }
+  .ch-title { color: var(--paper); font-size: clamp(3rem, 2rem + 5vw, 6rem); margin-top: 0.6rem; }
+  .ch-lead { margin-top: 1.2rem; color: rgba(243,239,227,.78); font-size: 1.2rem; }
+  .ch-mascote { filter: drop-shadow(0 14px 30px rgba(0,0,0,.4)); animation: float 6s ease-in-out infinite; }
+  @keyframes float { 0%,100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-12px) rotate(-3deg); } }
+  @media (max-width: 720px) { .ch-grid { grid-template-columns: 1fr; } .ch-mascote { display: none; } }
+
+  .proj-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.4rem; }
+  .proj-card { display: flex; flex-direction: column; gap: 0.6rem; padding: 1.6rem 1.7rem; border: 1.5px solid var(--line-strong); border-radius: var(--radius); background: #fffdf6; text-decoration: none; color: inherit; position: relative; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+  .proj-card:hover { transform: translateY(-4px); border-color: var(--jacare); box-shadow: var(--shadow-doc); }
+  .proj-top { display: flex; justify-content: space-between; align-items: center; }
+  .proj-status { font-size: 0.64rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.25em 0.6em; border-radius: 99px; border: 1px solid currentColor; }
+  .st-em-uso { color: var(--jacare); }
+  .st-em-desenvolvimento { color: var(--amber); }
+  .st-experimento { color: var(--carimbo); }
+  .st-aposentado { color: var(--ink-faint); }
+  .proj-ano { font-size: 0.7rem; color: var(--ink-faint); }
+  .proj-title { font-size: 1.6rem; }
+  .proj-sub { font-size: 1rem; }
+  .proj-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.3rem; }
+  .tag { font-size: 0.64rem; padding: 0.25em 0.6em; border: 1px solid var(--line-strong); border-radius: 99px; color: var(--ink-faint); }
+  .proj-go { margin-top: 0.6rem; color: var(--jacare-deep); font-size: 0.8rem; }
+  @media (max-width: 640px) { .proj-grid { grid-template-columns: 1fr; } }
+</style>

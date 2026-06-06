@@ -1,0 +1,108 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const edicoes = (await getCollection('edicoes')).filter((e) => !e.data.rascunho);
+  const ordenadas = [...edicoes].sort((a, b) => b.data.numero - a.data.numero);
+  return ordenadas.map((entry, i) => ({
+    params: { slug: entry.id },
+    props: {
+      entry,
+      anterior: ordenadas[i + 1] ?? null, // edição de número menor
+      proxima: ordenadas[i - 1] ?? null,   // edição de número maior
+    },
+  }));
+}
+
+const { entry, anterior, proxima } = Astro.props;
+const { Content } = await render(entry);
+
+const fmt = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'long', year: 'numeric', timeZone: 'UTC' });
+const pad = (n: number) => String(n).padStart(3, '0');
+---
+<Base title={`Nº ${pad(entry.data.numero)} · ${entry.data.titulo}`} description={entry.data.resumo}>
+  <article class="ed">
+    <header class="wrap ed-head rise">
+      <a href="/edicoes" class="back mono">← todas as edições</a>
+      <div class="ed-meta">
+        <span class="ed-numero mono">Edição Nº {pad(entry.data.numero)}/{entry.data.data.getFullYear()}</span>
+        <span class="dot">·</span>
+        <time class="mono" datetime={entry.data.data.toISOString()}>{fmt.format(entry.data.data)}</time>
+      </div>
+      <h1 class="ed-title">{entry.data.titulo}</h1>
+      {entry.data.dateline && <p class="ed-dateline mono">{entry.data.dateline}</p>}
+      <p class="ed-resumo measure">{entry.data.resumo}</p>
+
+      {entry.data.destaques.length > 0 && (
+        <aside class="sumario">
+          <span class="label">Nesta edição</span>
+          <ul>
+            {entry.data.destaques.map((d) => <li>{d}</li>)}
+          </ul>
+        </aside>
+      )}
+      <hr class="rule" />
+    </header>
+
+    <div class="wrap ed-body">
+      <div class="prose">
+        <Content />
+      </div>
+    </div>
+
+    <footer class="wrap ed-foot">
+      {entry.data.editores.length > 0 && (
+        <div class="assina">
+          <span class="label">Curadoria e edição</span>
+          <p class="assina-nomes">{entry.data.editores.join(' · ')}</p>
+        </div>
+      )}
+      <hr class="rule" />
+      <nav class="prevnext" aria-label="Navegação entre edições">
+        {anterior ? (
+          <a href={`/edicoes/${anterior.id}`} class="pn pn-prev">
+            <span class="label">← Edição anterior</span>
+            <span class="pn-title">Nº {pad(anterior.data.numero)} · {anterior.data.titulo}</span>
+          </a>
+        ) : <span></span>}
+        {proxima && (
+          <a href={`/edicoes/${proxima.id}`} class="pn pn-next">
+            <span class="label">Próxima edição →</span>
+            <span class="pn-title">Nº {pad(proxima.data.numero)} · {proxima.data.titulo}</span>
+          </a>
+        )}
+      </nav>
+    </footer>
+  </article>
+</Base>
+
+<style>
+  .ed-head { padding-top: clamp(2rem, 5vw, 3.5rem); }
+  .back { display: inline-block; color: var(--ink-faint); text-decoration: none; font-size: 0.78rem; margin-bottom: 1.6rem; }
+  .back:hover { color: var(--jacare); }
+  .ed-meta { display: flex; align-items: center; gap: 0.6rem; font-size: 0.78rem; color: var(--ink-faint); }
+  .ed-numero { color: var(--jacare); letter-spacing: 0.08em; }
+  .dot { color: var(--line-strong); }
+  .ed-title { margin-top: 1rem; }
+  .ed-dateline { margin-top: 0.9rem; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--carimbo); }
+  .ed-resumo { margin-top: 1.1rem; font-size: clamp(1.15rem, 1rem + 0.7vw, 1.45rem); color: var(--ink-soft); font-style: italic; }
+
+  .assina { margin-bottom: 1.6rem; text-align: center; }
+  .assina-nomes { font-family: var(--display); font-size: 1.15rem; margin-top: 0.4rem; }
+
+  .sumario { margin-top: 2rem; padding: 1.3rem 1.5rem; background: #fffdf6; border: 1px solid var(--line); border-left: 3px solid var(--jacare); border-radius: var(--radius); max-width: var(--measure); }
+  .sumario ul { margin-top: 0.7rem; padding-left: 1.1em; display: flex; flex-direction: column; gap: 0.35rem; }
+  .sumario li { color: var(--ink-soft); }
+  .sumario li::marker { color: var(--jacare); }
+  .ed-head .rule { margin-top: 2.4rem; }
+
+  .ed-body { margin-top: 2.4rem; }
+  .ed-foot { margin-top: 3.5rem; }
+  .prevnext { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 1.6rem; }
+  .pn { display: flex; flex-direction: column; gap: 0.4rem; padding: 1.1rem 1.3rem; border: 1px solid var(--line-strong); border-radius: var(--radius); text-decoration: none; color: inherit; transition: border-color .15s ease, transform .15s ease; }
+  .pn:hover { border-color: var(--jacare); transform: translateY(-2px); }
+  .pn-next { text-align: right; }
+  .pn-title { font-family: var(--display); font-size: 1.05rem; }
+  @media (max-width: 560px) { .prevnext { grid-template-columns: 1fr; } .pn-next { text-align: left; } }
+</style>

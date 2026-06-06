@@ -1,0 +1,85 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const fmt = new Intl.DateTimeFormat('pt-BR', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+
+const hobbies = (await getCollection('hobbies'))
+  .filter((h) => !h.data.rascunho)
+  .sort((a, b) => b.data.data.getTime() - a.data.data.getTime());
+
+const atual = hobbies[0];
+const resto = hobbies.slice(1);
+---
+<Base title="Habemos Hobby" description="Um hobby sugerido por mês, para resguardar o lado que a máquina não alcança.">
+  <section class="wrap head rise">
+    <span class="label eyebrow">Um hobby por mês</span>
+    <h1>Habemos Hobby</h1>
+    <p class="measure lead">A gente passa a semana ensinando máquina a pensar. Esta aba é o contrapeso: todo mês, um convite para fazer algo com as próprias mãos — desenho, pintura, culinária, jardinagem, música — pelo simples gosto de fazer. Nada para entregar, nada para postar. O músculo que você guarda para si.</p>
+  </section>
+
+  {atual && (
+    <section class="wrap">
+      <a href={`/hobbies/${atual.id}`} class="feat">
+        <div class="feat-body">
+          <span class="label">Hobby do mês · {fmt.format(atual.data.data)}</span>
+          {atual.data.categoria && <span class="feat-cat mono">{atual.data.categoria}</span>}
+          <h2 class="feat-titulo">{atual.data.titulo}</h2>
+          <p class="feat-resumo">{atual.data.resumo}</p>
+          {atual.data.desafio && (
+            <p class="feat-desafio"><span class="label">O convite</span>{atual.data.desafio}</p>
+          )}
+          <span class="feat-go mono">como começar →</span>
+        </div>
+      </a>
+    </section>
+  )}
+
+  {resto.length > 0 && (
+    <section class="wrap arquivo">
+      <div class="sec-head"><h2>Convites anteriores</h2></div>
+      <ul class="hb-list">
+        {resto.map((h) => (
+          <li>
+            <a href={`/hobbies/${h.id}`} class="hb-row">
+              {h.data.categoria && <span class="hb-cat mono">{h.data.categoria}</span>}
+              <span class="hb-info">
+                <span class="hb-titulo">{h.data.titulo}</span>
+                <span class="hb-resumo muted">{h.data.resumo}</span>
+              </span>
+              <time class="hb-data mono" datetime={h.data.data.toISOString()}>{fmt.format(h.data.data)}</time>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+</Base>
+
+<style>
+  .head { padding-top: clamp(2.5rem, 6vw, 4.5rem); }
+  .lead { margin-top: 1rem; font-size: 1.2rem; color: var(--ink-soft); }
+
+  .feat { display: block; margin-top: 2.4rem; text-decoration: none; color: inherit; border: 1.5px solid var(--ink); border-left: 4px solid var(--gold); border-radius: var(--radius); background: #fffdf6; padding: clamp(1.6rem, 4vw, 2.6rem); box-shadow: var(--shadow-doc); transition: transform .2s ease, box-shadow .2s ease; }
+  .feat:hover { transform: translateY(-3px); box-shadow: 0 1px 0 var(--ink), 0 26px 50px -30px rgba(27,26,22,.6); }
+  .feat-cat { display: inline-block; margin-top: 0.6rem; font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-deep); }
+  .feat-titulo { margin-top: 0.3rem; font-size: clamp(1.7rem, 1.3rem + 1.8vw, 2.6rem); }
+  .feat-resumo { margin-top: 0.9rem; font-size: 1.15rem; color: var(--ink-soft); max-width: 56ch; }
+  .feat-desafio { margin-top: 1.3rem; padding: 1rem 1.2rem; background: var(--paper-deep); border-radius: var(--radius); max-width: 60ch; }
+  .feat-desafio .label { display: block; color: var(--gold-deep); margin-bottom: 0.3rem; }
+  .feat-go { display: inline-block; margin-top: 1.4rem; color: var(--jacare-deep); font-size: 0.85rem; }
+  .feat:hover .feat-go { text-decoration: underline; }
+
+  .arquivo { margin-top: clamp(3rem, 7vw, 5rem); }
+  .sec-head { margin-bottom: 1.4rem; }
+  .hb-list { list-style: none; padding: 0; border-top: 1px solid var(--line-strong); }
+  .hb-list li { border-bottom: 1px solid var(--line); }
+  .hb-row { display: grid; grid-template-columns: 7rem 1fr auto; gap: clamp(0.8rem, 3vw, 2rem); align-items: baseline; padding: 1.1rem 0.4rem; text-decoration: none; color: inherit; transition: background .15s ease, padding .15s ease; }
+  .hb-row:hover { background: var(--paper-deep); padding-inline: 1rem; }
+  .hb-cat { font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-deep); }
+  .hb-info { display: flex; flex-direction: column; gap: 0.2rem; }
+  .hb-titulo { font-family: var(--display); font-size: 1.25rem; }
+  .hb-resumo { font-size: 0.95rem; max-width: 62ch; }
+  .hb-data { font-size: 0.72rem; color: var(--ink-faint); white-space: nowrap; }
+  @media (max-width: 600px) { .hb-row { grid-template-columns: 1fr; } .hb-data { display: none; } }
+</style>

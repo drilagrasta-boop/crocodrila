@@ -1,0 +1,103 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const fmt = new Intl.DateTimeFormat('pt-BR', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+
+const entrevistas = (await getCollection('entrevistas'))
+  .filter((e) => !e.data.rascunho)
+  .sort((a, b) => b.data.data.getTime() - a.data.data.getTime());
+
+const destaque = entrevistas[0];
+const resto = entrevistas.slice(1);
+const iniciais = (nome: string) => nome.split(/\s+/).slice(0, 2).map((p) => p[0]).join('').toUpperCase();
+---
+<Base title="Entrevistas" description="Uma conversa mensal com quem entende de IA — pesquisa, prática e o que vem por aí.">
+  <section class="wrap head rise">
+    <span class="label eyebrow">Uma conversa por mês</span>
+    <h1>O Outro Lado da Tela</h1>
+    <p class="measure lead">Uma vez por mês a gente senta com quem convive com IA em algum ofício — direito, docência, música, design, RH — pra ver como é do outro lado da tela. Sem roteiro de marketing.</p>
+  </section>
+
+  {entrevistas.length === 0 && (
+    <section class="wrap"><p class="muted">A primeira entrevista entra no ar em breve. Tem nome pra sugerir? A gente aceita pauta.</p></section>
+  )}
+
+  {destaque && (
+    <section class="wrap">
+      <a href={`/entrevistas/${destaque.id}`} class="feat">
+        <div class="feat-portrait-col">
+          <div class="feat-portrait" aria-hidden="true">
+            {destaque.data.foto
+              ? <img src={destaque.data.foto} alt={destaque.data.convidado} />
+              : <span class="feat-iniciais">{iniciais(destaque.data.convidado)}</span>}
+          </div>
+          {destaque.data.foto_legenda && <span class="foto-cap mono">{destaque.data.foto_legenda}</span>}
+        </div>
+        <div class="feat-body">
+          <span class="label">Mais recente · {fmt.format(destaque.data.data)}</span>
+          <h2 class="feat-titulo">{destaque.data.titulo}</h2>
+          <p class="feat-resumo">{destaque.data.resumo}</p>
+          <p class="feat-quem mono"><b>{destaque.data.convidado}</b> · {destaque.data.papel}</p>
+          <span class="feat-go mono">ler a conversa →</span>
+        </div>
+      </a>
+    </section>
+  )}
+
+  {resto.length > 0 && (
+    <section class="wrap arquivo">
+      <div class="sec-head"><h2>Conversas anteriores</h2></div>
+      <ul class="ent-list">
+        {resto.map((e) => (
+          <li>
+            <a href={`/entrevistas/${e.id}`} class="ent-row">
+              <span class="ent-avatar" aria-hidden="true">
+                {e.data.foto ? <img src={e.data.foto} alt={e.data.convidado} /> : <span>{iniciais(e.data.convidado)}</span>}
+              </span>
+              <span class="ent-info">
+                <span class="ent-titulo">{e.data.titulo}</span>
+                <span class="ent-quem muted">{e.data.convidado} — {e.data.papel}</span>
+              </span>
+              <time class="ent-data mono" datetime={e.data.data.toISOString()}>{fmt.format(e.data.data)}</time>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+</Base>
+
+<style>
+  .head { padding-top: clamp(2.5rem, 6vw, 4.5rem); }
+  .lead { margin-top: 1rem; font-size: 1.2rem; color: var(--ink-soft); }
+
+  .feat { display: grid; grid-template-columns: 220px 1fr; gap: clamp(1.4rem, 4vw, 2.6rem); margin-top: 2.4rem; text-decoration: none; color: inherit; border: 1.5px solid var(--ink); border-radius: var(--radius); background: #fffdf6; padding: clamp(1.4rem, 4vw, 2.4rem); box-shadow: var(--shadow-doc); transition: transform .2s ease, box-shadow .2s ease; }
+  .feat:hover { transform: translateY(-3px); box-shadow: 0 1px 0 var(--ink), 0 26px 50px -30px rgba(27,26,22,.6); }
+  .feat-portrait-col { display: flex; flex-direction: column; gap: 0.55rem; }
+  .feat-portrait { aspect-ratio: 1; border-radius: var(--radius); overflow: hidden; background: linear-gradient(150deg, var(--jacare), var(--jacare-deep)); display: grid; place-items: center; border: 1px solid var(--line-strong); }
+  .foto-cap { font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-deep); text-align: center; }
+  .foto-cap::before { content: '✦ '; }
+  .feat-portrait img { width: 100%; height: 100%; object-fit: cover; }
+  .feat-iniciais { font-family: var(--display); font-size: 3.4rem; color: var(--paper); font-weight: 600; }
+  .feat-titulo { margin-top: 0.5rem; font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.4rem); }
+  .feat-resumo { margin-top: 0.8rem; font-size: 1.12rem; color: var(--ink-soft); max-width: 52ch; }
+  .feat-quem { margin-top: 1rem; font-size: 0.8rem; color: var(--ink-faint); }
+  .feat-quem b { color: var(--jacare-deep); }
+  .feat-go { display: inline-block; margin-top: 1.2rem; color: var(--jacare-deep); font-size: 0.85rem; }
+  @media (max-width: 620px) { .feat { grid-template-columns: 1fr; } .feat-portrait { max-width: 160px; } }
+
+  .arquivo { margin-top: clamp(3rem, 7vw, 5rem); }
+  .sec-head { margin-bottom: 1.4rem; }
+  .ent-list { list-style: none; padding: 0; border-top: 1px solid var(--line-strong); }
+  .ent-list li { border-bottom: 1px solid var(--line); }
+  .ent-row { display: grid; grid-template-columns: auto 1fr auto; gap: 1.2rem; align-items: center; padding: 1rem 0.4rem; text-decoration: none; color: inherit; transition: background .15s ease, padding .15s ease; }
+  .ent-row:hover { background: var(--paper-deep); padding-inline: 1rem; }
+  .ent-avatar { width: 44px; height: 44px; border-radius: 50%; overflow: hidden; background: linear-gradient(150deg, var(--jacare), var(--jacare-deep)); display: grid; place-items: center; color: var(--paper); font-family: var(--display); font-size: 0.95rem; font-weight: 600; flex: none; }
+  .ent-avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .ent-info { display: flex; flex-direction: column; gap: 0.2rem; }
+  .ent-titulo { font-family: var(--display); font-size: 1.2rem; }
+  .ent-quem { font-size: 0.9rem; }
+  .ent-data { font-size: 0.72rem; color: var(--ink-faint); white-space: nowrap; }
+  @media (max-width: 560px) { .ent-row { grid-template-columns: auto 1fr; } .ent-data { display: none; } }
+</style>

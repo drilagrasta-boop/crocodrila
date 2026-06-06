@@ -1,0 +1,71 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const entrevistas = (await getCollection('entrevistas')).filter((e) => !e.data.rascunho);
+  return entrevistas.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const fmt = new Intl.DateTimeFormat('pt-BR', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+const iniciais = entry.data.convidado.split(/\s+/).slice(0, 2).map((p) => p[0]).join('').toUpperCase();
+---
+<Base title={`${entry.data.convidado} · Entrevista`} description={entry.data.resumo}>
+  <article class="ent">
+    <header class="wrap ent-head rise">
+      <a href="/entrevistas" class="back mono">← todas as entrevistas</a>
+      <span class="label eyebrow">O Outro Lado da Tela · {fmt.format(entry.data.data)}</span>
+      <h1 class="ent-titulo">{entry.data.titulo}</h1>
+
+      <div class="ent-cartao">
+        <span class="ent-foto-col">
+          <span class="ent-foto" aria-hidden="true">
+            {entry.data.foto ? <img src={entry.data.foto} alt={entry.data.convidado} /> : <span>{iniciais}</span>}
+          </span>
+          {entry.data.foto_legenda && <span class="ent-fotocap mono">{entry.data.foto_legenda}</span>}
+        </span>
+        <div>
+          <p class="ent-nome">{entry.data.convidado}</p>
+          <p class="muted ent-papel">{entry.data.papel}</p>
+        </div>
+      </div>
+
+      <p class="ent-resumo measure">{entry.data.resumo}</p>
+      <hr class="rule" />
+    </header>
+
+    <div class="wrap ent-body">
+      <div class="prose entrevista-prose">
+        <Content />
+      </div>
+    </div>
+
+    <footer class="wrap ent-foot">
+      <hr class="rule" />
+      <p class="muted">Tem um nome pra sugerir pra próxima conversa? Responda a edição no seu leitor ou fale com a gente no grupo.</p>
+    </footer>
+  </article>
+</Base>
+
+<style>
+  .ent-head { padding-top: clamp(2rem, 5vw, 3.5rem); }
+  .back { display: inline-block; color: var(--ink-faint); text-decoration: none; font-size: 0.78rem; margin-bottom: 1.4rem; }
+  .back:hover { color: var(--jacare); }
+  .ent-titulo { margin-top: 0.8rem; }
+  .ent-cartao { display: flex; align-items: center; gap: 1rem; margin-top: 1.6rem; }
+  .ent-foto-col { display: flex; flex-direction: column; align-items: center; gap: 0.35rem; flex: none; }
+  .ent-fotocap { font-size: 0.56rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-deep); }
+  .ent-foto { width: 64px; height: 64px; border-radius: 50%; overflow: hidden; background: linear-gradient(150deg, var(--jacare), var(--jacare-deep)); display: grid; place-items: center; color: var(--paper); font-family: var(--display); font-size: 1.3rem; font-weight: 600; flex: none; border: 1px solid var(--line-strong); }
+  .ent-foto img { width: 100%; height: 100%; object-fit: cover; }
+  .ent-nome { font-family: var(--display); font-size: 1.3rem; font-weight: 600; }
+  .ent-papel { font-size: 0.9rem; margin-top: 0.1rem; }
+  .ent-resumo { margin-top: 1.4rem; font-size: clamp(1.15rem, 1rem + 0.7vw, 1.4rem); font-style: italic; color: var(--ink-soft); }
+  .ent-head .rule { margin-top: 2rem; }
+  .ent-body { margin-top: 2.4rem; }
+  .ent-foot { margin-top: 3rem; }
+
+  /* destaca o entrevistador (negrito no início do parágrafo de pergunta) */
+  .entrevista-prose :global(strong:first-child) { color: var(--jacare-deep); }
+</style>

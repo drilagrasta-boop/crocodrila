@@ -1,0 +1,78 @@
+---
+import Base from '../layouts/Base.astro';
+import Crocodrila from '../components/Crocodrila.astro';
+---
+<Base title="Sobre" description="Como nasceu a newsletter Condenados à Atualização em IA.">
+  <section class="wrap sobre rise">
+    <span class="label eyebrow">A origem</span>
+    <h1>Gente condenada a se atualizar.</h1>
+
+    <div class="prose sobre-prose">
+      <p class="abre">
+        Tudo começou num grupo. Um punhado de colegas trocando link, paper, print de
+        tweet e áudio de três minutos sobre a próxima coisa que ia mudar tudo. O nome
+        saiu sozinho, meio de brincadeira, meio de desespero: <strong>Condenados à
+        Atualização em IA</strong>.
+      </p>
+
+      <p>
+        Porque é isso que parece, né? Acompanhar IA virou uma pena perpétua. Todo dia
+        um modelo novo, um anúncio, um “isso muda o jogo”. É muita informação e, junto,
+        muito ruído — e o ruído cansa mais do que a informação informa.
+      </p>
+
+      <p>
+        Das conversas nasceu uma ideia simples: e se a gente fizesse uma <strong>captura
+        semanal</strong> das novidades que realmente importam, indo atrás de <strong>fontes
+        primárias</strong> em vez de ficar repetindo o que o algoritmo empurrou? O paper
+        original, o post oficial, a documentação — não o resumo do resumo do resumo.
+      </p>
+
+      <blockquote>
+        No começo era só pra consumo próprio. Mas, se já estávamos filtrando pra nós,
+        por que não dividir?
+      </blockquote>
+
+      <p>
+        Dividimos. Deu certo. Aí pediram um lugar fixo pra guardar as edições — e este
+        site é esse lugar. Toda semana entra uma edição nova, numerada como os autos de
+        um processo. Quem chegou agora pode folhear de trás pra frente sem perder nada.
+      </p>
+
+      <h2>E a Crocodrila?</h2>
+      <p>
+        Ler é metade do trabalho; a outra metade é construir. No caminho, a gente foi
+        fazendo ferramenta — conversor de documento, integrações de pesquisa
+        jurisprudencial, pipelines que automatizam o tedioso. A <a class="tlink" href="/crocodrila">Crocodrila</a>
+        é a toca onde esses bichos ficam. O nome é uma piada interna que pegou, e o
+        jacaré virou mascote. Ele usa óculos porque também foi condenado a estudar.
+      </p>
+
+      <h2>Como acompanhar</h2>
+      <p>
+        A forma mais limpa é pelo <a class="tlink" href="/rss.xml">RSS</a>: cola o
+        endereço no seu leitor e a edição chega quando sai, sem intermediário e sem
+        rastreador. Ou simplesmente visite o <a class="tlink" href="/edicoes">arquivo</a>
+        quando der vontade.
+      </p>
+    </div>
+
+    <div class="assinatura">
+      <Crocodrila size={46} />
+      <div>
+        <p class="mono ass-nome">— o grupo Condenados à Atualização em IA</p>
+        <p class="muted ass-tag">feito a quatro mãos, humanas e de jacaré</p>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .sobre { padding-top: clamp(2.5rem, 6vw, 4.5rem); padding-bottom: 2rem; }
+  .sobre h1 { margin-top: 0.8rem; max-width: 16ch; }
+  .sobre-prose { margin-top: 2rem; }
+  .abre { font-size: clamp(1.2rem, 1rem + 0.8vw, 1.5rem); font-family: var(--display); font-weight: 400; line-height: 1.4; color: var(--ink); }
+  .assinatura { display: flex; align-items: center; gap: 1.1rem; margin-top: 3rem; padding-top: 1.6rem; border-top: 1px solid var(--line-strong); }
+  .ass-nome { font-size: 0.85rem; }
+  .ass-tag { font-size: 0.85rem; margin-top: 0.2rem; }
+</style>

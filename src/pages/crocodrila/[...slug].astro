@@ -1,0 +1,70 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const projetos = await getCollection('crocodrila');
+  return projetos.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const fmt = new Intl.DateTimeFormat('pt-BR', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+---
+<Base title={`${entry.data.titulo} · Crocodrila`} description={entry.data.subtitulo}>
+  <article class="proj">
+    <header class="wrap proj-head rise">
+      <a href="/crocodrila" class="back mono">← a toca da Crocodrila</a>
+      <div class="ph-meta">
+        <span class:list={['ph-status mono', `st-${entry.data.status.replace(/\s+/g, '-')}`]}>{entry.data.status}</span>
+        <span class="dot">·</span>
+        <span class="mono">{fmt.format(entry.data.data)}</span>
+      </div>
+      <h1>{entry.data.titulo}</h1>
+      <p class="ph-sub measure">{entry.data.subtitulo}</p>
+      {entry.data.credito && (
+        <p class="ph-credito mono">{entry.data.credito}</p>
+      )}
+
+      <div class="ph-actions">
+        {entry.data.repo && <a href={entry.data.repo} class="btn btn--ghost" target="_blank" rel="noopener">Ver o código ↗</a>}
+        {entry.data.demo && <a href={entry.data.demo} class="btn btn--jacare" target="_blank" rel="noopener">Testar ↗</a>}
+      </div>
+
+      {entry.data.tags.length > 0 && (
+        <div class="ph-tags">
+          {entry.data.tags.map((t) => <span class="tag mono">{t}</span>)}
+        </div>
+      )}
+      <hr class="rule" />
+    </header>
+
+    <div class="wrap proj-body">
+      <div class="prose">
+        <Content />
+      </div>
+    </div>
+  </article>
+</Base>
+
+<style>
+  .proj-head { padding-top: clamp(2rem, 5vw, 3.5rem); }
+  .back { display: inline-block; color: var(--ink-faint); text-decoration: none; font-size: 0.78rem; margin-bottom: 1.6rem; }
+  .back:hover { color: var(--jacare); }
+  .ph-meta { display: flex; align-items: center; gap: 0.6rem; font-size: 0.78rem; }
+  .ph-status { text-transform: uppercase; letter-spacing: 0.1em; padding: 0.2em 0.6em; border: 1px solid currentColor; border-radius: 99px; }
+  .st-em-uso { color: var(--jacare); }
+  .st-em-desenvolvimento { color: var(--amber); }
+  .st-experimento { color: var(--carimbo); }
+  .st-aposentado { color: var(--ink-faint); }
+  .dot { color: var(--line-strong); }
+  h1 { margin-top: 1rem; }
+  .ph-sub { margin-top: 1rem; font-size: clamp(1.15rem, 1rem + 0.7vw, 1.4rem); color: var(--ink-soft); }
+  .ph-credito { margin-top: 0.9rem; font-size: 0.72rem; letter-spacing: 0.06em; color: var(--gold-deep); }
+  .ph-credito::before { content: '✦ '; }
+  .ph-actions { display: flex; gap: 0.7rem; flex-wrap: wrap; margin-top: 1.6rem; }
+  .ph-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.6rem; }
+  .tag { font-size: 0.64rem; padding: 0.25em 0.6em; border: 1px solid var(--line-strong); border-radius: 99px; color: var(--ink-faint); }
+  .proj-head .rule { margin-top: 2.2rem; }
+  .proj-body { margin-top: 2.4rem; }
+</style>
