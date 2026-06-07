@@ -58,6 +58,16 @@ const pad = (n: number) => String(n).padStart(3, '0');
       </div>
     </div>
 
+    <aside class="wrap ed-cta-wrap">
+      <div class="ed-cta">
+        <div>
+          <span class="label eyebrow">Não perca a próxima</span>
+          <p class="ed-cta-text">Uma captura por semana, direto na sua caixa. Sem rastreador, sem ruído.</p>
+        </div>
+        <a href="/assinar" class="btn btn--jacare">Assinar →</a>
+      </div>
+    </aside>
+
     <footer class="wrap ed-foot">
       {entry.data.editores.length > 0 && (
         <div class="assina">
@@ -107,6 +117,13 @@ const pad = (n: number) => String(n).padStart(3, '0');
   .ed-head .rule { margin-top: 2.4rem; }
 
   .ed-body { margin-top: 2.4rem; }
+
+  .ed-cta-wrap { margin-top: 3.2rem; }
+  .ed-cta { display: flex; align-items: center; justify-content: space-between; gap: 1.4rem; flex-wrap: wrap; padding: clamp(1.4rem, 4vw, 2rem) clamp(1.5rem, 4vw, 2.2rem); border: 1.5px solid var(--jacare); border-radius: var(--radius); background: #fffdf6; }
+  .ed-cta-text { margin-top: 0.4rem; color: var(--ink-soft); max-width: 46ch; }
+  .ed-cta .btn { white-space: nowrap; flex: none; }
+  @media (max-width: 520px) { .ed-cta { flex-direction: column; align-items: flex-start; } }
+
   .ed-foot { margin-top: 3.5rem; }
   .prevnext { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 1.6rem; }
   .pn { display: flex; flex-direction: column; gap: 0.4rem; padding: 1.1rem 1.3rem; border: 1px solid var(--line-strong); border-radius: var(--radius); text-decoration: none; color: inherit; transition: border-color .15s ease, transform .15s ease; }
