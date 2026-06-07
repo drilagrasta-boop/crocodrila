@@ -45,7 +45,7 @@ const pad = (n: number) => String(n).padStart(3, '0');
 
       {entry.data.pdf && (
         <p class="ed-pdf">
-          <a href={entry.data.pdf} class="btn btn--ghost" download>↓ Baixar o PDF original</a>
+          <a href={entry.data.pdf} class="btn btn--ghost" target="_blank" rel="noopener">Abrir o PDF original ↗</a>
           <span class="ed-pdf-nota mono">o original, com os links das fontes</span>
         </p>
       )}
