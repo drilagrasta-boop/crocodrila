@@ -5,9 +5,7 @@ import Crocodrila from '../components/Crocodrila.astro';
 // O endereço do feed, usado no botão de copiar e no "Adicionar ao Feedly".
 const FEED = 'https://crocodrila.netlify.app/rss.xml';
 const feedlyUrl = `https://feedly.com/i/subscription/feed/${encodeURIComponent(FEED)}`;
-const mailto = 'mailto:drilagrasta@gmail.com'
-  + '?subject=' + encodeURIComponent('Quero assinar a newsletter')
-  + '&body=' + encodeURIComponent('Oi! Quero receber as edições do Condenados à Atualização em IA por e-mail. Pode me incluir na lista?');
+const buttondownAction = 'https://buttondown.com/api/emails/embed-subscribe/crocodrila';
 ---
 <Base title="Assinar" description="Como receber cada edição do Condenados à Atualização em IA — por e-mail ou por RSS, sem rastreador.">
   <section class="wrap assinar rise">
@@ -26,14 +24,17 @@ const mailto = 'mailto:drilagrasta@gmail.com'
           <h2>Por e-mail</h2>
         </div>
         <p>
-          A edição cai na sua caixa quando sai. Você clica no botão, manda o e-mail já
-          escrito, e a gente te inclui na lista. É na mão por enquanto, então pode levar
-          um dia até a confirmação.
+          A edição cai na sua caixa quando sai. Deixe seu e-mail, confirme no link que
+          chega em seguida, e pronto.
         </p>
-        <a href={mailto} class="btn btn--jacare">Pedir para entrar na lista →</a>
+        <form id="bd-form" action={buttondownAction} method="post" class="bd-form">
+          <label for="bd-email" class="sr-only">Seu e-mail</label>
+          <input type="email" name="email" id="bd-email" placeholder="seu@email.com" autocomplete="email" required class="bd-input" />
+          <button type="submit" class="btn btn--jacare">Assinar →</button>
+        </form>
+        <p id="bd-msg" class="bd-msg" hidden></p>
         <p class="opt-fine muted">
-          Sem custo. Para sair, basta responder qualquer edição pedindo. O e-mail de
-          contato é <a class="tlink" href="mailto:drilagrasta@gmail.com">drilagrasta@gmail.com</a>.
+          Sem custo, sem rastreador. Para sair, é um clique no rodapé de qualquer edição.
         </p>
       </article>
 
@@ -85,6 +86,22 @@ const mailto = 'mailto:drilagrasta@gmail.com'
 </Base>
 
 <script>
+  // Inscrição por e-mail (Buttondown). Envia em segundo plano para o usuário não sair do site;
+  // o duplo opt-in do Buttondown manda o e-mail de confirmação.
+  const form = document.getElementById('bd-form') as HTMLFormElement | null;
+  const msg = document.getElementById('bd-msg');
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const body = new FormData(form);
+    fetch(form.action, { method: 'POST', body, mode: 'no-cors' }).finally(() => {
+      form.hidden = true;
+      if (msg) {
+        msg.hidden = false;
+        msg.textContent = 'Quase lá — confira seu e-mail e clique no link de confirmação.';
+      }
+    });
+  });
+
   const btn = document.getElementById('copy-feed');
   const url = document.getElementById('feed-url')?.textContent ?? '';
   btn?.addEventListener('click', async () => {
@@ -118,6 +135,13 @@ const mailto = 'mailto:drilagrasta@gmail.com'
   .opt p { color: var(--ink-soft); }
   .opt .btn { margin-top: 1.2rem; align-self: flex-start; }
   .opt-fine { margin-top: 1rem; font-size: 0.85rem; }
+
+  .bd-form { display: flex; gap: 0.5rem; margin-top: 1.2rem; flex-wrap: wrap; }
+  .bd-input { flex: 1 1 12rem; min-width: 0; padding: 0.6em 0.8em; border: 1.5px solid var(--line-strong); border-radius: 8px; background: var(--paper); font: inherit; font-size: 1rem; color: var(--ink); }
+  .bd-input:focus { outline: none; border-color: var(--jacare); box-shadow: 0 0 0 3px color-mix(in srgb, var(--jacare) 22%, transparent); }
+  .bd-form .btn { margin-top: 0; }
+  .bd-msg { margin-top: 1.1rem; color: var(--jacare-deep); font-weight: 500; }
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 
   .rss-steps { margin-top: 1.1rem; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.7rem; color: var(--ink-soft); }
   .rss-steps li { padding-left: 0.3rem; }
