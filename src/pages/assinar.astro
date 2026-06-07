@@ -32,7 +32,7 @@ const buttondownAction = 'https://buttondown.com/api/emails/embed-subscribe/croc
           <input type="email" name="email" id="bd-email" placeholder="seu@email.com" autocomplete="email" required class="bd-input" />
           <button type="submit" class="btn btn--jacare">Inscreva-se</button>
         </form>
-        <p id="bd-msg" class="bd-msg" hidden></p>
+        <div id="bd-msg" class="bd-msg" role="status" aria-live="polite" hidden></div>
         <p class="opt-fine muted">
           Sem custo, sem rastreador. Para sair, é um clique no rodapé de qualquer edição.
         </p>
@@ -97,7 +97,11 @@ const buttondownAction = 'https://buttondown.com/api/emails/embed-subscribe/croc
       form.hidden = true;
       if (msg) {
         msg.hidden = false;
-        msg.textContent = 'Quase lá — confira seu e-mail e clique no link de confirmação.';
+        msg.innerHTML =
+          '<strong>Inscrição enviada!</strong> Falta um passo: abra seu e-mail e clique no '
+          + 'link de confirmação que acabamos de mandar. Sem isso, a inscrição não vale. '
+          + '<span class="bd-msg-fine">Não chegou em alguns minutos? Dê uma olhada na caixa de spam.</span>';
+        msg.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
     });
   });
@@ -140,7 +144,9 @@ const buttondownAction = 'https://buttondown.com/api/emails/embed-subscribe/croc
   .bd-input { flex: 1 1 12rem; min-width: 0; padding: 0.6em 0.8em; border: 1.5px solid var(--line-strong); border-radius: 8px; background: var(--paper); font: inherit; font-size: 1rem; color: var(--ink); }
   .bd-input:focus { outline: none; border-color: var(--jacare); box-shadow: 0 0 0 3px color-mix(in srgb, var(--jacare) 22%, transparent); }
   .bd-form .btn { margin-top: 0; }
-  .bd-msg { margin-top: 1.1rem; color: var(--jacare-deep); font-weight: 500; }
+  .bd-msg { margin-top: 1.2rem; padding: 1rem 1.2rem; border: 1.5px solid var(--jacare); border-left-width: 4px; border-radius: 10px; background: color-mix(in srgb, var(--jacare) 8%, #fffdf6); color: var(--jacare-deep); line-height: 1.5; }
+  .bd-msg strong { color: var(--jacare-deep); }
+  .bd-msg-fine { display: block; margin-top: 0.5rem; font-size: 0.85rem; color: var(--ink-soft); }
   .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 
   .rss-steps { margin-top: 1.1rem; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.7rem; color: var(--ink-soft); }
