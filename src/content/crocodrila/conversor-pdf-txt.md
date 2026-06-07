@@ -44,6 +44,44 @@ usá-lo com material sob sigilo sem mandar o processo do cliente para o servidor
 > Nasceu de uma dor real: uma pasta com dezenas de milhares de decisões em PDF que
 > ninguém ia transcrever na mão.
 
+## Como montar o seu
+
+Não distribuímos o nosso código (a base é do George — veja o crédito abaixo), mas a técnica
+é padrão e você monta a sua versão com ferramentas livres. O esqueleto cabe em vinte linhas.
+
+**O que instalar**
+
+1. **Python** (3.10 ou mais novo).
+2. As bibliotecas: `pip install pymupdf pytesseract pillow`
+3. O **Tesseract OCR** e o idioma português (no Windows, o instalador oficial; marque
+   "Portuguese" na lista de idiomas).
+
+**A lógica (página a página)**
+
+Tente o texto digital primeiro; se a página vier quase vazia, é imagem — aí renderize em
+300 DPI e passe no OCR. Tudo local:
+
+```python
+import fitz, io, pytesseract
+from PIL import Image
+
+doc = fitz.open("processo.pdf")
+paginas = []
+for page in doc:
+    texto = page.get_text().strip()
+    if len(texto) < 100:                      # pouca letra = página escaneada
+        pix = page.get_pixmap(dpi=300)
+        img = Image.open(io.BytesIO(pix.tobytes("png")))
+        texto = pytesseract.image_to_string(img, lang="por")
+    paginas.append(texto)
+
+open("processo.txt", "w", encoding="utf-8").write("\n\n".join(paginas))
+```
+
+A partir daí é refinar: ajustar o limite que decide "isto é imagem", descontar carimbos de
+assinatura digital antes de medir, varrer uma pasta inteira de uma vez. Mas o coração é
+esse — e repare que **nada saiu da sua máquina**.
+
 ---
 
 *Inspirado no **Sistema Marmelstein**, de George Marmelstein — nosso professor e orientador,

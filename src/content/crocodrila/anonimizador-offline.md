@@ -43,6 +43,45 @@ material fica pronto para circular, virar exemplo de aula ou entrar numa ferrame
 sem ferir o sigilo nem a LGPD. Como o conversor, ele troca conveniência por uma garantia:
 nada sai do computador.
 
+## Como montar o seu
+
+A base é dois movimentos simples, ambos offline: **trocar por padrão** (os dados que têm
+formato fixo) e **trocar por lista** (os nomes que você informa).
+
+**O que instalar**
+
+1. **Python** — só ele já resolve a parte de tarjas (CPF, e-mail, telefone…), que é pura
+   expressão regular.
+2. Opcional, para pescar nomes que você esqueceu de listar: `pip install spacy` e o modelo
+   português (`python -m spacy download pt_core_news_sm`). Trate o automático como rascunho.
+
+**O esqueleto**
+
+```python
+import re
+
+# dados com formato fixo → tarja com rótulo
+TARJAS = {
+    r"\d{3}\.?\d{3}\.?\d{3}-?\d{2}": "[CPF]",
+    r"[\w.+-]+@[\w-]+\.[\w.-]+":      "[EMAIL]",
+    r"\(?\d{2}\)?\s?9?\d{4}-?\d{4}":  "[TELEFONE]",
+}
+texto = open("peca.txt", encoding="utf-8").read()
+for padrao, rotulo in TARJAS.items():
+    texto = re.sub(padrao, rotulo, texto)
+
+# nomes das partes (o jeito confiável: você informa)
+for nome in ["João Silva Souza", "Maria Lima"]:
+    iniciais = "".join(p[0] for p in nome.split() if p[0].isupper()) 
+    texto = texto.replace(nome, ".".join(iniciais) + ".")
+
+open("peca_anon.txt", "w", encoding="utf-8").write(texto)
+```
+
+Depois é só somar padrões (RG, OAB, CNPJ, CEP) e, importante, **gerar um arquivo-mapa** do
+que foi trocado — pra você conferir antes de usar, e guardar em segurança (esse mapa
+re-identifica).
+
 ---
 
 *Inspirado no **Sistema Marmelstein**, de George Marmelstein — nosso professor e orientador,
