@@ -42,6 +42,13 @@ const pad = (n: number) => String(n).padStart(3, '0');
           </ul>
         </aside>
       )}
+
+      {entry.data.pdf && (
+        <p class="ed-pdf">
+          <a href={entry.data.pdf} class="btn btn--ghost" download>↓ Baixar o PDF original</a>
+          <span class="ed-pdf-nota mono">o original, com os links das fontes</span>
+        </p>
+      )}
       <hr class="rule" />
     </header>
 
@@ -95,6 +102,8 @@ const pad = (n: number) => String(n).padStart(3, '0');
   .sumario ul { margin-top: 0.7rem; padding-left: 1.1em; display: flex; flex-direction: column; gap: 0.35rem; }
   .sumario li { color: var(--ink-soft); }
   .sumario li::marker { color: var(--jacare); }
+  .ed-pdf { display: flex; align-items: center; gap: 0.9rem; flex-wrap: wrap; margin-top: 1.8rem; }
+  .ed-pdf-nota { font-size: 0.7rem; color: var(--ink-faint); letter-spacing: 0.04em; }
   .ed-head .rule { margin-top: 2.4rem; }
 
   .ed-body { margin-top: 2.4rem; }

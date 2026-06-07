@@ -14,6 +14,7 @@ const edicoes = defineCollection({
     dateline: z.string().optional(),    // ex.: "Lavrado em 30 de maio de 2026, com efeitos retroativos a 23 de maio"
     resumo: z.string(),                 // chamada de 1–2 frases (aparece na lista e no preview)
     destaques: z.array(z.string()).default([]), // bullets do "nesta edição"
+    pdf: z.string().optional(),                 // caminho do PDF original em /public (ex.: /relatorios/...pdf)
     editores: z.array(z.string()).default([]),  // curadoria e edição (assina o rodapé da edição)
     rascunho: z.boolean().default(false),       // true = não publica
   }),
