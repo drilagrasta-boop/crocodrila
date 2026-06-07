@@ -1,0 +1,133 @@
+---
+import Base from '../layouts/Base.astro';
+import Crocodrila from '../components/Crocodrila.astro';
+
+// O endereço do feed, usado no botão de copiar e no "Adicionar ao Feedly".
+const FEED = 'https://crocodrila.netlify.app/rss.xml';
+const feedlyUrl = `https://feedly.com/i/subscription/feed/${encodeURIComponent(FEED)}`;
+const mailto = 'mailto:drilagrasta@gmail.com'
+  + '?subject=' + encodeURIComponent('Quero assinar a newsletter')
+  + '&body=' + encodeURIComponent('Oi! Quero receber as edições do Condenados à Atualização em IA por e-mail. Pode me incluir na lista?');
+---
+<Base title="Assinar" description="Como receber cada edição do Condenados à Atualização em IA — por e-mail ou por RSS, sem rastreador.">
+  <section class="wrap assinar rise">
+    <span class="label eyebrow">Assinar</span>
+    <h1>Receba cada edição.</h1>
+    <p class="abre measure">
+      Duas formas de não perder a captura semanal. Escolha a que combina com você.
+      Nenhuma das duas tem rastreador, algoritmo ou intermediário decidindo o que você vê.
+    </p>
+
+    <div class="opts">
+      <!-- E-MAIL -->
+      <article class="opt opt--email">
+        <div class="opt-head">
+          <span class="opt-kicker mono">A mais simples</span>
+          <h2>Por e-mail</h2>
+        </div>
+        <p>
+          A edição cai na sua caixa quando sai. Você clica no botão, manda o e-mail já
+          escrito, e a gente te inclui na lista. É na mão por enquanto, então pode levar
+          um dia até a confirmação.
+        </p>
+        <a href={mailto} class="btn btn--jacare">Pedir para entrar na lista →</a>
+        <p class="opt-fine muted">
+          Sem custo. Para sair, basta responder qualquer edição pedindo. O e-mail de
+          contato é <a class="tlink" href="mailto:drilagrasta@gmail.com">drilagrasta@gmail.com</a>.
+        </p>
+      </article>
+
+      <!-- RSS -->
+      <article class="opt opt--rss">
+        <div class="opt-head">
+          <span class="opt-kicker mono">Para quem já usa</span>
+          <h2>Por RSS</h2>
+        </div>
+        <p>
+          RSS é um jeito antigo e ótimo de seguir sites sem dar seu e-mail a ninguém:
+          um leitor de feeds junta tudo que você acompanha num lugar só, na ordem em que
+          sai. Sem login, sem anúncio, sem ninguém reordenando por você.
+        </p>
+
+        <ol class="rss-steps">
+          <li>
+            Instale um leitor grátis. No celular ou no navegador, o
+            <a class="tlink" href="https://feedly.com" target="_blank" rel="noopener">Feedly</a> e o
+            <a class="tlink" href="https://www.inoreader.com" target="_blank" rel="noopener">Inoreader</a>
+            resolvem; no computador, o
+            <a class="tlink" href="https://netnewswire.com" target="_blank" rel="noopener">NetNewsWire</a> (grátis e sem conta).
+          </li>
+          <li>
+            Cole o endereço do nosso feed nele:
+            <div class="feed-row">
+              <code id="feed-url">{FEED}</code>
+              <button type="button" id="copy-feed" class="btn-copy mono">copiar</button>
+            </div>
+          </li>
+          <li>Pronto. Cada edição nova aparece sozinha no seu leitor.</li>
+        </ol>
+
+        <div class="rss-cta">
+          <a href={feedlyUrl} class="btn btn--ghost" target="_blank" rel="noopener">Adicionar ao Feedly num clique</a>
+          <a href="/rss.xml" class="tlink mono">ver o feed cru</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="assinar-foot">
+      <Crocodrila size={40} />
+      <p class="muted">
+        Prefere só folhear quando der vontade? O <a class="tlink" href="/edicoes">arquivo</a>
+        guarda todas as edições, numeradas como autos.
+      </p>
+    </div>
+  </section>
+</Base>
+
+<script>
+  const btn = document.getElementById('copy-feed');
+  const url = document.getElementById('feed-url')?.textContent ?? '';
+  btn?.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(url);
+      const old = btn.textContent;
+      btn.textContent = 'copiado ✓';
+      setTimeout(() => (btn.textContent = old), 1600);
+    } catch {
+      // Se o navegador bloquear a área de transferência, seleciona o texto como plano B.
+      const range = document.createRange();
+      const node = document.getElementById('feed-url');
+      if (node) { range.selectNodeContents(node); getSelection()?.removeAllRanges(); getSelection()?.addRange(range); }
+    }
+  });
+</script>
+
+<style>
+  .assinar { padding-top: clamp(2.5rem, 6vw, 4.5rem); padding-bottom: 2rem; }
+  .assinar h1 { margin-top: 0.8rem; }
+  .abre { margin-top: 1.2rem; font-size: clamp(1.1rem, 1rem + 0.6vw, 1.35rem); color: var(--ink-soft); }
+
+  .opts { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; margin-top: 2.6rem; }
+  @media (max-width: 720px) { .opts { grid-template-columns: 1fr; } }
+
+  .opt { border: 1.5px solid var(--line-strong); border-radius: var(--radius); padding: clamp(1.5rem, 4vw, 2.2rem); background: #fffdf6; display: flex; flex-direction: column; }
+  .opt--email { border-color: var(--jacare); border-left-width: 3px; }
+  .opt-head { display: flex; flex-direction: column; gap: 0.3rem; margin-bottom: 0.8rem; }
+  .opt-kicker { font-size: 0.64rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-deep); }
+  .opt h2 { font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2rem); }
+  .opt p { color: var(--ink-soft); }
+  .opt .btn { margin-top: 1.2rem; align-self: flex-start; }
+  .opt-fine { margin-top: 1rem; font-size: 0.85rem; }
+
+  .rss-steps { margin-top: 1.1rem; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.7rem; color: var(--ink-soft); }
+  .rss-steps li { padding-left: 0.3rem; }
+  .feed-row { display: flex; align-items: center; gap: 0.5rem; margin-top: 0.5rem; flex-wrap: wrap; }
+  .feed-row code { font-family: var(--mono); font-size: 0.8rem; background: var(--paper-deep); border: 1px solid var(--line-strong); border-radius: 6px; padding: 0.4em 0.6em; color: var(--ink); word-break: break-all; }
+  .btn-copy { cursor: pointer; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.45em 0.8em; border: 1px solid var(--jacare); border-radius: 6px; background: transparent; color: var(--jacare-deep); transition: background .15s ease, color .15s ease; }
+  .btn-copy:hover { background: var(--jacare); color: var(--paper); }
+
+  .rss-cta { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-top: 1.4rem; }
+
+  .assinar-foot { display: flex; align-items: center; gap: 1.1rem; margin-top: 3rem; padding-top: 1.6rem; border-top: 1px solid var(--line-strong); }
+  .assinar-foot p { font-size: 0.95rem; }
+</style>
