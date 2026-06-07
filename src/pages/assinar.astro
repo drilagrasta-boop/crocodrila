@@ -7,9 +7,9 @@ const FEED = 'https://crocodrila.netlify.app/rss.xml';
 const feedlyUrl = `https://feedly.com/i/subscription/feed/${encodeURIComponent(FEED)}`;
 const buttondownAction = 'https://buttondown.com/api/emails/embed-subscribe/crocodrila';
 ---
-<Base title="Assinar" description="Como receber cada edição do Condenados à Atualização em IA — por e-mail ou por RSS, sem rastreador.">
+<Base title="Inscreva-se" description="Como receber cada edição do Condenados à Atualização em IA — por e-mail ou por RSS, sem rastreador.">
   <section class="wrap assinar rise">
-    <span class="label eyebrow">Assinar</span>
+    <span class="label eyebrow">Inscreva-se</span>
     <h1>Receba cada edição.</h1>
     <p class="abre measure">
       Duas formas de não perder a captura semanal. Escolha a que combina com você.
@@ -30,7 +30,7 @@ const buttondownAction = 'https://buttondown.com/api/emails/embed-subscribe/croc
         <form id="bd-form" action={buttondownAction} method="post" class="bd-form">
           <label for="bd-email" class="sr-only">Seu e-mail</label>
           <input type="email" name="email" id="bd-email" placeholder="seu@email.com" autocomplete="email" required class="bd-input" />
-          <button type="submit" class="btn btn--jacare">Assinar</button>
+          <button type="submit" class="btn btn--jacare">Inscreva-se</button>
         </form>
         <p id="bd-msg" class="bd-msg" hidden></p>
         <p class="opt-fine muted">
