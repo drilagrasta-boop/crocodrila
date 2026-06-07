@@ -42,6 +42,16 @@ const iniciais = entry.data.convidado.split(/\s+/).slice(0, 2).map((p) => p[0]).
       </div>
     </div>
 
+    <aside class="wrap ent-cta-wrap">
+      <div class="ent-cta">
+        <div>
+          <span class="label eyebrow">Gostou da conversa?</span>
+          <p class="ent-cta-text">Uma captura de IA por semana, direto na sua caixa. Sem rastreador, sem ruído.</p>
+        </div>
+        <a href="/assinar" class="btn btn--jacare">Assinar →</a>
+      </div>
+    </aside>
+
     <footer class="wrap ent-foot">
       <hr class="rule" />
       <p class="muted">Tem um nome pra sugerir pra próxima conversa? Responda a edição no seu leitor ou fale com a gente no grupo.</p>
@@ -64,6 +74,13 @@ const iniciais = entry.data.convidado.split(/\s+/).slice(0, 2).map((p) => p[0]).
   .ent-resumo { margin-top: 1.4rem; font-size: clamp(1.15rem, 1rem + 0.7vw, 1.4rem); font-style: italic; color: var(--ink-soft); }
   .ent-head .rule { margin-top: 2rem; }
   .ent-body { margin-top: 2.4rem; }
+
+  .ent-cta-wrap { margin-top: 3.2rem; }
+  .ent-cta { display: flex; align-items: center; justify-content: space-between; gap: 1.4rem; flex-wrap: wrap; padding: clamp(1.4rem, 4vw, 2rem) clamp(1.5rem, 4vw, 2.2rem); border: 1.5px solid var(--jacare); border-radius: var(--radius); background: #fffdf6; }
+  .ent-cta-text { margin-top: 0.4rem; color: var(--ink-soft); max-width: 46ch; }
+  .ent-cta .btn { white-space: nowrap; flex: none; }
+  @media (max-width: 520px) { .ent-cta { flex-direction: column; align-items: flex-start; } }
+
   .ent-foot { margin-top: 3rem; }
 
   /* destaca o entrevistador (negrito no início do parágrafo de pergunta) */
