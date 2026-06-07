@@ -3,9 +3,9 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import rehypeExternalLinks from 'rehype-external-links';
 
-// Troque para o seu domínio final quando registrar (ex.: https://condenadosia.com.br).
-// Por enquanto vale o subdomínio gratuito do Cloudflare Pages.
-const SITE = process.env.SITE_URL || 'https://condenados-ia.pages.dev';
+// Endereço oficial do site (usado em canonical, sitemap e RSS).
+// Troque quando registrar um domínio próprio (ex.: https://condenadosia.com.br).
+const SITE = process.env.SITE_URL || 'https://crocodrila.netlify.app';
 
 // https://astro.build/config
 export default defineConfig({
