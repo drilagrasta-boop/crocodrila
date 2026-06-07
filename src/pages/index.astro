@@ -50,12 +50,21 @@ const iniciais = (nome: string) => nome.split(/\s+/).slice(0, 2).map((p) => p[0]
           <a href="/sobre" class="btn btn--ghost">Como nasceu</a>
         </div>
       </div>
-      <aside class="hero-side" aria-hidden="true">
-        <div class="dossie-mark">
-          <Crocodrila size={50} />
-          <span class="stamp">Autos · Vol. {ultima ? ultima.data.numero : 1}</span>
-          <p class="dossie-meta mono">CONDENADOS À<br />ATUALIZAÇÃO<br />EM I.A.</p>
-        </div>
+      <aside class="hero-side">
+        {ultima ? (
+          <a href={`/edicoes/${ultima.id}`} class="dossie-mark dossie-link" aria-label={`Abrir a edição mais recente — Nº ${pad(ultima.data.numero)}`}>
+            <Crocodrila size={50} />
+            <span class="stamp">Autos · Vol. {ultima.data.numero}</span>
+            <p class="dossie-meta mono">CONDENADOS À<br />ATUALIZAÇÃO<br />EM I.A.</p>
+            <span class="dossie-go mono">abrir a edição →</span>
+          </a>
+        ) : (
+          <div class="dossie-mark" aria-hidden="true">
+            <Crocodrila size={50} />
+            <span class="stamp">Autos · Vol. 1</span>
+            <p class="dossie-meta mono">CONDENADOS À<br />ATUALIZAÇÃO<br />EM I.A.</p>
+          </div>
+        )}
       </aside>
     </div>
   </section>
@@ -217,6 +226,12 @@ const iniciais = (nome: string) => nome.split(/\s+/).slice(0, 2).map((p) => p[0]
   }
   .dossie-mark::before { content: ''; position: absolute; inset: 6px; border: 1px dashed var(--line-strong); border-radius: var(--radius); pointer-events: none; }
   .dossie-meta { font-size: 0.6rem; letter-spacing: 0.22em; text-align: center; color: var(--ink-faint); line-height: 1.5; }
+  .dossie-link { text-decoration: none; color: inherit; cursor: pointer; transition: transform .25s cubic-bezier(.2,.7,.2,1), box-shadow .25s ease; }
+  .dossie-link:hover { transform: translateY(-4px) rotate(-1deg); box-shadow: 0 1px 0 var(--line-strong), 0 26px 48px -26px rgba(29,43,36,.55); }
+  .dossie-link :global(svg) { transition: transform .25s cubic-bezier(.2,.7,.2,1); }
+  .dossie-link:hover :global(svg) { transform: scale(1.06) rotate(-3deg); }
+  .dossie-go { font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-deep); opacity: 0; transform: translateY(-4px); transition: opacity .2s ease, transform .2s ease; }
+  .dossie-link:hover .dossie-go { opacity: 1; transform: none; }
 
   /* FEATURE / última edição */
   .feature { margin-top: 1rem; }
