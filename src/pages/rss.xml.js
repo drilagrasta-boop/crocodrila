@@ -7,6 +7,7 @@ export async function GET(context) {
     .sort((a, b) => b.data.numero - a.data.numero);
 
   return rss({
+    stylesheet: '/rss-styles.xsl',
     title: 'Condenados à Atualização em IA',
     description:
       'Captura semanal das principais novidades sobre IA, a partir de fontes primárias.',
