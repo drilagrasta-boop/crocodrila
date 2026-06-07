@@ -2,7 +2,7 @@
 titulo: "Pipeline de Acórdão"
 subtitulo: "Vários agentes especializados que, juntos, levam um recurso da análise à minuta."
 data: 2026-05-15
-status: "em desenvolvimento"
+status: "em uso"
 tags: ["agentes", "pipeline", "redação jurídica"]
 credito: "Inspirado no Sistema Marmelstein, de George Marmelstein"
 destaque: false
