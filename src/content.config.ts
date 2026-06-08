@@ -41,7 +41,7 @@ const crocodrila = defineCollection({
 });
 
 // ---------------------------------------------------------------------------
-// ENTREVISTAS — conversa mensal com um convidado que entende de IA.
+// ENTREVISTAS — conversa com um convidado que entende de IA (sem periodicidade fixa).
 // Cada entrevista é um arquivo em src/content/entrevistas/ (ex.: 2026-06-joana-silva.md)
 // ---------------------------------------------------------------------------
 const entrevistas = defineCollection({

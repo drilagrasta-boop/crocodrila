@@ -12,11 +12,11 @@ const destaque = entrevistas[0];
 const resto = entrevistas.slice(1);
 const iniciais = (nome: string) => nome.split(/\s+/).slice(0, 2).map((p) => p[0]).join('').toUpperCase();
 ---
-<Base title="Entrevistas" description="Uma conversa mensal com quem entende de IA — pesquisa, prática e o que vem por aí.">
+<Base title="Entrevistas" description="Uma conversa com quem entende de IA — pesquisa, prática e o que vem por aí.">
   <section class="wrap head rise">
-    <span class="label eyebrow">Uma conversa por mês</span>
+    <span class="label eyebrow">Sai quando fica boa</span>
     <h1>O Outro Lado da Tela</h1>
-    <p class="measure lead">Uma vez por mês a gente senta com quem convive com IA em algum ofício — direito, docência, música, design, RH — pra ver como é do outro lado da tela. Sem roteiro de marketing.</p>
+    <p class="measure lead">A gente senta com quem convive com IA em algum ofício — direito, docência, música, design, RH — pra ver como é do outro lado da tela. Sem calendário fixo: publica quando a conversa vale, não quando o prazo cobra. Sem roteiro de marketing.</p>
   </section>
 
   {entrevistas.length === 0 && (
