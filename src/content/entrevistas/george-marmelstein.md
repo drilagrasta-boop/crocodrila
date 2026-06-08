@@ -84,8 +84,14 @@ _(resposta)_
 
 _(resposta)_
 
-**Nos últimos meses você caminhou por Santiago de Compostela. Numa vida de hiperfoco, de IA que resolve em dez minutos o que levava duas horas, o que faz um homem dessa pressa escolher andar centenas de quilômetros devagar — e o que o Caminho te disse sobre a superaprendizagem que o computador não diz?**
+**Você recebeu o "chamado" do Caminho em 2024, no português; refez o francês com seus filhos saindo de Sarria; e este ano encarou os 790 km do Francês inteiro — de Saint-Jean-Pied-de-Port, em 8 de abril, até Santiago, em 14 de maio, seguindo ainda até Finisterre. Escreveu que chegou "mais leve, apesar de a mochila ser a mesma", e que o Caminho te tornou "mais humano, numa era em que estamos cada vez mais conectados e cada vez menos presentes". Numa vida de hiperfoco, de IA que resolve em dez minutos o que levava duas horas, o que faz um homem dessa pressa andar 36 dias devagar?**
 
-<!-- âncora: a peregrinação (não confirmada em fonte pública; você preenche o contexto). Fecha no humano, em contraste com a IA. -->
+<!-- âncora: a peregrinação, agora confirmada pelas legendas do Instagram dele. Datas, trechos e a frase "o caminho se faz ao andar" são dele. Fecha no humano, em contraste direto com a IA. -->
+
+_(resposta)_
+
+**Você disse que foi ao Caminho "para pensar e só depois compartilhar". Mas levou o Claude junto: contou que, num teste, ele se recusou a seguir seu pedido e deu a resposta que julgou mais apropriada — e você comentou que "um ser humano mais elevado faria o mesmo". O que te diz sobre a máquina o fato de ela, às vezes, te dizer não? E onde fica a linha entre uma IA que te protege e uma IA que decide no seu lugar?**
+
+<!-- âncora: o post do teste moral com o Claude feito DURANTE o Caminho. Ponte perfeita peregrinação ↔ ética da IA. Pergunta-bônus: corte se ficar com 12, mas é a que mais conversa com a entrevista do Claude. -->
 
 _(resposta)_
