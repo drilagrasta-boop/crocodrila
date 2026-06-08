@@ -5,7 +5,7 @@ data: 2026-05-25
 status: "em uso"
 tags: ["Astro", "web", "Netlify", "conteúdo"]
 destaque: false
-ordem: 5
+ordem: 6
 ---
 
 O site que você está lendo não foi terceirizado. A gente montou — e montou de um jeito
