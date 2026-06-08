@@ -36,6 +36,18 @@ _(resposta)_
 
 _(resposta)_
 
+**O Hootly não é só o app: ele assina, como autor, o seu novo livro — _Máquinas Conscientes_. Na capa está "Hootly Marmelstein"; o seu crédito é "ideação e regência agêntica". Você dá o tema e o que pensa, e a IA escreve as 122 páginas sozinha, em cerca de dez horas, sem você tocar numa frase. O que significa ser autor de um livro que você não escreveu — onde termina o seu trabalho e começa o da máquina?**
+
+<!-- âncora: capa do PDF assina "HOOTLY MARMELSTEIN"; folha de rosto traz "Ideação e Regência Agêntica: George Marmelstein". 122 páginas, ~10h sem intervenção. Conversa direto com a nossa pergunta: ser mais que quem aperta botões. -->
+
+_(resposta)_
+
+**É um livro sobre se a máquina tem mente por dentro — escrito por uma máquina. Ele abre com o engenheiro do Google e o LaMDA, e monta um julgamento em quatro atos, acusação e defesa, sem entregar o veredito de graça. Depois de ler o que a sua própria IA escreveu sobre a consciência das máquinas, você ficou mais perto ou mais longe de achar que tem alguém em casa?**
+
+<!-- âncora: estrutura tese/antítese/réplica/síntese; abertura no caso Lemoine/LaMDA; a imagem central do livro ("as luzes acesas numa casa que pode estar vazia"). A própria forma — máquina escrevendo sobre mente de máquina — é a pergunta. -->
+
+_(resposta)_
+
 **Numa palestra você contou que cortou a preparação de uma audiência de duas horas para dez minutos com ajuda de IA. O que você faz com a outra hora e cinquenta? Porque a promessa de produtividade quase nunca vem com a pergunta sobre o que sobra de tempo.**
 
 <!-- âncora: o dado 2h→10min, dito por ele. A pergunta vira o número do avesso. -->
