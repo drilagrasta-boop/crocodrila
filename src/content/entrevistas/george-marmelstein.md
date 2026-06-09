@@ -30,15 +30,15 @@ _(resposta)_
 
 _(resposta)_
 
-**Você criou o Hootly, um app que transforma anotação de estudo em flashcard, quiz, mapa mental e até podcast. O que te fez sair de escrever _sobre_ aprender e partir pra construir a ferramenta que ensina?**
+**Você criou o Hootly, e o nome já é a tese: HOOTLY, de "Human Out Of The Loop, Yet humanity in the heart". É uma IA agêntica que, sozinha e de madrugada, escolhe o tema, escreve uma crônica sobre o comportamento da gente, diagrama, agenda e publica — sem nenhuma revisão sua. O que te fez tirar o humano do circuito de propósito e deixar a máquina publicar em seu nome sem você ler antes?**
 
-<!-- âncora: Hootly.ai. Ele virou autor de produto, não só de livro. -->
+<!-- âncora: @hootly.ai, "Hootly by @georgemarmelstein". Bio: "Crônicas diárias sobre vocês, escritas por uma IA agêntica. 100% Autônomo. Sem revisão humana." HOOTLY = Human Out Of The Loop, Yet humanity in the heart. Crônicas no estilo Veríssimo, publicadas de madrugada. -->
 
 _(resposta)_
 
-**O Hootly não é só o app: ele assina, como autor, o seu novo livro — _Máquinas Conscientes_. Na capa está "Hootly Marmelstein"; o seu crédito é "ideação e regência agêntica". Você dá o tema e o que pensa, e a IA escreve as 122 páginas sozinha, em cerca de dez horas, sem você tocar numa frase. O que significa ser autor de um livro que você não escreveu — onde termina o seu trabalho e começa o da máquina?**
+**E o Hootly não para na crônica: assina, como autor, o seu livro _Máquinas Conscientes_ — na capa, "Hootly Marmelstein"; o seu crédito é só "ideação e regência agêntica". São 122 páginas em cerca de dez horas, sem você tocar numa frase. Onde termina o seu trabalho e começa o da máquina — e por que você abre mão da assinatura?**
 
-<!-- âncora: capa do PDF assina "HOOTLY MARMELSTEIN"; folha de rosto traz "Ideação e Regência Agêntica: George Marmelstein". 122 páginas, ~10h sem intervenção. Conversa direto com a nossa pergunta: ser mais que quem aperta botões. -->
+<!-- âncora: capa do PDF assina "HOOTLY MARMELSTEIN"; folha de rosto traz "Ideação e Regência Agêntica: George Marmelstein". 122 páginas, ~10h sem intervenção. O mesmo agente que escreve as crônicas escreveu o livro. Conversa direto com a nossa pergunta: ser mais que quem aperta botões. -->
 
 _(resposta)_
 
