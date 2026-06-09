@@ -3,7 +3,7 @@ convidado: "George Marmelstein"
 papel: "juiz federal, professor de Direito Constitucional e criador do Hootly · o professor que ensina a usar IA sem deixar de pensar"
 titulo: "“Asas para o pensamento, não uma muleta”"
 data: 2026-06-08
-resumo: "Conversa com George Marmelstein — juiz federal, autor de Superaprendizagem e criador do app Hootly — sobre usar IA sem terceirizar o juízo, a régua ética que ele ajudou a desenhar no CNJ, e o que o Caminho de Santiago ensina que nenhum modelo ensina."
+resumo: "Conversa com George Marmelstein — juiz federal, autor de Superaprendizagem e criador do Hootly, a IA agêntica que escreve sozinha — sobre usar IA sem terceirizar o juízo, a régua ética que ele ajudou a desenhar no CNJ, e o que o Caminho de Santiago ensina que nenhum modelo ensina."
 rascunho: true
 ---
 
@@ -16,7 +16,9 @@ rascunho: true
      Perguntas do Dennis entram onde fizerem sentido.
      ============================================================ -->
 
-*Tem entrevistado que a gente apresenta. Este não precisa: para boa parte do grupo, foi com o George Marmelstein que a IA deixou de ser assunto de palestra e virou ferramenta na mesa. Juiz federal, autor de* Superaprendizagem*, criador do Hootly, professor dos prompts que muita gente — eu inclusive — copiou no primeiro dia. Sentamos com ele para falar de aprender, de limites e do que sobra de humano quando a máquina faz em dez minutos o que levava duas horas.*
+*Tem convidado que precisa de apresentação. O George Marmelstein, para boa parte do nosso grupo, dispensa: foi com ele que a IA deixou de ser assunto de palestra e virou ferramenta na mesa. Juiz federal, doutor por Coimbra, autor de* Superaprendizagem*. Mas talvez seja mais honesto apresentá-lo pelo que ele fez com a gente: boa parte do que roda aqui na Toca começou num prompt que ele soltou de graça. O meu primeiro projeto também.*
+
+*A conversa tem uma ironia no meio, e desconfio que ele vá gostar dela. Marmelstein ajudou a desenhar a regra do CNJ que mantém o juiz no circuito de toda decisão. E criou o Hootly, uma IA cujo nome é "Human Out Of The Loop", que escreve crônicas e publica sozinha, de madrugada, sem ele ler antes. O mesmo homem que largou tudo por 36 dias para andar até Santiago de Compostela e voltar, como escreveu, "mais humano" numa era "em que estamos cada vez mais conectados e cada vez menos presentes". Sentamos para falar disso: de aprender, de onde fica o limite, e do que sobra de gente quando a máquina faz em dez minutos o que levava duas horas.*
 
 **Você foi aprovado no Ministério Público de Alagoas em primeiro lugar aos 22 e virou um dos juízes federais mais jovens do país aos 24. Muito antes de "prompt" existir, você já caçava um jeito de aprender mais rápido. De onde veio essa obsessão por eficiência cognitiva?**
 
