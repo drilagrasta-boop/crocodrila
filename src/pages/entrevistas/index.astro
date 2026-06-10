@@ -12,11 +12,11 @@ const destaque = entrevistas[0];
 const resto = entrevistas.slice(1);
 const iniciais = (nome: string) => nome.split(/\s+/).slice(0, 2).map((p) => p[0]).join('').toUpperCase();
 ---
-<Base title="Entrevistas" description="Uma conversa com quem entende de IA — pesquisa, prática e o que vem por aí.">
+<Base title="Entrevistas" description="A IA vista por quem pensa o humano — filosofia, teologia, educação, direito, ofício. Entusiastas e críticos, sem torcida.">
   <section class="wrap head rise">
-    <span class="label eyebrow">No tempo do assunto</span>
+    <span class="label eyebrow">O humano no centro</span>
     <h1>O Outro Lado da Tela</h1>
-    <p class="measure lead">A gente senta com quem convive com IA em algum ofício — direito, docência, música, design, RH — pra ver como é do outro lado da tela. Sem calendário fixo: num assunto que não espera, marcar dia no mês seria o atraso. A entrevista sai quando o tema pede. Sem roteiro de marketing.</p>
+    <p class="measure lead">A pergunta da casa não é se a IA funciona — é o que ela faz com a gente. Sentamos com quem pensa a máquina de dentro de um ofício — direito, docência, teologia, filosofia, publicidade, música — uns encantados, outros desconfiados, e ouvimos os dois. Sem calendário fixo: num assunto que não espera, marcar dia no mês já seria atraso. A conversa sai quando o tema pede, não quando o marketing manda.</p>
   </section>
 
   {entrevistas.length === 0 && (
