@@ -18,5 +18,6 @@ export async function GET({ props }) {
       selo: { numero: entry.data.numero, arteDataUri: svgDataUri(CROCODRILA) },
     });
   }
+  if (!png) throw new Error(`[og] tipo sem ramo de geracao: ${tipo}`);
   return new Response(png, { headers: { 'Content-Type': 'image/png' } });
 }
