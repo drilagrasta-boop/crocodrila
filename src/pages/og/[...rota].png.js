@@ -8,6 +8,7 @@ export async function getStaticPaths() {
     ...edicoes.map((e) => ({ params: { rota: `edicoes/${e.id}` }, props: { tipo: 'edicao', entry: e } })),
     ...(await getCollection('crocodrila')).map((e) => ({ params: { rota: `crocodrila/${e.id}` }, props: { tipo: 'projeto', entry: e } })),
     ...(await getCollection('hobbies')).filter((h) => !h.data.rascunho).map((e) => ({ params: { rota: `hobbies/${e.id}` }, props: { tipo: 'hobby', entry: e } })),
+    { params: { rota: 'site' }, props: { tipo: 'site' } },
   ];
 }
 
@@ -31,6 +32,14 @@ export async function GET({ props }) {
       arte: arteSvg
         ? { dataUri: svgDataUri(arteSvg), largura: 280, altura: 224 }
         : { dataUri: svgDataUri(CROCODRILA), largura: 326, altura: 120 },
+    });
+  }
+  if (tipo === 'site') {
+    png = await gerarCartao({
+      rotulo: 'Newsletter Semanal de IA',
+      titulo: 'Condenados à Atualização em IA',
+      subtitulo: 'IA em Cognição Nada Exauriente · Radar Semanal',
+      arte: { dataUri: svgDataUri(CROCODRILA), largura: 326, altura: 120 },
     });
   }
   if (!png) throw new Error(`[og] tipo sem ramo de geracao: ${tipo}`);
