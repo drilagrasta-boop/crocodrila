@@ -1,8 +1,10 @@
-import { writeFileSync } from 'node:fs';
-import { gerarCartao } from '../src/lib/og/cartao.mjs';
+import { gerarCartao, gerarSelo } from '../src/lib/og/cartao.mjs';
+import { CROCODRILA, svgDataUri } from '../src/lib/og/artes.mjs';
 
-const png = await gerarCartao({ rotulo: 'Radar Semanal', titulo: 'IA em Cognição Nada Exauriente', subtitulo: 'Lavrado em 13 de junho de 2026', selo: { numero: 3 } });
-const w = png.readUInt32BE(16), h = png.readUInt32BE(20); // IHDR
-if (w !== 1200 || h !== 630) throw new Error(`dimensões erradas: ${w}x${h}`);
-writeFileSync('teste-cartao.png', png);
-console.log(`OK ${w}x${h}`);
+const cartao = await gerarCartao({ rotulo: 'A Toca da Crocodrila', titulo: 'Teste de cartão', subtitulo: 'subtítulo de teste', arte: { dataUri: svgDataUri(CROCODRILA), largura: 326, altura: 120 } });
+if (cartao.readUInt32BE(16) !== 1200 || cartao.readUInt32BE(20) !== 630) throw new Error('cartao com dimensões erradas');
+
+const selo = await gerarSelo(3, svgDataUri(CROCODRILA));
+if (selo.readUInt32BE(16) !== 800 || selo.readUInt32BE(20) !== 800) throw new Error('selo com dimensões erradas');
+
+console.log('OK cartao 1200x630 + selo 800x800');
