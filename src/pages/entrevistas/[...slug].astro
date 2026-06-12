@@ -11,8 +11,10 @@ const { entry } = Astro.props;
 const { Content } = await render(entry);
 const fmt = new Intl.DateTimeFormat('pt-BR', { month: 'long', year: 'numeric', timeZone: 'UTC' });
 const iniciais = entry.data.convidado.split(/\s+/).slice(0, 2).map((p) => p[0]).join('').toUpperCase();
+// SVG não é aceito como og:image pelos apps (WhatsApp, X) — nesses casos fica a imagem padrão do site
+const ogFoto = entry.data.foto && !entry.data.foto.endsWith('.svg') ? entry.data.foto : undefined;
 ---
-<Base title={`${entry.data.convidado} · Entrevista`} description={entry.data.resumo}>
+<Base title={`${entry.data.convidado} · Entrevista`} description={entry.data.resumo} image={ogFoto}>
   <article class="ent">
     <header class="wrap ent-head rise">
       <a href="/entrevistas" class="back mono">← todas as entrevistas</a>
