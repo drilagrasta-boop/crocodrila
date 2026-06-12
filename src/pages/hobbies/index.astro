@@ -45,8 +45,8 @@ const resto = hobbies.slice(1);
           <li>
             <a href={`/hobbies/${h.id}`} class="hb-row">
               {h.data.arte && <div class="card-arte" set:html={ARTES_HOBBY[h.data.arte]} />}
-              {h.data.categoria && <span class="hb-cat mono">{h.data.categoria}</span>}
               <span class="hb-info">
+                {h.data.categoria && <span class="hb-cat mono">{h.data.categoria}</span>}
                 <span class="hb-titulo">{h.data.titulo}</span>
                 <span class="hb-resumo muted">{h.data.resumo}</span>
               </span>
@@ -79,7 +79,7 @@ const resto = hobbies.slice(1);
   .hb-list li { border-bottom: 1px solid var(--line); }
   .hb-row { display: grid; grid-template-columns: 7rem 1fr auto; gap: clamp(0.8rem, 3vw, 2rem); align-items: baseline; padding: 1.1rem 0.4rem; text-decoration: none; color: inherit; transition: background .15s ease, padding .15s ease; }
   .hb-row:hover { background: var(--paper-deep); padding-inline: 1rem; }
-  .hb-cat { font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-deep); }
+  .hb-cat { display: block; font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-deep); }
   .hb-info { display: flex; flex-direction: column; gap: 0.2rem; }
   .hb-titulo { font-family: var(--display); font-size: 1.25rem; }
   .hb-resumo { font-size: 0.95rem; max-width: 62ch; }
