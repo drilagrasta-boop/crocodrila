@@ -6,42 +6,26 @@ const C = { papel: '#f2e9d2', tinta: '#1d2b24', jacare: '#3c5a45', ouro: '#c49a3
 const el = (type, style, children = undefined) => ({ type, props: { style, children } });
 const texto = (style, s) => ({ type: 'div', props: { style, children: s } });
 
-function blocoArte(arteDataUri, largura, altura) {
-  return el('div', { display: 'flex', alignItems: 'center', justifyContent: 'center', width: 340 }, [
-    { type: 'img', props: { src: arteDataUri, width: largura, height: altura, style: {} } },
-  ]);
-}
-
 export async function gerarSelo(numero, arteDataUri) {
+  const filhos = numero != null
+    ? [
+        { type: 'img', props: { src: arteDataUri, width: 400, height: 147, style: {} } },
+        texto({ fontFamily: 'JetBrains Mono', fontWeight: 500, fontSize: 72, letterSpacing: 8, color: C.terracota, marginTop: 24 }, `VOL. ${String(numero).padStart(3, '0')}`),
+      ]
+    : [
+        { type: 'img', props: { src: arteDataUri, width: 440, height: 162, style: {} } },
+      ];
   const arvore = el('div', { display: 'flex', width: 800, height: 800, backgroundColor: C.papel, alignItems: 'center', justifyContent: 'center' }, [
-    el('div', { display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: 620, height: 620, border: `9px dashed ${C.terracota}`, borderRadius: 9999, transform: 'rotate(-6deg)' }, [
-      { type: 'img', props: { src: arteDataUri, width: 400, height: 147, style: {} } },
-      texto({ fontFamily: 'JetBrains Mono', fontWeight: 500, fontSize: 72, letterSpacing: 8, color: C.terracota, marginTop: 24 }, `VOL. ${String(numero).padStart(3, '0')}`),
-    ]),
+    el('div', { display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: 620, height: 620, border: `9px dashed ${C.terracota}`, borderRadius: 9999, transform: 'rotate(-6deg)' }, filhos),
   ]);
   const svg = await satori(arvore, { width: 800, height: 800, fonts: carregarFontes() });
   return new Resvg(svg, { fitTo: { mode: 'width', value: 800 } }).render().asPng();
 }
 
-// opcoes: { rotulo, titulo, subtitulo?, arte?: {dataUri, largura, altura} }
-export async function gerarCartao(opcoes) {
-  const direita = opcoes.arte ? blocoArte(opcoes.arte.dataUri, opcoes.arte.largura, opcoes.arte.altura) : el('div', { display: 'flex' });
-  const arvore = el('div', { display: 'flex', width: 1200, height: 630, backgroundColor: C.papel, padding: 40 }, [
-    el('div', { display: 'flex', flexDirection: 'column', flex: 1, border: `3px solid ${C.jacare}`, borderRadius: 14, padding: '44px 52px' }, [
-      el('div', { display: 'flex', flex: 1, gap: 36 }, [
-        el('div', { display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'center' }, [
-          texto({ fontFamily: 'JetBrains Mono', fontWeight: 500, fontSize: 26, letterSpacing: 5, color: C.ouro, textTransform: 'uppercase' }, opcoes.rotulo),
-          texto({ fontFamily: 'Fraunces', fontWeight: 600, fontSize: 62, lineHeight: 1.08, color: C.tinta, marginTop: 22 }, opcoes.titulo),
-          ...(opcoes.subtitulo ? [texto({ fontFamily: 'JetBrains Mono', fontWeight: 400, fontSize: 23, color: C.suave, marginTop: 20 }, opcoes.subtitulo)] : []),
-        ]),
-        el('div', { display: 'flex', alignItems: 'center' }, [direita]),
-      ]),
-      el('div', { display: 'flex', flexDirection: 'column', marginTop: 26 }, [
-        el('div', { display: 'flex', height: 2, backgroundColor: C.jacare, opacity: 0.35 }),
-        texto({ fontFamily: 'JetBrains Mono', fontWeight: 400, fontSize: 22, color: C.suave, marginTop: 16 }, 'Condenados à Atualização em IA · crocodrila.netlify.app'),
-      ]),
-    ]),
+export async function gerarArte(arteDataUri, largura, altura) {
+  const arvore = el('div', { display: 'flex', width: 800, height: 800, backgroundColor: C.papel, alignItems: 'center', justifyContent: 'center' }, [
+    { type: 'img', props: { src: arteDataUri, width: largura, height: altura, style: {} } },
   ]);
-  const svg = await satori(arvore, { width: 1200, height: 630, fonts: carregarFontes() });
-  return new Resvg(svg, { fitTo: { mode: 'width', value: 1200 } }).render().asPng();
+  const svg = await satori(arvore, { width: 800, height: 800, fonts: carregarFontes() });
+  return new Resvg(svg, { fitTo: { mode: 'width', value: 800 } }).render().asPng();
 }

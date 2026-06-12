@@ -1,5 +1,5 @@
 import { getCollection } from 'astro:content';
-import { gerarCartao, gerarSelo } from '../../lib/og/cartao.mjs';
+import { gerarArte, gerarSelo } from '../../lib/og/cartao.mjs';
 import { CROCODRILA, svgDataUri, POSES, ARTES_HOBBY } from '../../lib/og/artes.mjs';
 
 export async function getStaticPaths() {
@@ -19,28 +19,16 @@ export async function GET({ props }) {
     png = await gerarSelo(entry.data.numero, svgDataUri(CROCODRILA));
   }
   if (tipo === 'projeto') {
-    const svg = POSES[entry.data.pose] ?? CROCODRILA;
-    png = await gerarCartao({ rotulo: 'A Toca da Crocodrila', titulo: entry.data.titulo, subtitulo: entry.data.subtitulo, arte: { dataUri: svgDataUri(svg), largura: 326, altura: 120 } });
+    png = await gerarArte(svgDataUri(POSES[entry.data.pose] ?? CROCODRILA), 680, 250);
   }
   if (tipo === 'hobby') {
-    const resumo = entry.data.resumo;
     const arteSvg = ARTES_HOBBY[entry.data.arte];
-    png = await gerarCartao({
-      rotulo: 'Habemos Hobby',
-      titulo: entry.data.titulo,
-      subtitulo: resumo.length > 90 ? resumo.slice(0, 87) + '…' : resumo,
-      arte: arteSvg
-        ? { dataUri: svgDataUri(arteSvg), largura: 280, altura: 224 }
-        : { dataUri: svgDataUri(CROCODRILA), largura: 326, altura: 120 },
-    });
+    png = arteSvg
+      ? await gerarArte(svgDataUri(arteSvg), 600, 480)
+      : await gerarArte(svgDataUri(CROCODRILA), 680, 250);
   }
   if (tipo === 'site') {
-    png = await gerarCartao({
-      rotulo: 'Newsletter Semanal de IA',
-      titulo: 'Condenados à Atualização em IA',
-      subtitulo: 'IA em Cognição Nada Exauriente · Radar Semanal',
-      arte: { dataUri: svgDataUri(CROCODRILA), largura: 326, altura: 120 },
-    });
+    png = await gerarSelo(null, svgDataUri(CROCODRILA));
   }
   if (!png) throw new Error(`[og] tipo sem ramo de geracao: ${tipo}`);
   return new Response(png, { headers: { 'Content-Type': 'image/png' } });
