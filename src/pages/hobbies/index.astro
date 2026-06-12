@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { getCollection } from 'astro:content';
+import { ARTES_HOBBY } from '../../lib/og/artes.mjs';
 
 const fmt = new Intl.DateTimeFormat('pt-BR', { month: 'long', year: 'numeric', timeZone: 'UTC' });
 
@@ -22,6 +23,7 @@ const resto = hobbies.slice(1);
     <section class="wrap">
       <a href={`/hobbies/${atual.id}`} class="feat">
         <div class="feat-body">
+          {atual.data.arte && <div class="card-arte" set:html={ARTES_HOBBY[atual.data.arte]} />}
           <span class="label">Hobby do mês · {fmt.format(atual.data.data)}</span>
           {atual.data.categoria && <span class="feat-cat mono">{atual.data.categoria}</span>}
           <h2 class="feat-titulo">{atual.data.titulo}</h2>
@@ -42,6 +44,7 @@ const resto = hobbies.slice(1);
         {resto.map((h) => (
           <li>
             <a href={`/hobbies/${h.id}`} class="hb-row">
+              {h.data.arte && <div class="card-arte" set:html={ARTES_HOBBY[h.data.arte]} />}
               {h.data.categoria && <span class="hb-cat mono">{h.data.categoria}</span>}
               <span class="hb-info">
                 <span class="hb-titulo">{h.data.titulo}</span>
@@ -82,4 +85,6 @@ const resto = hobbies.slice(1);
   .hb-resumo { font-size: 0.95rem; max-width: 62ch; }
   .hb-data { font-size: 0.72rem; color: var(--ink-faint); white-space: nowrap; }
   @media (max-width: 600px) { .hb-row { grid-template-columns: 1fr; } .hb-data { display: none; } }
+  .card-arte { width: 96px; }
+  .card-arte :global(svg) { width: 100%; height: auto; }
 </style>

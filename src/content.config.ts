@@ -71,6 +71,7 @@ const hobbies = defineCollection({
     data: z.coerce.date(),
     resumo: z.string(),
     desafio: z.string().optional(),     // o convite do mês, em uma frase
+    arte: z.string().optional(),
     materiais: z.array(z.string()).default([]), // o que basta para começar
     tags: z.array(z.string()).default([]),
     rascunho: z.boolean().default(false),

@@ -41,4 +41,12 @@ export const POSES = {
   martelo:   wrap(`<g transform="rotate(-30 40 32)"><rect x="28" y="22" width="24" height="11" rx="2.5" fill="#3c5a45" stroke="#1d2b24" stroke-width="1.6"/><rect x="38" y="33" width="5" height="26" rx="2" fill="#c49a3a" stroke="#1d2b24" stroke-width="1.2"/></g>`),
   caderno:   wrap(`<rect x="20" y="20" width="32" height="40" rx="3" fill="#fffdf6" stroke="#1d2b24" stroke-width="2"/><line x1="26" y1="20" x2="26" y2="60" stroke="#c49a3a" stroke-width="1.6"/><g stroke="#1d2b24" stroke-width="1.3"><line x1="31" y1="30" x2="46" y2="30"/><line x1="31" y1="37" x2="46" y2="37"/><line x1="31" y1="44" x2="46" y2="44"/></g>`),
 };
-export const ARTES_HOBBY = {}; // preenchido na Task 6
+export const ARTES_HOBBY = {
+  'desenho-observacao': `<svg width="200" height="160" viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="20" y="40" width="120" height="90" rx="6" fill="#fffdf6" stroke="#1d2b24" stroke-width="2.4"/>
+    <line x1="36" y1="40" x2="36" y2="130" stroke="#c49a3a" stroke-width="2"/>
+    <path d="M50,100 Q70,70 90,95 T125,85" fill="none" stroke="#3c5a45" stroke-width="2.4" stroke-linecap="round"/>
+    <g transform="rotate(38 150 70)"><rect x="142" y="30" width="14" height="64" rx="3" fill="#c49a3a" stroke="#1d2b24" stroke-width="1.8"/><path d="M142,94 L149,110 L156,94 Z" fill="#f2e9d2" stroke="#1d2b24" stroke-width="1.8"/><circle cx="149" cy="106" r="2.2" fill="#1d2b24"/></g>
+    <circle cx="60" cy="62" r="6" fill="none" stroke="#9c4a2e" stroke-width="1.6"/>
+  </svg>`,
+};

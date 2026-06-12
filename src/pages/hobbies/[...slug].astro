@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { getCollection, render } from 'astro:content';
+import { ARTES_HOBBY } from '../../lib/og/artes.mjs';
 
 export async function getStaticPaths() {
   const hobbies = (await getCollection('hobbies')).filter((h) => !h.data.rascunho);
@@ -11,17 +12,22 @@ const { entry } = Astro.props;
 const { Content } = await render(entry);
 const fmt = new Intl.DateTimeFormat('pt-BR', { month: 'long', year: 'numeric', timeZone: 'UTC' });
 ---
-<Base title={`${entry.data.titulo} · Habemos Hobby`} description={entry.data.resumo}>
+<Base title={`${entry.data.titulo} · Habemos Hobby`} description={entry.data.resumo} image={`/og/hobbies/${entry.id}.png`} imageWidth={1200} imageHeight={630}>
   <article class="hb">
     <header class="wrap hb-head rise">
       <a href="/hobbies" class="back mono">← Habemos Hobby</a>
-      <div class="hb-meta">
-        {entry.data.categoria && <span class="hb-cat mono">{entry.data.categoria}</span>}
-        <span class="dot">·</span>
-        <span class="mono">{fmt.format(entry.data.data)}</span>
+      <div class="hb-topo">
+        <div class="hb-topo-texto">
+          <div class="hb-meta">
+            {entry.data.categoria && <span class="hb-cat mono">{entry.data.categoria}</span>}
+            <span class="dot">·</span>
+            <span class="mono">{fmt.format(entry.data.data)}</span>
+          </div>
+          <h1>{entry.data.titulo}</h1>
+          <p class="hb-resumo measure">{entry.data.resumo}</p>
+        </div>
+        {entry.data.arte && <div class="hb-arte" set:html={ARTES_HOBBY[entry.data.arte]} />}
       </div>
-      <h1>{entry.data.titulo}</h1>
-      <p class="hb-resumo measure">{entry.data.resumo}</p>
 
       {entry.data.materiais.length > 0 && (
         <aside class="materiais">
@@ -49,6 +55,11 @@ const fmt = new Intl.DateTimeFormat('pt-BR', { month: 'long', year: 'numeric', t
 
 <style>
   .hb-head { padding-top: clamp(2rem, 5vw, 3.5rem); }
+  .hb-topo { display: flex; gap: 1.6rem; align-items: flex-start; justify-content: space-between; }
+  .hb-topo-texto { min-width: 0; }
+  .hb-arte { flex: none; width: 130px; }
+  .hb-arte :global(svg) { width: 100%; height: auto; }
+  @media (max-width: 640px) { .hb-arte { display: none; } }
   .back { display: inline-block; color: var(--ink-faint); text-decoration: none; font-size: 0.78rem; margin-bottom: 1.4rem; }
   .back:hover { color: var(--gold-deep); }
   .hb-meta { display: flex; align-items: center; gap: 0.6rem; font-size: 0.78rem; }

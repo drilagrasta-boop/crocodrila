@@ -2,6 +2,7 @@
 titulo: "Desenho de observação"
 categoria: "Desenho"
 data: 2026-06-01
+arte: "desenho-observacao"
 resumo: "Começar pelo desenho não é à toa: é o ato de olhar uma coisa devagar até entendê-la — o oposto exato de delegar. Pega um lápis."
 desafio: "Desenhe a mesma xícara todos os dias por uma semana. Sem borracha, sem postar, sem mostrar para ninguém."
 materiais:
