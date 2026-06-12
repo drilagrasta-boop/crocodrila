@@ -22,7 +22,7 @@ const { Content } = await render(entry);
 const fmt = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'long', year: 'numeric', timeZone: 'UTC' });
 const pad = (n: number) => String(n).padStart(3, '0');
 ---
-<Base title={`Nº ${pad(entry.data.numero)} · ${entry.data.titulo}`} description={entry.data.resumo} image={`/og/edicoes/${entry.id}.png`} imageWidth={1200} imageHeight={630}>
+<Base title={`Nº ${pad(entry.data.numero)} · ${entry.data.titulo}`} description={entry.data.resumo} image={`/og/edicoes/${entry.id}.png`} imageWidth={800} imageHeight={800}>
   <article class="ed">
     <header class="wrap ed-head rise">
       <a href="/edicoes" class="back mono">← todas as edições</a>

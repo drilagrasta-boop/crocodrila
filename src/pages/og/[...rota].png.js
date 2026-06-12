@@ -1,5 +1,5 @@
 import { getCollection } from 'astro:content';
-import { gerarCartao } from '../../lib/og/cartao.mjs';
+import { gerarCartao, gerarSelo } from '../../lib/og/cartao.mjs';
 import { CROCODRILA, svgDataUri, POSES, ARTES_HOBBY } from '../../lib/og/artes.mjs';
 
 export async function getStaticPaths() {
@@ -15,12 +15,7 @@ export async function GET({ props }) {
   const { tipo, entry } = props;
   let png;
   if (tipo === 'edicao') {
-    png = await gerarCartao({
-      rotulo: `Radar Semanal · Nº ${String(entry.data.numero).padStart(3, '0')}`,
-      titulo: entry.data.titulo,
-      subtitulo: entry.data.dateline ?? '',
-      selo: { numero: entry.data.numero, arteDataUri: svgDataUri(CROCODRILA) },
-    });
+    png = await gerarSelo(entry.data.numero, svgDataUri(CROCODRILA));
   }
   if (tipo === 'projeto') {
     const svg = POSES[entry.data.pose] ?? CROCODRILA;

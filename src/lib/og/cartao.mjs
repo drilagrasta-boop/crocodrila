@@ -18,6 +18,17 @@ function blocoArte(arteDataUri, largura, altura) {
   ]);
 }
 
+export async function gerarSelo(numero, arteDataUri) {
+  const arvore = el('div', { display: 'flex', width: 800, height: 800, backgroundColor: C.papel, alignItems: 'center', justifyContent: 'center' }, [
+    el('div', { display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: 620, height: 620, border: `9px dashed ${C.terracota}`, borderRadius: 9999, transform: 'rotate(-6deg)' }, [
+      { type: 'img', props: { src: arteDataUri, width: 400, height: 147, style: {} } },
+      texto({ fontFamily: 'JetBrains Mono', fontWeight: 500, fontSize: 72, letterSpacing: 8, color: C.terracota, marginTop: 24 }, `VOL. ${String(numero).padStart(3, '0')}`),
+    ]),
+  ]);
+  const svg = await satori(arvore, { width: 800, height: 800, fonts: carregarFontes() });
+  return new Resvg(svg, { fitTo: { mode: 'width', value: 800 } }).render().asPng();
+}
+
 // opcoes: { rotulo, titulo, subtitulo?, selo?: {numero, arteDataUri?}, arte?: {dataUri, largura, altura} }
 export async function gerarCartao(opcoes) {
   const direita = opcoes.selo ? blocoSelo(opcoes.selo.numero) : opcoes.arte ? blocoArte(opcoes.arte.dataUri, opcoes.arte.largura, opcoes.arte.altura) : el('div', { display: 'flex' });
