@@ -7,6 +7,7 @@ tags: ["agentes", "pipeline", "redação jurídica"]
 credito: "Inspirado no Sistema Marmelstein, de George Marmelstein"
 destaque: false
 ordem: 5
+pose: "martelo"
 ---
 
 Elaborar um acórdão é trabalho de etapas: entender os fatos, checar admissibilidade, montar

@@ -6,6 +6,7 @@ status: "em uso"
 tags: ["segurança", "prompt injection", "IA jurídica", "CNJ", "prompts"]
 destaque: false
 ordem: 4
+pose: "lupa"
 ---
 
 Você manda a IA resumir uma petição. No meio do PDF, em fonte de 4 pontos e cor branca

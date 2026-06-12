@@ -6,6 +6,7 @@ status: "em uso"
 tags: ["mestrado", "fichamento", "transcrição", "estudo"]
 destaque: false
 ordem: 7
+pose: "caderno"
 ---
 
 Aula gravada vira transcrição num clique. O problema começa depois: a transcrição é um

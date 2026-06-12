@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { getCollection, render } from 'astro:content';
+import { POSES } from '../../lib/og/artes.mjs';
 
 export async function getStaticPaths() {
   const projetos = await getCollection('crocodrila');
@@ -11,20 +12,25 @@ const { entry } = Astro.props;
 const { Content } = await render(entry);
 const fmt = new Intl.DateTimeFormat('pt-BR', { month: 'long', year: 'numeric', timeZone: 'UTC' });
 ---
-<Base title={`${entry.data.titulo} · Crocodrila`} description={entry.data.subtitulo}>
+<Base title={`${entry.data.titulo} · Crocodrila`} description={entry.data.subtitulo} image={`/og/crocodrila/${entry.id}.png`} imageWidth={1200} imageHeight={630}>
   <article class="proj">
     <header class="wrap proj-head rise">
       <a href="/crocodrila" class="back mono">← a toca da Crocodrila</a>
-      <div class="ph-meta">
-        <span class:list={['ph-status mono', `st-${entry.data.status.replace(/\s+/g, '-')}`]}>{entry.data.status}</span>
-        <span class="dot">·</span>
-        <span class="mono">{fmt.format(entry.data.data)}</span>
+      <div class="ph-topo">
+        <div class="ph-topo-texto">
+          <div class="ph-meta">
+            <span class:list={['ph-status mono', `st-${entry.data.status.replace(/\s+/g, '-')}`]}>{entry.data.status}</span>
+            <span class="dot">·</span>
+            <span class="mono">{fmt.format(entry.data.data)}</span>
+          </div>
+          <h1>{entry.data.titulo}</h1>
+          <p class="ph-sub measure">{entry.data.subtitulo}</p>
+          {entry.data.credito && (
+            <p class="ph-credito mono">{entry.data.credito}</p>
+          )}
+        </div>
+        <div class="ph-pose" set:html={POSES[entry.data.pose] ?? ''} />
       </div>
-      <h1>{entry.data.titulo}</h1>
-      <p class="ph-sub measure">{entry.data.subtitulo}</p>
-      {entry.data.credito && (
-        <p class="ph-credito mono">{entry.data.credito}</p>
-      )}
 
       <div class="ph-actions">
         {entry.data.repo && <a href={entry.data.repo} class="btn btn--ghost" target="_blank" rel="noopener">Ver o código ↗</a>}
@@ -49,6 +55,11 @@ const fmt = new Intl.DateTimeFormat('pt-BR', { month: 'long', year: 'numeric', t
 
 <style>
   .proj-head { padding-top: clamp(2rem, 5vw, 3.5rem); }
+  .ph-topo { display: flex; gap: 1.6rem; align-items: flex-start; justify-content: space-between; }
+  .ph-topo-texto { min-width: 0; }
+  .ph-pose { flex: none; width: 150px; }
+  .ph-pose :global(svg) { width: 100%; height: auto; }
+  @media (max-width: 640px) { .ph-pose { display: none; } }
   .back { display: inline-block; color: var(--ink-faint); text-decoration: none; font-size: 0.78rem; margin-bottom: 1.6rem; }
   .back:hover { color: var(--jacare); }
   .ph-meta { display: flex; align-items: center; gap: 0.6rem; font-size: 0.78rem; }

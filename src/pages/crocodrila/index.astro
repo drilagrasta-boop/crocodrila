@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import Crocodrila from '../../components/Crocodrila.astro';
 import { getCollection } from 'astro:content';
+import { POSES } from '../../lib/og/artes.mjs';
 
 const projetos = (await getCollection('crocodrila'))
   .sort((a, b) => a.data.ordem - b.data.ordem);
@@ -35,6 +36,7 @@ const projetos = (await getCollection('crocodrila'))
             <span class:list={['proj-status mono', `st-${p.data.status.replace(/\s+/g, '-')}`]}>{p.data.status}</span>
             <span class="proj-ano mono">{p.data.data.getFullYear()}</span>
           </div>
+          <div class="card-pose" set:html={POSES[p.data.pose] ?? ''} />
           <h2 class="proj-title">{p.data.titulo}</h2>
           <p class="proj-sub muted">{p.data.subtitulo}</p>
           <div class="proj-tags">
@@ -72,5 +74,7 @@ const projetos = (await getCollection('crocodrila'))
   .proj-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.3rem; }
   .tag { font-size: 0.64rem; padding: 0.25em 0.6em; border: 1px solid var(--line-strong); border-radius: 99px; color: var(--ink-faint); }
   .proj-go { margin-top: 0.6rem; color: var(--jacare-deep); font-size: 0.8rem; }
+  .card-pose { width: 96px; }
+  .card-pose :global(svg) { width: 100%; height: auto; }
   @media (max-width: 640px) { .proj-grid { grid-template-columns: 1fr; } }
 </style>

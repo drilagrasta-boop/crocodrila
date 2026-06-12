@@ -7,6 +7,7 @@ tags: ["offline", "OCR", "sigilo", "Python"]
 credito: "Inspirado no Sistema Marmelstein, de George Marmelstein"
 destaque: true
 ordem: 1
+pose: "papeis"
 ---
 
 PDF de processo é um inimigo conhecido: uns têm texto limpo embutido, outros são só

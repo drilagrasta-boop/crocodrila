@@ -6,6 +6,7 @@ status: "em uso"
 tags: ["MCP", "jurisprudência", "scraping", "precedentes"]
 destaque: true
 ordem: 3
+pose: "balanca"
 ---
 
 A maioria dos tribunais não tem API pública decente de jurisprudência — tem um

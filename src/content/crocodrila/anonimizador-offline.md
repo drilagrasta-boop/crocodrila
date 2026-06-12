@@ -7,6 +7,7 @@ tags: ["offline", "LGPD", "sigilo", "privacidade"]
 credito: "Inspirado no Sistema Marmelstein, de George Marmelstein"
 destaque: true
 ordem: 2
+pose: "tarja"
 ---
 
 Compartilhar uma decisão para estudo, mandar uma peça de exemplo, alimentar uma

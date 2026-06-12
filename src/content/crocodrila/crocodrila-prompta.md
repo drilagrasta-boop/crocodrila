@@ -6,6 +6,7 @@ status: "em uso"
 tags: ["prompts", "AutoHotkey", "launcher", "produtividade"]
 destaque: true
 ordem: 0
+pose: "pensando"
 ---
 
 Este foi o primeiro bicho da toca. Antes do conversor, antes dos MCPs, a gente já
