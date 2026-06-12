@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import SeloVolume from '../../components/SeloVolume.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -21,18 +22,23 @@ const { Content } = await render(entry);
 const fmt = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'long', year: 'numeric', timeZone: 'UTC' });
 const pad = (n: number) => String(n).padStart(3, '0');
 ---
-<Base title={`Nº ${pad(entry.data.numero)} · ${entry.data.titulo}`} description={entry.data.resumo}>
+<Base title={`Nº ${pad(entry.data.numero)} · ${entry.data.titulo}`} description={entry.data.resumo} image={`/og/edicoes/${entry.id}.png`}>
   <article class="ed">
     <header class="wrap ed-head rise">
       <a href="/edicoes" class="back mono">← todas as edições</a>
-      <div class="ed-meta">
-        <span class="ed-numero mono">Edição Nº {pad(entry.data.numero)}/{entry.data.data.getFullYear()}</span>
-        <span class="dot">·</span>
-        <time class="mono" datetime={entry.data.data.toISOString()}>{fmt.format(entry.data.data)}</time>
+      <div class="ed-topo">
+        <div class="ed-topo-texto">
+          <div class="ed-meta">
+            <span class="ed-numero mono">Edição Nº {pad(entry.data.numero)}/{entry.data.data.getFullYear()}</span>
+            <span class="dot">·</span>
+            <time class="mono" datetime={entry.data.data.toISOString()}>{fmt.format(entry.data.data)}</time>
+          </div>
+          <h1 class="ed-title">{entry.data.titulo}</h1>
+          {entry.data.dateline && <p class="ed-dateline mono">{entry.data.dateline}</p>}
+          <p class="ed-resumo measure">{entry.data.resumo}</p>
+        </div>
+        <SeloVolume numero={entry.data.numero} />
       </div>
-      <h1 class="ed-title">{entry.data.titulo}</h1>
-      {entry.data.dateline && <p class="ed-dateline mono">{entry.data.dateline}</p>}
-      <p class="ed-resumo measure">{entry.data.resumo}</p>
 
       {entry.data.destaques.length > 0 && (
         <aside class="sumario">
@@ -95,6 +101,11 @@ const pad = (n: number) => String(n).padStart(3, '0');
 </Base>
 
 <style>
+  .ed-topo { display: flex; gap: 1.6rem; align-items: flex-start; justify-content: space-between; }
+  .ed-topo-texto { min-width: 0; }
+  .ed-topo :global(.selo) { flex: none; }
+  @media (max-width: 640px) { .ed-topo :global(.selo) { display: none; } }
+
   .ed-head { padding-top: clamp(2rem, 5vw, 3.5rem); }
   .back { display: inline-block; color: var(--ink-faint); text-decoration: none; font-size: 0.78rem; margin-bottom: 1.6rem; }
   .back:hover { color: var(--jacare); }

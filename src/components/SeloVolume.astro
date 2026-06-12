@@ -1,0 +1,17 @@
+---
+import Crocodrila from './Crocodrila.astro';
+interface Props { numero: number }
+const { numero } = Astro.props;
+const pad = String(numero).padStart(3, '0');
+---
+<div class="selo" aria-hidden="true">
+  <Crocodrila size={34} />
+  <span class="mono">VOL. {pad}</span>
+</div>
+<style>
+  .selo { display: inline-flex; flex-direction: column; align-items: center; gap: 0.3rem;
+    width: 118px; height: 118px; justify-content: center;
+    border: 2.5px dashed var(--carimbo); border-radius: 50%;
+    color: var(--carimbo); transform: rotate(-8deg); }
+  .selo span { font-size: 0.66rem; letter-spacing: 0.18em; }
+</style>
