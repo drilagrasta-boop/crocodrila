@@ -29,7 +29,7 @@ const fmt = new Intl.DateTimeFormat('pt-BR', { month: 'long', year: 'numeric', t
             <p class="ph-credito mono">{entry.data.credito}</p>
           )}
         </div>
-        <div class="ph-pose" set:html={POSES[entry.data.pose] ?? ''} />
+        {entry.data.pose && <div class="ph-pose" set:html={POSES[entry.data.pose]} />}
       </div>
 
       <div class="ph-actions">
