@@ -8,7 +8,6 @@ const texto = (style, s) => ({ type: 'div', props: { style, children: s } });
 
 function blocoSelo(numero) {
   return el('div', { display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: 300, height: 300, border: `4px dashed ${C.terracota}`, borderRadius: 9999 }, [
-    el('div', { display: 'flex' }, undefined), // respiro superior
     texto({ fontFamily: 'JetBrains Mono', fontWeight: 500, fontSize: 34, letterSpacing: 4, color: C.terracota, marginTop: 12 }, `VOL. ${String(numero).padStart(3, '0')}`),
   ]);
 }
