@@ -24,7 +24,7 @@ const ogFoto = entry.data.foto && !entry.data.foto.endsWith('.svg') ? entry.data
       <div class="ent-cartao">
         <span class="ent-foto-col">
           <span class="ent-foto" aria-hidden="true">
-            {entry.data.foto ? <img src={entry.data.foto} alt={entry.data.convidado} /> : <span>{iniciais}</span>}
+            {entry.data.foto ? <img src={entry.data.foto_avatar ?? entry.data.foto} alt={entry.data.convidado} /> : <span>{iniciais}</span>}
           </span>
           {entry.data.foto_legenda && <span class="ent-fotocap mono">{entry.data.foto_legenda}</span>}
         </span>

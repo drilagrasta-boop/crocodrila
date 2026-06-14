@@ -29,7 +29,7 @@ const iniciais = (nome: string) => nome.split(/\s+/).slice(0, 2).map((p) => p[0]
         <div class="feat-portrait-col">
           <div class="feat-portrait" aria-hidden="true">
             {destaque.data.foto
-              ? <img src={destaque.data.foto} alt={destaque.data.convidado} />
+              ? <img src={destaque.data.foto_avatar ?? destaque.data.foto} alt={destaque.data.convidado} />
               : <span class="feat-iniciais">{iniciais(destaque.data.convidado)}</span>}
           </div>
           {destaque.data.foto_legenda && <span class="foto-cap mono">{destaque.data.foto_legenda}</span>}
@@ -53,7 +53,7 @@ const iniciais = (nome: string) => nome.split(/\s+/).slice(0, 2).map((p) => p[0]
           <li>
             <a href={`/entrevistas/${e.id}`} class="ent-row">
               <span class="ent-avatar" aria-hidden="true">
-                {e.data.foto ? <img src={e.data.foto} alt={e.data.convidado} /> : <span>{iniciais(e.data.convidado)}</span>}
+                {e.data.foto ? <img src={e.data.foto_avatar ?? e.data.foto} alt={e.data.convidado} /> : <span>{iniciais(e.data.convidado)}</span>}
               </span>
               <span class="ent-info">
                 <span class="ent-titulo">{e.data.titulo}</span>

@@ -53,7 +53,8 @@ const entrevistas = defineCollection({
     titulo: z.string(),                 // título/chamada da entrevista
     data: z.coerce.date(),
     resumo: z.string(),                 // 1–2 frases
-    foto: z.string().optional(),        // caminho de uma foto em /public (opcional)
+    foto: z.string().optional(),        // caminho de uma foto em /public (opcional) — usada no compartilhamento/OG e como fallback do avatar
+    foto_avatar: z.string().optional(), // recorte fechado no rosto p/ o avatar redondo; se ausente, usa `foto`
     foto_legenda: z.string().optional(),// legenda da foto (ex.: "Autorretrato")
     rascunho: z.boolean().default(false),
   }),
