@@ -6,7 +6,7 @@ status: "em uso"
 tags: ["Astro", "web", "Netlify", "conteúdo"]
 destaque: false
 ordem: 6
-pose: "digitando"
+pose: "site"
 ---
 
 O site que você está lendo não foi terceirizado. A gente montou — e montou de um jeito
