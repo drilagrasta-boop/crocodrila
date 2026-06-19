@@ -3,7 +3,7 @@ convidado: "George Marmelstein"
 papel: "juiz federal, professor de Direito Constitucional e criador do Hootly · o professor que ensina a usar IA sem deixar de pensar"
 titulo: "Asas para o pensamento"
 data: 2026-06-19
-resumo: "George Marmelstein — juiz federal, autor de Superaprendizagem, criador do Hootly, a IA que escreve e publica sozinha — sobre usar a máquina sem terceirizar o juízo, livros agênticos que pensam o que ele ainda não pensou, o inocente condenado que a IA já sabe encontrar e os 36 dias a pé até Finisterre que nenhum modelo lhe daria."
+resumo: "George Marmelstein — juiz federal, autor de Superaprendizagem, criador do Hootly, a IA que escreve e publica sozinha — sobre usar a máquina sem terceirizar o juízo, livros agênticos que pensam o que ele ainda não pensou, do inocente que a IA já sabe achar entre os condenados e a experiência de caminhar por 36 dias até Finisterre que nenhum modelo lhe daria."
 foto: "/entrevistas/george-marmelstein.jpg"
 foto_avatar: "/entrevistas/george-marmelstein-avatar.jpg"
 foto_legenda: "Foto de divulgação"
