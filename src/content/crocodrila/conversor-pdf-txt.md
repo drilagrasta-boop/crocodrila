@@ -85,5 +85,5 @@ esse — e repare que **nada saiu da sua máquina**.
 
 ---
 
-*Inspirado no **Sistema Marmelstein**, de George Marmelstein — nosso professor e orientador,
+*Inspirado no **Sistema Marmelstein**, de [George Marmelstein](/entrevistas/2026-06-george-marmelstein) — nosso professor e orientador,
 que disponibiliza seus prompts publicamente. A Crocodrila adaptou a ideia à sua rotina.*
