@@ -29,7 +29,7 @@ Outra característica associada a essa obsessão é um sentimento que nem sempre
 <figcaption>O método virou livro: <em>Superaprendizagem — A ciência da alta performance cognitiva</em> (Objetiva, 2023). <a href="https://www.companhiadasletras.com.br/livro/9788539007424/superaprendizagem" target="_blank" rel="noopener">Na editora →</a></figcaption>
 </figure>
 
-**Palestras em tribunais, OABs, escolas de magistratura; grupos de estudo, lives, uma pós-graduação em IA generativa no Direito... em todas essas salas de aula, dois públicos convivem: o que chega com medo de ser substituído e o que chega achando que a máquina resolve tudo. O que mudou no rosto dessa plateia de 2023 para cá?**
+**Palestras em tribunais, Seccionais da OAB, escolas de magistratura; grupos de estudo, lives, uma pós-graduação em IA generativa no Direito... em todas essas salas de aula, dois públicos convivem: o que chega com medo de ser substituído e o que chega achando que a máquina resolve tudo. O que mudou no rosto dessa plateia de 2023 para cá?**
 
 Como diria o ChatGPT, excelente pergunta! A principal mudança que eu noto é que, em 2023, quando a hype em torno da inteligência artificial generativa estava começando, as pessoas tinham vergonha de dizer que usavam IA. Hoje, parece que o movimento é o contrário: as pessoas ficam envergonhadas por dizer que não usam a IA. Mas eu não julgo nenhuma posição porque estamos vivendo um período de transição. A resistência não é apenas preconceito, é uma posição legítima de quem sente que a inteligência artificial pode nos tornar menos humanos.
 
