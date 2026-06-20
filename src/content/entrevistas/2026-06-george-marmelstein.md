@@ -68,7 +68,7 @@ O Camino foi um chamado. Eu precisava dar uma pausa em tudo o que eu estava faze
 
 <figure class="foto">
 <img src="/entrevistas/george-finisterra.jpg" alt="George Marmelstein ao lado do marco Km 0,000 em Finisterre, com a concha amarela do Caminho de Santiago" style="max-width: 340px;" />
-<figcaption>Finisterre, o Km 0,000: onde o Caminho e, segundo a tradição, o mundo termina. Foto do Instagram.</figcaption>
+<figcaption>Finisterre, o Km 0,000: onde o Camino e, segundo a tradição, o mundo terminam. Foto do Instagram.</figcaption>
 </figure>
 
 **Num teste, o Claude se recusou a seguir o seu pedido e devolveu a resposta que achou mais apropriada — e você comentou que "um ser humano mais elevado faria o mesmo". Onde fica a linha entre uma IA que te protege e uma IA que decide no seu lugar?**
