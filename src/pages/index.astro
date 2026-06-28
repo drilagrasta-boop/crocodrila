@@ -284,13 +284,13 @@ const iniciais = (nome: string) => nome.split(/\s+/).slice(0, 2).map((p) => p[0]
   .entrevista-home { margin-top: clamp(3.5rem, 8vw, 6rem); }
   .eh-card { display: grid; grid-template-columns: auto 1fr; gap: clamp(1.2rem, 3vw, 2rem); align-items: center; text-decoration: none; color: inherit; border: 1px solid var(--line-strong); border-left: 3px solid var(--jacare); border-radius: var(--radius); background: #fffdf6; padding: clamp(1.3rem, 3vw, 2rem); transition: transform .2s ease, box-shadow .2s ease; }
   .eh-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-doc); }
-  .eh-avatar { width: 88px; height: 88px; border-radius: 50%; overflow: hidden; background: linear-gradient(150deg, var(--jacare), var(--jacare-deep)); display: grid; place-items: center; color: var(--paper); font-family: var(--display); font-size: 1.8rem; font-weight: 600; flex: none; }
+  .eh-avatar { width: 140px; height: 140px; border-radius: 50%; overflow: hidden; background: linear-gradient(150deg, var(--jacare), var(--jacare-deep)); display: grid; place-items: center; color: var(--paper); font-family: var(--display); font-size: 2.6rem; font-weight: 600; flex: none; }
   .eh-avatar img { width: 100%; height: 100%; object-fit: cover; }
   .eh-titulo { font-size: clamp(1.4rem, 1.1rem + 1.2vw, 2rem); margin-top: 0.2rem; }
   .eh-quem { margin-top: 0.5rem; font-size: 0.78rem; color: var(--ink-faint); }
   .eh-quem b { color: var(--jacare-deep); }
   .eh-resumo { margin-top: 0.6rem; font-size: 1rem; max-width: 60ch; }
-  @media (max-width: 560px) { .eh-card { grid-template-columns: 1fr; text-align: left; } .eh-avatar { width: 64px; height: 64px; } }
+  @media (max-width: 560px) { .eh-card { grid-template-columns: 1fr; text-align: left; } .eh-avatar { width: 110px; height: 110px; } }
 
   /* CROCODRILA strip */
   .croco-strip { margin-top: clamp(4rem, 9vw, 7rem); padding-block: clamp(2.6rem, 6vw, 4rem); background: var(--ink); color: var(--paper); }

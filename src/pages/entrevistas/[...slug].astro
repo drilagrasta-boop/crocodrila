@@ -1,6 +1,8 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { getCollection, render } from 'astro:content';
+import sharp from 'sharp';
+import path from 'node:path';
 
 export async function getStaticPaths() {
   const entrevistas = (await getCollection('entrevistas')).filter((e) => !e.data.rascunho);
@@ -13,8 +15,16 @@ const fmt = new Intl.DateTimeFormat('pt-BR', { month: 'long', year: 'numeric', t
 const iniciais = entry.data.convidado.split(/\s+/).slice(0, 2).map((p) => p[0]).join('').toUpperCase();
 // SVG não é aceito como og:image pelos apps (WhatsApp, X) — nesses casos fica a imagem padrão do site
 const ogFoto = entry.data.foto && !entry.data.foto.endsWith('.svg') ? entry.data.foto : undefined;
+// Lê a dimensão real da foto de OG no build (ajuda WhatsApp/Facebook a exibir a imagem grande)
+let ogW: number | undefined, ogH: number | undefined;
+if (ogFoto) {
+  try {
+    const meta = await sharp(path.join(process.cwd(), 'public', ogFoto)).metadata();
+    ogW = meta.width; ogH = meta.height;
+  } catch { /* sem dimensões: o app cai no fallback */ }
+}
 ---
-<Base title={`${entry.data.convidado} · Entrevista`} description={entry.data.resumo} image={ogFoto}>
+<Base title={`${entry.data.convidado} · Entrevista`} description={entry.data.resumo} image={ogFoto} imageWidth={ogW} imageHeight={ogH}>
   <article class="ent">
     <header class="wrap ent-head rise">
       <a href="/entrevistas" class="back mono">← todas as entrevistas</a>
