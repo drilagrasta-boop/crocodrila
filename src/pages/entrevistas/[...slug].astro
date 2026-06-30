@@ -54,6 +54,19 @@ if (ogFoto) {
       </div>
     </div>
 
+    {entry.data.linkedin && (
+      <div class="wrap ent-linkedin-wrap">
+        <p class="ent-linkedin">
+          <a href={entry.data.linkedin} target="_blank" rel="noopener" class="ent-linkedin-link">
+            <svg class="ent-linkedin-icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+              <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/>
+            </svg>
+            {entry.data.convidado} no LinkedIn
+          </a>
+        </p>
+      </div>
+    )}
+
     <aside class="wrap ent-cta-wrap">
       <div class="ent-cta">
         <div>
@@ -66,17 +79,7 @@ if (ogFoto) {
 
     <footer class="wrap ent-foot">
       <hr class="rule" />
-      {entry.data.linkedin && (
-        <p class="ent-linkedin">
-          <a href={entry.data.linkedin} target="_blank" rel="noopener" class="ent-linkedin-link">
-            <svg class="ent-linkedin-icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
-              <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/>
-            </svg>
-            {entry.data.convidado} no LinkedIn
-          </a>
-        </p>
-      )}
-      <p class="muted">Tem um nome pra sugerir pra próxima conversa? Responda a edição no seu leitor ou fale com a gente no grupo.</p>
+      <p class="muted">Tem um nome pra sugerir pra próxima conversa? Responda a edição no seu leitor, escreva pra <a href="mailto:drilagrasta@gmail.com">drilagrasta@gmail.com</a> ou fale com a gente no grupo.</p>
     </footer>
   </article>
 </Base>
@@ -104,7 +107,8 @@ if (ogFoto) {
   @media (max-width: 520px) { .ent-cta { flex-direction: column; align-items: flex-start; } }
 
   .ent-foot { margin-top: 3rem; }
-  .ent-linkedin { margin-bottom: 1rem; }
+  .ent-linkedin-wrap { margin-top: 2.8rem; }
+  .ent-linkedin { margin: 0; }
   .ent-linkedin-link { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--jacare-deep); text-decoration: none; font-size: 0.92rem; font-weight: 500; }
   .ent-linkedin-link:hover { color: var(--jacare); text-decoration: underline; }
   .ent-linkedin-icon { flex: none; }
