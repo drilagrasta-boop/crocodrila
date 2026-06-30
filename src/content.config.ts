@@ -56,6 +56,7 @@ const entrevistas = defineCollection({
     foto: z.string().optional(),        // caminho de uma foto em /public (opcional) — usada no compartilhamento/OG e como fallback do avatar
     foto_avatar: z.string().optional(), // recorte fechado no rosto p/ o avatar redondo; se ausente, usa `foto`
     foto_legenda: z.string().optional(),// legenda da foto (ex.: "Autorretrato")
+    linkedin: z.string().url().optional(), // perfil do entrevistado no LinkedIn (link no rodapé)
     rascunho: z.boolean().default(false),
   }),
 });

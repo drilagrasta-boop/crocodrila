@@ -5,6 +5,7 @@ titulo: "Copiloto, não piloto"
 data: 2026-06-17
 resumo: "MVP da Microsoft, engenheiro de software e instrutor da LinkedIn Learning. Sobre produtividade, o ofício de ensinar a máquina a servir e o que, no aprendizado, continua sendo só nosso."
 foto: "/entrevistas/alessandro-trovato.jpg"
+linkedin: "https://www.linkedin.com/in/alessandrotrovato/"
 rascunho: false
 ---
 

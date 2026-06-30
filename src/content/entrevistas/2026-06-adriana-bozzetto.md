@@ -6,6 +6,7 @@ data: 2026-06-28
 resumo: "Adriana Elisa Lagrasta Bozzetto — professora de apoio pedagógico especializado, em Dourados, e escritora — sobre usar a IA para adaptar o ensino a um aluno por vez: o sanduíche humano-máquina-humano, o casulo que ela monta sem acelerar a metamorfose, e o que num gesto ou num silêncio do aluno ainda não cabe em modelo nenhum."
 foto: "/entrevistas/adriana-palhacinha.jpg"
 foto_avatar: "/entrevistas/adriana-bozzetto-avatar.jpg"
+linkedin: "https://www.linkedin.com/in/adriana-elisab/"
 rascunho: false
 ---
 

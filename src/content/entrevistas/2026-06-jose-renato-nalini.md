@@ -7,6 +7,7 @@ resumo: "Desembargador aposentado e ex-presidente do TJSP, regulamentou o teletr
 foto: "/entrevistas/jose-renato-nalini.jpg"
 foto_avatar: "/entrevistas/jose-renato-nalini-rosto.jpg"
 foto_legenda: "Foto: APEdu"
+linkedin: "https://www.linkedin.com/in/jrnalini/"
 rascunho: false
 ---
 

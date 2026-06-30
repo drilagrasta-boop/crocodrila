@@ -7,6 +7,7 @@ resumo: "George Marmelstein — juiz federal, autor de Superaprendizagem, criado
 foto: "/entrevistas/george-marmelstein.jpg"
 foto_avatar: "/entrevistas/george-marmelstein-avatar.jpg"
 foto_legenda: "Foto de divulgação"
+linkedin: "https://www.linkedin.com/in/george-marmelstein-a1517887/"
 rascunho: false
 ---
 
