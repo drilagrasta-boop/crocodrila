@@ -51,10 +51,14 @@ formato fixo) e **trocar por lista** (os nomes que você informa).
 
 **O que instalar**
 
-1. **Python** — só ele já resolve a parte de tarjas (CPF, e-mail, telefone…), que é pura
-   expressão regular.
-2. Opcional, para pescar nomes que você esqueceu de listar: `pip install spacy` e o modelo
-   português (`python -m spacy download pt_core_news_sm`). Trate o automático como rascunho.
+1. **Python** (versão 3.10 ou mais nova) — baixe em [python.org/downloads](https://www.python.org/downloads/).
+   Na primeira tela do instalador, marque **"Add Python to PATH"**. É o passo que quase todo mundo
+   esquece, e sem ele o computador não acha o programa depois. Só o Python já resolve a parte de
+   tarjas (CPF, e-mail, telefone…), que é pura expressão regular.
+2. **Opcional**, para pescar nomes que você esqueceu de listar: abra o Prompt de Comando (tecle
+   Windows, digite `cmd`, Enter) e rode `pip install spacy`, depois
+   `python -m spacy download pt_core_news_sm` — baixa uma vez. Trate o resultado automático como
+   rascunho a conferir.
 
 **O esqueleto**
 

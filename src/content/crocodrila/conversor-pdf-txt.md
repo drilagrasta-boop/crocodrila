@@ -52,10 +52,14 @@ Não distribuímos o nosso código (a base é do George — veja o crédito abai
 
 **O que instalar**
 
-1. **Python** (3.10 ou mais novo).
-2. As bibliotecas: `pip install pymupdf pytesseract pillow`
-3. O **Tesseract OCR** e o idioma português (no Windows, o instalador oficial; marque
-   "Portuguese" na lista de idiomas).
+1. **Python** (versão 3.10 ou mais nova) — baixe em [python.org/downloads](https://www.python.org/downloads/).
+   Na primeira tela do instalador, marque **"Add Python to PATH"**; sem isso o computador não acha
+   o Python depois, e é o tropeço número um de quem começa.
+2. **As bibliotecas** — abra o Prompt de Comando (tecle Windows, digite `cmd`, Enter) e rode:
+   `pip install pymupdf pytesseract pillow`
+3. **O Tesseract OCR**, com o idioma português — no Windows, use o
+   [instalador do UB Mannheim](https://github.com/UB-Mannheim/tesseract/wiki) e marque
+   **"Portuguese"** na lista de idiomas. É ele que lê as páginas escaneadas.
 
 **A lógica (página a página)**
 
