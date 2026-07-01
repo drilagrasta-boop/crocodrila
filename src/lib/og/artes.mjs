@@ -49,4 +49,17 @@ export const ARTES_HOBBY = {
     <g transform="rotate(38 150 70)"><rect x="142" y="30" width="14" height="64" rx="3" fill="#c49a3a" stroke="#1d2b24" stroke-width="1.8"/><path d="M142,94 L149,110 L156,94 Z" fill="#f2e9d2" stroke="#1d2b24" stroke-width="1.8"/><circle cx="149" cy="106" r="2.2" fill="#1d2b24"/></g>
     <circle cx="60" cy="62" r="6" fill="none" stroke="#9c4a2e" stroke-width="1.6"/>
   </svg>`,
+  'modelar-com-as-maos': `<svg width="200" height="160" viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <line x1="18" y1="131" x2="182" y2="131" stroke="#1d2b24" stroke-width="2" stroke-linecap="round"/>
+    <ellipse cx="150" cy="107" rx="24" ry="22" fill="#3c5a45" stroke="#1d2b24" stroke-width="2.2" transform="rotate(-5 150 107)"/>
+    <path d="M138,96 q7,-6 15,-3" fill="none" stroke="#f2e9d2" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+    <ellipse cx="62" cy="104" rx="31" ry="27" fill="#9c4a2e" stroke="#1d2b24" stroke-width="2.2" transform="rotate(4 62 104)"/>
+    <path d="M46,108 q7,6 15,1" fill="none" stroke="#1d2b24" stroke-width="1.4" stroke-linecap="round" opacity="0.5"/>
+    <ellipse cx="59" cy="63" rx="23" ry="21" fill="#c49a3a" stroke="#1d2b24" stroke-width="2.2" transform="rotate(-6 59 63)"/>
+    <circle cx="52" cy="60" r="2.7" fill="#1d2b24"/>
+    <circle cx="66" cy="58.5" r="2.2" fill="#1d2b24"/>
+    <path d="M53,70 q7,5 14,-0.5" fill="none" stroke="#1d2b24" stroke-width="1.6" stroke-linecap="round"/>
+    <rect x="44" y="124" width="13" height="13" rx="4.5" fill="#3c5a45" stroke="#1d2b24" stroke-width="1.8"/>
+    <rect x="70" y="124" width="13" height="8" rx="4" fill="#3c5a45" stroke="#1d2b24" stroke-width="1.8"/>
+  </svg>`,
 };
