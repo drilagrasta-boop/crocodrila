@@ -3,10 +3,10 @@ titulo: "Modelar com as mãos"
 categoria: "Modelagem"
 data: 2026-07-01
 arte: "modelar-com-as-maos"
-resumo: "Depois de olhar uma coisa devagar, o passo natural é dar volume a ela. A massinha não guarda arquivo nem desfaz com um clique: você faz, vive com aquilo um dia e amassa de volta com a própria mão. Sobra o que ela deixou nos seus dedos."
+resumo: "Depois de olhar uma coisa devagar, o passo natural é dar volume a ela. A massinha não guarda arquivo nem desfaz com um clique: ou você amassa de volta, ou ela resseca e some. Sobra o que ela deixou nos seus dedos."
 desafio: "Modele um bicho ou uma fruta de memória, sem olhar referência nenhuma. Viva com ele um dia em cima da mesa. No dia seguinte, amasse de volta numa bola. Não fotografe."
 materiais:
-  - "Massa à base de óleo (plasticina) — não seca, dá pra amassar e refazer sempre. A de criança seca rápido; biscuit ou polymer só se quiser guardar a peça"
+  - "Massinha de criança — a mais fácil de achar e barata (resseca no ar: guarde em pote ou saco fechado quando não estiver usando). Ou massa à base de óleo (plasticina), que não seca e dá pra refazer sempre"
   - "As próprias mãos"
   - "Uma mesa que possa sujar um pouco"
 tags: ["analógico", "com as mãos", "sem entregável"]
@@ -26,9 +26,9 @@ versão fica no histórico, todo erro tem um Ctrl+Z. Você pode gerar quarenta v
 uma imagem em dois minutos e nenhuma delas custa nada, nem some.
 
 A massinha é o contrário exato disso. A peça sai torta, com a marca do seu dedo no meio, e
-não tem Ctrl+Z: pra mudar, você amassa tudo com a mão e começa de novo. Não existe versão
-final nem histórico — existe a bola de massa antes, a bola de massa depois, e no meio um
-bicho que durou um dia porque você decidiu desfazê-lo.
+não tem Ctrl+Z: pra mudar, você amassa tudo com a mão e começa de novo — e, se deixar de
+lado, ela resseca sozinha e vira pó. De um jeito ou de outro, não existe versão final nem
+histórico: existe a bola de massa antes, o bicho que durou um dia, e o fim dele.
 
 É por isso que ela resguarda algo que a tela não resguarda. O que a IA cospe é liso,
 simétrico, perfeito e infinito. O que sai da sua mão é irregular, único e mortal. As duas
@@ -36,12 +36,14 @@ coisas não competem — mas só uma tem a sua digital.
 
 ## O básico, que é pouco
 
-Não precisa de kit. A melhor para este mês é a **massa à base de óleo** — a plasticina de
-sempre, aquela que não seca: fica mole por tempo indefinido, então dá para amassar e
-refazer quantas vezes quiser sem virar pedra de um dia para o outro. A de criança, à base
-de água, é mais barata, mas resseca rápido no ar; se for usar, guarde num pote bem
-fechado. Biscuit e porcelana fria são o oposto — endurecem de vez em cerca de um dia,
-boas só se você quiser *guardar* a peça.
+Não precisa de kit, e você tem duas opções fáceis. A **massinha de criança** é a mais
+simples de achar e a mais barata — é mole, perdoa e serve muito bem para começar. O único
+porém é que ela é à base de água e resseca no ar: guarde num pote ou saco bem fechado
+quando não estiver mexendo e, se endurecer, pingue umas gotas de água e sove que ela
+volta. A outra é a **massa à base de óleo** (plasticina), que não seca nunca — fica mole
+por tempo indefinido e dá para amassar e refazer sem virar pedra. Biscuit e porcelana
+fria são o oposto das duas: endurecem de vez em cerca de um dia, boas só se você quiser
+*guardar* a peça.
 
 Dois truques bastam para o mês inteiro:
 
