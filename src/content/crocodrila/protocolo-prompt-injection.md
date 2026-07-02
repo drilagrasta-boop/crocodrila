@@ -22,8 +22,8 @@ Não é falha de senha nem invasão de servidor. É engenharia social feita cont
 escrita em português comum, escondida onde ninguém revisa.
 
 No nosso trabalho isso deixa de ser curiosidade e vira risco concreto. A toca toda roda
-em cima de documentos de terceiros — petições, laudos, PDFs de processo que entram na
-[pipeline de acórdão](/crocodrila/pipeline-acordao), no [conversor](/crocodrila/conversor-pdf-txt),
+em cima de documentos de terceiros — petições, laudos, PDFs de processo que entram no
+[conversor](/crocodrila/conversor-pdf-txt),
 no [anonimizador](/crocodrila/anonimizador-offline). Cada um desses arquivos é um input que
 nós não escrevemos e não controlamos. Uma parte mal-intencionada que descubra que do outro
 lado tem uma IA pré-processando os autos tem um incentivo óbvio: plantar a ordem no lugar
