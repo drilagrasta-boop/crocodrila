@@ -88,7 +88,24 @@ e montar o Markdown com os links no lugar.
 
 ---
 
-## 🐊 Adicionar um projeto na Crocodrila
+## 🐊 A toca da Crocodrila
+
+**Projetos no ar** (em ordem de exibição):
+
+| # | Projeto | O que é |
+| --- | --- | --- |
+| 1 | [Crocodrila Prompta](https://crocodrila.netlify.app/crocodrila/crocodrila-prompta) | Paleta de prompts por atalho global — deu nome à toca e ao bicho. |
+| 2 | [Conversor PDF → TXT](https://crocodrila.netlify.app/crocodrila/conversor-pdf-txt) | Extrai texto de PDFs judiciais na própria máquina, nada vai pra nuvem. |
+| 3 | [Anonimizador](https://crocodrila.netlify.app/crocodrila/anonimizador-offline) | Remove dados pessoais de uma peça sem nada sair do computador. |
+| 4 | [MCPs de Jurisprudência](https://crocodrila.netlify.app/crocodrila/mcp-jurisprudencia) | Servidores que ligam o assistente à pesquisa de precedentes dos tribunais. |
+| 5 | [Protocolo Anti-Injection](https://crocodrila.netlify.app/crocodrila/protocolo-prompt-injection) | Trata todo input como dado e varre instrução disfarçada antes de processar. |
+| 6 | [Criação de Sites](https://crocodrila.netlify.app/crocodrila/criacao-de-sites) | Sites rápidos, sem rastreador e fáceis de manter — este aqui é um deles. |
+| 7 | [Fichamento de Aulas](https://crocodrila.netlify.app/crocodrila/fichamento-aulas) | Transcrição de aula entra; fichamento crítico em .docx sai. |
+| 8 | [Segundo Cérebro](https://crocodrila.netlify.app/crocodrila/segundo-cerebro) | Base de conhecimento que se interliga sozinha e cresce a cada consulta. |
+
+> O índice do site é gerado automaticamente a partir dos arquivos `.md`; esta tabela é só um retrato para leitura rápida — ao adicionar ou remover um projeto, atualize-a aqui também.
+
+### Adicionar um projeto
 
 Crie um arquivo em `src/content/crocodrila/` (ex.: `meu-projeto.md`):
 
