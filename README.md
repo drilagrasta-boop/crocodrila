@@ -114,16 +114,21 @@ Crie um arquivo em `src/content/crocodrila/` (ex.: `meu-projeto.md`):
 titulo: "Nome do projeto"
 subtitulo: "Uma linha dizendo o que é."
 data: 2026-06-01
-status: "em uso"          # em uso | em desenvolvimento | experimento | aposentado
 tags: ["MCP", "Python"]
 repo: "https://github.com/..."   # opcional
 demo: "https://..."              # opcional
 destaque: true            # aparece na home
 ordem: 1                  # menor = aparece primeiro
+# status: "experimento"   # opcional — só mostra etiqueta se NÃO for "em uso"
+#                         #   (em desenvolvimento | experimento | aposentado). Omitir = sem etiqueta.
 ---
 
 Descrição completa do projeto em Markdown.
 ```
+
+> Os projetos da toca são guias **faça você mesmo** — o passo a passo pra o leitor montar o
+> seu, não um download pronto. Escreva a descrição nesse espírito (a única exceção hoje é o
+> Protocolo Anti-Injection, que já vem pronto pra copiar).
 
 ---
 
