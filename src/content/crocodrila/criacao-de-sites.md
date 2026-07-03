@@ -2,7 +2,6 @@
 titulo: "Criação de Sites"
 subtitulo: "Sites rápidos, sem rastreador e fáceis de manter — este aqui é um deles."
 data: 2026-05-25
-status: "em uso"
 tags: ["Astro", "web", "Netlify", "conteúdo"]
 destaque: false
 ordem: 6

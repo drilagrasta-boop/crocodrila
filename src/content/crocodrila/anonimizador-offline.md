@@ -2,7 +2,6 @@
 titulo: "Anonimizador"
 subtitulo: "Tira os dados pessoais de uma peça sem nada sair do seu computador."
 data: 2026-05-10
-status: "em uso"
 tags: ["offline", "LGPD", "sigilo", "privacidade"]
 credito: "Inspirado no Sistema Marmelstein, de George Marmelstein"
 destaque: true

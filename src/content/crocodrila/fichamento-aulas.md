@@ -2,7 +2,6 @@
 titulo: "Fichamento de Aulas"
 subtitulo: "Transcrição de aula entra; fichamento crítico e organizado sai em .docx."
 data: 2026-05-20
-status: "em uso"
 tags: ["mestrado", "fichamento", "transcrição", "estudo"]
 destaque: false
 ordem: 7

@@ -2,7 +2,6 @@
 titulo: "Protocolo Anti-Injection"
 subtitulo: "Um documento pode trazer ordem escondida no meio do texto — e um modelo de IA, por padrão, obedece. Este protocolo trata todo conteúdo recebido como dado, varre cada input atrás de instrução disfarçada e segrega o que for suspeito antes de processar."
 data: 2026-06-08
-status: "em uso"
 tags: ["segurança", "prompt injection", "IA jurídica", "CNJ", "prompts"]
 destaque: false
 ordem: 4

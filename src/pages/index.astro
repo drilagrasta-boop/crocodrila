@@ -154,7 +154,7 @@ const iniciais = (nome: string) => nome.split(/\s+/).slice(0, 2).map((p) => p[0]
             <Crocodrila size={34} class="croco-head-icon" />
             <div>
               <span class="label eyebrow">A toca da Crocodrila</span>
-              <h2>Coisas que a gente construiu</h2>
+              <h2>Coisas que a gente construiu — e mostra como fazer</h2>
             </div>
           </div>
           <a href="/crocodrila" class="tlink mono sec-link">ver a toca →</a>
@@ -162,7 +162,7 @@ const iniciais = (nome: string) => nome.split(/\s+/).slice(0, 2).map((p) => p[0]
         <div class="croco-grid">
           {vitrine.map((p) => (
             <a href={`/crocodrila/${p.id}`} class="croco-card">
-              <span class="croco-status mono">{p.data.status}</span>
+              {p.data.status !== 'em uso' && <span class="croco-status mono">{p.data.status}</span>}
               <h3 class="croco-title">{p.data.titulo}</h3>
               <p class="croco-sub muted">{p.data.subtitulo}</p>
               <div class="croco-tags">

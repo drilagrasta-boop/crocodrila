@@ -2,7 +2,6 @@
 titulo: "Segundo Cérebro"
 subtitulo: "Uma base de conhecimento que cresce sozinha: o assistente lê, organiza, interliga e consulta tudo que você já produziu e pesquisou."
 data: 2026-07-02
-status: "em uso"
 tags: ["Obsidian", "knowledge base", "automação", "Claude Code"]
 destaque: false
 ordem: 8

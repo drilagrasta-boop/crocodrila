@@ -7,7 +7,7 @@ import { POSES } from '../../lib/og/artes.mjs';
 const projetos = (await getCollection('crocodrila'))
   .sort((a, b) => a.data.ordem - b.data.ordem);
 ---
-<Base title="Crocodrila" description="A toca onde guardamos os projetos que construímos no caminho — conversores, MCPs de jurisprudência, pipelines e outros bichos." image="/og/site.png" imageWidth={800} imageHeight={800}>
+<Base title="Crocodrila" description="A toca onde a gente mostra como montar as ferramentas de IA que usa no dia a dia — passo a passo, faça você mesmo." image="/og/site.png" imageWidth={800} imageHeight={800}>
   <section class="croco-hero">
     <div class="wrap rise">
       <div class="ch-grid">
@@ -15,9 +15,10 @@ const projetos = (await getCollection('crocodrila'))
           <span class="label eyebrow">A toca</span>
           <h1 class="ch-title">Crocodrila</h1>
           <p class="ch-lead measure">
-            Ler sobre IA é metade. A outra metade é meter a mão. Aqui ficam os bichos
-            que a gente construiu enquanto se atualizava — ferramentas que usamos de
-            verdade no dia a dia. Algumas nasceram de uma conversa no grupo às onze da noite.
+            Ler sobre IA é metade. A outra metade é meter a mão. Aqui não tem ferramenta
+            pronta pra baixar: cada projeto é o passo a passo pra você montar o seu. A gente
+            construiu, usa todo dia, e mostra como refazer. (Só o Protocolo Anti-Injection
+            já vem pronto pra copiar.)
           </p>
         </div>
         <div class="ch-mascote" aria-hidden="true">
@@ -33,7 +34,9 @@ const projetos = (await getCollection('crocodrila'))
       {projetos.map((p) => (
         <a href={`/crocodrila/${p.id}`} class="proj-card">
           <div class="proj-top">
-            <span class:list={['proj-status mono', `st-${p.data.status.replace(/\s+/g, '-')}`]}>{p.data.status}</span>
+            {p.data.status !== 'em uso'
+              ? <span class:list={['proj-status mono', `st-${p.data.status.replace(/\s+/g, '-')}`]}>{p.data.status}</span>
+              : <span></span>}
             <span class="proj-ano mono">{p.data.data.getFullYear()}</span>
           </div>
           {p.data.pose && <div class="card-pose" set:html={POSES[p.data.pose]} />}

@@ -19,8 +19,12 @@ const fmt = new Intl.DateTimeFormat('pt-BR', { month: 'long', year: 'numeric', t
       <div class="ph-topo">
         <div class="ph-topo-texto">
           <div class="ph-meta">
-            <span class:list={['ph-status mono', `st-${entry.data.status.replace(/\s+/g, '-')}`]}>{entry.data.status}</span>
-            <span class="dot">·</span>
+            {entry.data.status !== 'em uso' && (
+              <>
+                <span class:list={['ph-status mono', `st-${entry.data.status.replace(/\s+/g, '-')}`]}>{entry.data.status}</span>
+                <span class="dot">·</span>
+              </>
+            )}
             <span class="mono">{fmt.format(entry.data.data)}</span>
           </div>
           <h1>{entry.data.titulo}</h1>

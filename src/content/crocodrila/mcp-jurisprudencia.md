@@ -2,7 +2,6 @@
 titulo: "MCPs de Jurisprudência"
 subtitulo: "Servidores que conectam o assistente direto à pesquisa de precedentes dos tribunais."
 data: 2026-04-25
-status: "em uso"
 tags: ["MCP", "jurisprudência", "scraping", "precedentes"]
 destaque: true
 ordem: 3

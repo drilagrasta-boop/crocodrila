@@ -2,7 +2,6 @@
 titulo: "Crocodrila Prompta"
 subtitulo: "Um atalho global abre uma paleta, você busca o prompt, preenche as variáveis, e ele cola na janela aberta. Deu nome à toca e ao bicho."
 data: 2026-04-01
-status: "em uso"
 tags: ["prompts", "AutoHotkey", "launcher", "produtividade"]
 destaque: true
 ordem: 0

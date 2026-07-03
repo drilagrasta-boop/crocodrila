@@ -2,7 +2,6 @@
 titulo: "Conversor PDF → TXT"
 subtitulo: "Extrai o texto de PDFs judiciais na sua própria máquina — nada sai para a nuvem."
 data: 2026-04-10
-status: "em uso"
 tags: ["offline", "OCR", "sigilo", "Python"]
 credito: "Inspirado no Sistema Marmelstein, de George Marmelstein"
 destaque: true
