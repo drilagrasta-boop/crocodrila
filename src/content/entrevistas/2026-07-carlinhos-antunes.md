@@ -6,6 +6,7 @@ data: 2026-07-20
 resumo: "Carlinhos Antunes — multi-instrumentista, regente e produtor cultural, fundador da Orquestra Mundana e da Orquestra Mundana Refugi — sobre instrumentos de dez culturas, a lentidão que um encontro exige e o que continua sendo humano."
 foto: "/entrevistas/carlinhos-antunes.jpg"
 foto_avatar: "/entrevistas/carlinhos-antunes-avatar.jpg"
+linkedin: "https://www.linkedin.com/in/carlinhos-antunes-2631a21b/"
 rascunho: false
 ---
 
