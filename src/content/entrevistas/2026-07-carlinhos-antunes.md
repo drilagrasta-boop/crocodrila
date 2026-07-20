@@ -4,7 +4,7 @@ papel: "multi-instrumentista, regente e produtor cultural · criou a Orquestra M
 titulo: "Se fôssemos convergentes, artistas não seríamos"
 data: 2026-07-20
 resumo: "Carlinhos Antunes — multi-instrumentista, regente e produtor cultural, fundador da Orquestra Mundana e da Orquestra Mundana Refugi — sobre instrumentos de dez culturas, a lentidão que um encontro exige e o que continua sendo humano."
-foto: "/entrevistas/carlinhos-antunes.jpg"
+foto: "/entrevistas/carlinhos-antunes-retrato.jpg"
 foto_avatar: "/entrevistas/carlinhos-antunes-avatar.jpg"
 linkedin: "https://www.linkedin.com/in/carlinhos-antunes-2631a21b/"
 rascunho: false
@@ -68,7 +68,7 @@ Em suma, é impossível ser músico em 2026 e não encarar essa lógica, esse mu
 Tem uma dose de ironia nisso tudo, obviamente. O que quero dizer com isso é que, na minha vida, desde que me conheço como gente, busquei conciliar o esporte, a contemplação da natureza, as viagens inusitadas — mesmo que entre turnês de trabalho — como práticas necessárias para exercer minha profissão de músico com dignidade. Além de músico, escrevo livros de poesias, fiz dois documentários de 60 minutos cada no continente africano, tive programa de rádio por quase cinco anos, planto árvores, caminho descalço na areia, troco experiências com profissionais de outras áreas, nado todos os dias. Sou um curioso permanente.
 
 <figure class="foto">
-<img src="/entrevistas/carlinhos-antunes.jpg" alt="Retrato em preto e branco de Carlinhos Antunes, de boina, mão no queixo, olhando pensativo para o lado" style="max-width: 560px;" />
+<img src="/entrevistas/carlinhos-antunes-retrato.jpg" alt="Retrato em preto e branco de Carlinhos Antunes, de boina, mão no queixo, olhando pensativo para o lado" style="max-width: 560px;" />
 <figcaption>"Sou um curioso permanente."</figcaption>
 </figure>
 
