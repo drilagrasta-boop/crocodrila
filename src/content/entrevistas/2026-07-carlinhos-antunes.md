@@ -20,7 +20,7 @@ rascunho: false
 
 Ter nascido numa época em que ser curioso exigia muito trabalho, não ter instrumento por falta de recursos, em que a rua era o grande aprendizado, tem suas delícias e dores que nos fazem seres diferenciados, sobreviventes, criados na coragem e nos desafios. Podemos aqui fazer uma ponte com os movimentos dos anos 70 que geraram o hip-hop, o break dance, os grafites, os DJs, as batalhas de rima etc.
 
-**Sobre inteligência artificial você se disse "engatinho nessa área", mas emendou: "nós músicos lidamos com as tecnologias desde que nascemos". É verdade — você atravessou o rádio, o microfone, o disco, o multipistas, o sampler, o software que conserta o que a mão errou. Em qual dessas passagens a tecnologia deixou de ser uma ferramenta na sua mão e começou a decidir alguma coisa por você?**
+**Sobre inteligência artificial você disse "engatinho nessa área", mas emendou: "nós músicos lidamos com as tecnologias desde que nascemos". É verdade — você atravessou o rádio, o microfone, o disco, o multipistas, o sampler, o software que conserta o que a mão errou. Em qual dessas passagens a tecnologia deixou de ser uma ferramenta na sua mão e começou a decidir alguma coisa por você?**
 
 Eu amo o trabalho em conjunto, apesar de ser uma pessoa totalmente solitária. Uma contradição. Solidário e solitário na mesma medida, eu diria.
 
