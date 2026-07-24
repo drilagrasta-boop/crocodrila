@@ -71,9 +71,9 @@ Sobretudo para afastar mal-entendidos, acrescento que as minhas funções na Ass
 
 É sobretudo uma afirmação destinada a provocar os leitores, declarando a absorção da realidade física pela digital. Quanto aos subtextos, antes de mais, como será evidente, pelo menos para todos os que têm formação jurídica, parafraseei o brocardo “quod non est in actis non est in mundo” ou, mais próximo dos meus interesses, “quod non est in titulo non est in mundo”. Mas, adicionalmente, é também confissão, a de eu não pretender ter uma “persona” digital diferente do que sou fora da Rede, mal tolerando que os outros assim não o sejam.
 
-<p class="kicker">Do outro lado do jurista</p>
+<p class="kicker">O outro lado do jurista</p>
 
-*Fora dos pareceres e das bancas, Masseno aponta a câmara ao que floresce no Alentejo — roseiras, o cardo bravo entre a aveia seca — e publica. É o contraponto sereno de quem passou a vida a discutir o que as máquinas fazem connosco.*
+*Fora dos pareceres e das bancas, Masseno aponta a câmara ao que floresce no Alentejo — roseiras, o cardo bravo entre a aveia seca — e publica. É o contraponto sereno de quem passou a vida a discutir o que as máquinas fazem conosco.*
 
 <figure class="foto">
 <img src="/entrevistas/manuel-david-masseno-rosas.jpg" alt="Roseira com flores cor-de-rosa" style="max-width: 420px;" />
