@@ -18,7 +18,7 @@ rascunho: false
 
 <figure class="foto">
 <img src="/entrevistas/manuel-david-masseno-amendoeiras.jpg" alt="Alameda de amendoeiras em flor sob céu azul, no Alentejo" style="max-width: 640px;" />
-<figcaption>Amendoeiras em flor — uma das fotografias que o próprio Masseno faz e publica.</figcaption>
+<figcaption>Amendoeiras em flor — uma das fotografias que o próprio Masseno tira e publica em suas redes sociais.</figcaption>
 </figure>
 
 **Antes dos dados, veio a terra — e ela não ficou para trás. Você se formou em Lisboa, foi discípulo de Antonio Carrozza em Pisa e segue no Direito Agrário e Alimentar até hoje, agora no conselho científico da União Mundial dos Agraristas. Dos dados agrícolas à soberania sobre a informação: o que o Direito da terra enxerga sobre inteligência artificial que o direito digital, sozinho, não vê?**
