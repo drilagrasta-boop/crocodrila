@@ -1,9 +1,9 @@
 ---
 convidado: "Paula Mastroberti"
-papel: "artista visual, escritora e professora do Instituto de Artes da UFRGS · a ilustradora que estuda as máquinas que imaginam"
+papel: "artista visual, escritora e professora do Instituto de Artes da UFRGS, doutora em Letras pela PUCRS · a ilustradora que fez carreira redesenhando os clássicos e hoje estuda as máquinas que imaginam"
 titulo: "A mosca na sopa das máquinas"
 data: 2026-06-11
-resumo: "Professora do Instituto de Artes da UFRGS, doutora em Letras pela PUCRS, escritora e ilustradora que fez carreira redesenhando os clássicos. Sobre máquinas que imaginam, leis que correm atrás e o que continua sendo feito à mão."
+resumo: "Máquinas que imaginam, leis que correm atrás e o que continua sendo feito à mão."
 foto: "/entrevistas/paula-mastroberti.jpg"
 rascunho: false
 ---

@@ -3,7 +3,7 @@ convidado: "Carlinhos Antunes"
 papel: "multi-instrumentista, regente e produtor cultural · criou a Orquestra Mundana e, com a assistente social Cleo Regina Miranda, idealizou a Orquestra Mundana Refugi"
 titulo: "Se fôssemos convergentes, artistas não seríamos"
 data: 2026-07-20
-resumo: "Carlinhos Antunes — multi-instrumentista, regente e produtor cultural, fundador da Orquestra Mundana e da Orquestra Mundana Refugi — sobre instrumentos de dez culturas, a lentidão que um encontro exige e o que continua sendo humano."
+resumo: "Instrumentos de dez culturas dentro do mesmo arranjo, a lentidão que um encontro exige e o que, no ofício de quem vive das mãos, continua sendo humano."
 foto: "/entrevistas/carlinhos-antunes-retrato.jpg"
 foto_avatar: "/entrevistas/carlinhos-antunes-avatar.jpg"
 linkedin: "https://www.linkedin.com/in/carlinhos-antunes-2631a21b/"

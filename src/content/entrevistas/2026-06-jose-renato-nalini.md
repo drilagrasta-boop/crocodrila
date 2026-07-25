@@ -3,7 +3,7 @@ convidado: "José Renato Nalini"
 papel: "desembargador aposentado e ex-presidente do TJSP, ex-secretário de Educação do Estado e secretário executivo de Mudanças Climáticas da Prefeitura de São Paulo · o magistrado que apostou na tecnologia antes que pedissem"
 titulo: "Ela não é tão inteligente assim"
 data: 2026-06-14
-resumo: "Desembargador aposentado e ex-presidente do TJSP, regulamentou o teletrabalho no tribunal cinco anos antes da pandemia tornar a medida indispensável. Aos 80 anos, à frente da pasta de Mudanças Climáticas de São Paulo, fala de uma ética que foi a óbito, de uma educação que claudica desde Montaigne e de uma IA cujo único princípio é a eficiência."
+resumo: "Regulamentou o teletrabalho no tribunal cinco anos antes de a pandemia tornar a medida indispensável. Aos 80 anos, fala de uma ética que foi a óbito, de uma educação que claudica desde Montaigne e de uma IA cujo único princípio é a eficiência."
 foto: "/entrevistas/jose-renato-nalini.jpg"
 foto_avatar: "/entrevistas/jose-renato-nalini-rosto.jpg"
 foto_legenda: "Foto: APEdu"

@@ -15,6 +15,9 @@ const fmt = new Intl.DateTimeFormat('pt-BR', { month: 'long', year: 'numeric', t
 const iniciais = entry.data.convidado.split(/\s+/).slice(0, 2).map((p) => p[0]).join('').toUpperCase();
 // SVG não é aceito como og:image pelos apps (WhatsApp, X) — nesses casos fica a imagem padrão do site
 const ogFoto = entry.data.foto && !entry.data.foto.endsWith('.svg') ? entry.data.foto : undefined;
+// O `resumo` traz só a chamada — quem é o convidado a página já mostra no cartão. Para o
+// compartilhamento, onde não há cartão, o nome volta na frente.
+const ogDescricao = `${entry.data.convidado} — ${entry.data.resumo}`;
 // Lê a dimensão real da foto de OG no build (ajuda WhatsApp/Facebook a exibir a imagem grande)
 let ogW: number | undefined, ogH: number | undefined;
 if (ogFoto) {
@@ -24,7 +27,7 @@ if (ogFoto) {
   } catch { /* sem dimensões: o app cai no fallback */ }
 }
 ---
-<Base title={`${entry.data.convidado} · Entrevista`} description={entry.data.resumo} image={ogFoto} imageWidth={ogW} imageHeight={ogH}>
+<Base title={`${entry.data.titulo} · ${entry.data.convidado}`} description={ogDescricao} image={ogFoto} imageWidth={ogW} imageHeight={ogH}>
   <article class="ent">
     <header class="wrap ent-head rise">
       <a href="/entrevistas" class="back mono">← todas as entrevistas</a>

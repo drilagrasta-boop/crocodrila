@@ -3,7 +3,7 @@ convidado: "Nima Spigolon"
 papel: "pedagoga e poeta, professora na Faculdade de Educação da Unicamp · passou quinze anos devolvendo a Elza Freire o nome que a história deu só a Paulo"
 titulo: "Não se herda só a máquina"
 data: 2026-07-14
-resumo: "Nima Spigolon — pedagoga, poeta e professora na Faculdade de Educação da Unicamp — sobre os quinze anos que passou reconstruindo a vida de Elza Freire, a leitura crítica das tecnologias na escola e onde fica a linha entre devolver o crédito a quem foi apagado e aceitar que a máquina dissolva a própria ideia de autor."
+resumo: "A leitura crítica das tecnologias na escola e onde fica a linha entre devolver o crédito a quem a história apagou e aceitar que a máquina dissolva a própria ideia de autor."
 foto: "/entrevistas/nima-divulgacao.jpg"
 foto_avatar: "/entrevistas/nima-avatar.jpg"
 linkedin: "https://www.linkedin.com/in/nima-i-spigolon-028b17306/"
