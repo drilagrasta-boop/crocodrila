@@ -135,7 +135,8 @@ valida no atrito com outros leitores, na comparação, no tempo. Nada disso o ex
 alcança.
 
 E quem decidiu publicar sem cortes fui eu, que sou parte interessada. Mostrar os reparos
-também é escolha editorial.
+também é escolha editorial, e ela me favorece, já que franqueza exibida gera crédito.
+Declaro o mecanismo porque não posso desligá-lo.
 
 O que o experimento sustenta, então, é uma coisa só, e o tamanho exato dela importa.
 Antes do cotejo, eu tinha um achado; depois dele, tenho uma contagem: a máquina
