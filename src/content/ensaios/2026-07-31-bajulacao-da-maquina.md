@@ -24,7 +24,7 @@ ajustados por avaliação humana aprendem que concordar agrada, e que o elogio b
 posicionado quase nunca é punido. O resultado é um leitor artificial com forte
 inclinação a dizer sim.
 
-O problema epistemológico começa aí. A bajulação imita a leitura atenta com competência
+A dificuldade começa aí. A bajulação imita a leitura atenta com competência
 incômoda. Usa o vocabulário certo, elogia no lugar plausível, soa informada. Vista de
 fora, a frase que nasce da leitura e a frase que nasce da vontade de agradar são
 indistinguíveis; ambas chegam bem escritas, ambas chegam rápido. Eu precisava de um
@@ -112,8 +112,8 @@ concessão ao gênero." Sobre *A construção da primavera*: "Verão afrouxa —
 conjugal é registrada sem contradição interna, e o diário desliza para o álbum." E
 sobre o conjunto: "Seu risco permanente é o açúcar, e ela o sabe."
 
-Publiquei os três, e não por bravura. O reparo cumpre função epistemológica antes de
-moral: é o segundo teste. Um sistema que só elogia pode ter lido ou não, e é impossível
+Publiquei os três, e não por bravura. O reparo serve de prova antes de servir de
+franqueza: é o segundo teste. Um sistema que só elogia pode ter lido ou não, e é impossível
 saber; um sistema que aponta fraqueza localizada, com citação, oferece mais superfície
 de conferência e, portanto, mais chance de ser desmentido. Uma leitura crítica só vale
 alguma coisa se puder dizer não, e uma leitura que não pode dizer não é publicidade com
