@@ -80,4 +80,28 @@ const hobbies = defineCollection({
   }),
 });
 
-export const collections = { edicoes, crocodrila, entrevistas, hobbies };
+// ---------------------------------------------------------------------------
+// ENSAIOS — texto autoral sobre IA, da casa ou de convidados, sem periodicidade.
+// Não é a notícia da semana (isso é a edição) nem a ferramenta com passo a passo
+// (isso é a Crocodrila): é argumento, experiência de uso, crítica ou caso testado.
+// Arquivos em src/content/ensaios/ (ex.: 2026-07-31-bajulacao-da-maquina.md)
+// ---------------------------------------------------------------------------
+const ensaios = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/ensaios' }),
+  schema: z.object({
+    titulo: z.string(),
+    subtitulo: z.string().optional(),   // linha de apoio, abaixo do título
+    data: z.coerce.date(),
+    resumo: z.string(),                 // 1–2 frases (lista, home e preview)
+    autor: z.string().default('Adriana Aneli'),
+    papel: z.string().optional(),       // quem é o autor convidado (ex.: "juíza do trabalho, TRT-2")
+    linkedin: z.string().url().optional(), // perfil do autor convidado, se houver
+    tags: z.array(z.string()).default([]),
+    // aviso ao leitor no alto do texto (ex.: conflito de interesse declarado)
+    nota: z.string().optional(),
+    pose: z.enum(['pensando', 'site', 'lupa', 'papeis', 'tarja', 'balanca', 'martelo', 'caderno', 'grafo', 'microfone']).optional(),
+    rascunho: z.boolean().default(false),
+  }),
+});
+
+export const collections = { edicoes, crocodrila, entrevistas, hobbies, ensaios };

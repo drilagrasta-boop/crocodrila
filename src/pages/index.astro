@@ -23,6 +23,11 @@ const entrevistas = (await getCollection('entrevistas'))
   .sort((a, b) => b.data.data.getTime() - a.data.data.getTime());
 const entrevistaDestaque = entrevistas[0];
 
+const ensaios = (await getCollection('ensaios'))
+  .filter((e) => !e.data.rascunho)
+  .sort((a, b) => b.data.data.getTime() - a.data.data.getTime());
+const ensaioDestaque = ensaios[0];
+
 const hobbies = (await getCollection('hobbies'))
   .filter((h) => !h.data.rascunho)
   .sort((a, b) => b.data.data.getTime() - a.data.data.getTime());
@@ -141,6 +146,23 @@ const iniciais = (nome: string) => nome.split(/\s+/).slice(0, 2).map((p) => p[0]
           <p class="eh-quem mono"><b>{entrevistaDestaque.data.convidado}</b> · {entrevistaDestaque.data.papel}</p>
           <p class="eh-resumo muted">{entrevistaDestaque.data.resumo}</p>
         </div>
+      </a>
+    </section>
+  )}
+
+  <!-- ================= ENSAIOS ================= -->
+  {ensaioDestaque && (
+    <section class="wrap ensaio-home">
+      <div class="sec-head">
+        <h2>Ensaios</h2>
+        <a href="/ensaios" class="tlink mono sec-link">todos os ensaios →</a>
+      </div>
+      <a href={`/ensaios/${ensaioDestaque.id}`} class="es-card">
+        <span class="label">{mesFmt.format(ensaioDestaque.data.data)}</span>
+        <h3 class="es-titulo">{ensaioDestaque.data.titulo}</h3>
+        {ensaioDestaque.data.subtitulo && <p class="es-sub">{ensaioDestaque.data.subtitulo}</p>}
+        <p class="es-resumo muted">{ensaioDestaque.data.resumo}</p>
+        <span class="es-go mono">ler o ensaio →</span>
       </a>
     </section>
   )}
@@ -310,6 +332,15 @@ const iniciais = (nome: string) => nome.split(/\s+/).slice(0, 2).map((p) => p[0]
   @media (max-width: 760px) { .croco-grid { grid-template-columns: 1fr; } }
 
   /* habeas hobby */
+  .ensaio-home { margin-top: clamp(3.5rem, 8vw, 6rem); }
+  .es-card { display: block; text-decoration: none; color: inherit; border: 1px solid var(--line-strong); border-left: 4px solid var(--gold); border-radius: var(--radius); background: #fffdf6; padding: clamp(1.4rem, 4vw, 2.2rem); transition: transform .2s ease, box-shadow .2s ease; }
+  .es-card:hover { transform: translateY(-3px); box-shadow: 0 1px 0 var(--ink), 0 22px 44px -30px rgba(27,26,22,.55); }
+  .es-titulo { margin-top: 0.35rem; font-size: clamp(1.35rem, 1.1rem + 1vw, 1.9rem); }
+  .es-sub { margin-top: 0.4rem; font-style: italic; color: var(--ink-soft); }
+  .es-resumo { margin-top: 0.7rem; max-width: 62ch; }
+  .es-go { display: inline-block; margin-top: 1rem; font-size: 0.8rem; color: var(--jacare-deep); }
+  .es-card:hover .es-go { text-decoration: underline; }
+
   .hobby-home { margin-top: clamp(3.5rem, 8vw, 6rem); }
   .hh-card { display: grid; grid-template-columns: 1fr auto; gap: clamp(1.2rem, 4vw, 3rem); align-items: center; text-decoration: none; color: inherit; border: 1.5px dashed var(--line-strong); border-radius: var(--radius); padding: clamp(1.4rem, 4vw, 2.4rem); transition: border-color .2s ease, background .2s ease; }
   .hh-card:hover { border-color: var(--gold); background: #fffdf6; }

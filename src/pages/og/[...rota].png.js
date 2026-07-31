@@ -8,6 +8,7 @@ export async function getStaticPaths() {
     ...edicoes.map((e) => ({ params: { rota: `edicoes/${e.id}` }, props: { tipo: 'edicao', entry: e } })),
     ...(await getCollection('crocodrila')).map((e) => ({ params: { rota: `crocodrila/${e.id}` }, props: { tipo: 'projeto', entry: e } })),
     ...(await getCollection('hobbies')).filter((h) => !h.data.rascunho).map((e) => ({ params: { rota: `hobbies/${e.id}` }, props: { tipo: 'hobby', entry: e } })),
+    ...(await getCollection('ensaios')).filter((e) => !e.data.rascunho).map((e) => ({ params: { rota: `ensaios/${e.id}` }, props: { tipo: 'ensaio', entry: e } })),
     { params: { rota: 'site' }, props: { tipo: 'site' } },
   ];
 }
@@ -26,6 +27,9 @@ export async function GET({ props }) {
     png = arteSvg
       ? await gerarArte(svgDataUri(arteSvg), 600, 480)
       : await gerarArte(svgDataUri(CROCODRILA), 680, 250);
+  }
+  if (tipo === 'ensaio') {
+    png = await gerarArte(svgDataUri(POSES[entry.data.pose] ?? CROCODRILA), 680, 250);
   }
   if (tipo === 'site') {
     png = await gerarSelo(null, svgDataUri(CROCODRILA));

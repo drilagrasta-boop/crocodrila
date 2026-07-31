@@ -1,0 +1,89 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const ensaios = (await getCollection('ensaios')).filter((e) => !e.data.rascunho);
+  return ensaios.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const fmt = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'long', year: 'numeric', timeZone: 'UTC' });
+---
+<Base
+  title={`${entry.data.titulo} · Ensaios`}
+  description={entry.data.resumo}
+  image={`/og/ensaios/${entry.id}.png`}
+  imageWidth={800}
+  imageHeight={800}
+>
+  <article class="en">
+    <header class="wrap en-head rise">
+      <a href="/ensaios" class="back mono">← Ensaios</a>
+      <div class="en-meta">
+        <span class="mono">{fmt.format(entry.data.data)}</span>
+        <span class="dot">·</span>
+        <span class="mono en-autor">
+          {entry.data.linkedin
+            ? <a href={entry.data.linkedin} target="_blank" rel="noopener noreferrer">{entry.data.autor}</a>
+            : entry.data.autor}
+        </span>
+        {entry.data.papel && <span class="dot">·</span>}
+        {entry.data.papel && <span class="mono">{entry.data.papel}</span>}
+      </div>
+      <h1>{entry.data.titulo}</h1>
+      {entry.data.subtitulo && <p class="en-sub measure">{entry.data.subtitulo}</p>}
+      <p class="en-resumo measure">{entry.data.resumo}</p>
+
+      {entry.data.nota && (
+        <aside class="nota">
+          <span class="label">Antes de começar</span>
+          <p>{entry.data.nota}</p>
+        </aside>
+      )}
+
+      {entry.data.tags.length > 0 && (
+        <div class="en-tags">
+          {entry.data.tags.map((t) => <span class="tag mono">{t}</span>)}
+        </div>
+      )}
+      <hr class="rule" />
+    </header>
+
+    <div class="wrap en-body">
+      <div class="prose">
+        <Content />
+      </div>
+    </div>
+
+    <footer class="wrap en-foot">
+      <hr class="rule" />
+      <p class="muted">O ensaio expressa a posição de quem assina, e não a da casa. Discorda, ou quer publicar o seu? Escreva para <a href="mailto:drilagrasta@gmail.com">drilagrasta@gmail.com</a>. Ensaio que não admite réplica é panfleto.</p>
+      <p class="voltar"><a href="/ensaios" class="tlink mono">← todos os ensaios</a></p>
+    </footer>
+  </article>
+</Base>
+
+<style>
+  .en-head { padding-top: clamp(2rem, 5vw, 3.5rem); }
+  .back { display: inline-block; color: var(--ink-faint); text-decoration: none; font-size: 0.78rem; margin-bottom: 1.4rem; }
+  .back:hover { color: var(--gold-deep); }
+  .en-meta { display: flex; align-items: center; gap: 0.6rem; font-size: 0.78rem; color: var(--ink-faint); }
+  .dot { color: var(--line-strong); }
+  .en-autor a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--line-strong); }
+  .en-autor a:hover { color: var(--gold-deep); border-color: var(--gold); }
+  h1 { margin-top: 0.9rem; }
+  .en-sub { margin-top: 0.8rem; font-size: clamp(1.15rem, 1rem + 0.7vw, 1.4rem); color: var(--ink-soft); font-style: italic; }
+  .en-resumo { margin-top: 1rem; font-size: 1.05rem; color: var(--ink-soft); }
+
+  .nota { margin-top: 1.8rem; padding: 1.1rem 1.3rem; background: var(--paper-deep); border-left: 3px solid var(--gold); border-radius: var(--radius); max-width: var(--measure); }
+  .nota .label { display: block; color: var(--gold-deep); margin-bottom: 0.35rem; }
+  .nota p { font-size: 0.95rem; color: var(--ink-soft); }
+
+  .en-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.4rem; }
+  .en-head .rule { margin-top: 2.2rem; }
+  .en-body { margin-top: 2.4rem; }
+  .en-foot { margin-top: 3rem; }
+  .voltar { margin-top: 1rem; }
+</style>
