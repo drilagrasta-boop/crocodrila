@@ -3,7 +3,6 @@ titulo: "O teste da bajulação, feito com os meus próprios livros"
 data: 2026-07-31
 resumo: "Bajulação imita a leitura atenta com competência incômoda. Pedi a uma IA uma análise crítica dos meus cinco livros de literatura, publiquei o resultado sem cortes nos juízos, e conto aqui o teste que separa uma coisa da outra."
 autor: "Adriana Aneli"
-tags: ["bajulação", "método", "crítica", "texto longo"]
 pose: lupa
 rascunho: false
 ---
