@@ -48,11 +48,11 @@ dos livros não sustentava a metáfora original. Nenhuma avaliação foi suaviza
 
 ## O teste que isola a bajulação
 
-Elogio, qualquer modelo de linguagem produz “by default”, e produz bem rápido. Por isso
+Elogio, qualquer modelo de linguagem produz por padrão, e produz bem rápido. Por isso
 o teste não pode estar na qualidade do elogio: elogio é sinal barato, não custa nada,
 não exige leitura integral do material posto à prova. O teste tem que estar na
 existência, no meio do texto, de uma afirmação de fato que só se sustenta se houver
-leitura, e que eu possa conferir organicamente depois. É o critério do risco: aquilo que
+leitura, e que eu possa conferir sozinha depois. É o critério do risco: aquilo que
 ninguém pode desmentir, não informa; crítica precisa poder estar errada.
 
 A análise afirma que os poemas migram entre os meus livros. O poema que abre o capítulo
