@@ -59,15 +59,15 @@ os versos e a localização de cada um. Basta uma palavra trocada para derrubar 
 afirmação.
 
 Essa afirmação não me devolve o que dei; me entrega algo que eu não tinha. A análise
-formulou uma tese nova sobre o meu trabalho: "A obra de Aneli funciona por transplantio:
+formulou uma tese sobre o meu trabalho: "A obra de Aneli funciona por transplantio:
 poemas mudam de livro como mudas trocam de canteiro, e o sentido se refaz com o solo." O
 verso que no diário de inverno era agouro íntimo de um ano difícil, no livro da cidade
 vira dado social.
 
-Há aí um refinamento que vale isolar. A concordância devolve ao autor a imagem que
-ele já tinha de si. A leitura produz alguma coisa nova sobre o que foi lido. Eu tinha
-mesmo mudado poemas de um livro para outro, como quem conversa consigo, mas nunca chamei
-aquilo de método. A tese pode estar certa ou errada. O que importa é que ela saiu do
+Há aí um refinamento que vale isolar. A concordância devolve ao autor a imagem que ele já
+tinha de si. A leitura produz algo inédito sobre o que foi lido. Eu tinha mesmo levado
+poemas pontuais de um livro para outro, num diálogo, uma ponte entre eles, mas nunca
+chamei isso de método. A tese pode estar certa ou errada. O que importa é que ela saiu do
 texto, não do meu desejo, e cada parte dela aponta para uma página que se confere.
 
 Depois de escrever este ensaio, fiz o que ele manda fazer. Cotejei a Nota técnica, linha a
