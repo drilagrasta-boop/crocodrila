@@ -30,7 +30,11 @@ export async function GET({ props }) {
       : await gerarArte(svgDataUri(CROCODRILA), 680, 250);
   }
   if (tipo === 'ensaio') {
-    png = await gerarArte(svgDataUri(POSES[entry.data.pose] ?? CROCODRILA), 680, 250);
+    // Por padrão o ensaio compartilha a arte da seção (as aspas). Só usa jacaré
+    // se o texto declarar uma `pose` no frontmatter.
+    png = entry.data.pose
+      ? await gerarArte(svgDataUri(POSES[entry.data.pose]), 680, 250)
+      : await gerarArte(svgDataUri(ARTE_ENSAIOS), 600, 480);
   }
   if (tipo === 'secao-ensaios') {
     png = await gerarArte(svgDataUri(ARTE_ENSAIOS), 600, 480);
