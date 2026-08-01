@@ -88,7 +88,7 @@ contagem diria. A parte automatizada é o elo fraco, e a lacuna só apareceu qua
 foi, ela também, cotejada contra a Nota técnica. Ou seja, a conferência tem que se deixar
 conferir.
 
-## Os reparos, que também foram publicados
+## As objeções, que também foram publicadas
 
 Sobre *Amor expresso*, o livro de minicontos: "o livro é forte quando termina em perda
 seca […] e fraco quando serve sobremesa. A assinatura está no corte; o resto é concessão
@@ -96,10 +96,10 @@ ao gênero." Sobre *A construção da primavera*: "Verão afrouxa — a felicida
 registrada sem contradição interna, e o diário desliza para o álbum." E sobre o conjunto:
 "Seu risco permanente é o açúcar, e ela o sabe."
 
-Publiquei os três, e não por bravura. O reparo serve de estudo antes de servir de moral, e
+Publiquei os três, e não por bravura. A objeção serve de estudo antes de servir de moral, e
 é o segundo teste. Um sistema que só elogia pode ter lido ou não, e não há como saber. Um
 sistema que aponta uma fraqueza específica, com citação, dá mais superfície para conferir
-e mais chance de levar um desmentido. Se eu tivesse cortado os reparos, este ensaio seria
+e mais chance de levar um desmentido. Se eu tivesse cortado as objeções, este ensaio seria
 exatamente o que ele diz não ser.
 
 ## O que isto não prova
