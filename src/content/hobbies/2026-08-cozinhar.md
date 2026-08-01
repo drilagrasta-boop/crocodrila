@@ -76,7 +76,7 @@ sal e orégano por cima e finalize com azeite.
 Não mexa, não levante a tampa a toda hora. O caldo do peixe e do tomate se misturam ao
 azeite, à cebola e ao orégano, e o resultado é leve e saboroso.
 
-## Porpetas que aprendi com o Caetano
+## Polpetas que aprendi com o Caetano
 
 *Para quatro pessoas.*
 
@@ -90,7 +90,7 @@ alho; azeite, sal e 1 folha de louro.
 
 **Comece pelo molho.** Corte a cebola em cubinhos e pique o alho bem fino, e refogue no
 azeite com uma pitada de sal, em fogo baixo. Junte os tomates e a folha de louro, e deixe apurar
-enquanto você cuida das porpetas.
+enquanto você cuida das polpetas.
 
 **Embeba o pão.** Deixe o miolo dos pães amanhecidos no leite frio com noz-moscada até
 amolecer.

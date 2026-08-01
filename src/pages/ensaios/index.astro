@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { getCollection } from 'astro:content';
+import { ARTE_ENSAIOS } from '../../lib/og/artes.mjs';
 
 const fmt = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'long', year: 'numeric', timeZone: 'UTC' });
 
@@ -11,10 +12,15 @@ const ensaios = (await getCollection('ensaios'))
 const destaque = ensaios[0];
 const resto = ensaios.slice(1);
 ---
-<Base title="Ensaios" description="Texto autoral sobre inteligência artificial, da casa e de convidados: argumento, experiência de uso, crítica, caso testado de perto." image="/og/site.png" imageWidth={800} imageHeight={800}>
+<Base title="Ensaios" description="Texto autoral sobre inteligência artificial, da casa e de convidados: argumento, experiência de uso, crítica, caso testado de perto." image="/og/ensaios.png" imageWidth={800} imageHeight={800}>
   <section class="wrap head rise">
-    <span class="label eyebrow">Textos autorais</span>
-    <h1>Ensaios</h1>
+    <div class="head-topo">
+      <div class="head-texto">
+        <span class="label eyebrow">Textos autorais</span>
+        <h1>Ensaios</h1>
+      </div>
+      <div class="head-arte" set:html={ARTE_ENSAIOS} />
+    </div>
     <p class="measure lead">A edição semanal traz a notícia, e a toca da Crocodrila traz a ferramenta com o passo a passo. Esta aba é para o que não cabe em nenhuma das duas: o argumento, a experiência de uso, a crítica, o caso testado de perto. Escrevem os editores da casa e os convidados que aceitarem o convite, cada um assinando o que pensa. Sem periodicidade, sem tamanho fixo e sem obrigação de concordar com a gente.</p>
     <p class="measure convite muted">Quer publicar aqui? Escreva para <a href="mailto:drilagrasta@gmail.com">drilagrasta@gmail.com</a> com o tema, ou com o texto pronto.</p>
   </section>
@@ -66,6 +72,12 @@ const resto = ensaios.slice(1);
 
 <style>
   .head { padding-top: clamp(2.5rem, 6vw, 4.5rem); }
+  .head-topo { display: flex; align-items: flex-start; justify-content: space-between; gap: 1.6rem; }
+  .head-texto { min-width: 0; }
+  .head-arte { flex: none; width: 132px; }
+  .head-arte :global(svg) { width: 100%; height: auto; }
+  @media (max-width: 640px) { .head-arte { width: 92px; } }
+  @media (max-width: 420px) { .head-arte { display: none; } }
   .lead { margin-top: 1rem; font-size: 1.2rem; color: var(--ink-soft); }
   .convite { margin-top: 1.1rem; font-size: 0.95rem; }
 

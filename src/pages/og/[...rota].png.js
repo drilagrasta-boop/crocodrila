@@ -1,6 +1,6 @@
 import { getCollection } from 'astro:content';
 import { gerarArte, gerarSelo } from '../../lib/og/cartao.mjs';
-import { CROCODRILA, svgDataUri, POSES, ARTES_HOBBY } from '../../lib/og/artes.mjs';
+import { CROCODRILA, svgDataUri, POSES, ARTES_HOBBY, ARTE_ENSAIOS } from '../../lib/og/artes.mjs';
 
 export async function getStaticPaths() {
   const edicoes = (await getCollection('edicoes')).filter((e) => !e.data.rascunho);
@@ -9,6 +9,7 @@ export async function getStaticPaths() {
     ...(await getCollection('crocodrila')).map((e) => ({ params: { rota: `crocodrila/${e.id}` }, props: { tipo: 'projeto', entry: e } })),
     ...(await getCollection('hobbies')).filter((h) => !h.data.rascunho).map((e) => ({ params: { rota: `hobbies/${e.id}` }, props: { tipo: 'hobby', entry: e } })),
     ...(await getCollection('ensaios')).filter((e) => !e.data.rascunho).map((e) => ({ params: { rota: `ensaios/${e.id}` }, props: { tipo: 'ensaio', entry: e } })),
+    { params: { rota: 'ensaios' }, props: { tipo: 'secao-ensaios' } },
     { params: { rota: 'site' }, props: { tipo: 'site' } },
   ];
 }
@@ -30,6 +31,9 @@ export async function GET({ props }) {
   }
   if (tipo === 'ensaio') {
     png = await gerarArte(svgDataUri(POSES[entry.data.pose] ?? CROCODRILA), 680, 250);
+  }
+  if (tipo === 'secao-ensaios') {
+    png = await gerarArte(svgDataUri(ARTE_ENSAIOS), 600, 480);
   }
   if (tipo === 'site') {
     png = await gerarSelo(null, svgDataUri(CROCODRILA));
