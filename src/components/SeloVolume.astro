@@ -1,11 +1,16 @@
 ---
 import Crocodrila from './Crocodrila.astro';
+import { ARTE_ANIVERSARIO } from '../lib/og/artes.mjs';
 interface Props { numero: number }
 const { numero } = Astro.props;
 const pad = String(numero).padStart(3, '0');
+// A décima edição carrega o jacaré de chapéu e bolo no lugar do mascote de sempre.
+const festa = numero === 10;
 ---
-<div class="selo" aria-hidden="true">
-  <Crocodrila size={34} />
+<div class:list={['selo', { festa }]} aria-hidden="true">
+  {festa
+    ? <div class="croco-festa" set:html={ARTE_ANIVERSARIO} />
+    : <Crocodrila size={34} />}
   <span class="mono">VOL. {pad}</span>
 </div>
 <style>
@@ -14,4 +19,10 @@ const pad = String(numero).padStart(3, '0');
     border: 2.5px dashed var(--carimbo); border-radius: 50%;
     color: var(--carimbo); transform: rotate(-8deg); }
   .selo span { font-size: 0.66rem; letter-spacing: 0.18em; }
+
+  /* O desenho comemorativo é mais alto que o mascote, por causa do chapéu e da
+     vela, então o selo cresce um pouco para não espremer o "VOL. 010". */
+  .selo.festa { width: 134px; height: 134px; gap: 0.1rem; }
+  .croco-festa { width: 106px; }
+  .croco-festa :global(svg) { width: 100%; height: auto; display: block; }
 </style>
