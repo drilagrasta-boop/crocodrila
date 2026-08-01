@@ -75,7 +75,7 @@ linha, contra os cinco livros. São 48 as afirmações de fato conferíveis, e n
 Quarenta e três batem palavra por palavra e no lugar exato; cinco batem na citação, com
 reparos miúdos de estrutura ou tipografia. A
 [tabela de conferência](https://adrianaaneli.com.br/nota-tecnica/conferencia/), com a
-página de cada citação, está no site junto da Nota técnica. E digo logo: o cotejo também
+página de cada citação, está no site junto da Nota técnica. Registro que o cotejo também
 passou pela máquina, em busca literal de texto. O que o torna confiável não é quem fez, é
 que qualquer leitor refaz por amostragem.
 
