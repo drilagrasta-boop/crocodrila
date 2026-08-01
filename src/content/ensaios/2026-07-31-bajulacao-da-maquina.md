@@ -58,12 +58,11 @@ aqui. O mesmo vale para a abertura do Outono. A nota técnica registra os demais
 os versos e a localização de cada um. Basta uma palavra trocada para derrubar a
 afirmação.
 
-Essa afirmação não me devolve o que dei; me entrega algo que eu não tinha. Do achado a
-análise tirou uma tese que eu nunca havia formulado
-sobre o meu próprio trabalho: "A obra de Aneli funciona por transplantio: poemas mudam de
-livro como mudas trocam de canteiro, e o sentido se refaz com o solo." O verso que no
-diário de inverno era agouro íntimo de um ano difícil, no livro da cidade vira dado
-social.
+Essa afirmação não me devolve o que dei; me entrega algo que eu não tinha. A análise
+formulou uma tese nova sobre o meu trabalho: "A obra de Aneli funciona por transplantio:
+poemas mudam de livro como mudas trocam de canteiro, e o sentido se refaz com o solo." O
+verso que no diário de inverno era agouro íntimo de um ano difícil, no livro da cidade
+vira dado social.
 
 Há aí um refinamento que vale isolar. A concordância devolve ao autor a imagem que
 ele já tinha de si. A leitura produz alguma coisa nova sobre o que foi lido. Eu tinha
