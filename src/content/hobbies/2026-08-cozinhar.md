@@ -52,6 +52,11 @@ Três avisos que valem para as quatro:
 3. **Prove antes de servir.** Sal é a única coisa que ninguém acerta pelo texto de
    outra pessoa.
 
+Se o número de pessoas na sua mesa não bater com o da receita, a toca tem um prompt para
+isso: o [Adapta-Receita](/crocodrila/adapta-receita) refaz as quantidades e, mais
+importante, avisa o que não se multiplica junto, como o tamanho da panela e o ponto de
+sal.
+
 ## Pescada da D. Ida
 
 *Para duas pessoas.*

@@ -34,7 +34,6 @@ const fmt = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'long', ye
       </div>
       <h1>{entry.data.titulo}</h1>
       {entry.data.subtitulo && <p class="en-sub measure">{entry.data.subtitulo}</p>}
-      <p class="en-resumo measure">{entry.data.resumo}</p>
 
       {entry.data.nota && (
         <aside class="nota">
@@ -75,7 +74,6 @@ const fmt = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'long', ye
   .en-autor a:hover { color: var(--gold-deep); border-color: var(--gold); }
   h1 { margin-top: 0.9rem; }
   .en-sub { margin-top: 0.8rem; font-size: clamp(1.15rem, 1rem + 0.7vw, 1.4rem); color: var(--ink-soft); font-style: italic; }
-  .en-resumo { margin-top: 1rem; font-size: 1.05rem; color: var(--ink-soft); }
 
   .nota { margin-top: 1.8rem; padding: 1.1rem 1.3rem; background: var(--paper-deep); border-left: 3px solid var(--gold); border-radius: var(--radius); max-width: var(--measure); }
   .nota .label { display: block; color: var(--gold-deep); margin-bottom: 0.35rem; }

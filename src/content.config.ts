@@ -37,7 +37,7 @@ const crocodrila = defineCollection({
     credito: z.string().optional(),     // autoria/crédito (ex.: "George Marmelstein · Sistema Marmelstein")
     destaque: z.boolean().default(false), // aparece em destaque na home
     ordem: z.number().default(99),       // ordena os cards (menor = primeiro)
-    pose: z.enum(['pensando', 'site', 'lupa', 'papeis', 'tarja', 'balanca', 'martelo', 'caderno', 'grafo', 'microfone']).optional(),
+    pose: z.enum(['pensando', 'site', 'lupa', 'papeis', 'tarja', 'balanca', 'martelo', 'caderno', 'grafo', 'microfone', 'medidas']).optional(),
   }),
 });
 
@@ -99,7 +99,7 @@ const ensaios = defineCollection({
     tags: z.array(z.string()).default([]),
     // aviso ao leitor no alto do texto (ex.: conflito de interesse declarado)
     nota: z.string().optional(),
-    pose: z.enum(['pensando', 'site', 'lupa', 'papeis', 'tarja', 'balanca', 'martelo', 'caderno', 'grafo', 'microfone']).optional(),
+    pose: z.enum(['pensando', 'site', 'lupa', 'papeis', 'tarja', 'balanca', 'martelo', 'caderno', 'grafo', 'microfone', 'medidas']).optional(),
     rascunho: z.boolean().default(false),
   }),
 });
