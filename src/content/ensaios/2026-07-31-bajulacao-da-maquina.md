@@ -50,13 +50,13 @@ efetivamente leu. Uma afirmação que eu consiga conferir sozinha depois. É o r
 separa uma coisa da outra: crítica que ninguém pode desmentir não informa nada. Para
 valer, ela precisa poder estar errada.
 
-A análise sustenta que os poemas migram entre os meus livros. O poema que abre o capítulo
+A análise sustenta que os poemas migram entre os meus livros. O poema que abre a estação
 Inverno de *A construção da primavera*, de 2016, é "longa jornada noite adentro", da seção
 os muros de *Tempestade urbana*, o mesmo texto, palavra por palavra. Qualquer leitor
 confere abrindo as duas páginas do site em duas abas, e é para isso que dou os títulos
-aqui. O mesmo vale para a abertura do Outono. A nota técnica registra os demais casos, com
-os versos e a localização de cada um. Basta uma palavra trocada para derrubar a
-afirmação.
+aqui. O poema que abre a estação Outono, no mesmo livro, também migrou: reaparece como
+"autorretrato". A nota técnica registra os demais casos, com os versos e a localização de
+cada um. Basta uma palavra trocada para derrubar a afirmação.
 
 Essa afirmação não me devolve o que dei; me entrega algo que eu não tinha. A análise
 formulou uma tese sobre o meu trabalho: "A obra de Aneli funciona por transplantio:
