@@ -137,16 +137,16 @@ Quem está aqui costuma lidar com texto longo por ofício: peça processual, dos
 acervo de decisões. A pergunta prática é se dá para usar IA como leitora crítica desse
 material, e o experimento aponta uma condição, não uma garantia.
 
-Rende quando o pedido exige três coisas ao mesmo tempo. Citação literal com localização,
-que corta o atalho da paráfrase vaga, aquela que soa fiel mas não se deixa checar. Juízo
+Rende quando o pedido exige três coisas ao mesmo tempo: citação literal com localização,
+que corta o atalho da paráfrase vaga, aquela que soa fiel mas não se deixa checar; juízo
 afirmado, no lugar da descrição neutra do que o documento diz, o que fecha a saída de quem
-resume sem se comprometer e por isso nunca erra. E permissão explícita para apontar o que
+resume sem se comprometer e por isso nunca erra; e permissão explícita para apontar o que
 está fraco, dita com essas palavras no pedido, que tira do sistema a desculpa de que
 ninguém pediu severidade.
 
 Sem as três, o que volta é o resumo elogioso. O alerta vale principalmente para a tentação
 maior de todas, que é pedir a uma IA a avaliação do próprio trabalho. Sem exigir citação e
-sem pedir o reparo, você recebe concordância, e concordância não é leitura. O teste não
+sem pedir a objeção, você recebe concordância, e concordância não é leitura. O teste não
 tira de você a obrigação de ler. Só deixa a delegação auditável. A conferência final
 continua sendo de quem pediu. Talvez seja essa a conclusão menos confortável do
 experimento: a leitura se delega, a prova da leitura, não.
