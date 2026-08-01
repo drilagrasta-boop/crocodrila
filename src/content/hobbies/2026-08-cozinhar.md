@@ -149,6 +149,12 @@ engrossar e virar calda.
 **Despeje a calda por cima** e sirva morna ou fria. Fica ótima com uma bola de sorvete de
 creme.
 
+---
+
+Escolheu o prato e a conta não fecha com o número de pessoas? O
+[Adapta-Receita](/crocodrila/adapta-receita), na toca, é um prompt que reescala qualquer
+uma destas quatro e avisa o que não acompanha a multiplicação.
+
 ## Como começar (hoje, sem plano)
 
 1. **Escolha uma das quatro** pelo que você já tem em casa, não pela vontade.
