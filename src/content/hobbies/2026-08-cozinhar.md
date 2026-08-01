@@ -88,8 +88,8 @@ miúda e sal.
 kg de tomate in natura sem pele e sem semente; a outra metade da cebola roxa; 1 dente de
 alho; azeite, sal e 1 folha de louro.
 
-**Comece pelo molho.** Pique a cebola e o alho bem fino e refogue no azeite com uma
-pitada de sal, em fogo baixo. Junte os tomates e a folha de louro, e deixe apurar
+**Comece pelo molho.** Corte a cebola em cubinhos e pique o alho bem fino, e refogue no
+azeite com uma pitada de sal, em fogo baixo. Junte os tomates e a folha de louro, e deixe apurar
 enquanto você cuida das porpetas.
 
 **Embeba o pão.** Deixe o miolo dos pães amanhecidos no leite frio com noz-moscada até
