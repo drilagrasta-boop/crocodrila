@@ -19,7 +19,10 @@ export async function GET({ props }) {
   const { tipo, entry } = props;
   let png;
   if (tipo === 'edicao') {
-    png = await gerarSelo(entry.data.numero, svgDataUri(CROCODRILA));
+    // A décima edição compartilha a arte comemorativa; as demais, o selo numerado.
+    png = entry.data.numero === 10
+      ? await gerarArte(svgDataUri(ARTE_ANIVERSARIO), 700, 258)
+      : await gerarSelo(entry.data.numero, svgDataUri(CROCODRILA));
   }
   if (tipo === 'projeto') {
     png = await gerarArte(svgDataUri(POSES[entry.data.pose] ?? CROCODRILA), 680, 250);
