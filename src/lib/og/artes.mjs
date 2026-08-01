@@ -71,11 +71,11 @@ export const ARTES_HOBBY = {
       <path d="M100,48 q-7,-12 0,-23 q7,-11 0,-21"/>
       <path d="M122,52 q-7,-11 0,-21 q7,-10 0,-20"/>
     </g>
+    <rect x="34" y="76" width="26" height="11" rx="5.5" fill="#3c5a45" stroke="#1d2b24" stroke-width="2.2"/>
+    <rect x="140" y="76" width="26" height="11" rx="5.5" fill="#3c5a45" stroke="#1d2b24" stroke-width="2.2"/>
     <path d="M56,66 h88 l-9,62 a8,8 0 0 1 -8,7 h-54 a8,8 0 0 1 -8,-7 Z" fill="#3c5a45" stroke="#1d2b24" stroke-width="2.4" stroke-linejoin="round"/>
-    <path d="M60,88 q40,12 80,0" fill="none" stroke="#f2e9d2" stroke-width="2" stroke-linecap="round" opacity="0.45"/>
+    <path d="M60,92 q40,12 80,0" fill="none" stroke="#f2e9d2" stroke-width="2" stroke-linecap="round" opacity="0.45"/>
     <rect x="46" y="60" width="108" height="10" rx="5" fill="#c49a3a" stroke="#1d2b24" stroke-width="2.2"/>
-    <path d="M40,70 a11,9 0 0 1 0,-14" fill="none" stroke="#1d2b24" stroke-width="2.4" stroke-linecap="round"/>
-    <path d="M160,70 a11,9 0 0 0 0,-14" fill="none" stroke="#1d2b24" stroke-width="2.4" stroke-linecap="round"/>
     <g transform="rotate(19 168 96)">
       <rect x="163" y="52" width="9" height="62" rx="4" fill="#9c4a2e" stroke="#1d2b24" stroke-width="1.8"/>
       <ellipse cx="167.5" cy="118" rx="12" ry="14" fill="#9c4a2e" stroke="#1d2b24" stroke-width="1.8"/>
