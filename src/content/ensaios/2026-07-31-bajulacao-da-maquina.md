@@ -31,7 +31,7 @@ gráfica, desenhou as vinhetas que separam os poemas, gerou os PDFs e os EPUBs, 
 domínio, certificado e feed. Da literatura não escreveu uma linha. Nem precisava. Essa
 parte estava pronta havia anos.
 
-Já com o site no ar, o experimento veio quase como uma pergunta de despedida. Pedi ao
+Já com o site no ar, o experimento veio quase como pergunta de despedida. Pedi ao
 assistente uma análise crítica da obra completa, com instruções de rigor: ler tudo, citar
 com precisão,
 afirmar juízos em vez de descrever, apontar fraquezas, dispensar o elogio de cortesia. O
@@ -50,13 +50,13 @@ efetivamente leu. Uma afirmação que eu consiga conferir sozinha depois. É o r
 separa uma coisa da outra: crítica que ninguém pode desmentir não informa nada. Para
 valer, ela precisa poder estar errada.
 
-A análise afirma que os poemas migram entre os meus livros. O poema que abre o capítulo
+A análise sustenta que os poemas migram entre os meus livros. O poema que abre o capítulo
 Inverno de *A construção da primavera*, de 2016, é "longa jornada noite adentro", da seção
 os muros de *Tempestade urbana*, o mesmo texto, palavra por palavra. Qualquer leitor
 confere abrindo as duas páginas do site em duas abas, e é para isso que dou os títulos
 aqui. O mesmo vale para a abertura do Outono. A nota técnica registra os demais casos, com
-os versos e a localização de cada um. A afirmação corre risco: bastaria uma palavra
-trocada para derrubá-la.
+os versos e a localização de cada um. Basta uma palavra trocada para derrubar a
+afirmação.
 
 Repare no que essa afirmação tem e o elogio não. Ela não me devolve o que dei; me entrega
 algo que eu não tinha. Do achado a análise tirou uma tese que eu nunca havia formulado
@@ -65,7 +65,7 @@ livro como mudas trocam de canteiro, e o sentido se refaz com o solo." O verso q
 diário de inverno era agouro íntimo de um ano difícil, no livro da cidade vira dado
 social.
 
-Aí aparece um segundo critério, mais fino. A concordância devolve ao autor a imagem que
+Há aí um refinamento que vale isolar. A concordância devolve ao autor a imagem que
 ele já tinha de si. A leitura produz alguma coisa nova sobre o que foi lido. Eu tinha
 mesmo mudado poemas de um livro para outro, como quem conversa consigo, mas nunca chamei
 aquilo de método. A tese pode estar certa ou errada. O que importa é que ela saiu do
@@ -126,9 +126,8 @@ também é escolha de edição, e ela joga a meu favor: franqueza exibida rende 
 isso porque não consigo desligar esse mecanismo.
 
 O que sobra é modesto, e o tamanho exato importa. Antes do cotejo eu tinha um achado;
-depois dele, tenho uma contagem. A máquina sustentou a leitura de um material longo e
-tirou dele 48 afirmações verificáveis que aguentaram a conferência, algumas novas até para
-mim. Não substitui um crítico humano. A confiança nunca esteve no sistema. Esteve no
+depois dele, tenho uma contagem. A máquina percorreu um material longo e tirou dele 48
+afirmações verificáveis que aguentaram a conferência, algumas novas até para mim. Não substitui um crítico humano. A confiança nunca esteve no sistema. Esteve no
 procedimento que obrigou o sistema a se expor, e na conferência que veio depois.
 
 ## A parte útil para quem lê esta newsletter
