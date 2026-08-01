@@ -110,7 +110,7 @@ máquina não teve acesso a nenhuma fortuna crítica disponível.
 
 O segundo é o viés. O modelo vinha de dias trabalhando na minha obra, a meu pedido e sob a
 minha instrução, e sistemas assim tendem a concordar com quem conversa com eles. Nada do
-que ele escreveu está imune a essa suspeita, nem mesmo os reparos, que podem ser a dose
+que ele escreveu está imune a essa suspeita, nem mesmo as objeções, que podem ser a dose
 exata de severidade que torna o elogio crível. A bajulação sofisticada também sabe
 criticar um pouco.
 
@@ -120,14 +120,16 @@ que me parece o centro de tudo: o teste comprova que houve leitura, não que o j
 certo. Que a máquina leu, mostro página a página. Que julgou bem, não tenho como mostrar.
 Juízo crítico só se firma no atrito com outros leitores, na comparação, com o tempo.
 
-E quem decidiu publicar sem cortes fui eu, que sou parte interessada. Mostrar os reparos
-também é escolha de edição, e ela joga a meu favor: franqueza exibida rende crédito. Digo
-isso porque não consigo desligar esse mecanismo.
+E quem decidiu publicar sem cortes fui eu, que sou parte interessada. Mostrar as objeções
+também é escolha de edição, e ela joga a meu favor: franqueza exibida rende crédito. E não
+há saída limpa, porque nem confessar o viés me tira do jogo. A confissão também parece
+franqueza, e também rende crédito. Declaro o problema porque não sei neutralizá-lo.
 
 O que sobra é modesto, e o tamanho exato importa. Antes do cotejo eu tinha um achado;
 depois dele, tenho uma contagem. A máquina percorreu um material longo e tirou dele 48
-afirmações verificáveis que aguentaram a conferência, algumas novas até para mim. Não substitui um crítico humano. A confiança nunca esteve no sistema. Esteve no
-procedimento que obrigou o sistema a se expor, e na conferência que veio depois.
+afirmações que sobreviveram à conferência, algumas novas até para mim. Não substitui um
+crítico humano. A confiança nunca esteve no sistema. Esteve no procedimento que obrigou o
+sistema a se expor, e na conferência que veio depois.
 
 ## A parte útil para quem lê esta newsletter
 
