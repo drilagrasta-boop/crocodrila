@@ -97,7 +97,7 @@ amolecer.
 
 **Misture com as mãos.** Carne, pão embebido, salsinha, orégano, cebola e sal, tudo
 junto, e faça bolinhas pequenas. A salsinha não é enfeite, é ela que dá frescor à massa.
-Quem dá a liga é o pão com leite, então não ponha ovos nem farinha. Esse é o segredo de elas ficarem bem macias.
+Quem dá a liga é o pão com leite, então não ponha ovos nem farinha. Esse é o segredo de elas ficarem bem macias e não desmancharem.
 
 **Doure, não cozinhe.** Frite em frigideira antiaderente com um pouco de azeite, virando
 para dourar todos os lados. Escorra em papel-toalha e coloque no molho.
