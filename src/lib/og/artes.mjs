@@ -44,6 +44,27 @@ export const POSES = {
   microfone: wrap(`<rect x="16" y="18" width="16" height="26" rx="8" fill="#c49a3a" stroke="#1d2b24" stroke-width="1.2"/><path d="M10,34 a14,14 0 0 0 28,0" fill="none" stroke="#3c5a45" stroke-width="2.4" stroke-linecap="round"/><line x1="24" y1="48" x2="24" y2="54" stroke="#3c5a45" stroke-width="2.4" stroke-linecap="round"/><g stroke="#c49a3a" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.75"><path d="M40,24 q6,7 0,14"/><path d="M47,20 q10,11 0,22"/><path d="M54,16 q14,15 0,30"/></g>`),
   grafo:     wrap(`<g stroke="#1d2b24" stroke-width="1.5" opacity="0.55"><line x1="50" y1="34" x2="26" y2="22"/><line x1="50" y1="34" x2="72" y2="20"/><line x1="50" y1="34" x2="78" y2="46"/><line x1="50" y1="34" x2="44" y2="56"/><line x1="50" y1="34" x2="22" y2="46"/><line x1="26" y1="22" x2="72" y2="20"/><line x1="78" y1="46" x2="44" y2="56"/></g><g stroke="#1d2b24" stroke-width="1.4"><circle cx="26" cy="22" r="4" fill="#3c5a45"/><circle cx="72" cy="20" r="4" fill="#c49a3a"/><circle cx="78" cy="46" r="4" fill="#9c4a2e"/><circle cx="44" cy="56" r="4" fill="#3c5a45"/><circle cx="22" cy="46" r="4" fill="#c49a3a"/></g><circle cx="50" cy="34" r="6" fill="#c49a3a" stroke="#1d2b24" stroke-width="1.6"/><circle cx="50" cy="34" r="2.4" fill="#1d2b24"/>`),
 };
+// Comemorativa da décima edição: jacaré de chapéu de festa, com bolo e vela.
+export const ARTE_ANIVERSARIO = wrap(`
+  <g>
+    <path d="M75,19 L63,44 L87,44 Z" fill="#c49a3a" stroke="#1d2b24" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M71,28 L82,28 M67,36 L86,36" stroke="#9c4a2e" stroke-width="2.4" stroke-linecap="round"/>
+    <circle cx="75" cy="14" r="4" fill="#f2e9d2" stroke="#1d2b24" stroke-width="1.8"/>
+  </g>
+  <g>
+    <line x1="8" y1="56" x2="54" y2="56" stroke="#1d2b24" stroke-width="2" stroke-linecap="round"/>
+    <rect x="12" y="35" width="38" height="21" rx="2.5" fill="#f2e9d2" stroke="#1d2b24" stroke-width="2.2"/>
+    <path d="M12,35 h38 v-4 a2,2 0 0 0 -2,-2 h-34 a2,2 0 0 0 -2,2 Z" fill="#9c4a2e" stroke="#1d2b24" stroke-width="2.2" stroke-linejoin="round"/>
+    <g fill="#1d2b24">
+      <rect x="22" y="40" width="4" height="12" rx="1"/>
+      <path d="M17,43 L22,39 L22,43 Z"/>
+    </g>
+    <ellipse cx="38" cy="46" rx="6" ry="6.4" fill="none" stroke="#1d2b24" stroke-width="3.4"/>
+    <rect x="29.5" y="17" width="3" height="12" rx="1.5" fill="#fffdf6" stroke="#1d2b24" stroke-width="1.5"/>
+    <path d="M31,16 q-3,-4 0,-7 q3,4 0,7 Z" fill="#c49a3a" stroke="#1d2b24" stroke-width="1.2"/>
+  </g>
+`);
+
 export const ARTE_ENSAIOS = `<svg width="200" height="160" viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
   <rect x="56" y="24" width="104" height="116" rx="6" fill="#f2e9d2" stroke="#1d2b24" stroke-width="2" opacity="0.55"/>
   <rect x="44" y="18" width="104" height="116" rx="6" fill="#fffdf6" stroke="#1d2b24" stroke-width="2.4"/>
