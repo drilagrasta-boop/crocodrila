@@ -6,6 +6,14 @@
 [build.environment]
   NODE_VERSION = "20"
 
+# O ensaio de estreia dos Ensaios nasceu com a data de 31/07 e foi republicado
+# em 01/08; o endereço antigo continua funcionando para quem já tinha o link.
+[[redirects]]
+  from = "/ensaios/2026-07-31-bajulacao-da-maquina/*"
+  to = "/ensaios/2026-08-01-bajulacao-da-maquina/"
+  status = 301
+  force = true
+
 # Tipos de conteúdo corretos (charset) para o feed e sua folha de estilo,
 # para os acentos e a "capa" do RSS aparecerem certos no navegador.
 [[headers]]
