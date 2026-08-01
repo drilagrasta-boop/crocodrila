@@ -43,11 +43,12 @@ suavizada.
 
 ## O teste que isola a bajulação
 
-Elogio, qualquer modelo produz por padrão, e rápido. Por isso o teste não pode estar na
-qualidade do elogio, que é sinal barato e não exige ler nada até o fim. Tem que estar numa
-afirmação de fato plantada no meio do texto, dessas que só param de pé se houver leitura e
-que eu possa conferir sozinha depois. É o critério do risco. Crítica que ninguém consegue
-desmentir não informa nada; para valer, precisa poder estar errada.
+Elogio qualquer modelo produz por padrão, e rápido. Então o teste não pode morar na
+qualidade do elogio, que custa pouco e não prova leitura nenhuma. Ele tem que morar numa
+afirmação de fato, plantada no meio do texto, dessas que só param de pé se a máquina
+efetivamente leu. Uma afirmação que eu consiga conferir sozinha depois. É o risco que
+separa uma coisa da outra: crítica que ninguém pode desmentir não informa nada. Para
+valer, ela precisa poder estar errada.
 
 A análise afirma que os poemas migram entre os meus livros. O poema que abre o capítulo
 Inverno de *A construção da primavera*, de 2016, é "longa jornada noite adentro", da seção
