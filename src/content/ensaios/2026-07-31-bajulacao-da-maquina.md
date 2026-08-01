@@ -1,6 +1,6 @@
 ---
 titulo: "A máquina leu ou só concordou?"
-subtitulo: "Um teste de bajulação feito com os meus próprios livros."
+subtitulo: "Um teste de bajulação, feito com os meus próprios livros."
 data: 2026-07-31
 resumo: "A bajulação imita a leitura atenta, e imita bem. Pedi a uma IA que analisasse os meus cinco livros, publiquei o resultado sem cortar nenhum juízo, e conto aqui o teste que separa uma coisa da outra."
 autor: "Adriana Aneli"
@@ -24,15 +24,16 @@ leitura daquela que nasceu da vontade de agradar. É essa diferença que o teste
 expor.
 
 Os cinco livros saíram entre 2015 e 2021 pela Scenarium Livros Artesanais, em edições
-costuradas à mão e de tiragem mínima. Desde este mês estão inteiros e de graça em
+costuradas à mão e de tiragem mínima. Desde este mês estão inteiros e gratuitos em
 [adrianaaneli.com.br](https://adrianaaneli.com.br/). A edição digital foi feita em
 diálogo com o Claude Code, da Anthropic: ele converteu os originais já diagramados pela
 gráfica, desenhou as vinhetas que separam os poemas, gerou os PDFs e os EPUBs, configurou
-domínio, certificado e feed. Da literatura não escreveu uma linha, e nem precisava. Essa
+domínio, certificado e feed. Da literatura não escreveu uma linha. Nem precisava. Essa
 parte estava pronta havia anos.
 
-O experimento veio no fim, quase como pergunta de despedida. Pedi ao assistente uma
-análise crítica da obra completa, com instruções de rigor: ler tudo, citar com precisão,
+Já com o site no ar, o experimento veio quase como uma pergunta de despedida. Pedi ao
+assistente uma análise crítica da obra completa, com instruções de rigor: ler tudo, citar
+com precisão,
 afirmar juízos em vez de descrever, apontar fraquezas, dispensar o elogio de cortesia. O
 texto que ele produziu está publicado inteiro na aba
 [Nota técnica](https://adrianaaneli.com.br/nota-tecnica/) do site, assinado por ele, sem
