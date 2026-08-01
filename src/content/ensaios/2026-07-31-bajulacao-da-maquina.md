@@ -1,6 +1,6 @@
 ---
 titulo: "A máquina leu ou só concordou?"
-subtitulo: "Um teste de bajulação, feito com os meus próprios livros."
+subtitulo: "Um teste de bajulação feito com os meus próprios livros."
 data: 2026-07-31
 resumo: "A bajulação imita a leitura atenta, e imita bem. Pedi a uma IA que analisasse os meus cinco livros, publiquei o resultado sem cortar nenhum juízo, e conto aqui o teste que separa uma coisa da outra."
 autor: "Adriana Aneli"
@@ -12,16 +12,16 @@ Um aviso antes de tudo. Este ensaio trata de um projeto meu, sobre uma obra minh
 newsletter que coedito. São três conflitos de interesse empilhados, e prefiro declarar
 isso agora a esperar que alguém aponte. Escrevo mesmo assim porque o assunto aqui não é a
 minha literatura. É um teste. Os livros entraram como material de laboratório. Se o texto
-soar como propaganda, eu falhei. Se servir de experimento que outra pessoa consiga
+soar como propaganda, eu falhei; se servir de experimento que outra pessoa consiga
 repetir, fez o que prometeu.
 
-A pergunta é prática. Quando uma IA devolve uma avaliação elogiosa, como saber se ela leu
-tudo mesmo ou se só concordou com quem pediu? Concordar é o comportamento padrão desses
-sistemas. E faz sentido: eles foram ajustados por gente que os avaliava, e aprenderam que
-agradar tira nota alta. O problema é que o elogio vem bem-feito. Usa o vocabulário certo,
-soa informado, parece atento. De fora, não dá para distinguir a frase que saiu da leitura
-da frase que saiu da vontade de agradar. O que interessa aqui não é o meu caso, é o teste
-que separa as duas.
+A pergunta é prática: quando uma IA devolve uma avaliação elogiosa, como saber se ela leu
+tudo ou se só concordou com quem pediu? Concordar é o comportamento padrão desses
+sistemas, e faz sentido. Eles foram ajustados, no treinamento, por avaliação humana, e
+aprenderam que agradar tira nota alta. O modelo aprende a usar o vocabulário certo, a
+soar informado, a parecer atento. De fora, o leitor não distingue a frase que nasceu da
+leitura daquela que nasceu da vontade de agradar. É essa diferença que o teste tenta
+expor.
 
 Os cinco livros saíram entre 2015 e 2021 pela Scenarium Livros Artesanais, em edições
 costuradas à mão e de tiragem mínima. Desde este mês estão inteiros e de graça em
