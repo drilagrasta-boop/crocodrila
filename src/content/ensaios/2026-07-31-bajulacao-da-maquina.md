@@ -79,13 +79,14 @@ feito à mão e também pela máquina, em busca literal de texto. O que o torna 
 que qualquer leitor refaz por amostragem.
 
 A conferência achou uma migração que não estava na lista de itens: a prosa do gavião e dos
-saguis, no Outono, reaparece como o poema "cinquenta anos esta noite" em *Tempestade
-urbana*. Por um instante pareceu achado novo. Não era. A análise já a citava, no mesmo
+saguis, no mesmo Outono, reaparece como o poema "cinquenta anos esta noite" em *Tempestade
+urbana*. Por um instante pareceu achado novo, mas não era. A análise já a citava, no mesmo
 parágrafo em que trata dos outros transplantes. O que a conferência flagrou foi uma falha
 nela mesma: a etapa de extração tinha deixado essa afirmação de fora da lista. Ela entrou
-como item 48, e confere. Conto o episódio porque ele diz do método mais do que a contagem
-diria. A parte automatizada é o elo fraco, e a lacuna só apareceu quando a tabela foi, ela
-também, cotejada contra a Nota técnica. Até a conferência tem que se deixar conferir.
+como item 48, e confere. Conto este episódio porque ele diz do método mais do que a
+contagem diria. A parte automatizada é o elo fraco, e a lacuna só apareceu quando a tabela
+foi, ela também, cotejada contra a Nota técnica. Ou seja, a conferência tem que se deixar
+conferir.
 
 ## Os reparos, que também foram publicados
 
