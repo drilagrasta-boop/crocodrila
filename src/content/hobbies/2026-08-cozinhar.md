@@ -102,7 +102,7 @@ Quem dá a liga é o pão com leite, então não ponha ovos nem farinha. Esse é
 **Doure, não cozinhe.** Frite em frigideira antiaderente com um pouco de azeite, virando
 para dourar todos os lados. Escorra em papel-toalha e coloque no molho.
 
-**Sirva com espaguete.**
+**Sirva sobre o espaguete.**
 
 ## Sopa de fubá da Vó Brígida
 
