@@ -70,10 +70,10 @@ poemas pontuais de um livro para outro, num diálogo, uma ponte entre eles, mas 
 chamei isso de método. A tese pode estar certa ou errada. O que importa é que ela saiu do
 texto, não do meu desejo, e cada parte dela aponta para uma página que se confere.
 
-Depois de escrever este ensaio, fiz o que ele manda fazer. Cotejei a Nota técnica, linha a
-linha, contra os cinco livros. São 48 as afirmações de fato conferíveis, e nenhuma caiu.
-Quarenta e três batem palavra por palavra e no lugar exato; cinco batem na citação, com
-reparos miúdos de estrutura ou tipografia. A
+Depois de escrever este ensaio, fiz o que ele manda fazer. Cotejei a Nota técnica inteira
+contra os cinco livros. São 48 as afirmações de fato verificáveis, e nenhuma caiu.
+Quarenta e três batem palavra por palavra e no lugar exato; as outras cinco conferem na
+citação, com reparos miúdos de estrutura ou tipografia. A
 [tabela de conferência](https://adrianaaneli.com.br/nota-tecnica/conferencia/), com a
 página de cada citação, está no site junto da Nota técnica. Registro que o cotejo também
 passou pela máquina, em busca literal de texto. O que o torna confiável não é quem fez, é
