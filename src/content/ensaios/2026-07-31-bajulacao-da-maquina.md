@@ -1,5 +1,6 @@
 ---
-titulo: "O teste da bajulação, feito com os meus próprios livros"
+titulo: "A máquina leu ou só concordou?"
+subtitulo: "Um teste de bajulação, feito com os meus próprios livros."
 data: 2026-07-31
 resumo: "A bajulação imita a leitura atenta, e imita bem. Pedi a uma IA que analisasse os meus cinco livros, publiquei o resultado sem cortar nenhum juízo, e conto aqui o teste que separa uma coisa da outra."
 autor: "Adriana Aneli"
