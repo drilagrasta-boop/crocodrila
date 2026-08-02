@@ -76,7 +76,7 @@ em duas assadeiras. Em outras IAs, sem esse recurso, a mesma estrutura sai em te
 O prompt inteiro está abaixo. Copie, cole numa conversa nova com a IA de sua preferência,
 anexe a receita e diga o alvo.
 
-```
+```prompt
 Recebo uma receita (foto, PDF, link ou texto colado) e um alvo de adaptação
 (nº de porções, quantidade de um ingrediente-âncora, restrição ou substituição).
 

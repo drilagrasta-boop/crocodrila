@@ -168,6 +168,39 @@ h3 { font-size: clamp(1.25rem, 1.1rem + 0.7vw, 1.6rem); }
   line-height: 1.6;
 }
 .prose pre code { background: none; padding: 0; }
+
+/* ---- bloco de prompt: o leitor copia inteiro e leva para a IA dele ---- */
+.bloco-prompt { position: relative; }
+/* espaço no topo para o botão não encostar na primeira linha do prompt */
+.prose .bloco-prompt pre { padding-top: 3em; }
+.copiar-prompt {
+  position: absolute;
+  top: 0.7em;
+  right: 0.7em;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  line-height: 1;
+  color: var(--jacare);
+  background: var(--paper-deep);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  padding: 0.4em 0.7em;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+.copiar-prompt:hover { color: var(--gold-deep); border-color: var(--gold); }
+.copiar-prompt:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.copiar-prompt[data-estado='copiado'] { color: var(--jacare); border-color: var(--jacare); }
+.copiar-prompt[data-estado='falhou'] { color: var(--carimbo); border-color: var(--carimbo); }
+/* anúncio para leitor de tela, invisível para quem enxerga */
+.so-leitor-de-tela {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
 .prose img { border: 1px solid var(--line); border-radius: var(--radius); margin-block: 1.6em; }
 .prose hr { margin-block: 2.4em; height: 1px; background: var(--line-strong); border: 0; }
 .prose ul li::marker { color: var(--jacare); }

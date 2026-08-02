@@ -85,5 +85,51 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
       .skip:focus { left: 0; }
       main { display: block; }
     </style>
+    <script>
+      // Blocos marcados com ```prompt ganham um botão de copiar. O botão é montado
+      // aqui, e não no HTML, para que ele só exista onde de fato consegue funcionar.
+      for (const pre of document.querySelectorAll('pre[data-language="prompt"]')) {
+        const code = pre.querySelector('code');
+        if (!code || !pre.parentNode) continue;
+
+        const envelope = document.createElement('div');
+        envelope.className = 'bloco-prompt';
+        pre.parentNode.insertBefore(envelope, pre);
+        envelope.appendChild(pre);
+
+        const botao = document.createElement('button');
+        botao.type = 'button';
+        botao.className = 'copiar-prompt';
+        botao.textContent = 'Copiar prompt';
+
+        const aviso = document.createElement('span');
+        aviso.className = 'so-leitor-de-tela';
+        aviso.setAttribute('role', 'status');
+
+        envelope.append(botao, aviso);
+
+        let volta;
+        botao.addEventListener('click', async () => {
+          clearTimeout(volta);
+          try {
+            await navigator.clipboard.writeText(code.textContent ?? '');
+            botao.textContent = 'Copiado';
+            botao.dataset.estado = 'copiado';
+            aviso.textContent = 'Prompt copiado para a área de transferência.';
+          } catch {
+            // Acontece fora de HTTPS ou com a permissão negada. Melhor dizer
+            // do que fingir que copiou.
+            botao.textContent = 'Não deu, copie à mão';
+            botao.dataset.estado = 'falhou';
+            aviso.textContent = 'Não foi possível copiar. Selecione o texto do bloco.';
+          }
+          volta = setTimeout(() => {
+            botao.textContent = 'Copiar prompt';
+            delete botao.dataset.estado;
+            aviso.textContent = '';
+          }, 2000);
+        });
+      }
+    </script>
   </body>
 </html>

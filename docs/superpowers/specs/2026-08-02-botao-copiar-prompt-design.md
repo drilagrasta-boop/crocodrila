@@ -15,9 +15,14 @@ que a página existe para provocar.
 
 **Entra:** botão de copiar nos blocos que contêm prompt.
 
-**Não entra:** blocos de comando. O site tem 19 blocos de código, dos quais 3 são prompt
-(1 no Adapta-Receita, 2 no protocolo de prompt injection) e 16 são Python, PowerShell ou
-markdown de exemplo. Estes últimos ficam como estão.
+**Não entra:** blocos de comando e blocos de exemplo de saída. O site tem 19 blocos de
+código, dos quais **2 são prompt** (1 no Adapta-Receita, 1 no protocolo de prompt
+injection) e 17 são Python, PowerShell, markdown de exemplo ou saída de programa. Estes
+ficam como estão.
+
+Verificado em 02/08: a página do protocolo tem dois blocos, mas só o segundo é prompt. O
+primeiro mostra a resposta do modelo quando a varredura passa limpa, e não há o que copiar
+ali.
 
 A decisão foi consciente: um botão em tudo seria mais fácil de implementar, mas o valor
 está em copiar o prompt, e marcar só o que é prompt mantém o gesto significativo.
@@ -42,10 +47,11 @@ desproporcional para um botão).
 apelido de texto puro (`langAlias: { prompt: 'text' }`), para o Shiki não tentar colorir
 sintaxe que não existe nem falhar com linguagem desconhecida.
 
-**Conteúdo.** Trocar a cerca de três blocos:
+**Conteúdo.** Trocar a cerca de dois blocos:
 
 - `src/content/crocodrila/adapta-receita.md` — bloco hoje sem linguagem
-- `src/content/crocodrila/protocolo-prompt-injection.md` — dois blocos hoje marcados como `text`
+- `src/content/crocodrila/protocolo-prompt-injection.md` — o segundo bloco, hoje `text`.
+  O primeiro, que mostra a saída do protocolo, permanece sem linguagem e sem botão.
 
 **Layout.** `src/layouts/Base.astro` ganha um script que localiza os blocos marcados como
 prompt e insere em cada um um `<button type="button">`. O clique copia o texto do bloco
@@ -73,16 +79,15 @@ seções (edições, ensaios, hobbies, entrevistas) é afetada.
 ## Verificação
 
 1. `npm run build` limpo, 42 páginas
-2. No HTML gerado, exatamente os 3 blocos de prompt marcados, e nenhum bloco de Python,
-   PowerShell ou markdown alterado
+2. No HTML gerado, exatamente os 2 blocos de prompt marcados, e nenhum bloco de Python,
+   PowerShell, markdown ou saída de programa alterado
 3. Teste no navegador com clique real, conferindo que o texto copiado é idêntico ao do
    bloco
 
-## Pendências antes de publicar
+## Pendências
 
-**Confirmar os dois blocos do protocolo de prompt injection.** Se um deles for exemplo de
-ataque em vez de prompt de uso, não leva botão. Facilitar a cópia do exemplo errado seria
-o oposto do que a página ensina.
+**Confirmar os blocos do protocolo de prompt injection.** Resolvido em 02/08: só o segundo
+bloco é prompt. Ver Escopo.
 
-**Combinar com o Dennis.** A newsletter é coeditada e esta é mudança de comportamento do
-site, não de texto. Implementar e mostrar antes do push.
+**Combinar com o Dennis.** Resolvido em 02/08: autorizado pela Adriana, que confirmou o
+aval dele.

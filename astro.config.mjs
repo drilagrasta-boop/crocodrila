@@ -15,6 +15,9 @@ export default defineConfig({
     shikiConfig: {
       theme: 'github-light',
       wrap: true,
+      // ```prompt marca os blocos que o leitor deve copiar inteiros. É texto puro
+      // (não há sintaxe a colorir), e a marcação é o que faz aparecer o botão de copiar.
+      langAlias: { prompt: 'text' },
     },
     // Links para fontes externas abrem em nova aba, com segurança.
     rehypePlugins: [
