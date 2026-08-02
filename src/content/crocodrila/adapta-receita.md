@@ -24,9 +24,10 @@ que falham.
 Há ainda uma pergunta anterior a todas essas, que a receita também não faz: quanto cada um
 come. A porção é unidade de quem escreveu, não medida do seu apetite, e o mesmo caldo verde
 é uma coisa quando é o jantar inteiro e outra quando divide a mesa com mais quatro pratos.
-Multiplicar porção por pessoa sem responder isso dá comida demais quase sempre. E dá também
-o excesso que se sente antes de acabar o prato, a gordura e o sabor forte que estavam
-equilibrados em quatro porções e pesam em dezesseis.
+Multiplicar porção por pessoa sem responder isso erra em alguma direção, quase sempre para
+mais, às vezes para menos, porque quatro adolescentes à mesa comem bem mais do que quatro
+lugares na conta. E há ainda o excesso que se sente antes de acabar o prato, a gordura e o
+sabor forte que estavam equilibrados em quatro porções e pesam em dezesseis.
 
 Nada disso está escrito na receita, porque quem escreveu não imaginava você multiplicando
 por 1,75. Uma IA faz a aritmética em um segundo, mas, se ninguém pedir o contrário, ela
@@ -43,7 +44,9 @@ O prompt faz cinco coisas que a conta simples não faz.
 **Transcreve antes de calcular.** A receita original é reproduzida com fidelidade, sem
 inventar ingrediente, etapa, tempo ou temperatura que não estejam na fonte. Se a foto
 estiver cortada ou ilegível, ele diz qual dado falta em vez de preencher por suposição. É
-a mesma regra que vale para documento jurídico: o que não está na fonte não entra.
+a mesma regra que vale para documento jurídico: o que não está na fonte não entra. E
+distingue o dado que falta do que a receita deixou a gosto de propósito, porque receita de
+família se escreve assim, com azeite e salsinha sem medida, e isso não é lacuna.
 
 **Pergunta quem vai comer.** Antes de calcular, estabelece o consumo por pessoa. Se o prato
 é a refeição inteira ou parte de um menu, se quem come são adultos ou crianças, se é entrada
@@ -55,10 +58,12 @@ ingrediente que você já tem. "Tenho três morcillas e a receita pede duas" dá
 escala por si, 3 dividido por 2, e o resto do prato se ajusta em volta.
 
 **Separa o que escala do que não escala.** Ingredientes recebem o fator. Temperatura de
-forno, tamanho de panela e ponto de sal, não. Gordura, embutido e tempero de sabor forte,
-linguiça, bacon, anchova, alho, escalam abaixo do fator, pela mesma razão do sal, e o
-abatimento vem declarado. Fermento, gelatina e liga escalam com ressalva. Arredondamento só
-quando a diferença some no prato, e sempre avisado.
+forno, tamanho de panela e ponto de sal, não. Gordura, embutido e aromático potente, da
+linguiça e do bacon ao alho, ao louro e à noz-moscada, escalam abaixo do fator, pela mesma
+razão do sal, e o abatimento vem declarado. Fermento, gelatina e liga escalam com ressalva.
+Arredondamento só quando a diferença some no prato, e sempre avisado. O acompanhamento que
+a receita cita no modo de servir e não mede, o arroz, o pão, a massa, entra pela conta do
+alvo e vem marcado como acréscimo da adaptação.
 
 **Devolve num artefato de receita.** No Claude, a resposta sai como uma página interativa,
 com as porções ajustadas, os ingredientes numerados e referenciados dentro dos passos, e
@@ -78,9 +83,14 @@ Recebo uma receita (foto, PDF, link ou texto colado) e um alvo de adaptação
 O que fazer:
 
 1. Transcrever a receita original com fidelidade. Não inventar ingrediente,
-   etapa, tempo ou temperatura que não estejam na fonte. Se algo estiver
-   ilegível ou ausente, dizer qual dado falta em vez de completar por
-   suposição.
+   etapa, tempo ou temperatura que não estejam na fonte. Separar dois casos
+   de quantidade não escrita, que não são a mesma coisa:
+   - dado ausente que impede a conta (a carne, o tomate, o rendimento, a
+     temperatura do forno): dizer qual falta, e não completar por suposição;
+   - quantidade deixada a gosto por quem escreveu (sal, azeite, ervas,
+     tempero, "um pouco de", "a gosto"): é escolha da receita, não lacuna.
+     Não listar como dado faltante. Apenas dizer se acompanha a escala ou
+     não, e seguir.
 
 2. Estabelecer o consumo por pessoa antes de escalar. Perguntar, se não
    estiver dito: o prato é a refeição completa ou parte de um menu com
@@ -96,10 +106,17 @@ O que fazer:
 4. Aplicar o fator a todos os ingredientes. Arredondar só quando a diferença
    for irrelevante no prato, e avisar quando arredondar. Não escalar
    linearmente: temperatura de forno, tamanho da panela e ponto de sal.
-   Gordura, embutido e tempero de sabor forte (linguiça, bacon, anchova,
-   alho, pimenta) escalam abaixo do fator quando ele passa de 2, ponto de
-   partida em torno de três quartos, com o abatimento sempre declarado.
-   Fermento, gelatina e agentes de liga escalam, mas com ressalva.
+   Gordura, embutido e aromático potente (linguiça, bacon, anchova, alho,
+   pimenta, louro, cravo, noz-moscada) escalam abaixo do fator quando ele
+   passa de 2, ponto de partida em torno de três quartos, com o abatimento
+   sempre declarado. Fermento, gelatina e agentes de liga escalam, mas com
+   ressalva.
+
+   Acompanhamento citado no modo de servir e não medido (espaguete, arroz,
+   pão) entra na conta pelo alvo, marcado como acréscimo da adaptação e não
+   da receita. Se a preparação tiver de ser dividida em duas panelas ou
+   assadeiras, dividir também o aromático e o tempero entre elas, sem
+   repetir a dose cheia em cada uma.
 
 5. Entregar no widget de receita, com:
    - porções ajustadas, e quanto rende por pessoa
