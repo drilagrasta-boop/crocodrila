@@ -58,9 +58,9 @@ ingrediente que você já tem. "Tenho três morcillas e a receita pede duas" dá
 escala por si, 3 dividido por 2, e o resto do prato se ajusta em volta.
 
 **Separa o que escala do que não escala.** Ingredientes recebem o fator. Temperatura de
-forno, tamanho de panela e ponto de sal, não. Gordura, embutido e aromático potente, da
-linguiça e do bacon ao alho, ao louro e à noz-moscada, escalam abaixo do fator, pela mesma
-razão do sal, e o abatimento vem declarado. Fermento, gelatina e liga escalam com ressalva.
+forno, tamanho de panela, ponto de sal e quantidade de alho, não. Gordura, embutido e
+aromático potente, da linguiça e do bacon ao louro e à noz-moscada, escalam abaixo do
+fator, pela mesma razão do sal, e o abatimento vem declarado. Fermento, gelatina e liga escalam com ressalva.
 Arredondamento só quando a diferença some no prato, e sempre avisado. O acompanhamento que
 a receita cita no modo de servir e não mede, o arroz, o pão, a massa, entra pela conta do
 alvo e vem marcado como acréscimo da adaptação.
@@ -105,11 +105,14 @@ O que fazer:
 
 4. Aplicar o fator a todos os ingredientes. Arredondar só quando a diferença
    for irrelevante no prato, e avisar quando arredondar. Não escalar
-   linearmente: temperatura de forno, tamanho da panela e ponto de sal.
-   Gordura, embutido e aromático potente (linguiça, bacon, anchova, alho,
-   pimenta, louro, cravo, noz-moscada) escalam abaixo do fator quando ele
-   passa de 2, ponto de partida em torno de três quartos, com o abatimento
-   sempre declarado. Fermento, gelatina e agentes de liga escalam, mas com
+   linearmente: temperatura de forno, tamanho da panela, ponto de sal e
+   quantidade de alho. O alho não acompanha o fator de jeito nenhum: manter
+   a quantidade da receita original e deixar o ajuste a gosto, porque satura
+   rápido e passa a dominar o prato.
+   Gordura, embutido e aromático potente (linguiça, bacon, anchova, pimenta,
+   louro, cravo, noz-moscada) escalam abaixo do fator quando ele passa de 2,
+   ponto de partida em torno de três quartos, com o abatimento sempre
+   declarado. Fermento, gelatina e agentes de liga escalam, mas com
    ressalva.
 
    Acompanhamento citado no modo de servir e não medido (espaguete, arroz,
