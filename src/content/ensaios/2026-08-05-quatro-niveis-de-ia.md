@@ -203,7 +203,7 @@ Ninguém está completamente seguro diante de uma mudança tecnológica dessa di
 eu mesmo! Vejo minha atividade de instrutor em risco. E tenho que me adaptar aos novos
 tempos. Estamos presenciando uma virada de chave que dificilmente terá volta.
 
-Precisamos nos adaptar quanto antes.
+Precisamos nos adaptar o quanto antes.
 
 Essa adaptação exige esforço, persistência e, principalmente, a criação de uma rotina de
 estudos e prática. Muita prática!
