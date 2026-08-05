@@ -213,7 +213,8 @@ inteligência artificial para potencializar suas atividades. Comece já! Ponha a
 massa. Teste, erre, ajuste, refaça, até conseguir.
 
 Tenho certeza de que esse será um dos melhores caminhos de aprendizado para você e, caso
-precise de apoio, tenho cursos completos no YouTube, em meu portal de treinamento e
+precise de apoio, tenho cursos completos no
+[YouTube](https://www.youtube.com/@AlessandroTrovato), em meu portal de treinamento e
 também em canais parceiros que vão te ajudar.
 
 Agradeço a leitura deste artigo e espero ter atingido o objetivo inicial: provocar em
@@ -229,3 +230,5 @@ Bons estudos!
 *Alessandro Trovato — Compartilhando conhecimento, sempre!*
 
 → Alessandro no LinkedIn: [linkedin.com/in/alessandrotrovato](https://www.linkedin.com/in/alessandrotrovato/)
+
+→ Cursos do Alessandro no YouTube: [youtube.com/@AlessandroTrovato](https://www.youtube.com/@AlessandroTrovato)
