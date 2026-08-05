@@ -80,6 +80,65 @@ export const ARTE_ENSAIOS = `<svg width="200" height="160" viewBox="0 0 200 160"
   <line x1="58" y1="122" x2="86" y2="122" stroke="#9c4a2e" stroke-width="3" stroke-linecap="round"/>
 </svg>`;
 
+// Arte própria de cada ensaio (padrão da casa: todo ensaio novo ganha a sua).
+// A chave entra no frontmatter do ensaio como `arte`.
+export const ARTES_ENSAIO = {
+  // "Inteligência artificial e uma reflexão..." (Alessandro Trovato): a escada
+  // dos quatro níveis — do chat gratuito (balão no chão) à bandeira no topo,
+  // com a linha dourada do lombo do jacaré subindo os degraus.
+  'escada-de-niveis': `<svg width="200" height="160" viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <line x1="12" y1="140" x2="188" y2="140" stroke="#1d2b24" stroke-width="2" stroke-linecap="round"/>
+    <g fill="#fffdf6" stroke="#1d2b24" stroke-width="2.2" stroke-linejoin="round">
+      <rect x="28" y="116" width="36" height="24"/>
+      <rect x="64" y="92" width="36" height="48"/>
+      <rect x="100" y="68" width="36" height="72"/>
+      <rect x="136" y="44" width="36" height="96"/>
+    </g>
+    <polyline points="28,116 64,116 64,92 100,92 100,68 136,68 136,44 172,44"
+      fill="none" stroke="#c49a3a" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+    <g>
+      <line x1="154" y1="44" x2="154" y2="16" stroke="#1d2b24" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M154,16 L176,22 L154,28 Z" fill="#9c4a2e" stroke="#1d2b24" stroke-width="1.8" stroke-linejoin="round"/>
+    </g>
+    <g>
+      <rect x="14" y="98" width="26" height="17" rx="5" fill="#3c5a45" stroke="#1d2b24" stroke-width="1.8"/>
+      <path d="M22,115 L20,122 L29,115 Z" fill="#3c5a45" stroke="#1d2b24" stroke-width="1.8" stroke-linejoin="round"/>
+      <g stroke="#f2e9d2" stroke-width="1.6" stroke-linecap="round">
+        <line x1="19" y1="104" x2="35" y2="104"/>
+        <line x1="19" y1="109" x2="30" y2="109"/>
+      </g>
+    </g>
+    <g stroke="#c49a3a" stroke-width="2" stroke-linecap="round">
+      <line x1="184" y1="24" x2="184" y2="34"/>
+      <line x1="179" y1="29" x2="189" y2="29"/>
+    </g>
+  </svg>`,
+  // "A máquina leu ou só concordou?" (Adriana Aneli): o livro aberto sob a lupa,
+  // com a citação conferida em dourado — a leitura que se deixa provar.
+  'leitura-provada': `<svg width="200" height="160" viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <line x1="16" y1="128" x2="184" y2="128" stroke="#1d2b24" stroke-width="2" stroke-linecap="round"/>
+    <g fill="#fffdf6" stroke="#1d2b24" stroke-width="2.4" stroke-linejoin="round">
+      <path d="M100,48 Q66,38 30,48 L30,114 Q66,104 100,114 Z"/>
+      <path d="M100,48 Q134,38 170,48 L170,114 Q134,104 100,114 Z"/>
+    </g>
+    <line x1="100" y1="48" x2="100" y2="114" stroke="#1d2b24" stroke-width="2"/>
+    <g stroke="#3c5a45" stroke-width="2.6" stroke-linecap="round">
+      <line x1="40" y1="62" x2="88" y2="58"/>
+      <line x1="40" y1="74" x2="88" y2="70"/>
+      <line x1="40" y1="86" x2="76" y2="83"/>
+    </g>
+    <g stroke="#3c5a45" stroke-width="2.6" stroke-linecap="round">
+      <line x1="112" y1="58" x2="160" y2="62"/>
+      <line x1="112" y1="82" x2="148" y2="85"/>
+    </g>
+    <line x1="112" y1="70" x2="160" y2="74" stroke="#c49a3a" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="138" cy="72" r="21" fill="none" stroke="#1d2b24" stroke-width="2.8"/>
+    <circle cx="138" cy="72" r="13" fill="none" stroke="#c49a3a" stroke-width="1.6"/>
+    <line x1="153" y1="87" x2="172" y2="106" stroke="#1d2b24" stroke-width="3.4" stroke-linecap="round"/>
+    <polyline points="129,72 136,80 149,63" fill="none" stroke="#9c4a2e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>`,
+};
+
 export const ARTES_HOBBY = {
   'desenho-observacao': `<svg width="200" height="160" viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect x="20" y="40" width="120" height="90" rx="6" fill="#fffdf6" stroke="#1d2b24" stroke-width="2.4"/>

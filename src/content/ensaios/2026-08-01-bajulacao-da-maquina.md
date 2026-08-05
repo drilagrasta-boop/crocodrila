@@ -4,6 +4,8 @@ subtitulo: "Um teste de bajulação, feito com os meus próprios livros."
 data: 2026-08-01
 resumo: "A bajulação imita a leitura atenta, e imita bem. Pedi a uma IA que analisasse os meus cinco livros, publiquei o resultado sem cortar nenhum juízo, e conto aqui o teste que separa uma coisa da outra."
 autor: "Adriana Aneli"
+linkedin: "https://www.linkedin.com/in/adriana-aneli-costa-lagrasta/"
+arte: "leitura-provada"
 rascunho: false
 ---
 
@@ -155,3 +157,5 @@ experimento: a leitura se delega, a prova da leitura, não.
 → A nota técnica completa: [adrianaaneli.com.br/nota-tecnica](https://adrianaaneli.com.br/nota-tecnica/)
 
 → Os cinco livros, gratuitos e sem cadastro: [adrianaaneli.com.br](https://adrianaaneli.com.br/)
+
+→ Adriana no LinkedIn: [linkedin.com/in/adriana-aneli-costa-lagrasta](https://www.linkedin.com/in/adriana-aneli-costa-lagrasta/)

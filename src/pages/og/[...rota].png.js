@@ -1,6 +1,6 @@
 import { getCollection } from 'astro:content';
 import { gerarArte, gerarSelo } from '../../lib/og/cartao.mjs';
-import { CROCODRILA, svgDataUri, POSES, ARTES_HOBBY, ARTE_ENSAIOS, ARTE_ANIVERSARIO } from '../../lib/og/artes.mjs';
+import { CROCODRILA, svgDataUri, POSES, ARTES_HOBBY, ARTES_ENSAIO, ARTE_ENSAIOS, ARTE_ANIVERSARIO } from '../../lib/og/artes.mjs';
 
 export async function getStaticPaths() {
   const edicoes = (await getCollection('edicoes')).filter((e) => !e.data.rascunho);
@@ -34,11 +34,14 @@ export async function GET({ props }) {
       : await gerarArte(svgDataUri(CROCODRILA), 680, 250);
   }
   if (tipo === 'ensaio') {
-    // Por padrão o ensaio compartilha a arte da seção (as aspas). Só usa jacaré
-    // se o texto declarar uma `pose` no frontmatter.
-    png = entry.data.pose
-      ? await gerarArte(svgDataUri(POSES[entry.data.pose]), 680, 250)
-      : await gerarArte(svgDataUri(ARTE_ENSAIOS), 600, 480);
+    // Padrão da casa: cada ensaio declara uma `arte` própria (ARTES_ENSAIO).
+    // Sem arte, cai na `pose` do jacaré; sem pose, na arte da seção (as aspas).
+    const arteSvg = ARTES_ENSAIO[entry.data.arte];
+    png = arteSvg
+      ? await gerarArte(svgDataUri(arteSvg), 600, 480)
+      : entry.data.pose
+        ? await gerarArte(svgDataUri(POSES[entry.data.pose]), 680, 250)
+        : await gerarArte(svgDataUri(ARTE_ENSAIOS), 600, 480);
   }
   if (tipo === 'secao-ensaios') {
     png = await gerarArte(svgDataUri(ARTE_ENSAIOS), 600, 480);

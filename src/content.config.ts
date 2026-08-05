@@ -100,6 +100,9 @@ const ensaios = defineCollection({
     // aviso ao leitor no alto do texto (ex.: conflito de interesse declarado)
     nota: z.string().optional(),
     pose: z.enum(['pensando', 'site', 'lupa', 'papeis', 'tarja', 'balanca', 'martelo', 'caderno', 'grafo', 'microfone', 'medidas']).optional(),
+    // arte de divulgação própria do ensaio (chave em ARTES_ENSAIO, src/lib/og/artes.mjs);
+    // padrão da casa: todo ensaio novo ganha a sua
+    arte: z.string().optional(),
     rascunho: z.boolean().default(false),
   }),
 });
