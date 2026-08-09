@@ -4,7 +4,7 @@ papel: "Juiz de direito português · Assessor do Gabinete dos Juízes do Tribun
 titulo: "A meio da ponte"
 data: 2026-08-01
 resumo: "Sobre algoritmos que assistem, tribunais que se digitalizam e o que, numa sentença, continua sendo humano."
-foto: "/entrevistas/jose-joaquim-oliveira-martins-avatar.jpg"
+foto: "/entrevistas/jose-joaquim-oliveira-martins.jpg"
 foto_avatar: "/entrevistas/jose-joaquim-oliveira-martins-avatar.jpg"
 foto_legenda: "Coimbra, Portugal"
 linkedin: "https://www.linkedin.com/in/josé-joaquim-f-oliveira-martins-70890765/"
@@ -16,6 +16,11 @@ rascunho: false
 *José Joaquim Fernandes Oliveira Martins chegou aqui na Toca pelas mãos de um amigo da casa, o professor Manuel David Masseno, e bastou abrir o material para entender o porquê. Juiz de direito, percorreu nove comarcas do interior português, de Cantanhede a Montemor-o-Velho, antes dos juízos do trabalho de Leiria e da Figueira da Foz; desde 26 de outubro de 2021, é assessor do Gabinete dos Juízes do Tribunal Constitucional. No think tank que produziu a Agenda da Reforma da Justiça (Almedina, 2023) — mais de um ano de trabalho, centenas de participantes, um livro de mais de seiscentas páginas —, coube a ele coordenar o subgrupo de justiça digital e inteligência artificial. É autor do Código de Processo do Trabalho Anotado e Comentado (2.ª edição, 2024), preside desde dezembro de 2025 a Associação dos Assessores do Tribunal Constitucional e, em 2026, assinou o capítulo sobre legitimidade dos juízes e IA no livro do Tribunal Permanente de Revisão do Mercosul — o mesmo volume, em acesso livre, em que também escreve outro amigo desta Toca, Pepe Chaves.*
 
 *Por dentro, é um juiz que, com a carreira feita, decidiu recomeçar como aluno: em outubro de 2025, voltou à sua "Alma Mater", a Faculdade de Direito de Coimbra, para os seminários do doutoramento — e escreveu, sem pose: "Sei bem o percurso árduo e difícil que me espera, mas era algo que queria já há bastante tempo." Sentamos para falar sobre a legitimidade dos juízes na era dos algoritmos, o cavalo de Troia da justiça digital e o que uma estátua e uma sentença têm em comum.*
+
+<figure class="foto">
+<img src="/entrevistas/jose-joaquim-oliveira-martins.jpg" alt="Retrato de José Joaquim F. Oliveira Martins" style="max-width: 640px;" />
+<figcaption>José Joaquim F. Oliveira Martins.</figcaption>
+</figure>
 
 **1. O seu primeiro livro, O Crime de Dano e o Património Cultural (2003), defendia bens culturais contra a destruição — e voltou ao tema ainda em 2023, na Revista Portuguesa de Direito Constitucional, sinal de que certas fidelidades não prescrevem. Hoje, o que defende da destruição é outra coisa: a legitimidade dos juízes diante dos algoritmos. De onde vem a vocação de guardião do que é valioso e frágil?**
 
