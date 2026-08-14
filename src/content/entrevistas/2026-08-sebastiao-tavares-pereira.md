@@ -4,7 +4,7 @@ papel: "Juiz do trabalho aposentado do TRT-12 · Programador e analista de siste
 titulo: "Sem humano, mas não desumano"
 data: 2026-08-14
 resumo: "Sobre algoritmos que aprendem com o juiz, a fronteira estreita entre apoiar e substituir e o que, no ato de julgar, continua sendo humano."
-foto: "/entrevistas/sebastiao-tavares-pereira.jpg"
+foto: "/entrevistas/sebastiao-tavares-pereira-og.jpg"
 foto_avatar: "/entrevistas/sebastiao-tavares-pereira-avatar.jpg"
 rascunho: false
 ---
