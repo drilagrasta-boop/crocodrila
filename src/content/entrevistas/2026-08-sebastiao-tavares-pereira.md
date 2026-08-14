@@ -36,7 +36,7 @@ Por que mudei? A pedagoga Spigolon, numa entrevista recente aqui na Toca, deu a 
 
 Achei que o mundo do Direito me traria isso e não me arrependo. Encontrei um sistema articulado, racional até onde é possível, mas que transpira humanidade, lida com as incertezas, desbasta os excessos, mas deixa espaço para as visões diferentes de vida. O Direito organiza a convivência na diversidade moral, religiosa, de pensamento. É um sistema que erra muito, acerta bastante e que, principalmente, fecha as portas para as visões unificantes dos donos de verdades que sempre temi.
 
-Fiquei surpreso com a estruturação do sistema. O terceiro capítulo do meu livro *Machine learning*, é "estrutura". Aos meus olhos de tecnólogo, pareceu-me uma "bagunça estruturada". Entendi o que atualmente leio, de vez em quando: "*order from chaos*". Enfim, aprendi a admirar o Direito. Um sistema dúctil e em movimento.
+Fiquei surpreso com a estruturação do sistema. O terceiro capítulo do meu livro *Machine learning* é "estrutura". Aos meus olhos de tecnólogo, pareceu-me uma "bagunça estruturada". Entendi o que atualmente leio, de vez em quando: "*order from chaos*". Enfim, aprendi a admirar o Direito. Um sistema dúctil e em movimento.
 
 Na magistratura, como operador do sistema, decidindo, vi chegar a internet comercial. As tecnologias velhas conhecidas (informática) já andavam pelo judiciário, mas a internet, com aquele escopo, era nova inclusive para mim. Chegou uma revolução.
 
@@ -108,7 +108,7 @@ Então, esse risco de a máquina começar a escolher para onde olhar parece-me i
 
 A ideia do mero suporte — a linha de limite para o uso da IA —, no cenário atual e com as modelagens estabelecidas, pode mesmo ser vista como uma bengala não confiável, bamba. Mas, repito, tudo depende da modelagem, ou seja, do jeito que as coisas são organizadas para usar a IA.
 
-O acionamento de uma IA despreparada, que sabe tudo sem entender nada — pois é assim que elas são —, para dar suporte, é bem problemático. A lábia da IA é marcante. Tenho chamado essas ferramentas de novos sofistas porque convencem até os inimigos. Isso, combinado com o excesso de processos a julgar, são o caminho para o "se está convincente, está bom!". Desenraiza-se a decisão do exame efetivo dos autos e planta-se, confortavelmente, no discurso retórico convincente e de ocasião da IA.
+O acionamento de uma IA despreparada, que sabe tudo sem entender nada — pois é assim que elas são —, para dar suporte, é bem problemático. A lábia da IA é marcante. Tenho chamado essas ferramentas de novos sofistas porque convencem até os inimigos. Isso, combinado com o excesso de processos a julgar, é o caminho para o "se está convincente, está bom!". Desenraiza-se a decisão do exame efetivo dos autos e planta-se, confortavelmente, no discurso retórico convincente e de ocasião da IA.
 
 — Decida isso para mim, indeferindo!
 
@@ -116,7 +116,7 @@ O conforto venceu e a dicção do Direito foi terceirizada. Como diria o meu pro
 
 Por isso precisamos encabrestá-las, antes de soltá-las a ver autos e a trazer propostas de solução. Sem defira ou indefira no disparo da ferramenta. Num modelo de aplicação de esquemas de generalização, o "defiro" ou "indefiro" vem no fim. O cabresto é posto antes de soltar o animal. Não haverá prompts, comandos, interferências espúrias e outras manobras que interferem na proposta de decisão.
 
-E isso não implica necessária fixidez. Os humanos são causalmente abertos e mudam com frequência de posição. Juízes devidamente apoiados, pela IA e pelos demais operadores, poderão rever suas visões das coisas e o algoritmo poderá reaprender, fixando novo esquema de generalização, dali para a frente aplicado consistentemente. Isso acontece com frequência com todos os magistrados, mundo afora, como também aconteceu comigo. A Suprema Corte dos Estados Unidos reviu, recentemente, sua posição sobre o aborto, fixada em 1973, no caso Roe & Wade. Outro caso: em 1986, a mesma Corte afirmou que não havia o direito à sodomia consensual entre adultos. Em 2003, em Lawrence versus Texas, a corte voltou atrás e afirmou o direito constitucional à sodomia consensual de adultos.
+E isso não implica necessária fixidez. Os humanos são causalmente abertos e mudam com frequência de posição. Juízes devidamente apoiados, pela IA e pelos demais operadores, poderão rever suas visões das coisas e o algoritmo poderá reaprender, fixando novo esquema de generalização, dali para a frente aplicado consistentemente. Isso acontece com frequência com todos os magistrados, mundo afora, como também aconteceu comigo. A Suprema Corte dos Estados Unidos reviu, recentemente, sua posição sobre o aborto, fixada em 1973, no caso Roe versus Wade. Outro caso: em 1986, a mesma Corte afirmou que não havia o direito à sodomia consensual entre adultos. Em 2003, em Lawrence versus Texas, a corte voltou atrás e afirmou o direito constitucional à sodomia consensual de adultos.
 
 Prompts, os comandos, são uma ferramenta excelente e inacreditavelmente útil. Deram a todos os humanos o poder de programar. Mas são, também, um perigo. Então, o risco da troca, do apoiar pelo decidir, existe, mas não faltarão observadores e suas irritações para ajudar a ordenar as coisas, como quer o sistema jurídico.
 
