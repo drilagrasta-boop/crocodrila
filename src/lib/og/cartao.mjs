@@ -6,7 +6,9 @@ const C = { papel: '#f2e9d2', tinta: '#1d2b24', jacare: '#3c5a45', ouro: '#c49a3
 const el = (type, style, children = undefined) => ({ type, props: { style, children } });
 const texto = (style, s) => ({ type: 'div', props: { style, children: s } });
 
-export async function gerarSelo(numero, arteDataUri) {
+// `largura` só reescala o vetor na rasterização: 800 é o cartão de compartilhamento,
+// valores maiores servem para uso avulso (post, slide, impressão).
+export async function gerarSelo(numero, arteDataUri, largura = 800) {
   const filhos = numero != null
     ? [
         { type: 'img', props: { src: arteDataUri, width: 400, height: 147, style: {} } },
@@ -19,7 +21,7 @@ export async function gerarSelo(numero, arteDataUri) {
     el('div', { display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: 620, height: 620, border: `9px dashed ${C.terracota}`, borderRadius: 9999, transform: 'rotate(-6deg)' }, filhos),
   ]);
   const svg = await satori(arvore, { width: 800, height: 800, fonts: carregarFontes() });
-  return new Resvg(svg, { fitTo: { mode: 'width', value: 800 } }).render().asPng();
+  return new Resvg(svg, { fitTo: { mode: 'width', value: largura } }).render().asPng();
 }
 
 export async function gerarArte(arteDataUri, largura, altura) {
