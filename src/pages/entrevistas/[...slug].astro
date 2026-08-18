@@ -131,4 +131,54 @@ if (ogFoto) {
     margin: 0 auto;
   }
   .entrevista-prose :global(figure.foto figcaption a) { color: var(--gold-deep); }
+
+  /* título de obra dentro de um bloco em itálico volta ao romano: é o itálico
+     reverso, a regra que faz o título se destacar em vez de sumir no itálico */
+  .entrevista-prose :global(em a) { font-style: normal; }
+
+  /* áudio original da resposta, quando a entrevista foi respondida por voz.
+     Fica recolhido: quem quiser só ler não esbarra nele. */
+  .entrevista-prose :global(details.audio-resposta) { margin: 1.4em 0 2.2em; }
+  .entrevista-prose :global(details.audio-resposta summary) {
+    cursor: pointer;
+    list-style: none;
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--jacare);
+    padding: 0.35em 0.75em;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius);
+    background: #fffdf6;
+  }
+  .entrevista-prose :global(details.audio-resposta summary::-webkit-details-marker) { display: none; }
+  .entrevista-prose :global(details.audio-resposta summary::before) { content: "\25B8  "; color: var(--gold-deep); }
+  .entrevista-prose :global(details.audio-resposta[open] summary::before) { content: "\25BE  "; }
+  .entrevista-prose :global(details.audio-resposta summary:hover) { color: var(--jacare-deep); border-color: var(--jacare); }
+  .entrevista-prose :global(details.audio-resposta audio) { width: 100%; margin: 0.9em 0 0.5em; height: 34px; }
+  .entrevista-prose :global(p.audio-nota) {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    line-height: 1.6;
+    color: var(--ink-faint);
+    text-align: left;
+    margin: 0.2em 0 0.5em;
+  }
+  .entrevista-prose :global(div.audio-bruto) {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    line-height: 1.65;
+    color: var(--ink-faint);
+    background: #fbf7ec;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 0.7em 0.85em;
+    max-height: 18rem;
+    overflow: auto;
+  }
+  .entrevista-prose :global(div.audio-bruto p) { margin: 0 0 0.25em; text-align: left; -webkit-hyphens: none; hyphens: none; }
+  .entrevista-prose :global(div.audio-bruto span.t) { display: inline-block; width: 3.4em; color: var(--line-strong); }
+  @media print { .entrevista-prose :global(details.audio-resposta) { display: none; } }
 </style>
