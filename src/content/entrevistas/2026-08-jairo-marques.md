@@ -161,8 +161,8 @@ Mas eu te digo que também tem essa pessoa aí que é o pai da Elis — eu me to
 Mas eu acho que eu sou muito alegre na paz. Sou muito alegre brincando com cachorro, muito alegre quando eu posso ficar contemplando o mar. Quando eu não tenho que estar brigando com o mundo, na tal da fadiga de acesso. Eu estou com 51 anos, estou com muita fadiga de acesso, muita fadiga de tudo ter que pensar: se aonde eu vou me cabe, se aonde eu vou dá pra parar, se aonde eu vou vão me tratar relativamente ok. Sabe, ter que usar o crachá do jornal em que eu trabalho — isso me fatiga um pouco. Não: me fatiga muito. Então eu acho que me deixa feliz quando eu não tenho essa sensação, assim, nos vários momentos... vários, não: nos momentos em que eu não tenho essa sensação.
 
 <figure class="foto">
-<img src="/entrevistas/jairo-marques-elis-selfie.jpg" alt="Selfie de Jairo e Elis: ele sorri em primeiro plano e ela, atrás, ri com a mão no queixo; ao fundo, um grande painel iluminado com manuscritos" style="max-width: 420px;" />
-<figcaption>Com Elis, na exposição de Da Vinci.</figcaption>
+<img src="/entrevistas/jairo-marques-elis-selfie.jpg" alt="Selfie de Jairo e Elis: ele sorri em primeiro plano e ela, atrás, ri com a mão no queixo; ao fundo, o telão do palco reproduz páginas manuscritas de um grimório" style="max-width: 420px;" />
+<figcaption>Com Elis, no espetáculo Wicked.</figcaption>
 </figure>
 
 <details class="audio-resposta">
