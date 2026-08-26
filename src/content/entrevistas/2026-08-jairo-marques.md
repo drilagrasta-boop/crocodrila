@@ -152,7 +152,7 @@ Então, o que é real é que a gente, de fato, tem movimentos que vão otimizar,
 
 > Quando qualquer instrumento de acessibilidade é retirado da pessoa, sua condição volta a ser a nata.
 
-**7. Fora do trabalho e da militância existe o pai da Elis e alguém que já disse querer, um dia, escrever sobre "o amor na deficiência, e sexo", temas que o noticiário insiste em silenciar. Longe da causa e do crachá, há um Jairo que não precisa provar nada a ninguém: como é esse Jairo, e o que o alegra quando não há plateia?**
+**7. Fora do trabalho e da militância existe o pai da [Elis](https://www.instagram.com/reel/DZ7WI0dx4I-/?igsi=MWJ1b3UwZWczaTdpNg==) e alguém que já disse querer, um dia, escrever sobre "o amor na deficiência, e sexo", temas que o noticiário insiste em silenciar. Longe da causa e do crachá, há um Jairo que não precisa provar nada a ninguém: como é esse Jairo, e o que o alegra quando não há plateia?**
 
 Desculpa ficar batendo nessa tecla, mas é muito interessante esse escrutínio que você conseguiu fazer da minha trajetória. Caramba — quando você diz assim, "longe do crachá, esse Jairo que não precisa provar nada pra ninguém"... caramba. Porque, de fato, eu acho que nos meus textos, nas minhas reportagens, eu estou sempre provando algo, sempre querendo mostrar algo. E eu acho que esse Jairo que não está nesse lugar é um Jairo muito mais calmo. É um cara muito mais easygoing, que gosta de pegar um livrinho, de dar umas risadas, de ir ao cinema, sabe, de ser tranquilo. É um cara que não necessariamente gostaria de carregar as angústias do mundo.
 
