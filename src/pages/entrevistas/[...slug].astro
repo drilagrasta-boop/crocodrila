@@ -5,7 +5,8 @@ import sharp from 'sharp';
 import path from 'node:path';
 
 export async function getStaticPaths() {
-  const entrevistas = (await getCollection('entrevistas')).filter((e) => !e.data.rascunho);
+  // Em dev, rascunhos aparecem para pré-visualização; no build publicado, ficam de fora.
+  const entrevistas = (await getCollection('entrevistas')).filter((e) => !e.data.rascunho || import.meta.env.DEV);
   return entrevistas.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
 }
 

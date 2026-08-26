@@ -5,7 +5,8 @@ import { getCollection } from 'astro:content';
 const fmt = new Intl.DateTimeFormat('pt-BR', { month: 'long', year: 'numeric', timeZone: 'UTC' });
 
 const entrevistas = (await getCollection('entrevistas'))
-  .filter((e) => !e.data.rascunho)
+  // Em dev, rascunhos aparecem para pré-visualização; no build publicado, ficam de fora.
+  .filter((e) => !e.data.rascunho || import.meta.env.DEV)
   .sort((a, b) => b.data.data.getTime() - a.data.data.getTime());
 
 const destaque = entrevistas[0];
