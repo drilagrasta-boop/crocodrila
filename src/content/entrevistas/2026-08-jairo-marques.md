@@ -15,7 +15,7 @@ rascunho: false
 
 *Nascido em Três Lagoas (MS), ele escreve sobre inclusão de dentro da própria experiência: provoca para fazer pensar, não para ferir, e desconfia de qualquer palavra que tente resumir uma pessoa a uma condição. Falamos sobre o corpo como território de tecnologia, os limites da inteligência artificial diante da deficiência e o que a inclusão ainda cobra de quem projeta o mundo.*
 
-*As respostas vieram por áudio, uma pergunta de cada vez, gravadas na véspera de uma viagem à feira do livro de Paracatu, no sertão de Minas. "Eu acho que o áudio é melhor, porque carrega um pouco da emoção, da intenção", avisou ele logo no primeiro. Ficam abaixo como ele as disse, e sob cada uma está o áudio original, com a transcrição automática antes da nossa edição.*
+*As respostas vieram por áudio, uma pergunta de cada vez, gravadas na véspera de uma viagem. "Eu acho que o áudio é melhor, porque carrega um pouco da emoção, da intenção", avisou ele logo no primeiro. Ficam abaixo como ele as disse, e sob cada uma está o áudio original, com a transcrição automática antes da nossa edição.*
 
 <figure class="foto">
 <img src="/entrevistas/jairo-marques-retrato.jpg" alt="Jairo Marques posa em sua cadeira de rodas, de óculos e camisa vinho, olhando para a câmera; ao fundo, numa parede clara, uma escultura de hastes e círculos de metal se espalha como uma rede" style="max-width: 520px;" />
