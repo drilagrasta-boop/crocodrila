@@ -48,7 +48,7 @@ E também foi algo de construção. A pessoa com deficiência saiu da toca há m
 
 > O teu corpo é o teu corpo: ele não determina o que é a tua essência.
 
-**2. São mais de duas décadas de observação: repórter de deficiência e inclusão na Folha desde 1999, autor do blog Assim como Você desde 2008, presença em quatro Paralimpíadas. Nesse tempo, a inclusão virou palavra de ordem, ganhou lei, campanha e vitrine corporativa. Mas o que mudou de verdade de 1999 para cá?**
+**2. São mais de duas décadas de observação: repórter de deficiência e inclusão na Folha desde 1999, autor do blog *Assim como Você* desde 2008, presença em quatro Paralimpíadas. Nesse tempo, a inclusão virou palavra de ordem, ganhou lei, campanha e vitrine corporativa. Mas o que mudou de verdade de 1999 para cá?**
 
 A mudança de 99 para cá — quase três décadas — é brutal. A gente não tinha nenhum protagonismo, não tinha discussão sobre inclusão e acessibilidade no início dos anos 2000; era muito uma questão de por conta própria. Quando eu vim para São Paulo, eu vim com a cara e com muita coragem, sem falsa modéstia, porque não havia sequer uma preocupação do tipo "puxa, como é que ele vai fazer?". Não havia essa discussão. Era muito do tipo: olha, se você conseguir chegar aqui, tá ótimo.
 
