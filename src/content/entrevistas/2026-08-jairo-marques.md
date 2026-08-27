@@ -220,4 +220,6 @@ Bom, espero ter respondido tudo — qualquer coisa, você reforça, qualquer coi
 </div>
 </details>
 
+*E, já que ele mandou reforçar o que fosse preciso, a gente reforça: o "Malacabado" é inteligente, excelente jornalista. Quando soubemos que ele faria um blog, dissemos a ele que seria um sucesso. Ele foi além — virou escritor e segue fazendo excelentes reportagens nos lugares mais incríveis.*
+
 *Onde encontrar Jairo Marques: na [sua página de colunista da Folha de S.Paulo](https://www1.folha.uol.com.br/autores/jairo-marques.shtml) e no blog [Assim como Você](https://assimcomovoce.blogfolha.uol.com.br/), que mantém desde 2008; nas livrarias, em [Malacabado — a história de um jornalista sobre rodas](https://www.amazon.com.br/Malacabado-Hist%C3%B3ria-Jornalista-Sobre-Rodas/dp/8568493262) (Três Estrelas, 2016), a história que ele batizou com o próprio neologismo, e em [Crônica para um Mundo mais Diverso](https://www.amazon.com.br/Cr%C3%B4nica-para-mundo-mais-diverso/dp/6589902313) (Serena, 2022); no X, ele é [@assimcomovc](https://x.com/assimcomovc). No dia seguinte ao destas gravações, ele embarcava para a feira do livro de Paracatu, no sertão de Minas — ocupando os espaços, como gosta.*
