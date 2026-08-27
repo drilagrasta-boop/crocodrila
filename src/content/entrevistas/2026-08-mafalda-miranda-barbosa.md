@@ -4,7 +4,7 @@ papel: "professora catedrática da Faculdade de Direito da Universidade de Coimb
 titulo: "O juízo não cabe num cálculo"
 data: 2026-08-27
 resumo: "Sobre a responsabilidade, o algoritmo e o que, em cada pessoa, não se deixa calcular."
-foto: "/entrevistas/mafalda-miranda-barbosa.jpg"
+foto: "/entrevistas/mafalda-miranda-barbosa-avatar.jpg"
 foto_avatar: "/entrevistas/mafalda-miranda-barbosa-avatar.jpg"
 rascunho: false
 ---
