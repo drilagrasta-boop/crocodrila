@@ -1,6 +1,6 @@
 ---
 convidado: "Manuel David Masseno"
-papel: "jurista português · professor no Instituto Politécnico de Beja · Encarregado de Proteção de Dados da instituição · conselho científico da União Mundial dos Agraristas"
+papel: "jurista português · professor no Instituto Politécnico de Beja (atual Universidade Politécnica de Beja) · Encarregado de Proteção de Dados da instituição · conselho científico da União Mundial dos Agraristas"
 titulo: "A última palavra não pode ser da máquina"
 data: 2026-07-24
 resumo: "Vigilância, decisões automatizadas e o que, no direito e na sala de aula, ainda precisa de assinatura humana."
@@ -8,12 +8,13 @@ foto: "/entrevistas/manuel-david-masseno-retrato.jpg"
 foto_avatar: "/entrevistas/manuel-david-masseno-avatar.jpg"
 foto_legenda: "Beja, Alentejo"
 linkedin: "https://www.linkedin.com/in/masseno/"
+atualizacao: "Atualizada em 29 de agosto de 2026, para registrar a atual denominação da instituição: Universidade Politécnica de Beja."
 rascunho: false
 ---
 
 > O risco mais sério estará na coisificação do ser humano, com decisões definitivas afetando os Direitos Fundamentais a serem tomadas por máquinas.
 
-*Manuel David Masseno é de Beja, no Alentejo, e é de lá que fala ao mundo, depois de ter lecionado ou palestrado na Europa, nas Américas, na África e ainda nas “portas” da Ásia. Ensina Direito no Instituto Politécnico da cidade desde 1999 e, desde 2019, é também o Encarregado de Proteção de Dados da instituição — aplica em casa as regras que estuda. Como convidado ou visitante, leciona, há anos, nas Faculdades de Direito de Lisboa, de Coimbra e do Porto (Católica), ou na Escola de Direito do Minho, em Braga; lecionou quatro anos em um doutorado da Universidade de Salerno, na Itália, e outros quatro na Escola de Verão da Universidade da Lapônia, em Rovaniemi; participa de projetos europeus desde os anos 1990, incluindo a docência em cursos de formação avançada interuniversitária em Istambul. Por outro lado ainda, começou palestrando e escrevendo sobre a Inteligência Artificial no Direito, incluindo a responsabilização dos agentes, em 2005. Publica quase tudo em acesso aberto — perto de quatrocentos textos sobre proteção de dados, inteligência artificial e cibersegurança.*
+*Manuel David Masseno é de Beja, no Alentejo, e é de lá que fala ao mundo, depois de ter lecionado ou palestrado na Europa, nas Américas, na África e ainda nas “portas” da Ásia. Ensina Direito no Instituto Politécnico da cidade (atual Universidade Politécnica de Beja) desde 1999 e, desde 2019, é também o Encarregado de Proteção de Dados da instituição — aplica em casa as regras que estuda. Como convidado ou visitante, leciona, há anos, nas Faculdades de Direito de Lisboa, de Coimbra e do Porto (Católica), ou na Escola de Direito do Minho, em Braga; lecionou quatro anos em um doutorado da Universidade de Salerno, na Itália, e outros quatro na Escola de Verão da Universidade da Lapônia, em Rovaniemi; participa de projetos europeus desde os anos 1990, incluindo a docência em cursos de formação avançada interuniversitária em Istambul. Por outro lado ainda, começou palestrando e escrevendo sobre a Inteligência Artificial no Direito, incluindo a responsabilização dos agentes, em 2005. Publica quase tudo em acesso aberto — perto de quatrocentos textos sobre proteção de dados, inteligência artificial e cibersegurança.*
 
 *No Brasil, sua presença remonta ao início do século, a princípio incidindo sobre o Direito do Turismo e o Direito Agrário. Depois, durante anos, foi lecionando, palestrando e participando em iniciativas no domínio do Direito Digital, também como Membro Consultor de Comissões estaduais da OAB e até exercendo funções como Diretor para as Relações Internacionais do Instituto Brasileiro de Direito da Informática. Um livro de referência do GEDAI/UFPR o colocou entre os nomes da doutrina portuguesa sobre LGPD e RGPD. Aqui na Toca, quase tudo vive de dados — e ele é o jurista que pergunta “com que direito?” É disso que tratamos.*
 
