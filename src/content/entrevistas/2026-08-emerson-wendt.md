@@ -8,6 +8,7 @@ foto: "/entrevistas/emerson-wendt-retrato.jpg"
 foto_avatar: "/entrevistas/emerson-wendt-avatar.jpg"
 foto_legenda: "Porto Alegre"
 linkedin: "https://www.linkedin.com/in/emersonwendt/"
+curadoria: "Manuel David Masseno"
 rascunho: false
 ---
 

@@ -57,6 +57,7 @@ const entrevistas = defineCollection({
     foto_avatar: z.string().optional(), // recorte fechado no rosto p/ o avatar redondo; se ausente, usa `foto`
     foto_legenda: z.string().optional(),// legenda da foto (ex.: "Autorretrato")
     linkedin: z.string().url().optional(), // perfil do entrevistado no LinkedIn (link no rodapé)
+    curadoria: z.string().optional(),   // curador da entrevista, creditado no rodapé (ex.: "Manuel David Masseno")
     rascunho: z.boolean().default(false),
   }),
 });

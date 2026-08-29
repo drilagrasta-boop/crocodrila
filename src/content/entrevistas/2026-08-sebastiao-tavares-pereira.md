@@ -6,6 +6,7 @@ data: 2026-08-14
 resumo: "Sobre algoritmos que aprendem com o juiz, a fronteira estreita entre apoiar e substituir e o que, no ato de julgar, continua sendo humano."
 foto: "/entrevistas/sebastiao-tavares-pereira-og.jpg"
 foto_avatar: "/entrevistas/sebastiao-tavares-pereira-avatar.jpg"
+curadoria: "Manuel David Masseno"
 rascunho: false
 ---
 

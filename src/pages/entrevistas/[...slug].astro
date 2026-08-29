@@ -83,7 +83,7 @@ if (ogFoto) {
 
     <footer class="wrap ent-foot">
       <hr class="rule" />
-      <p class="muted ent-credito">Entrevista conduzida por Adriana Aneli para a série “O Outro Lado da Tela” · Condenados à Atualização em IA · Crocodrila · {fmt.format(entry.data.data)}.</p>
+      <p class="muted ent-credito">Entrevista conduzida por Adriana Aneli para a série “O Outro Lado da Tela”{entry.data.curadoria ? `, com curadoria de ${entry.data.curadoria}` : ''} · Condenados à Atualização em IA · Crocodrila · {fmt.format(entry.data.data)}.</p>
       <p class="muted">Tem um nome pra sugerir pra próxima conversa? Responda a edição no seu leitor ou escreva pra <a href="mailto:drilagrasta@gmail.com">drilagrasta@gmail.com</a>.</p>
     </footer>
   </article>

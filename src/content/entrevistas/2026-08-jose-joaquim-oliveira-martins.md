@@ -8,6 +8,7 @@ foto: "/entrevistas/jose-joaquim-oliveira-martins.jpg"
 foto_avatar: "/entrevistas/jose-joaquim-oliveira-martins-avatar.jpg"
 foto_legenda: "Coimbra, Portugal"
 linkedin: "https://www.linkedin.com/in/josé-joaquim-f-oliveira-martins-70890765/"
+curadoria: "Manuel David Masseno"
 rascunho: false
 ---
 
