@@ -177,4 +177,29 @@ export const ARTES_HOBBY = {
       <ellipse cx="167.5" cy="118" rx="12" ry="14" fill="#9c4a2e" stroke="#1d2b24" stroke-width="1.8"/>
     </g>
   </svg>`,
+  'plantar-e-esperar': `<svg width="200" height="160" viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <line x1="16" y1="136" x2="184" y2="136" stroke="#1d2b24" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="162" cy="38" r="12" fill="#c49a3a" stroke="#1d2b24" stroke-width="2"/>
+    <g stroke="#c49a3a" stroke-width="2.2" stroke-linecap="round">
+      <line x1="162" y1="15" x2="162" y2="21"/>
+      <line x1="162" y1="55" x2="162" y2="61"/>
+      <line x1="139" y1="38" x2="145" y2="38"/>
+      <line x1="179" y1="38" x2="185" y2="38"/>
+      <line x1="146" y1="22" x2="150" y2="26"/>
+      <line x1="174" y1="50" x2="178" y2="54"/>
+      <line x1="178" y1="22" x2="174" y2="26"/>
+      <line x1="150" y1="50" x2="146" y2="54"/>
+    </g>
+    <path d="M40,62 q5,8 0,12 q-5,-4 0,-12" fill="#c49a3a" stroke="#1d2b24" stroke-width="1.4" stroke-linejoin="round"/>
+    <path d="M86,60 Q70,58 61,44 Q79,41 87,55 Z" fill="#3c5a45" stroke="#1d2b24" stroke-width="1.8" stroke-linejoin="round"/>
+    <path d="M88,58 Q103,54 110,40 Q92,38 86,53 Z" fill="#3c5a45" stroke="#1d2b24" stroke-width="1.8" stroke-linejoin="round"/>
+    <path d="M85,88 q-2,-16 2,-30" fill="none" stroke="#3c5a45" stroke-width="2.6" stroke-linecap="round"/>
+    <rect x="52" y="86" width="66" height="12" rx="4" fill="#9c4a2e" stroke="#1d2b24" stroke-width="2.2"/>
+    <path d="M59,98 h52 l-7,38 h-38 Z" fill="#9c4a2e" stroke="#1d2b24" stroke-width="2.2" stroke-linejoin="round"/>
+    <path d="M67,106 q18,6 36,0" fill="none" stroke="#f2e9d2" stroke-width="1.8" stroke-linecap="round" opacity="0.4"/>
+    <g transform="rotate(-12 140 130)">
+      <ellipse cx="140" cy="130" rx="9" ry="5.5" fill="#9c4a2e" stroke="#1d2b24" stroke-width="1.8"/>
+      <path d="M136,128 q3,-2 6,0" fill="none" stroke="#f2e9d2" stroke-width="1.4" stroke-linecap="round"/>
+    </g>
+  </svg>`,
 };
