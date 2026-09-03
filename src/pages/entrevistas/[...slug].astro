@@ -124,7 +124,10 @@ if (ogFoto) {
 
   /* fotos no corpo: legenda menor e apagada, para não se confundir com a fala */
   .entrevista-prose :global(figure.foto) { margin: 2.4em auto 2em; text-align: center; }
-  .entrevista-prose :global(figure.foto img) { display: block; margin: 0 auto 0.7rem; }
+  /* a largura inline (max-width em px) é o teto no desktop; no celular a foto
+     nunca passa da coluna: width 100% + max-width inline = min(coluna, teto) */
+  .entrevista-prose :global(figure.foto) { max-width: 100%; }
+  .entrevista-prose :global(figure.foto img) { display: block; width: 100%; height: auto; margin: 0 auto 0.7rem; }
   .entrevista-prose :global(figure.foto figcaption) {
     font-size: 0.8rem;
     line-height: 1.55;
