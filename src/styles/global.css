@@ -242,6 +242,9 @@ h3 { font-size: clamp(1.25rem, 1.1rem + 0.7vw, 1.6rem); }
 .prose tbody td { padding: 0.7em 0.8em; border-bottom: 1px solid var(--line); vertical-align: top; }
 .prose tbody tr td:first-child { font-weight: 500; }
 .prose tbody td:nth-child(2) { font-family: var(--mono); color: var(--jacare-deep); white-space: nowrap; }
+/* no celular a segunda coluna volta a quebrar linha: quando ela traz frases
+   (e não só números), o nowrap empurrava a tabela para fora da tela */
+@media (max-width: 640px) { .prose tbody td:nth-child(2) { white-space: normal; } }
 
 /* =========================== utilitários ============================= */
 .mono { font-family: var(--mono); }
