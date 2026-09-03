@@ -102,8 +102,8 @@ O Brasil optou (corretamente, na minha leitura) por uma lei mais abrangente, que
 O grande problema é que, até lá, a atividade fica como num vácuo, reduzida a iniciativas como portarias e resoluções que atuam num nível inferior ao de uma lei aprovada no Congresso. E mais, de forma descentralizada, capitaneadas por agências do governo, ou pelo próprio TSE, no que diz respeito às eleições. Não defendo que estes órgãos não regulem seus temas específicos, especialmente diante da ausência de uma legislação mais geral, mas a falta de coordenação é um perigo evidente neste caso. Se até o setor econômico está preocupado com esta aprovação, que dirá a sociedade que, como venho dizendo, está exposta a esta tecnologia.
 
 <figure class="foto">
-<img src="/entrevistas/rodney-amador-2.jpg" alt="Selfie de Rodney Amador sorrindo e fazendo sinal de positivo com a mão, de óculos, barba e camiseta preta" style="max-width: 380px;" />
-<figcaption>Rodney Amador, em selfie enviada para esta conversa.</figcaption>
+<img src="/entrevistas/rodney-amador-aula.jpg" alt="Rodney Amador em pé, de camisa polo verde-clara, gesticulando com as duas mãos diante de uma lousa branca em sala de aula" style="max-width: 520px;" />
+<figcaption>Em aula no curso de metodologia em Ciência Política da Fundação Escola de Sociologia e Política de São Paulo, em novembro de 2025.</figcaption>
 </figure>
 
 **7. Antes das pesquisas de opinião, você deu aula de política, ao ar livre, para operários da construção civil. Hoje você estuda, com método e tecnologia, o que pessoas como aquelas pensam e como decidem seu voto. Quando imagina aquele operário no canteiro de obra recebendo agora, no WhatsApp, um vídeo de campanha fabricado por IA, você compreende melhor sobre desinformação que dados sozinhos não podem explicar?**
@@ -131,5 +131,10 @@ Este ponto também não é diferente do que acontecia com os políticos que estu
 Entender como essas ferramentas funcionam é fundamental para a continuidade da democracia. Para isso, costumo defender dois pontos: o primeiro passo é a regulamentação ampla destas práticas, para começo de conversa. Mas, mais importante que isso, é a compreensão do que venho destacando como o aspecto social dos processos políticos. Muito da política é construído a partir do relacionamento com as pessoas e com o mundo – e menos a partir de uma reflexão íntima, econômica, dos indivíduos, como boa parte da política institucionalista postula. Infelizmente, há leituras que relegam estes aspectos ou a um “passado político”, pré-moderno, ou a uma falta de desenvolvimento das instituições. Perde-se de vista que estas relações formam e informam, criando os grupos de Zap que, posteriormente, vão compartilhar Fake News. Sem essa compreensão permaneceremos míopes e sujeitados a quem utiliza melhor uma tecnologia que, no cenário atual, carece de escrutínio público.
 
 ---
+
+<figure class="foto">
+<img src="/entrevistas/rodney-amador-2.jpg" alt="Selfie de Rodney Amador sorrindo e fazendo sinal de positivo com a mão, de óculos, barba e camiseta preta" style="max-width: 380px;" />
+<figcaption>Rodney Amador, em selfie enviada para esta conversa.</figcaption>
+</figure>
 
 *Onde encontrar Rodney Amador: a dissertação de mestrado, [A máquina adhemarista: democracia e práticas eleitorais no começo da Terceira República em São Paulo](https://www.teses.usp.br/teses/disponiveis/8/8131/tde-01032024-114755/pt-br.php), defendida na Faculdade de Filosofia, Letras e Ciências Humanas da USP em outubro de 2023, sob orientação de Fernando Limongi, está em acesso aberto no repositório de teses da universidade. O historiador que veio antes do cientista político assina [A Igreja dos Pobres: teoria e práticas da Teologia da Libertação (1970–1980)](https://desconcertoseditora.com.br/produto/a-igreja-dos-pobres-teoria-e-praticas-da-teologia-da-libertacao-1970-1980/), pela Desconcertos Editora, sobre a relação entre discurso e prática nas Comunidades Eclesiais de Base. E as aulas de formação política de que ele fala nasceram no Movimento Voto Consciente, que leva o curso a canteiros de obra em São Paulo.*
