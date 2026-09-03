@@ -8,6 +8,7 @@ foto: "/entrevistas/rodney-amador.jpg"
 foto_avatar: "/entrevistas/rodney-amador-avatar.jpg"
 foto_legenda: "São Paulo"
 linkedin: "https://www.linkedin.com/in/rodney-amador-8a654019b/"
+curadoria: "Manuel David Masseno"
 rascunho: false
 ---
 
