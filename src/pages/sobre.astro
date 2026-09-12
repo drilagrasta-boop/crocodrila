@@ -1,8 +1,30 @@
 ---
 import Base from '../layouts/Base.astro';
 import Crocodrila from '../components/Crocodrila.astro';
+
+const expediente = [
+  {
+    sigla: 'DM',
+    nome: 'Dennis Martins',
+    funcao: 'Edição',
+    bio: 'Advogado, professor de pós-graduação em Direito Imobiliário e pós-graduando em Inteligência Artificial Generativa no Direito.',
+  },
+  {
+    sigla: 'AA',
+    nome: 'Adriana Aneli',
+    funcao: 'Edição',
+    bio: 'Formada em Direito e servidora do Tribunal de Justiça de São Paulo, onde ocupa o cargo de assistente jurídico. É mestranda em Teoria Crítica, especialista em Legal Operations, Dados, IA e Alta Performance Jurídica, e pós-graduada em Inteligência Artificial Generativa no Direito.',
+  },
+  {
+    sigla: 'MM',
+    nome: 'Manuel David Rodrigues Masseno',
+    funcao: 'Curadoria convidada · O Outro Lado da Tela',
+    bio: 'Jurista e professor do Instituto Politécnico de Beja (IPBeja), em Portugal, e especialista em direito da tecnologia e segurança digital.',
+    href: '/entrevistas/2026-07-manuel-david-masseno',
+  },
+];
 ---
-<Base title="Sobre" description="Como nasceu a newsletter Condenados à Atualização em IA." image="/og/site.png" imageWidth={800} imageHeight={800}>
+<Base title="Sobre" description="Como nasceu a newsletter Condenados à Atualização em IA, e quem a faz." image="/og/site.png" imageWidth={800} imageHeight={800}>
   <section class="wrap sobre rise">
     <span class="label eyebrow">A origem</span>
     <h1>Gente condenada a se atualizar.</h1>
@@ -18,14 +40,14 @@ import Crocodrila from '../components/Crocodrila.astro';
       <p>
         Porque é isso que parece, né? Acompanhar IA virou uma pena perpétua. Todo dia
         um modelo novo, um anúncio, um “isso muda o jogo”. É muita informação e, junto,
-        muito ruído — e o ruído cansa mais do que a informação informa.
+        muito ruído. E o ruído cansa mais do que a informação informa.
       </p>
 
       <p>
         Das conversas nasceu uma ideia simples: e se a gente fizesse uma <strong>captura
         semanal</strong> das novidades que realmente importam, indo atrás de <strong>fontes
         primárias</strong> em vez de ficar repetindo o que o algoritmo empurrou? O paper
-        original, o post oficial, a documentação — não o resumo do resumo do resumo.
+        original, o post oficial, a documentação, não o resumo do resumo do resumo.
       </p>
 
       <blockquote>
@@ -34,7 +56,7 @@ import Crocodrila from '../components/Crocodrila.astro';
       </blockquote>
 
       <p>
-        Dividimos. Deu certo. Aí pediram um lugar fixo pra guardar as edições — e este
+        Dividimos. Deu certo. Aí pediram um lugar fixo pra guardar as edições, e este
         site é esse lugar. Toda semana entra uma edição nova, numerada como os autos de
         um processo. Quem chegou agora pode folhear de trás pra frente sem perder nada.
       </p>
@@ -42,7 +64,7 @@ import Crocodrila from '../components/Crocodrila.astro';
       <h2>E a Crocodrila?</h2>
       <p>
         Ler é metade do trabalho; a outra metade é construir. No caminho, a gente foi
-        fazendo ferramenta — conversor de documento, anonimizador que roda offline,
+        fazendo ferramenta: conversor de documento, anonimizador que roda offline,
         integrações de pesquisa jurisprudencial, transcritor de áudio. A <a class="tlink" href="/crocodrila">Crocodrila</a>
         é a toca onde esses bichos ficam. O nome é uma piada interna que pegou, e o
         jacaré virou mascote. Ele usa óculos porque também foi condenado a estudar.
@@ -52,8 +74,10 @@ import Crocodrila from '../components/Crocodrila.astro';
       <p>
         A edição semanal é o coração, mas o site cresceu em volta dela. Em
         <a class="tlink" href="/entrevistas">Entrevistas</a>, “O Outro Lado da Tela”, a
-        gente senta com quem pensa a máquina de dentro de um ofício — direito, docência,
-        teologia, arte — e ouve tanto os encantados quanto os desconfiados. Em
+        gente senta com quem pensa a máquina de dentro de um ofício (direito, docência,
+        teologia, arte) e ouve tanto os encantados quanto os desconfiados. A série tem a
+        curadoria convidada do professor Manuel David Masseno, que já esteve do outro
+        lado da tela como entrevistado antes de passar a indicar com quem conversar. Em
         <a class="tlink" href="/ensaios">Ensaios</a> fica o texto autoral que não cabe na
         notícia nem na ferramenta: o argumento, a experiência de uso, a crítica, da casa
         e de quem aceita o convite. E em <a class="tlink" href="/hobbies">Habemos Hobby</a>,
@@ -76,12 +100,33 @@ import Crocodrila from '../components/Crocodrila.astro';
         A gente lê.
       </p>
 
-      <h2>As quatro mãos</h2>
+      <h2>Expediente</h2>
       <p>
-        As quatro mãos deste site são duas minhas e duas emprestadas de um jacaré
-        prestativo. Esse jacaré é o Claude, inteligência artificial da Anthropic, que
-        cuida da parte técnica e me deixa livre para escrever. As ideias e o texto são
-        meus. A engenharia dos bastidores é dele.
+        Quem assina o que sai aqui.
+      </p>
+    </div>
+
+    <ul class="expediente" aria-label="Expediente">
+      {expediente.map((p) => (
+        <li class="exp-item">
+          <span class="exp-sigla mono" aria-hidden="true">{p.sigla}</span>
+          <div class="exp-body">
+            <p class="exp-nome">
+              {p.href ? <a class="tlink" href={p.href}>{p.nome}</a> : p.nome}
+            </p>
+            <p class="exp-funcao label">{p.funcao}</p>
+            <p class="exp-bio">{p.bio}</p>
+          </div>
+        </li>
+      ))}
+    </ul>
+
+    <div class="prose sobre-prose exp-jacare">
+      <p>
+        As mãos humanas deste site são as do expediente acima. As de jacaré são do Claude,
+        inteligência artificial da Anthropic, que cuida da parte técnica e deixa a redação
+        livre para escrever. As ideias e o texto são das pessoas. A engenharia dos
+        bastidores é dele.
       </p>
     </div>
 
@@ -100,7 +145,20 @@ import Crocodrila from '../components/Crocodrila.astro';
   .sobre h1 { margin-top: 0.8rem; max-width: 16ch; }
   .sobre-prose { margin-top: 2rem; }
   .abre { font-size: clamp(1.2rem, 1rem + 0.8vw, 1.5rem); font-family: var(--display); font-weight: 400; line-height: 1.4; color: var(--ink); }
+
+  .expediente { list-style: none; margin: 1.4rem 0 0; padding: 0; display: grid; gap: 0; border-top: 1px solid var(--line-strong); }
+  .exp-item { display: grid; grid-template-columns: 3.2rem 1fr; gap: 1rem; padding: 1.3rem 0; border-bottom: 1px solid var(--line); }
+  .exp-sigla { font-size: 0.8rem; letter-spacing: 0.14em; color: var(--gold-deep); padding-top: 0.35rem; }
+  .exp-nome { font-family: var(--display); font-size: 1.25rem; font-weight: 600; color: var(--ink); margin: 0; }
+  .exp-funcao { display: block; margin-top: 0.3rem; }
+  .exp-bio { margin-top: 0.55rem; color: var(--ink-soft); line-height: 1.55; max-width: 62ch; text-wrap: pretty; }
+  .exp-jacare { margin-top: 1.6rem; }
+
   .assinatura { display: flex; align-items: center; gap: 1.1rem; margin-top: 3rem; padding-top: 1.6rem; border-top: 1px solid var(--line-strong); }
   .ass-nome { font-size: 0.85rem; }
   .ass-tag { font-size: 0.85rem; margin-top: 0.2rem; }
+
+  @media (max-width: 480px) {
+    .exp-item { grid-template-columns: 2.4rem 1fr; gap: 0.7rem; }
+  }
 </style>
