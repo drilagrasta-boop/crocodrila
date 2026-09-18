@@ -4,7 +4,7 @@ papel: "Analista judiciário do TRT da 3ª Região, assessor em gabinete de segu
 titulo: "Artesanal, em escala industrial"
 data: 2026-09-18
 resumo: "Ele minuta decisões e defendeu, em tese de doutorado, que essa exata tarefa pode ser automatizada. Sobre minutas, máquinas e o que segue artesanal em quem as escreve."
-foto: "/entrevistas/romulo-valentini-mesa.jpg"
+foto: "/entrevistas/romulo-valentini-og.jpg"
 foto_avatar: "/entrevistas/romulo-valentini-avatar.jpg"
 linkedin: "https://www.linkedin.com/in/romulovalentini"
 curadoria: "Manuel David Masseno"
