@@ -6,6 +6,7 @@ data: 2026-09-18
 resumo: "Ele minuta decisões e defendeu, em tese de doutorado, que essa exata tarefa pode ser automatizada. Sobre minutas, máquinas e o que segue artesanal em quem as escreve."
 foto: "/entrevistas/romulo-valentini-og.jpg"
 foto_avatar: "/entrevistas/romulo-valentini-avatar.jpg"
+foto_cartao: "/entrevistas/romulo-valentini-cartao.jpg"
 linkedin: "https://www.linkedin.com/in/romulovalentini"
 curadoria: "Manuel David Masseno"
 rascunho: false
