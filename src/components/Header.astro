@@ -60,8 +60,12 @@ const nav = [
   .nav-link.active { color: var(--ink); }
   .rss { color: var(--ink-faint); }
 
+  /* No celular os sete links quebram em três linhas: o cabeçalho deixa de ser fixo
+     (senão ocupa quase um quinto da tela durante a leitura) e fica mais compacto. */
   @media (max-width: 540px) {
+    .masthead { position: static; }
+    .bar { padding-block: 0.55rem; }
     .brand-text { display: none; }
-    .nav { gap: 1rem; }
+    .nav { gap: 0.1rem 1rem; }
   }
 </style>

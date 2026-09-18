@@ -32,7 +32,7 @@ if (ogFoto) {
   <article class="ent">
     <header class="wrap ent-head rise">
       <a href="/entrevistas" class="back mono">← todas as entrevistas</a>
-      <span class="label eyebrow">O Outro Lado da Tela · {fmt.format(entry.data.data)}</span>
+      <span class="label eyebrow">O Outro Lado da Tela&nbsp;· {fmt.format(entry.data.data)}</span>
       <h1 class="ent-titulo">{entry.data.titulo}</h1>
 
       <div class="ent-cartao">
@@ -92,7 +92,9 @@ if (ogFoto) {
 
 <style>
   .ent-head { padding-top: clamp(2rem, 5vw, 3.5rem); }
-  .back { display: inline-block; color: var(--ink-faint); text-decoration: none; font-size: 0.78rem; margin-bottom: 1.4rem; }
+  /* bloco (e não inline-block): a etiqueta que vem depois é inline e colava no link, quebrando mal no celular */
+  .back { display: block; width: fit-content; color: var(--ink-faint); text-decoration: none; font-size: 0.78rem; margin-bottom: 1.4rem; }
+  .ent-head .eyebrow { display: block; text-wrap: balance; }
   .back:hover { color: var(--jacare); }
   .ent-titulo { margin-top: 0.8rem; }
   .ent-cartao { display: flex; align-items: center; gap: 1rem; margin-top: 1.6rem; }
