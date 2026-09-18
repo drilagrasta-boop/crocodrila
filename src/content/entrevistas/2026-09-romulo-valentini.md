@@ -3,7 +3,7 @@ convidado: "Rômulo Soares Valentini"
 papel: "Analista judiciário do TRT da 3ª Região, assessor em gabinete de segunda instância · doutor em Direito pela UFMG · secretário-geral do Instituto IDEIA – Direito e Inteligência Artificial · professor na pós-graduação da PUC-MG e no Centro DTIBR"
 titulo: "Artesanal, em escala industrial"
 data: 2026-09-18
-resumo: "Minuta decisões e defendeu, em tese de doutorado, que essa exata tarefa pode ser automatizada. Sobre minutas, máquinas e o que segue artesanal em quem as escreve."
+resumo: "Ele minuta decisões e defendeu, em tese de doutorado, que essa exata tarefa pode ser automatizada. Sobre minutas, máquinas e o que segue artesanal em quem as escreve."
 foto: "/entrevistas/romulo-valentini-mesa.jpg"
 foto_avatar: "/entrevistas/romulo-valentini-avatar.jpg"
 linkedin: "https://www.linkedin.com/in/romulovalentini"
