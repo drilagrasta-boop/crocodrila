@@ -137,7 +137,7 @@ const iniciais = (nome: string) => nome.split(/\s+/).slice(0, 2).map((p) => p[0]
       <a href={`/entrevistas/${entrevistaDestaque.id}`} class="eh-card">
         <span class="eh-avatar" aria-hidden="true">
           {entrevistaDestaque.data.foto
-            ? <img src={entrevistaDestaque.data.foto} alt={entrevistaDestaque.data.convidado} />
+            ? <img src={entrevistaDestaque.data.foto_avatar ?? entrevistaDestaque.data.foto} alt={entrevistaDestaque.data.convidado} />
             : <span>{iniciais(entrevistaDestaque.data.convidado)}</span>}
         </span>
         <div class="eh-body">
