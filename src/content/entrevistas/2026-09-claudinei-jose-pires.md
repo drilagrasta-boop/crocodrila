@@ -16,11 +16,6 @@ rascunho: false
 
 *O bairro cresceu, e boa parte da vida que passou por ali virou registro sob a responsabilidade dele: primeiro no papel, depois em arquivo digital. Para uma seção chamada O Outro Lado da Tela, esse guardião discreto da memória de um distrito inteiro é quase um enigma. Sentamos para falar sobre o ofício que migrou do papel para a rede, sobre a fé pública num tempo de verificação automática e sobre o que, no fim, ainda pede uma pessoa atrás do guichê.*
 
-<figure class="foto">
-<img src="/entrevistas/claudinei-jose-pires.jpg" alt="Retrato de Claudinei José Pires: homem de cabelos e barba grisalhos, de óculos e camisa xadrez azul-clara, braços cruzados sobre uma mesa, sorrindo, diante de uma parede de tijolos aparentes" style="max-width: 340px;" />
-<figcaption>Claudinei José Pires.</figcaption>
-</figure>
-
 **1. Capão Redondo esperou mais de vinte anos por um cartório: a comunidade reivindicava a serventia desde os anos 1970, uma lei estadual a criou em 1995, sob Mário Covas, e a instalação só veio em 9 de junho de 2000. Coube a quem venceu o concurso erguer tudo do zero, sem acervo, sem movimento, num distrito de baixa renda que muitos deixariam de lado em favor de uma serventia central já pronta. Três dias depois da instalação saiu ali o primeiro registro de nascimento do distrito, lançado pela sua mão. De onde veio a vontade de ser justamente quem funda esse cartório, em vez de buscar um caminho mais confortável?**
 
 Pra ser bem sincero, a classificação que tive no concurso não me ofereceu a opção de escolher um cartório na Bela Vista ou no Jardim América. A escolha é feita por ordem de classificação. E eu estava naquele anfiteatro, numa mistura de tensão e angústia, esperando se de fato chegaria a minha vez de escolher uma delegação. Ela chegou e os cartórios que restaram foram justamente aqueles que precisariam ser instalados, do zero. Vindo de uma cidade pequena do interior e conhecendo apenas a São Paulo dos turistas, olhei no mapa e escolhi Capão Redondo porque era o bairro mais perto das marginais (a de Pinheiros, no caso). Mas a escolha tornou-se um desafio e, depois de 26 anos à frente da Serventia, sopesadas e superadas as inúmeras dificuldades iniciais, sinto-me um profissional realizado, atendendo com boa vontade, humanidade e presteza à população do Capão Redondo.
