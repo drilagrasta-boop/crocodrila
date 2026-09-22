@@ -17,7 +17,7 @@ rascunho: false
 *O bairro cresceu, e boa parte da vida que passou por ali virou registro sob a responsabilidade dele: primeiro no papel, depois em arquivo digital. Para uma seção chamada O Outro Lado da Tela, esse guardião discreto da memória de um distrito inteiro é quase um enigma. Sentamos para falar sobre o ofício que migrou do papel para a rede, sobre a fé pública num tempo de verificação automática e sobre o que, no fim, ainda pede uma pessoa atrás do guichê.*
 
 <figure class="foto">
-<img src="/entrevistas/claudinei-jose-pires.jpg" alt="Retrato de Claudinei José Pires: homem de cabelos e barba grisalhos, de camisa cinza-azulada, sentado a uma mesa com um caderno e uma caneta, diante de uma parede de tijolos aparentes" style="max-width: 340px;" />
+<img src="/entrevistas/claudinei-jose-pires.jpg" alt="Retrato de Claudinei José Pires: homem de cabelos e barba grisalhos, de óculos e camisa xadrez azul-clara, braços cruzados sobre uma mesa, sorrindo, diante de uma parede de tijolos aparentes" style="max-width: 340px;" />
 <figcaption>Claudinei José Pires.</figcaption>
 </figure>
 
