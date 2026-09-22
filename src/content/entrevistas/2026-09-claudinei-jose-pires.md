@@ -4,6 +4,8 @@ papel: "Oficial de Registro Civil das Pessoas Naturais do Distrito de Capão Red
 titulo: "Quem o algoritmo não vê"
 data: 2026-09-22
 resumo: "Um cartório de bairro que registra nascimentos, casamentos e mortes hoje também emite certidões pela internet e confere assinaturas com a ajuda de máquinas. Uma conversa sobre o que muda quando o guichê vira tela e sobre o que só uma pessoa, atrás do balcão, ainda consegue reconhecer."
+foto: "/entrevistas/claudinei-jose-pires.jpg"
+foto_avatar: "/entrevistas/claudinei-jose-pires-avatar.jpg"
 curadoria: "Manuel David Masseno"
 rascunho: false
 ---
@@ -13,6 +15,11 @@ rascunho: false
 *Aqui na Toca, a gente vive perguntando o que a inteligência artificial automatiza de verdade e o que ela só finge automatizar. Poucos lugares carregam essa pergunta de forma tão literal quanto um cartório. Claudinei José Pires abriu o Registro Civil das Pessoas Naturais do Distrito de Capão Redondo na virada do milênio e segue à frente dele, na zona sul de São Paulo. É um posto discreto e imenso ao mesmo tempo: por ali passam os atos que dão a uma pessoa existência diante do Estado, ou a deixam à margem dele.*
 
 *O bairro cresceu, e boa parte da vida que passou por ali virou registro sob a responsabilidade dele: primeiro no papel, depois em arquivo digital. Para uma seção chamada O Outro Lado da Tela, esse guardião discreto da memória de um distrito inteiro é quase um enigma. Sentamos para falar sobre o ofício que migrou do papel para a rede, sobre a fé pública num tempo de verificação automática e sobre o que, no fim, ainda pede uma pessoa atrás do guichê.*
+
+<figure class="foto">
+<img src="/entrevistas/claudinei-jose-pires.jpg" alt="Retrato de Claudinei José Pires: homem de cabelos e barba grisalhos, de camisa cinza-azulada, sentado a uma mesa com um caderno e uma caneta, diante de uma parede de tijolos aparentes" style="max-width: 340px;" />
+<figcaption>Claudinei José Pires.</figcaption>
+</figure>
 
 **1. Capão Redondo esperou mais de vinte anos por um cartório: a comunidade reivindicava a serventia desde os anos 1970, uma lei estadual a criou em 1995, sob Mário Covas, e a instalação só veio em 9 de junho de 2000. Coube a quem venceu o concurso erguer tudo do zero, sem acervo, sem movimento, num distrito de baixa renda que muitos deixariam de lado em favor de uma serventia central já pronta. Três dias depois da instalação saiu ali o primeiro registro de nascimento do distrito, lançado pela sua mão. De onde veio a vontade de ser justamente quem funda esse cartório, em vez de buscar um caminho mais confortável?**
 
