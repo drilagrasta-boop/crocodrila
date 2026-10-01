@@ -82,6 +82,22 @@ lançador que cole onde você está.
 4. **Recarregue sem reiniciar.** Editar prompt tem que ser barato. Um atalho que relê a
    pasta mantém o acervo vivo, porque guardar deixa de dar trabalho.
 
+## Baixe o kit e monte a sua
+
+Se você usa Windows e quer pular a parte de construir do zero, a gente empacotou o
+motor da Crocodrila **sem os nossos prompts**: a paleta, o formulário de variáveis, o
+vigia que mantém tudo rodando, três prompts de exemplo e um guia passo a passo. A pasta
+`prompts\` é sua para encher.
+
+- [**Baixar o kit** (crocodrila-prompta-kit.zip, 390 KB)](/crocodrila/crocodrila-prompta/crocodrila-prompta-kit.zip)
+- [**Ler o guia** antes de instalar (PDF, 11 páginas)](/crocodrila/crocodrila-prompta/guia-crocodrila-prompta.pdf)
+
+Para instalar, clique com o botão direito no ZIP, escolha **Extrair tudo** e dê dois
+cliques em `INSTALAR.cmd`. O instalador baixa o AutoHotkey v2 se faltar, copia a pasta,
+cria o atalho de inicialização e abre a paleta. O Windows pode avisar que o arquivo veio
+da internet; o guia mostra como seguir. Quem preferir fazer à mão encontra o caminho
+manual no mesmo guia.
+
 A regra de ouro é a mesma da casa: prompt que faz a máquina inventar com confiança é
 prompt ruim. Peça sempre a fonte, imponha o guia de estilo, e confira a saída antes de
 confiar nela.
