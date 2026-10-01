@@ -36,6 +36,9 @@ paciência, o amigo de quem você nunca mais teve notícia, a avó, o vizinho do
 dez anos atrás. No dia 31 você terá o mês contado pelas pessoas a quem
 escreveu.
 
+**A máquina escreve sem fim e para qualquer um. O bilhete é breve, guarda a letra de
+quem escreve e tem endereço certo.**
+
 E outubro ainda dá uma ajuda: o **Dia do Professor** é em 15 de outubro. Se faltar
 destinatário para uma das páginas, comece por aí.
 
