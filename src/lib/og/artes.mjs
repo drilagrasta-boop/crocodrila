@@ -202,4 +202,30 @@ export const ARTES_HOBBY = {
       <path d="M136,128 q3,-2 6,0" fill="none" stroke="#f2e9d2" stroke-width="1.4" stroke-linecap="round"/>
     </g>
   </svg>`,
+  'bilhetes-de-bolso': `<svg width="200" height="160" viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <line x1="16" y1="136" x2="184" y2="136" stroke="#1d2b24" stroke-width="2" stroke-linecap="round"/>
+    <g transform="rotate(-14 38 44)">
+      <rect x="24" y="34" width="28" height="20" rx="2" fill="#c49a3a" stroke="#1d2b24" stroke-width="1.8"/>
+      <path d="M24,34 L38,46 L52,34" fill="none" stroke="#1d2b24" stroke-width="1.6" stroke-linejoin="round"/>
+    </g>
+    <path d="M44,74 L100,64 L100,128 L44,134 Z" fill="#fffdf6" stroke="#1d2b24" stroke-width="2.2" stroke-linejoin="round"/>
+    <path d="M100,64 L156,74 L156,134 L100,128 Z" fill="#fffdf6" stroke="#1d2b24" stroke-width="2.2" stroke-linejoin="round"/>
+    <line x1="100" y1="64" x2="100" y2="128" stroke="#c49a3a" stroke-width="2"/>
+    <g fill="none" stroke="#3c5a45" stroke-width="1.8" stroke-linecap="round">
+      <path d="M52,86 q6,-3 12,-1 t12,-2 t12,-1"/>
+      <path d="M52,97 q6,-3 12,-1 t12,-2 t14,-1"/>
+      <path d="M52,108 q6,-3 12,-1 t12,-2"/>
+      <path d="M108,80 q6,-2 12,0 t12,1 t12,1"/>
+      <path d="M108,91 q6,-2 12,0 t12,1"/>
+    </g>
+    <path d="M60,118 q4,-6 8,0 q4,-6 8,0" fill="none" stroke="#9c4a2e" stroke-width="1.8" stroke-linecap="round"/>
+    <g transform="rotate(40 150 84)">
+      <rect x="144" y="40" width="12" height="62" rx="3" fill="#c49a3a" stroke="#1d2b24" stroke-width="1.8"/>
+      <path d="M144,102 L150,116 L156,102 Z" fill="#f2e9d2" stroke="#1d2b24" stroke-width="1.8" stroke-linejoin="round"/>
+      <line x1="146" y1="52" x2="154" y2="52" stroke="#1d2b24" stroke-width="1.6"/>
+    </g>
+    <circle cx="167" cy="124" r="4" fill="none" stroke="#9c4a2e" stroke-width="2.2"/>
+    <circle cx="167" cy="131" r="4" fill="none" stroke="#9c4a2e" stroke-width="2.2"/>
+    <path d="M171,124 L188,131 M171,131 L188,124" stroke="#1d2b24" stroke-width="2" stroke-linecap="round"/>
+  </svg>`,
 };
