@@ -37,7 +37,25 @@ A regra da casa vale aqui também. A máquina organiza e propõe; quem estuda co
 fichamento que inventa uma tese que o professor não disse é pior que transcrição
 nenhuma, então cada afirmação tem que bater com a fala de origem.
 
-## Como montar o seu
+## Baixe o kit pronto
+
+A gente empacotou o fichador que usamos no mestrado, em três formas, para você escolher
+a que combina com a sua rotina:
+
+- [**Baixar o kit** (fichamento-aulas.zip, 54 KB)](/crocodrila/fichamento-aulas/fichamento-aulas.zip)
+
+**No Claude do site (claude.ai):** o kit traz a skill pronta para enviar nas
+configurações. Depois é só anexar a transcrição e pedir o fichamento; o Word vem para
+baixar. **No Claude Code:** um instalador copia a skill, instala o que gera o Word e faz
+um teste. **Em qualquer outra IA:** um prompt em `.txt` para colar antes da transcrição.
+
+O fichamento sai em dois blocos: o analítico (tema, conceitos, argumentos separando o
+professor dos autores citados, exemplos, conexões, perguntas em aberto) e o das
+referências, numa tabela que diz se cada uma está completa, parcial ou só fragmentária.
+Na pasta `exemplos` tem uma aula fictícia e o Word que saiu dela, para você ver antes de
+instalar. O `COMECE-AQUI.txt` explica os três caminhos.
+
+## Ou monte o seu
 
 Serve pra qualquer transcrição longa — aula, palestra, reunião, entrevista.
 
