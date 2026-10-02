@@ -21,9 +21,9 @@ A saída é fazer o caminho contrário: em vez de levar o áudio até a intelig�
 
 O motor é o **Whisper**, modelo de reconhecimento de voz que a OpenAI liberou gratuitamente em 2022 — qualquer pessoa pode baixar o modelo inteiro e rodá-lo no próprio computador, sem conta, sem chave de API, sem internet. Ele foi treinado com centenas de milhares de horas de áudio em dezenas de idiomas e transcreve português brasileiro nativamente, com acentuação e pontuação.
 
-Sobre ele, o projeto usa o **faster-whisper**, uma reimplementação otimizada que roda o mesmo modelo até quatro vezes mais rápido em processadores comuns — importante porque a máquina onde isso roda é um desktop modesto de escritório, sem placa de vídeo dedicada. Para vídeos, o **ffmpeg** (canivete suíço de conversão de mídia, também gratuito) extrai a trilha de áudio antes.
+Sobre ele, o projeto usa o **faster-whisper**, uma reimplementação otimizada que roda o mesmo modelo até quatro vezes mais rápido em processadores comuns — importante porque a máquina onde isso roda é um desktop modesto de escritório, sem placa de vídeo dedicada. Para vídeos, a trilha de áudio é extraída antes, pelo decodificador de mídia que já vem com o faster-whisper (o **ffmpeg**, canivete suíço de conversão de mídia, entra se estiver instalado).
 
-O fluxo completo: o arquivo entra (qualquer formato comum de áudio ou vídeo), o ffmpeg converte para o padrão que o modelo espera, o Whisper transcreve com detecção de silêncios (pausas longas de audiência não gastam processamento), e saem dois arquivos ao lado do original:
+O fluxo completo: o arquivo entra (qualquer formato comum de áudio ou vídeo), o áudio é convertido para o padrão que o modelo espera, o Whisper transcreve com detecção de silêncios (pausas longas de audiência não gastam processamento), e saem dois arquivos ao lado do original:
 
 - **nome.txt** — o texto corrido, dividido em parágrafos pelas pausas da fala
 - **nome_timestamps.txt** — o mesmo texto com marcas de tempo `[HH:MM:SS]` a cada trecho, para citar o momento exato de uma declaração
@@ -52,7 +52,25 @@ Parece lento? O truque é que o tempo é da máquina, não seu: solta-se o arqui
 
 No primeiro teste real — uma ligação telefônica de 1min36s juntada como prova — o modelo equilibrado transcreveu em 48 segundos, metade da duração do áudio, capturando o diálogo completo: nome, CPF ditado dígito a dígito, perguntas e confirmações. Os únicos tropeços foram em trechos de fala acelerada, do tipo que também faria um estagiário pedir para repetir.
 
-## Faça o seu
+## Baixe o kit pronto
+
+Se você usa Windows e prefere não montar do zero, a gente empacotou a versão que usamos:
+o transcritor, os quatro atalhos (padrão, rápido, qualidade e a pasta vigiada) e um
+instalador que faz o resto.
+
+- [**Baixar o kit** (transcritor-offline.zip, 134 KB)](/crocodrila/transcritor-offline/transcritor-offline.zip)
+
+O ZIP é pequeno porque o motor e os modelos de voz são baixados na instalação: cerca de
+700 MB, uma única vez. Para instalar, clique com o botão direito no ZIP, escolha **Extrair
+tudo** e siga o `COMECE-AQUI.txt` (precisa do Python; o roteiro mostra como instalar). O
+Windows pode avisar que o arquivo veio da internet; o roteiro mostra como seguir. Depois,
+tudo roda offline.
+
+**Bônus para quem usa o Claude Code.** A pasta `para-o-claude` traz a skill `/transcrever`,
+que ensina o seu Claude a chamar o transcritor quando você pedir "transcreve esta
+audiência". Com gravação sigilosa, ela só transcreve e não abre o texto sem a sua licença.
+
+## Ou faça o seu
 
 A versão mínima disso cabe em vinte linhas de Python e meia hora de paciência. O caminho:
 
@@ -60,12 +78,17 @@ A versão mínima disso cabe em vinte linhas de Python e meia hora de paciência
 
 ```
 # instale o Python em python.org (marque "Add to PATH"), depois:
-pip install faster-whisper
+pip install faster-whisper "av<19"
 ```
 
-### Passo 2 — Instale o ffmpeg (para vídeos)
+O `"av<19"` não é enfeite: a versão 19 do decodificador de mídia mudou um detalhe que o
+faster-whisper 1.2.1 ainda usa, e sem essa trava a primeira transcrição dá erro.
 
-Baixe o executável em [gyan.dev/ffmpeg](https://www.gyan.dev/ffmpeg/builds/) (Windows) e deixe numa pasta conhecida. Se só for transcrever arquivos de áudio, dá para pular este passo.
+### Passo 2 — O ffmpeg é opcional
+
+O faster-whisper já traz um decodificador de mídia e lê mp3, m4a e até vídeo mp4 direto.
+O ffmpeg separado ([gyan.dev/ffmpeg](https://www.gyan.dev/ffmpeg/builds/), no Windows) só
+faz falta em formato muito exótico.
 
 ### Passo 3 — O script mínimo
 
