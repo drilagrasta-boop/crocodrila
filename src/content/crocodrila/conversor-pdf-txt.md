@@ -16,9 +16,8 @@ miolo escaneado. É o ponto cego que derruba quase todo conversor. Este aqui dec
 
 ## Como funciona
 
-1. **PyMuPDF** — usado quando a página tem texto digital de verdade (e ele desconta o
-   carimbo "cópia do original assinado digitalmente" antes de medir, pra não se enganar).
-   Extração instantânea e perfeita; resolve a maioria.
+1. **PyMuPDF** — usado quando a página tem texto digital de verdade (pelo menos uma
+   centena de caracteres). Extração instantânea e perfeita; resolve a maioria.
 2. **Tesseract** (OCR local, 300 DPI) — quando a página é imagem, ele renderiza e lê ali
    mesmo, recuperando o que a extração digital ignora. Sem conexão, sem mandar nada para fora.
 
@@ -44,10 +43,31 @@ usá-lo com material sob sigilo sem mandar o processo do cliente para o servidor
 > Nasceu de uma dor real: uma pasta com dezenas de milhares de decisões em PDF que
 > ninguém ia transcrever na mão.
 
-## Como montar o seu
+## Baixe o kit pronto
 
-Não distribuímos o nosso código (a base é do George — veja o crédito abaixo), mas a técnica
-é padrão e você monta a sua versão com ferramentas livres. O esqueleto cabe em vinte linhas.
+Se você usa Windows e prefere não montar do zero, a gente empacotou a versão que usamos no
+dia a dia. A ideia veio do Sistema Marmelstein; o código deste kit foi escrito pela
+Crocodrila. Vem tudo junto: o **conversor**, o [**anonimizador**](/crocodrila/anonimizador-offline)
+e uma terceira ferramenta, **Limpar Metadados**, que apaga do documento final os dados
+ocultos (autor, datas, revisões) antes de você enviar.
+
+- [**Baixar o kit** (conversor-anonimizador-offline.zip, 17 MB)](/crocodrila/conversor-pdf-txt/conversor-anonimizador-offline.zip)
+
+Para instalar, clique com o botão direito no ZIP, escolha **Extrair tudo** e abra o
+arquivo `COMECE-AQUI.txt`: são seis passos, do Python aos atalhos na Área de Trabalho. A
+instalação precisa de internet uma única vez (baixa o Tesseract e um modelo de português
+de uns 550 MB); depois, tudo roda offline. O Windows pode avisar que o arquivo veio da
+internet; o roteiro mostra como seguir.
+
+**Bônus para quem usa o Claude Code.** Dentro do kit, a pasta `para-o-claude` traz uma
+skill que ensina o seu Claude a chamar este conversor, com OCR, quando você pedir
+"converte esse PDF". Com documento sigiloso, ela segue a ordem segura: converte e
+anonimiza na sua máquina antes de ler qualquer linha. O tutorial está na mesma pasta.
+
+## Ou monte o seu
+
+A técnica é padrão e você monta a sua versão com ferramentas livres. O esqueleto cabe em
+vinte linhas.
 
 **O que instalar**
 

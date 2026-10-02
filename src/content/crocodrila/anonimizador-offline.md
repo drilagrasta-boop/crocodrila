@@ -18,18 +18,27 @@ internet e sem gastar token**.
 
 - **Nomes de pessoas viram iniciais** — "João Silva Souza" vira "J.S.S.". Ele ignora
   conectores ("da", "de") e pronomes de tratamento ("Dr.", "Exmo."), pra não embaralhar.
-- **Dados estruturados ganham tarja com rótulo** — CPF, RG, CNPJ, OAB, CRM, telefone,
-  e-mail e CEP viram `[CPF]`, `[RG]`, `[EMAIL]` e por aí vai.
+- **Dados estruturados ganham tarja com rótulo** — CPF, RG, CNPJ (inclusive o novo,
+  alfanumérico), OAB, CRM e outros conselhos, PIS, título de eleitor, CTPS, cartão do SUS,
+  passaporte, placa e chassi, conta e agência, telefone, e-mail, CEP, perfil de rede social
+  e o número do endereço viram `[CPF]`, `[RG]`, `[EMAIL]` e por aí vai.
+- **Instituições ficam** — tribunais, órgãos, empresas, cidades, leis e datas continuam
+  legíveis, pra peça não virar sopa de iniciais.
+- **Sigilo total, quando o texto vai sair da máquina** — uma opção a mais tarja também o
+  número do processo e as datas de nascimento.
 
 ## Como ele acha os nomes
 
-Por dois caminhos, e a ordem importa:
+Por dois caminhos que se somam:
 
-1. **Por lista** — você informa os nomes das partes e eles são **sempre** trocados. É o
-   método confiável; é assim que se garante o resultado.
-2. **Automático** — um detector de nomes em português pega menções soltas que você não
-   listou. Funciona como **rede de segurança**, não como rede principal: trata-se de um
-   rascunho a conferir, e ele tropeça em nome escrito em CAIXA ALTA.
+1. **Automático** — um detector de nomes em português varre o texto inteiro, inclusive o
+   que vem em CAIXA ALTA e com pronome de tratamento na frente ("Dra. Fulana de Tal"). A
+   regra da casa é preferir anonimizar demais a deixar vazar um nome: em PDF escaneado,
+   uma ou outra frase em maiúsculas pode virar iniciais, e esse é o preço de não vazar.
+2. **Por lista** — você pode informar os nomes das partes para reforçar. Nome listado é
+   **sempre** trocado.
+
+Nenhum detector automático é perfeito, ainda mais em texto de OCR.
 
 Cada arquivo gera um **mapa do que foi trocado**, para você conferir antes de usar. Esse
 mapa permite re-identificar — então ele é tão sigiloso quanto o original: guarde em lugar
@@ -43,7 +52,18 @@ material fica pronto para circular, virar exemplo de aula ou entrar numa ferrame
 sem ferir o sigilo nem a LGPD. Como o conversor, ele troca conveniência por uma garantia:
 nada sai do computador.
 
-## Como montar o seu
+## Baixe o kit pronto
+
+O anonimizador vem no mesmo pacote do [Conversor PDF → TXT](/crocodrila/conversor-pdf-txt),
+para Windows, com atalhos na Área de Trabalho: você arrasta o arquivo para a janela e
+pronto. O código foi escrito pela Crocodrila, a partir da ideia do Sistema Marmelstein.
+
+- [**Baixar o kit** (conversor-anonimizador-offline.zip, 17 MB)](/crocodrila/conversor-pdf-txt/conversor-anonimizador-offline.zip)
+
+Extraia o ZIP e siga o `COMECE-AQUI.txt`. A instalação usa a internet uma vez; depois,
+tudo roda offline.
+
+## Ou monte o seu
 
 A base é dois movimentos simples, ambos offline: **trocar por padrão** (os dados que têm
 formato fixo) e **trocar por lista** (os nomes que você informa).
