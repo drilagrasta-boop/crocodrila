@@ -105,7 +105,22 @@ O assistente identifica links quebrados, páginas órfãs, conceitos que aparece
 
 ---
 
-## Faça o seu
+## Baixe o modelo pronto
+
+Se você prefere pular os passos 4 e 5 abaixo, a gente empacotou a nossa estrutura,
+**vazia**: as pastas `raw/`, `wiki/` e `output/`, um `CLAUDE.md` genérico para você
+adaptar à sua área, os comandos `/ingest`, `/query` e `/lint` prontos e o Obsidian já
+configurado para os links internos. Um instalador cria o vault em Documentos.
+
+- [**Baixar o modelo** (segundo-cerebro-modelo.zip, 28 KB)](/crocodrila/segundo-cerebro/segundo-cerebro-modelo.zip)
+
+Junto vai um **exemplo preenchido**: o mesmo modelo depois de processar uma única
+anotação de reunião, fictícia, com o resumo, os conceitos, as pessoas, o índice e o log
+que o `/ingest` gerou sozinho. Abra no Obsidian e veja o grafo antes de pôr o seu
+material. E, para quem quiser coleta automática, um coletor de feeds RSS que salva as
+novidades em `raw/` sem gastar IA. O `COMECE-AQUI.txt` explica tudo.
+
+## Ou faça o seu
 
 O segundo cérebro se adapta a qualquer área. O que muda de uma profissão para outra são as subpastas dentro de `raw/`, os tipos de página na `wiki/` e as fontes de coleta automática. A estrutura de três camadas (raw → wiki → output) e a lógica de funcionamento são as mesmas.
 
