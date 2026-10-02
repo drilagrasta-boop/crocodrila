@@ -152,6 +152,19 @@ você não tem como saber onde ele foi ajustado.
 **O estilo entra no pedido.** Medidas caseiras preservadas, sem estrangeirismo, sem elogio
 à receita. Modelo elogia por padrão, e elogio ocupa espaço que a nota prática deveria ter.
 
+## Leve pronto
+
+Para não ter de copiar o prompt a cada receita, o kit traz três jeitos de deixá-lo à mão.
+O mais cômodo é criar no claude.ai um projeto "Receitas" com o prompt nas instruções: daí
+em diante, basta abrir uma conversa ali, mandar a foto e dizer o alvo. O kit também traz o
+prompt como skill, pronta para enviar nas configurações do Claude, e o texto em `.txt`
+para qualquer outra IA.
+
+- [**Baixar o kit** (adapta-receita.zip, 7 KB)](/crocodrila/adapta-receita/adapta-receita.zip)
+
+O `COMECE-AQUI.txt` explica os três caminhos e o que conferir na resposta antes de ir para
+a cozinha.
+
 ## Princípio de projeto
 
 Conta certa não é prato certo. O que o prompt faz não é calcular melhor, porque
