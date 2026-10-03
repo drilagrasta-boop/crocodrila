@@ -44,6 +44,74 @@ export const POSES = {
   microfone: wrap(`<rect x="16" y="18" width="16" height="26" rx="8" fill="#c49a3a" stroke="#1d2b24" stroke-width="1.2"/><path d="M10,34 a14,14 0 0 0 28,0" fill="none" stroke="#3c5a45" stroke-width="2.4" stroke-linecap="round"/><line x1="24" y1="48" x2="24" y2="54" stroke="#3c5a45" stroke-width="2.4" stroke-linecap="round"/><g stroke="#c49a3a" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.75"><path d="M40,24 q6,7 0,14"/><path d="M47,20 q10,11 0,22"/><path d="M54,16 q14,15 0,30"/></g>`),
   grafo:     wrap(`<g stroke="#1d2b24" stroke-width="1.5" opacity="0.55"><line x1="50" y1="34" x2="26" y2="22"/><line x1="50" y1="34" x2="72" y2="20"/><line x1="50" y1="34" x2="78" y2="46"/><line x1="50" y1="34" x2="44" y2="56"/><line x1="50" y1="34" x2="22" y2="46"/><line x1="26" y1="22" x2="72" y2="20"/><line x1="78" y1="46" x2="44" y2="56"/></g><g stroke="#1d2b24" stroke-width="1.4"><circle cx="26" cy="22" r="4" fill="#3c5a45"/><circle cx="72" cy="20" r="4" fill="#c49a3a"/><circle cx="78" cy="46" r="4" fill="#9c4a2e"/><circle cx="44" cy="56" r="4" fill="#3c5a45"/><circle cx="22" cy="46" r="4" fill="#c49a3a"/></g><circle cx="50" cy="34" r="6" fill="#c49a3a" stroke="#1d2b24" stroke-width="1.6"/><circle cx="50" cy="34" r="2.4" fill="#1d2b24"/>`),
 };
+// Divulgação dos kits para baixar (out/2026): jacaré DE PÉ, halterofilista. Fica
+// sobre as patas de trás, as patas da frente são os braços que erguem a barra acima
+// da cabeça, e o rabo apoia no chão (quatro membros, como o bicho tem). Desenho
+// próprio, no traço e nas cores do mascote. A cápsula saiu a pedido da autora.
+const BRACO = (pts) => `
+    <polyline points="${pts}" fill="none" stroke="#1d2b24" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <polyline points="${pts}" fill="none" stroke="#3c5a45" stroke-width="8.2" stroke-linecap="round" stroke-linejoin="round"/>`;
+export const ARTE_HALTEROFILISTA = `<svg width="200" height="220" viewBox="0 -10 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <ellipse cx="118" cy="204" rx="74" ry="5" fill="#e4d6b5"/>
+  <path d="M112,140 Q150,172 192,194 Q194,200 186,202 Q140,190 106,162 Z" fill="#3c5a45"/>
+  <path d="M116,142 Q152,170 190,193" stroke="#c49a3a" stroke-width="2.4" stroke-linecap="round" fill="none" opacity="0.92"/>
+  <g fill="#3c5a45">
+    <path d="M86,148 L80,196 L70,203 L94,203 L98,154 Z"/>
+    <path d="M104,154 L106,196 L98,203 L122,203 L118,148 Z"/>
+  </g>
+  ${BRACO('84,84 34,72 36,8')}
+  ${BRACO('116,84 166,72 164,8')}
+  <path d="M80,76 Q70,118 86,162 L116,162 Q132,118 120,76 Q100,66 80,76 Z" fill="#3c5a45"/>
+  <g fill="#3c5a45">
+    <circle cx="84" cy="84" r="7"/>
+    <circle cx="116" cy="84" r="7"/>
+  </g>
+  <g fill="#56785f" stroke="#1d2b24" stroke-width="1.3">
+    <rect x="90" y="92" width="9" height="13" rx="3"/><rect x="101" y="92" width="9" height="13" rx="3"/>
+    <rect x="90" y="108" width="9" height="13" rx="3"/><rect x="101" y="108" width="9" height="13" rx="3"/>
+    <rect x="90" y="124" width="9" height="13" rx="3"/><rect x="101" y="124" width="9" height="13" rx="3"/>
+  </g>
+  <g fill="#3c5a45" stroke="#1d2b24" stroke-width="1.8">
+    <ellipse cx="60" cy="74" rx="11" ry="7.5" transform="rotate(13 60 74)"/>
+    <ellipse cx="140" cy="74" rx="11" ry="7.5" transform="rotate(-13 140 74)"/>
+  </g>
+  <g fill="none" stroke="#c49a3a" stroke-width="1.8" stroke-linecap="round">
+    <path d="M53,71 q6,-5 13,-3"/>
+    <path d="M147,71 q-6,-5 -13,-3"/>
+  </g>
+  <path d="M114,72 L114,42 L104,28 L92,38 L46,44 L42,52 L46,58 L96,62 L102,74 Z" fill="#3c5a45"/>
+  <polyline points="114,48 104,28 92,38" fill="none" stroke="#c49a3a" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" opacity="0.92"/>
+  <g fill="#f2e9d2" stroke="#1d2b24" stroke-width="0.6">
+    <path d="M50,52 L53,58 L56,52 Z"/><path d="M57,52 L60,58 L63,52 Z"/><path d="M64,52 L67,58 L70,52 Z"/>
+    <path d="M71,52 L74,58 L77,52 Z"/><path d="M78,52 L81,58 L84,52 Z"/><path d="M85,52 L88,57 L91,52 Z"/>
+  </g>
+  <path d="M45,52 L94,52" stroke="#1d2b24" stroke-width="1.6" stroke-linecap="round"/>
+  <ellipse cx="49" cy="47" rx="2.4" ry="1.6" fill="#1d2b24"/>
+  <circle cx="100" cy="40" r="5.2" fill="#c49a3a"/>
+  <circle cx="100.5" cy="40.5" r="2.2" fill="#1d2b24"/>
+  <circle cx="98.7" cy="38.5" r="0.9" fill="#f2e9d2"/>
+  <rect x="12" y="2.5" width="176" height="5" rx="2.5" fill="#4b5a51" stroke="#1d2b24" stroke-width="1.4"/>
+  <g fill="#3c5a45" stroke="#1d2b24" stroke-width="1.8">
+    <rect x="30" y="-1" width="12" height="12" rx="4"/>
+    <rect x="158" y="-1" width="12" height="12" rx="4"/>
+  </g>
+  <g stroke="#1d2b24" stroke-width="1.1" stroke-linecap="round">
+    <line x1="34" y1="-0.5" x2="34" y2="10.5"/><line x1="38" y1="-0.5" x2="38" y2="10.5"/>
+    <line x1="162" y1="-0.5" x2="162" y2="10.5"/><line x1="166" y1="-0.5" x2="166" y2="10.5"/>
+  </g>
+  <g stroke="#1d2b24" stroke-width="2" stroke-linejoin="round">
+    <rect x="12" y="-9" width="9" height="29" rx="2.5" fill="#9c4a2e"/>
+    <rect x="21" y="-4.5" width="6" height="20" rx="2" fill="#c49a3a"/>
+    <rect x="179" y="-9" width="9" height="29" rx="2.5" fill="#9c4a2e"/>
+    <rect x="173" y="-4.5" width="6" height="20" rx="2" fill="#c49a3a"/>
+  </g>
+  <g fill="#c49a3a">
+    <path d="M18,36 l1.4,3.6 l3.6,1.4 l-3.6,1.4 l-1.4,3.6 l-1.4,-3.6 l-3.6,-1.4 l3.6,-1.4 Z"/>
+    <path d="M178,40 l1,2.6 l2.6,1 l-2.6,1 l-1,2.6 l-1,-2.6 l-2.6,-1 l2.6,-1 Z"/>
+    <path d="M26,120 l1,2.6 l2.6,1 l-2.6,1 l-1,2.6 l-1,-2.6 l-2.6,-1 l2.6,-1 Z"/>
+  </g>
+</svg>`;
+
 // Comemorativa da décima edição: jacaré de chapéu de festa, com bolo e vela.
 export const ARTE_ANIVERSARIO = wrap(`
   <g>
