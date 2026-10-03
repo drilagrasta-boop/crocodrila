@@ -1,0 +1,78 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import { ARTE_HALTEROFILISTA } from '../lib/og/artes.mjs';
+
+// Página da campanha dos kits para baixar (out/2026). Ordem = a da divulgação.
+const KITS = [
+  { slug: 'conversor-pdf-txt', nome: 'Conversor e Anonimizador', sub: 'Transforma PDF em texto, inclusive o escaneado, e tira nomes, CPF e outros dados pessoais. Tudo no seu computador, sem internet.', zip: '/crocodrila/conversor-pdf-txt/conversor-anonimizador-offline.zip' },
+  { slug: 'transcritor-offline', zip: '/crocodrila/transcritor-offline/transcritor-offline.zip' },
+  { slug: 'protocolo-prompt-injection', zip: '/crocodrila/protocolo-prompt-injection/protocolo-anti-injection.zip' },
+  { slug: 'fichamento-aulas', zip: '/crocodrila/fichamento-aulas/fichamento-aulas.zip' },
+  { slug: 'segundo-cerebro', zip: '/crocodrila/segundo-cerebro/segundo-cerebro-modelo.zip' },
+  { slug: 'adapta-receita', zip: '/crocodrila/adapta-receita/adapta-receita.zip' },
+  { slug: 'crocodrila-prompta', zip: '/crocodrila/crocodrila-prompta/crocodrila-prompta-kit.zip' },
+];
+const projetos = await getCollection('crocodrila');
+const kits = KITS.map((k) => {
+  const p = projetos.find((x) => x.id === k.slug);
+  if (!p) throw new Error(`[kits] projeto não encontrado: ${k.slug}`);
+  return { ...k, titulo: k.nome ?? p.data.titulo, sub: k.sub ?? p.data.subtitulo };
+});
+---
+<Base title="Kits para baixar" description="Sete ferramentas de IA da toca da Crocodrila, prontas para baixar, de graça, cada uma com guia passo a passo." image="/divulgacao/kits-para-baixar.png" imageWidth={1080} imageHeight={1080}>
+  <section class="kits-hero">
+    <div class="wrap rise kh-grid">
+      <div>
+        <span class="label eyebrow">Novidade na toca</span>
+        <h1 class="kh-title">Agora dá para baixar</h1>
+        <p class="kh-lead measure">
+          Sete ferramentas que a gente usa no dia a dia viraram kits prontos, de graça, cada um
+          com guia passo a passo. Escolha, baixe e siga o arquivo COMECE-AQUI.
+        </p>
+      </div>
+      <div class="kh-arte" aria-hidden="true" set:html={ARTE_HALTEROFILISTA} />
+    </div>
+  </section>
+
+  <section class="wrap">
+    <ol class="kits-lista">
+      {kits.map((k) => (
+        <li class="kit">
+          <h2 class="kit-title">{k.titulo}</h2>
+          <p class="kit-sub muted">{k.sub}</p>
+          <div class="kit-acoes mono">
+            <a href={k.zip} class="kit-baixar" download>baixar o kit</a>
+            <a href={`/crocodrila/${k.slug}/`}>ver o projeto →</a>
+          </div>
+        </li>
+      ))}
+    </ol>
+    <p class="kits-nota muted">
+      As ferramentas que rodam no computador são para Windows e precisam do Python, que o guia
+      ensina a instalar. Nenhuma dispensa a sua conferência.
+    </p>
+  </section>
+</Base>
+
+<style>
+  .kits-hero { background: var(--ink); color: var(--paper); padding-block: clamp(2.4rem, 6vw, 4.4rem); margin-bottom: clamp(2.2rem, 5vw, 3.4rem); }
+  .kits-hero .label { color: var(--gold); }
+  .kh-grid { display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center; }
+  .kh-title { color: var(--paper); font-size: clamp(2.6rem, 1.8rem + 4vw, 5rem); margin-top: 0.6rem; }
+  .kh-lead { margin-top: 1.1rem; color: rgba(243,239,227,.78); font-size: 1.15rem; }
+  .kh-arte { width: clamp(150px, 22vw, 230px); background: var(--paper); border-radius: 18px; padding: 0.8rem; }
+  .kh-arte :global(svg) { width: 100%; height: auto; display: block; }
+  @media (max-width: 720px) { .kh-grid { grid-template-columns: 1fr; } .kh-arte { width: 170px; } }
+
+  .kits-lista { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
+  .kit { display: flex; flex-direction: column; gap: 0.5rem; padding: 1.4rem 1.5rem; border: 1.5px solid var(--line-strong); border-radius: var(--radius); background: #fffdf6; }
+  .kit-title { font-size: 1.45rem; }
+  .kit-sub { font-size: 0.98rem; }
+  .kit-acoes { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: auto; padding-top: 0.6rem; font-size: 0.82rem; }
+  .kit-acoes a { color: var(--jacare-deep); }
+  .kit-baixar { font-weight: 500; padding: 0.35em 0.9em; border: 1.5px solid var(--jacare); border-radius: 99px; text-decoration: none; }
+  .kit-baixar:hover { background: var(--jacare); color: var(--paper) !important; }
+  .kits-nota { margin-top: 2rem; font-size: 0.95rem; }
+  @media (max-width: 640px) { .kits-lista { grid-template-columns: 1fr; } }
+</style>

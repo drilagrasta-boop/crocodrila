@@ -15,10 +15,10 @@ const projetos = (await getCollection('crocodrila'))
           <span class="label eyebrow">A toca</span>
           <h1 class="ch-title">Crocodrila</h1>
           <p class="ch-lead measure">
-            Ler sobre IA é metade. A outra metade é meter a mão. Aqui não tem ferramenta
-            pronta pra baixar: cada projeto é o passo a passo pra você montar o seu. A gente
-            construiu, usa todo dia, e mostra como refazer na sua máquina. Por ora, apenas o Protocolo
-            Anti-Injection já vem pronto pra copiar e usar.
+            Ler sobre IA é metade. A outra metade é meter a mão. Cada projeto é o passo a
+            passo pra você montar o seu. A gente construiu, usa todo dia, e mostra como refazer
+            na sua máquina. E agora sete deles também vêm prontos pra baixar, com guia:
+            <a href="/kits/" class="ch-kits">veja os kits</a>.
           </p>
         </div>
         <div class="ch-mascote" aria-hidden="true">
@@ -58,6 +58,7 @@ const projetos = (await getCollection('crocodrila'))
   .ch-grid { display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center; }
   .ch-title { color: var(--paper); font-size: clamp(3rem, 2rem + 5vw, 6rem); margin-top: 0.6rem; }
   .ch-lead { margin-top: 1.2rem; color: rgba(243,239,227,.78); font-size: 1.2rem; }
+  .ch-kits { color: var(--gold); }
   .ch-mascote { filter: drop-shadow(0 14px 30px rgba(0,0,0,.4)); animation: float 6s ease-in-out infinite; }
   @keyframes float { 0%,100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-12px) rotate(-3deg); } }
   @media (max-width: 720px) { .ch-grid { grid-template-columns: 1fr; } .ch-mascote { display: none; } }
