@@ -17,7 +17,9 @@ miolo escaneado. É o ponto cego que derruba quase todo conversor. Este aqui dec
 ## Como funciona
 
 1. **PyMuPDF** — usado quando a página tem texto digital de verdade (pelo menos uma
-   centena de caracteres). Extração instantânea e perfeita; resolve a maioria.
+   centena de caracteres). Extração instantânea e perfeita; resolve a maioria. Os
+   carimbos que o tribunal grava em toda folha ("Para conferir o original...", "fls. 12")
+   não entram nessa conta, porque aparecem até na página escaneada.
 2. **Tesseract** (OCR local, 300 DPI) — quando a página é imagem, ele renderiza e lê ali
    mesmo, recuperando o que a extração digital ignora. Sem conexão, sem mandar nada para fora.
 
@@ -53,6 +55,14 @@ ocultos (autor, datas, revisões) antes de você enviar.
 
 - [**Baixar o kit** (conversor-anonimizador-offline.zip, 17 MB)](/crocodrila/conversor-pdf-txt/conversor-anonimizador-offline.zip)
 
+**Atualizado em 7 de outubro de 2026.** A versão anterior do kit tinha um defeito sério
+com autos do e-SAJ. O tribunal grava em toda folha, inclusive na escaneada, um carimbo de
+texto com o código de conferência e o número da folha. O conversor achava que esse carimbo
+era o conteúdo da página, pulava o OCR e a folha escaneada saía vazia no .txt, sem nenhum
+aviso. Agora o carimbo é descontado antes da decisão e a folha passa pelo OCR. Se você
+baixou o kit antes dessa data, baixe de novo, rode o instalador outra vez e reconverta os
+autos do e-SAJ que tinham páginas escaneadas.
+
 Para instalar, clique com o botão direito no ZIP, escolha **Extrair tudo** e abra o
 arquivo `COMECE-AQUI.txt`: são seis passos, do Python aos atalhos na Área de Trabalho. A
 instalação precisa de internet uma única vez (baixa o Tesseract e um modelo de português
@@ -83,17 +93,22 @@ vinte linhas.
 **A lógica (página a página)**
 
 Tente o texto digital primeiro; se a página vier quase vazia, é imagem — aí renderize em
-300 DPI e passe no OCR. Tudo local:
+300 DPI e passe no OCR. Um cuidado que aprendemos apanhando: desconte os carimbos do
+tribunal antes de medir, senão a folha escaneada com carimbo passa por digital. Tudo local:
 
 ```python
-import fitz, io, pytesseract
+import fitz, io, re, pytesseract
 from PIL import Image
+
+# carimbos que o e-SAJ grava em toda folha, até na escaneada
+CARIMBO = re.compile(r"Para conferir o original.*?código \S+|Este documento é cópia"
+                     r" do original.*?sob o número \d+|^\s*fls\. \d+\s*$", re.S | re.M)
 
 doc = fitz.open("processo.pdf")
 paginas = []
 for page in doc:
     texto = page.get_text().strip()
-    if len(texto) < 100:                      # pouca letra = página escaneada
+    if len(CARIMBO.sub("", texto).strip()) < 100:   # pouca letra = página escaneada
         pix = page.get_pixmap(dpi=300)
         img = Image.open(io.BytesIO(pix.tobytes("png")))
         texto = pytesseract.image_to_string(img, lang="por")
@@ -102,8 +117,9 @@ for page in doc:
 open("processo.txt", "w", encoding="utf-8").write("\n\n".join(paginas))
 ```
 
-A partir daí é refinar: ajustar o limite que decide "isto é imagem", descontar carimbos de
-assinatura digital antes de medir, varrer uma pasta inteira de uma vez. Mas o coração é
+A partir daí é refinar: ajustar o limite que decide "isto é imagem", incluir os carimbos de
+outros sistemas (o e-proc, por exemplo, põe "Evento 1, Página 1" no rodapé), varrer uma
+pasta inteira de uma vez. Mas o coração é
 esse — e repare que **nada saiu da sua máquina**.
 
 ---
