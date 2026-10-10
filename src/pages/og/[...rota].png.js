@@ -1,6 +1,6 @@
 import { getCollection } from 'astro:content';
-import { gerarArte, gerarSelo } from '../../lib/og/cartao.mjs';
-import { CROCODRILA, svgDataUri, POSES, ARTES_HOBBY, ARTES_ENSAIO, ARTE_ENSAIOS, ARTE_ANIVERSARIO } from '../../lib/og/artes.mjs';
+import { gerarArte, gerarSelo, gerarSeloComemorativo } from '../../lib/og/cartao.mjs';
+import { CROCODRILA, svgDataUri, POSES, ARTES_HOBBY, ARTES_ENSAIO, ARTE_ENSAIOS, ARTE_ANIVERSARIO, ARTE_VIGESIMA } from '../../lib/og/artes.mjs';
 
 export async function getStaticPaths() {
   const edicoes = (await getCollection('edicoes')).filter((e) => !e.data.rascunho);
@@ -19,10 +19,12 @@ export async function GET({ props }) {
   const { tipo, entry } = props;
   let png;
   if (tipo === 'edicao') {
-    // A décima edição compartilha a arte comemorativa; as demais, o selo numerado.
+    // A décima e a vigésima edições compartilham artes comemorativas; as demais, o selo numerado.
     png = entry.data.numero === 10
       ? await gerarArte(svgDataUri(ARTE_ANIVERSARIO), 700, 258)
-      : await gerarSelo(entry.data.numero, svgDataUri(CROCODRILA));
+      : entry.data.numero === 20
+        ? await gerarSeloComemorativo(20, svgDataUri(ARTE_VIGESIMA), 'VIGÉSIMA EDIÇÃO')
+        : await gerarSelo(entry.data.numero, svgDataUri(CROCODRILA));
   }
   if (tipo === 'projeto') {
     png = await gerarArte(svgDataUri(POSES[entry.data.pose] ?? CROCODRILA), 680, 250);

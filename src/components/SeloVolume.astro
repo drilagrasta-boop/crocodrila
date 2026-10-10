@@ -1,15 +1,17 @@
 ---
 import Crocodrila from './Crocodrila.astro';
-import { ARTE_ANIVERSARIO } from '../lib/og/artes.mjs';
+import { ARTE_ANIVERSARIO, ARTE_VIGESIMA } from '../lib/og/artes.mjs';
 interface Props { numero: number }
 const { numero } = Astro.props;
 const pad = String(numero).padStart(3, '0');
-// A décima edição carrega o jacaré de chapéu e bolo no lugar do mascote de sempre.
-const festa = numero === 10;
+// A décima e a vigésima edições carregam o jacaré de festa no lugar do mascote de sempre.
+const ARTES_FESTA: Record<number, string> = { 10: ARTE_ANIVERSARIO, 20: ARTE_VIGESIMA };
+const arteFesta = ARTES_FESTA[numero];
+const festa = Boolean(arteFesta);
 ---
 <div class:list={['selo', { festa }]} aria-hidden="true">
   {festa
-    ? <div class="croco-festa" set:html={ARTE_ANIVERSARIO} />
+    ? <div class="croco-festa" set:html={arteFesta} />
     : <Crocodrila size={34} />}
   <span class="mono">VOL. {pad}</span>
 </div>

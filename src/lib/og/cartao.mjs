@@ -24,6 +24,23 @@ export async function gerarSelo(numero, arteDataUri, largura = 800) {
   return new Resvg(svg, { fitTo: { mode: 'width', value: largura } }).render().asPng();
 }
 
+// Variante de festa do selo numerado: o mesmo carimbo, com anel dourado por fora
+// e uma legenda curta abaixo do número (ex.: "VIGÉSIMA EDIÇÃO").
+export async function gerarSeloComemorativo(numero, arteDataUri, legenda, largura = 800) {
+  const arvore = el('div', { display: 'flex', width: 800, height: 800, backgroundColor: C.papel, alignItems: 'center', justifyContent: 'center' }, [
+    el('div', { display: 'flex', alignItems: 'center', justifyContent: 'center', width: 716, height: 716, border: `5px solid ${C.ouro}`, borderRadius: 9999 }, [
+      el('div', { display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: 640, height: 640, border: `9px dashed ${C.terracota}`, borderRadius: 9999, transform: 'rotate(-6deg)' }, [
+        { type: 'img', props: { src: arteDataUri, width: 400, height: 147, style: {} } },
+        texto({ fontFamily: 'JetBrains Mono', fontWeight: 500, fontSize: 72, letterSpacing: 8, color: C.terracota, marginTop: 20 }, `VOL. ${String(numero).padStart(3, '0')}`),
+        el('div', { display: 'flex', width: 300, height: 3, backgroundColor: C.ouro, marginTop: 18 }),
+        texto({ fontFamily: 'JetBrains Mono', fontWeight: 500, fontSize: 26, letterSpacing: 6, color: C.jacare, marginTop: 16 }, legenda),
+      ]),
+    ]),
+  ]);
+  const svg = await satori(arvore, { width: 800, height: 800, fonts: carregarFontes() });
+  return new Resvg(svg, { fitTo: { mode: 'width', value: largura } }).render().asPng();
+}
+
 export async function gerarArte(arteDataUri, largura, altura) {
   const arvore = el('div', { display: 'flex', width: 800, height: 800, backgroundColor: C.papel, alignItems: 'center', justifyContent: 'center' }, [
     { type: 'img', props: { src: arteDataUri, width: largura, height: altura, style: {} } },

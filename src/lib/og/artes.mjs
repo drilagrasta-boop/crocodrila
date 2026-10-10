@@ -112,13 +112,35 @@ export const ARTE_HALTEROFILISTA = `<svg width="200" height="220" viewBox="0 -10
   </g>
 </svg>`;
 
-// Comemorativa da décima edição: jacaré de chapéu de festa, com bolo e vela.
-export const ARTE_ANIVERSARIO = wrap(`
+const CHAPEU_FESTA = `
   <g>
     <path d="M75,19 L63,44 L87,44 Z" fill="#c49a3a" stroke="#1d2b24" stroke-width="2" stroke-linejoin="round"/>
     <path d="M71,28 L82,28 M67,36 L86,36" stroke="#9c4a2e" stroke-width="2.4" stroke-linecap="round"/>
     <circle cx="75" cy="14" r="4" fill="#f2e9d2" stroke="#1d2b24" stroke-width="1.8"/>
+  </g>`;
+
+// Comemorativa da vigésima edição: o chapéu de festa da décima, agora com confete.
+export const ARTE_VIGESIMA = wrap(`${CHAPEU_FESTA}
+  <g fill="#c49a3a">
+    <rect x="120" y="14" width="9" height="4" rx="1.2" transform="rotate(25 123 15)"/>
+    <rect x="196" y="20" width="9" height="4" rx="1.2" transform="rotate(-30 199 21)"/>
+    <rect x="30" y="86" width="9" height="4" rx="1.2" transform="rotate(40 33 87)"/>
+    <rect x="222" y="74" width="9" height="4" rx="1.2" transform="rotate(-15 225 75)"/>
+    <circle cx="160" cy="16" r="3"/>
+    <circle cx="132" cy="90" r="3"/>
   </g>
+  <g fill="#9c4a2e">
+    <rect x="96" y="12" width="9" height="4" rx="1.2" transform="rotate(-35 99 13)"/>
+    <rect x="178" y="10" width="9" height="4" rx="1.2" transform="rotate(50 181 11)"/>
+    <rect x="58" y="88" width="9" height="4" rx="1.2" transform="rotate(-20 61 89)"/>
+    <rect x="248" y="56" width="9" height="4" rx="1.2" transform="rotate(30 251 57)"/>
+    <circle cx="36" cy="30" r="3"/>
+    <circle cx="204" cy="86" r="3"/>
+  </g>
+`);
+
+// Comemorativa da décima edição: jacaré de chapéu de festa, com bolo e vela.
+export const ARTE_ANIVERSARIO = wrap(`${CHAPEU_FESTA}
   <g>
     <line x1="8" y1="56" x2="54" y2="56" stroke="#1d2b24" stroke-width="2" stroke-linecap="round"/>
     <rect x="12" y="35" width="38" height="21" rx="2.5" fill="#f2e9d2" stroke="#1d2b24" stroke-width="2.2"/>
