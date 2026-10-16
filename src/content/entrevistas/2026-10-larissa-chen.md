@@ -3,7 +3,7 @@ convidado: "Larissa Chen"
 papel: "Advogada, sócia do Daniel Law · Tradutora do Código Civil chinês para o português · Doutoranda em Direito na Universidade Tsinghua, em Pequim"
 titulo: "O código, o costume e a máquina"
 data: 2026-10-16
-resumo: "Sobre regras que atravessam fronteiras, algoritmos que passam pelo crivo do Estado e o que permanece humano entre duas culturas."
+resumo: "Regras que atravessam fronteiras, algoritmos sob o crivo do Estado e o que permanece humano entre duas culturas."
 foto: "/entrevistas/larissa-chen.jpg"
 foto_avatar: "/entrevistas/larissa-chen-avatar.jpg"
 linkedin: "https://www.linkedin.com/in/larissa-chen-35786311b/"
