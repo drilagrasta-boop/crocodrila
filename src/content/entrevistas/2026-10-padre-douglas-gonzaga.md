@@ -21,7 +21,7 @@ rascunho: false
 <figcaption>Padre Douglas em Roma, diante da Basílica de São Pedro.</figcaption>
 </figure>
 
-**1. Ordenado há pouco mais de um ano, em dezembro de 2024, e, nesta primeira Semana da Família como administrador, tinha o tema inteiro para escolher. Escolheu a inteligência artificial. Antes de virar uma tese, uma escolha dessas costuma nascer de algo visto de perto: uma conversa, uma cena, um silêncio. O que andou vendo na Vila Zatt que fez um padre recém-ordenado concluir que era sobre este tema, e não outro, que as famílias daqui precisavam ouvir?**
+**1. Ordenado há pouco mais de um ano, em dezembro de 2024, nesta primeira Semana da Família como administrador teve liberdade para escolher o tema. Escolheu a inteligência artificial. Antes de virar uma tese, uma escolha dessas costuma nascer de algo visto de perto: uma conversa, uma cena, um silêncio. O que andou vendo na Vila Zatt que fez um padre recém-ordenado concluir que era sobre este tema, e não outro, que as famílias daqui precisavam ouvir?**
 
 Não foi uma cena específica, mas uma preocupação pastoral. Como Igreja, não podemos ignorar as transformações do nosso tempo. Precisamos ajudar as famílias a compreender essas mudanças, discernir seus benefícios e reconhecer também os riscos que elas podem trazer para a convivência, o diálogo e a formação.
 
