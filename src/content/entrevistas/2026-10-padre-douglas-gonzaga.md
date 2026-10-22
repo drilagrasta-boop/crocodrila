@@ -13,16 +13,14 @@ rascunho: false
 
 *Há padres que falam da inteligência artificial de longe, como quem comenta o noticiário; e há quem a tenha trazido para o centro da própria Semana da Família. Padre Douglas da Silva Gonzaga pertence ao segundo grupo. Crismado em 2014, na Paróquia Santa Maria Madalena, procurou a Pastoral Vocacional no ano seguinte, entrou no seminário em 2016 e foi ordenado presbítero pelo cardeal Odilo Scherer, na Basílica de Sant'Ana, no fim de 2024. Hoje, aos 28 anos e com menos de dois de presbiterado, administra a Paróquia Nossa Senhora Aparecida, na Vila Zatt, zona norte de São Paulo — a mesma Nossa Senhora a quem confiou o ministério no dia em que foi ordenado.*
 
-*Chama atenção a escolha. Podia ter dedicado a Semana da Família da paróquia a qualquer tema seguro; preferiu o mais espinhoso da hora, a inteligência artificial — e reservou para si o encerramento, numa fala que chamou de "A Magnífica Humanidade diante de Cristo", decalque da encíclica Magnifica Humanitas, do Papa Leão XIV, com duas palavras a mais. Aqui na Toca, quando a conversa chega ao ponto de perguntar o que a máquina não é capaz de substituir, é para gente como ele que ela costuma virar: quem cuida, no varejo de uma comunidade de periferia, dos vínculos que a tecnologia promete e nem sempre entrega. Sentamos para falar sobre a vocação de um padre jovem, sobre o que a Igreja tem a dizer às famílias na era da IA e sobre o que, dentro de uma casa, continua sendo humano.*
-
-*As respostas vieram por escrito e assim estão publicadas, como ele as escreveu; a nossa revisão limitou-se às gralhas de digitação.*
+*Chama atenção a escolha. Podia ter dedicado a Semana da Família da paróquia a qualquer tema seguro; preferiu o mais espinhoso da hora, a inteligência artificial — e reservou para si o encerramento, numa fala que chamou de "A Magnífica Humanidade diante de Cristo", decalque da encíclica Magnifica Humanitas, do Papa Leão XIV, com duas palavras a mais. Aqui na Toca, quando a conversa chega à pergunta sobre o que a máquina não é capaz de substituir, é para gente como ele que ela costuma se voltar: quem cuida, no varejo de uma comunidade de periferia, dos vínculos que a tecnologia promete e nem sempre entrega. Conversamos sobre a vocação de um padre jovem, sobre o que a Igreja tem a dizer às famílias na era da IA e sobre o que, dentro de uma casa, continua sendo humano.*
 
 <figure class="foto">
 <img src="/entrevistas/padre-douglas-gonzaga.jpg" alt="Padre Douglas, jovem, de batina preta e colarinho clerical, usando óculos de sol e sorrindo, diante da Basílica de São Pedro, no Vaticano, sob céu azul" style="max-width: 404px;" />
 <figcaption>Padre Douglas em Roma, diante da Basílica de São Pedro.</figcaption>
 </figure>
 
-**1. Você foi ordenado padre há pouco mais de um ano, em dezembro de 2024, e nesta sua primeira Semana da Família como administrador tinha o tema inteiro para escolher. Escolheu a inteligência artificial. Antes de virar uma tese, uma escolha dessas costuma nascer de algo visto de perto: uma conversa, uma cena, um silêncio. O que você andou vendo na Vila Zatt que fez um padre recém-ordenado concluir que era sobre este tema, e não outro, que as famílias daqui precisavam ouvir?**
+**1. Foi ordenado padre há pouco mais de um ano, em dezembro de 2024, e, nesta primeira Semana da Família como administrador, tinha o tema inteiro para escolher. Escolheu a inteligência artificial. Antes de virar uma tese, uma escolha dessas costuma nascer de algo visto de perto: uma conversa, uma cena, um silêncio. O que andou vendo na Vila Zatt que fez um padre recém-ordenado concluir que era sobre este tema, e não outro, que as famílias daqui precisavam ouvir?**
 
 Não foi uma cena específica, mas uma preocupação pastoral. Como Igreja, não podemos ignorar as transformações do nosso tempo. Precisamos ajudar as famílias a compreender essas mudanças, discernir seus benefícios e reconhecer também os riscos que elas podem trazer para a convivência, o diálogo e a formação.
 
@@ -30,7 +28,7 @@ Como padre há pouco tempo e jovem, entendo que a nossa missão não é simplesm
 
 A inteligência artificial pode ser uma grande aliada, mas não pode substituir aquilo que é essencialmente humano: o encontro, o afeto, o cuidado e a capacidade de reconhecer o outro em sua dignidade.
 
-**2. Você nasceu em 1998, é da primeira geração que nunca conheceu uma casa sem tela ligada. Agora está do outro lado do altar, olhando para famílias em que cada um está com o próprio celular na mão, mesmo sentados na mesma sala. Da casa em que você cresceu para as casas que visita hoje como padre, o que de fato mudou na maneira como uma família convive e o que permanece?**
+**2. Nasceu em 1998, é da primeira geração que nunca conheceu uma casa sem tela ligada. Agora está do outro lado do altar, olhando para famílias em que cada um está com o próprio celular na mão, mesmo sentados na mesma sala. Da casa em que cresceu para as casas que visita hoje como padre, o que de fato mudou na maneira como uma família convive e o que permanece?**
 
 Acredito que uma das mudanças mais significativas seja a intensidade com que as telas passaram a ocupar o nosso tempo e a nossa atenção. Embora eu tenha nascido em uma geração que já cresceu em contato com a tecnologia, quando entrei no seminário, em 2016, a relação com as telas era diferente. Hoje, percebemos que o celular está muito mais presente em praticamente todos os momentos do dia, inclusive naqueles que deveriam ser dedicados às convivências.
 
@@ -44,7 +42,7 @@ A família continua precisando de presença, diálogo e amor. E nada disso pode 
 
 > A família continua precisando de presença, diálogo e amor. E nada disso pode ser substituído por uma tela.
 
-**3. A Semana tem quatro noites e quatro vozes: "O corpo humano na era digital", "Conhecer para discernir", "A família diante da Inteligência Artificial" — e você fecha com "A Magnífica Humanidade diante de Cristo". O papa Leão XIV chamou a encíclica dele de *Magnifica Humanitas*; você pegou essa mesma expressão e acrescentou duas palavras: *diante de Cristo*. O que muda na humanidade quando ela é posta diante de Cristo, e não diante da máquina?**
+**3. A Semana tem quatro noites e quatro vozes: "O corpo humano na era digital", "Conhecer para discernir", "A família diante da Inteligência Artificial" — e o encerramento, "A Magnífica Humanidade diante de Cristo", é seu. É o título da encíclica de Leão XIV, *Magnifica Humanitas*, com duas palavras a mais: *diante de Cristo*. O que muda na humanidade quando ela é posta diante de Cristo, e não diante da máquina?**
 
 Quando colocamos a humanidade diante de Cristo, recuperamos aquilo que está no centro da nossa fé: a dignidade de cada pessoa humana, criada à imagem e semelhança de Deus e chamada a viver em comunhão com Ele. A máquina pode realizar muitas tarefas, processar informações e até nos ajudar a compreender melhor a realidade, mas Cristo nos revela algo que nenhuma tecnologia é capaz de substituir: o valor de cada pessoa, que não depende daquilo que ela sabe, produz ou consegue fazer, mas do amor com que Deus a criou e a chama para si.
 
@@ -79,7 +77,7 @@ Por isso, eu diria que a tecnologia começa a ocupar o lugar do vínculo quando 
 
 > A tecnologia começa a ocupar o lugar do vínculo quando deixa de ser um meio para nos aproximar e passa a nos dispensar do esforço de amar.
 
-**5. O papa escolheu se chamar Leão XIV mirando Leão XIII, que enfrentou a revolução industrial com a *Rerum Novarum*, em 1891 — e não são poucos os que acham que, naquela época e em outras, a Igreja chegou tarde ao debate do seu tempo. Agora ela quer falar de inteligência artificial quase em tempo real. Você, que é jovem, sente risco de a Igreja soar saudosista, defendendo um mundo analógico que não volta mais?**
+**5. O papa escolheu se chamar Leão XIV mirando Leão XIII, que enfrentou a revolução industrial com a *Rerum Novarum*, em 1891 — e não são poucos os que acham que, naquela época e em outras, a Igreja chegou tarde ao debate do seu tempo. Agora ela quer falar de inteligência artificial quase em tempo real. Sendo jovem, sente o risco de a Igreja soar saudosista, defendendo um mundo analógico que não volta mais?**
 
 Esse risco existe quando a Igreja fala da tecnologia apenas para condená-la ou quando parece que a solução para os desafios de hoje seria simplesmente voltar ao passado. Não é esse o caminho. A Igreja não é chamada a defender um mundo que já não existe, mas a anunciar o Evangelho no mundo em que vivemos.
 
@@ -117,7 +115,7 @@ O que impedirá a Igreja de perder sua relevância não será a capacidade de re
 
 > O que impedirá a Igreja de perder sua relevância não será a capacidade de responder mais rápido do que uma máquina, mas a fidelidade a Cristo.
 
-**7. Existe um paradoxo em pregar limite à tela enquanto se é o padre da geração do smartphone; a paróquia está no Instagram, você fala com a comunidade por aplicativo, provavelmente prepara homilia e estuda a própria encíclica na mesma tela de que desconfia. Sem discurso, na sua vida concreta: onde você se observa ultrapassando a linha que prega, e quais são os limites que se impõe ao uso do celular?**
+**7. Existe um paradoxo em pregar limite à tela sendo o padre da geração do smartphone: a paróquia está no Instagram, a comunidade é atendida por aplicativo e a homilia — como a própria encíclica — é preparada na mesma tela de que se desconfia. Sem discurso, na vida concreta: onde se observa ultrapassando a linha que prega, e que limites se impõe ao uso do celular?**
 
 Acho que seria incoerente falar sobre o uso responsável da tecnologia sem reconhecer que também sou atravessado por esses desafios. Apesar da pouca idade, não sou dos padres mais tecnológicos que existem. Não tenho o hábito de me expor nas redes sociais e procuro preservar minha vida pessoal, porque acredito que nem tudo precisa ser compartilhado. Para mim, é importante compreender que existe uma diferença entre utilizar a tecnologia como ferramenta de trabalho e permitir que ela determine a maneira como vivemos.
 
@@ -129,7 +127,7 @@ Outra dificuldade da vida sacerdotal é perceber que o trabalho nem sempre termi
 
 Por isso, procuro preservar meus momentos de oração, descanso e convivência com meus amigos e minha família. São espaços importantes para recuperar as forças e recordar que a vida não pode ser reduzida às tarefas que temos para cumprir.
 
-**8. No dia em que foi ordenado, você entregou o seu ministério às mãos de Nossa Senhora — confiou, colocou a vida em outras mãos. O medo da encíclica é quase o gesto inverso: entregar a um algoritmo, delegar à máquina, decisões que eram nossas, até as de vida e morte. Sua palestra de encerramento se chama, justamente, "diante de Cristo". Onde fica a linha entre entregar-se a Deus e delegar à máquina — o que, numa vida, você pode deixar a inteligência artificial fazer por você sem que aquilo deixe de ser seu?**
+**8. No dia em que foi ordenado, entregou o ministério às mãos de Nossa Senhora — confiou, colocou a vida em outras mãos. O medo da encíclica é quase o gesto inverso: entregar a um algoritmo, delegar à máquina, decisões que eram nossas, até as de vida e morte. A palestra de encerramento se chama, justamente, "diante de Cristo". Onde fica a linha entre entregar-se a Deus e delegar à máquina — o que, numa vida, pode ser deixado à inteligência artificial sem deixar de ser seu?**
 
 Acho que a diferença está naquilo a que entregamos nossa confiança e na responsabilidade que continuamos assumindo. Quando, no dia da minha ordenação, confiei meu ministério a Nossa Senhora, não estava pedindo que ela vivesse a minha vocação por mim, mas que me ajudasse a ser fiel a Cristo. A entrega a Deus não anula a nossa liberdade; pelo contrário, dá sentido a ela.
 
