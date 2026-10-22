@@ -6,6 +6,7 @@ data: 2026-10-21
 resumo: "Sobre a encíclica que pede para 'desarmar' a inteligência artificial, a Semana da Família que ele dedicou ao tema e o que, numa casa, nenhuma máquina substitui."
 foto: "/entrevistas/padre-douglas-gonzaga.jpg"
 foto_avatar: "/entrevistas/padre-douglas-gonzaga-avatar.jpg"
+curadoria: "Manuel David Masseno"
 rascunho: false
 ---
 
