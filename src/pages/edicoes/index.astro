@@ -49,6 +49,10 @@ const anos = [...porAno.keys()].sort((a, b) => b - a);
       </ul>
     </section>
   ))}
+
+  <section class="wrap">
+    <p class="proj-autoria mono">Projeto desenvolvido por @Dennis Martins e @Adriana Aneli</p>
+  </section>
 </Base>
 
 <style>
@@ -60,6 +64,7 @@ const anos = [...porAno.keys()].sort((a, b) => b - a);
   .ano-head { display: flex; align-items: center; gap: 1.2rem; margin-bottom: 0.6rem; }
   .ano-num { font-size: 1.6rem; font-weight: 500; color: var(--ink); }
   .ano-rule { flex: 1; }
+  .proj-autoria { margin-top: 3rem; text-align: center; font-size: 0.7rem; letter-spacing: 0.08em; color: var(--ink-faint); }
 
   .ed-list { list-style: none; padding: 0; border-top: 1px solid var(--line-strong); }
   .ed-row { border-bottom: 1px solid var(--line); }

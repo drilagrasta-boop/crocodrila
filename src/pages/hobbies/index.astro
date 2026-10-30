@@ -60,6 +60,10 @@ const ogImagem = atual ? `/og/hobbies/${atual.id}.png` : '/og/site.png';
       </ul>
     </section>
   )}
+
+  <section class="wrap">
+    <p class="proj-autoria mono">Projeto desenvolvido por @Adriana Aneli</p>
+  </section>
 </Base>
 
 <style>
@@ -88,6 +92,7 @@ const ogImagem = atual ? `/og/hobbies/${atual.id}.png` : '/og/site.png';
   .hb-resumo { font-size: 0.95rem; max-width: 62ch; }
   .hb-data { font-size: 0.72rem; color: var(--ink-faint); white-space: nowrap; }
   @media (max-width: 600px) { .hb-row { grid-template-columns: 1fr; } .hb-data { display: none; } }
+  .proj-autoria { margin-top: 3rem; text-align: center; font-size: 0.7rem; letter-spacing: 0.08em; color: var(--ink-faint); }
   .card-arte { width: 96px; }
   .card-arte :global(svg) { width: 100%; height: auto; }
 </style>
