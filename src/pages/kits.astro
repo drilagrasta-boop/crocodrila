@@ -12,6 +12,7 @@ const KITS = [
   { slug: 'segundo-cerebro', zip: '/crocodrila/segundo-cerebro/segundo-cerebro-modelo.zip' },
   { slug: 'adapta-receita', zip: '/crocodrila/adapta-receita/adapta-receita.zip' },
   { slug: 'crocodrila-prompta', zip: '/crocodrila/crocodrila-prompta/crocodrila-prompta-kit.zip' },
+  { slug: 'oraculo', nome: 'Oráculo', sub: 'Transforma o seu material de estudo num tutor que cita com a página e o arquivo, e confere cada aspa contra o texto de origem. Roda no seu computador.', zip: '/crocodrila/oraculo/oraculo-kit.zip' },
 ];
 const projetos = await getCollection('crocodrila');
 const kits = KITS.map((k) => {
@@ -20,14 +21,14 @@ const kits = KITS.map((k) => {
   return { ...k, titulo: k.nome ?? p.data.titulo, sub: k.sub ?? p.data.subtitulo };
 });
 ---
-<Base title="Kits para baixar" description="Sete ferramentas de IA da toca da Crocodrila, prontas para baixar, de graça, cada uma com guia passo a passo." image="/divulgacao/kits-para-baixar.png" imageWidth={1080} imageHeight={1080}>
+<Base title="Kits para baixar" description="Oito ferramentas de IA da toca da Crocodrila, prontas para baixar, de graça, cada uma com guia passo a passo." image="/divulgacao/kits-para-baixar.png" imageWidth={1080} imageHeight={1080}>
   <section class="kits-hero">
     <div class="wrap rise kh-grid">
       <div>
         <span class="label eyebrow">Novidade na toca</span>
         <h1 class="kh-title">Agora dá para baixar</h1>
         <p class="kh-lead measure">
-          Sete ferramentas que a gente usa no dia a dia viraram kits prontos, de graça, cada um
+          Oito ferramentas que a gente usa no dia a dia viraram kits prontos, de graça, cada um
           com guia passo a passo. Escolha, baixe e siga o arquivo COMECE-AQUI.
         </p>
       </div>

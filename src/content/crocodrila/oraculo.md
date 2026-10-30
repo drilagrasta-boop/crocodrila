@@ -41,12 +41,12 @@ por isso ela não vale como fonte, e as instruções dizem isso ao assistente.
 
 **3. Um script confere cada aspa.** Esta é a peça que faz diferença. O script lê todo
 trecho entre aspas das fichas e procura, palavra por palavra, no texto de origem. Aspa que
-não existe lá vem listada. Na maior base que montamos, as fichas já tinham sido conferidas
-pelos próprios agentes que as escreveram, e mesmo assim o script achou oito aspas em 981 que
-não batiam com o texto. Em sete delas a IA tinha "consertado" o original sem avisar: juntado
-letras que o reconhecimento de texto separou, acrescentado um hífen. A oitava era falso
-alarme do próprio script, por causa de um hífen de fim de linha. Para quem estuda, os sete
-são o tipo de erro que passaria para o trabalho sem ninguém ver.
+não existe lá vem listada. Na maior base que montamos, são 1.040 trechos entre aspas nas
+fichas, e o script confere os 1.040. Conferir à mão não é uma opção, e pedir à própria IA
+que confira o que ela mesma escreveu é pedir ao autor que revise o próprio texto. O erro
+que se procura é o de cópia: a IA "conserta" o original sem avisar, juntando letras que o
+reconhecimento de texto separou, acrescentando um hífen. Para quem estuda, é o tipo de erro
+que passaria para o trabalho sem ninguém ver.
 
 **4. As instruções do Project fixam o comportamento.** Falar dos autores em terceira pessoa.
 Pôr a fonte no corpo da resposta, com disciplina, arquivo e página. Terminar com uma seção
