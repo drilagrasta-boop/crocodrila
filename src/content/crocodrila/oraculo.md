@@ -5,7 +5,7 @@ data: 2026-10-30
 status: "em uso"
 tags: ["estudo", "claude.ai", "citação com página", "Python"]
 ordem: 10
-pose: "lupa"
+pose: "oraculo"
 ---
 
 ## O problema
