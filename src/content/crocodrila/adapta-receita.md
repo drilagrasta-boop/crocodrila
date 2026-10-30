@@ -4,7 +4,7 @@ subtitulo: "Uma receita para duas pessoas vira uma para sete, sem que o sal, o f
 data: 2026-08-01
 status: "em uso"
 tags: ["prompt", "cozinha", "sem instalação"]
-ordem: 9
+ordem: 10
 pose: "medidas"
 ---
 
