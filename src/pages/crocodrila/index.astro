@@ -49,6 +49,7 @@ const projetos = (await getCollection('crocodrila'))
         </a>
       ))}
     </div>
+    <p class="proj-autoria mono">Projetos desenvolvidos por @Adriana Aneli</p>
   </section>
 </Base>
 
@@ -78,6 +79,7 @@ const projetos = (await getCollection('crocodrila'))
   .proj-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.3rem; }
   .tag { font-size: 0.64rem; padding: 0.25em 0.6em; border: 1px solid var(--line-strong); border-radius: 99px; color: var(--ink-faint); }
   .proj-go { margin-top: 0.6rem; color: var(--jacare-deep); font-size: 0.8rem; }
+  .proj-autoria { margin-top: 2.6rem; text-align: center; font-size: 0.7rem; letter-spacing: 0.08em; color: var(--ink-faint); }
   .card-pose { width: 96px; }
   .card-pose :global(svg) { width: 100%; height: auto; }
   @media (max-width: 640px) { .proj-grid { grid-template-columns: 1fr; } }
