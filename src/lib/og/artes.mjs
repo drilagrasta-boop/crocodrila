@@ -321,4 +321,21 @@ export const ARTES_HOBBY = {
     <circle cx="167" cy="131" r="4" fill="none" stroke="#9c4a2e" stroke-width="2.2"/>
     <path d="M171,124 L188,131 M171,131 L188,124" stroke="#1d2b24" stroke-width="2" stroke-linecap="round"/>
   </svg>`,
+  'viola-quebrada': `<svg width="200" height="160" viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <line x1="16" y1="146" x2="184" y2="146" stroke="#1d2b24" stroke-width="2" stroke-linecap="round"/>
+    <g transform="rotate(-24 100 84)">
+      <rect x="94" y="8" width="12" height="62" rx="3" fill="#c49a3a" stroke="#1d2b24" stroke-width="2"/>
+      <rect x="90" y="4" width="20" height="14" rx="3" fill="#9c4a2e" stroke="#1d2b24" stroke-width="2"/>
+      <path d="M100,64 C70,64 62,84 72,98 C60,108 64,132 100,134 C136,132 140,108 128,98 C138,84 130,64 100,64 Z" fill="#9c4a2e" stroke="#1d2b24" stroke-width="2.4" stroke-linejoin="round"/>
+      <circle cx="100" cy="100" r="9" fill="#1d2b24"/>
+      <path d="M100,64 L92,84 L106,96 L94,118 L104,134" fill="none" stroke="#f2e9d2" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+      <path d="M97,18 L97,86" stroke="#f2e9d2" stroke-width="1.4" opacity="0.7"/>
+      <path d="M103,18 q-2,24 6,34 q6,8 -2,16" fill="none" stroke="#f2e9d2" stroke-width="1.4" stroke-linecap="round" opacity="0.7"/>
+    </g>
+    <g stroke="#3c5a45" stroke-width="2.2" stroke-linecap="round" fill="none">
+      <path d="M150,60 q8,-4 12,-12"/>
+      <path d="M158,76 q10,-2 16,-10"/>
+      <path d="M152,92 q10,0 18,-6"/>
+    </g>
+  </svg>`,
 };
