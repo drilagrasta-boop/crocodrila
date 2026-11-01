@@ -155,7 +155,7 @@ cantar só o refrão por cima. Errou? Ótimo, é assim que começa.
 
 ## Para ouvir
 
-- [Pena Branca e Xavantinho com Ná Ozzetti, no YouTube](https://www.youtube.com/watch?v=vCm1HP_9B2Q),
+- [Pena Branca e Xavantinho com Ná Ozzetti, no YouTube](https://www.youtube.com/watch?v=HeTEqmvcEaE),
   a gravação da letra acima. Arranjo de Kapenga, com violão de aço, violão de nylon,
   bandolim, contrabaixo elétrico e percussão.
 - [Ivan Vilela, no Spotify](https://open.spotify.com/track/0DtLZ4ngG7FOxsa7k1Ao0i), só
