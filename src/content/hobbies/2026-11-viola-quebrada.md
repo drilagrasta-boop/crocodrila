@@ -100,6 +100,30 @@ Colher canções foi um dos grandes trabalhos de Mário de Andrade.
 O que a Missão guardou em disco é a prova do que este mês propõe: uma canção que
 sobrevive porque alguém a sabe de cor e a canta.
 
+Essa mesma Missão reaparece num ensaio recente de Caetano Lagrasta, *Vesalius e Música:
+ensaio para poemas atonais* (Desconcertos Editora, 2024). Depois de enumerar o que se
+avizinha como tragédia (calor intenso e mortífero, degelo, ciclones, fome, falta de água
+potável), Lagrasta faz, no tom do poema de Drummond, uma pergunta que serve de epígrafe
+a este mês:
+
+> *E agora, José, poderemos continuar compondo, amando e dançando, ao influxo da
+> Inteligência Artificial?*
+
+Para responder, ele volta a Mário de Andrade. Lembra que Danilo Santos de Miranda,
+diretor regional do SESC São Paulo, depois de ouvir a coletiva da Missão de Pesquisas
+Folclóricas, em 2006, enalteceu Mário por "politizar a imaginação", e transcreve a
+fala dele:
+
+> (...) a surdez do progresso sente um quê de falta e nos convoca para um compromisso
+> não só com a Cultura dos Homens, mas com aquelas "baixas" culturas daqueles "menos"
+> homens que não tiveram direito à Humanidade, mas cantaram em suas mudas entrelinhas
+> (Miranda, 2006, p. 23, citado por Lagrasta, 2024).
+
+A máquina acha a letra em um segundo, mas não carrega essa falta. As canções que a
+Missão gravou chegaram até nós pela boca de gente que cantava sem que ninguém lhe
+perguntasse nada, "nas entrelinhas". Decorar "Viola quebrada" é, em escala doméstica,
+a resposta que a pergunta de Lagrasta pede: continuar cantando.
+
 ## A letra
 
 A letra abaixo é a da gravação indicada no fim, e pode diferir em detalhes do manuscrito
@@ -165,6 +189,11 @@ cantar só o refrão por cima. Errou? Ótimo, é assim que começa.
   na versão de Villa-Lobos.
 - [Podcast do IEB, no Spotify](https://open.spotify.com/episode/7k4G8QRAbEpDVY2IvqD5VZ):
   "Viola quebrada, uma canção de Mário de Andrade", por Flávia Camargo Toni.
+
+## Para ler
+
+- LAGRASTA, Caetano. *Vesalius e Música: ensaio para poemas atonais*. São Paulo:
+  Desconcertos Editora, 2024. ISBN 978-65-87908-96-0.
 
 > **O convite do mês:** decore "Viola quebrada" ao longo de novembro e cante, de cor,
 > para uma pessoa. Sem tela na mão, sem gravar e sem postar. Se a voz falhar, melhor
