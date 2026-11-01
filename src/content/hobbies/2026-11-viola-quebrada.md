@@ -100,7 +100,7 @@ Colher canções foi um dos grandes trabalhos de Mário de Andrade.
 O que a Missão guardou em disco é a prova do que este mês propõe: uma canção que
 sobrevive porque alguém a sabe de cor e a canta.
 
-Essa mesma Missão reaparece num ensaio recente de [Caetano Lagrasta](https://www.google.com/search?q=vesalius+caetano+lagrasta), [*Vesalius e Música:
+Essa mesma Missão reaparece num ensaio recente de [Caetano Lagrasta](https://www.estadao.com.br/politica/blog-do-fausto-macedo/labirintos-atonais/), [*Vesalius e Música:
 ensaio para poemas atonais*](https://desconcertoseditora.com.br/produto/vesalius-e-musica-ensaio-para-poemas-atonais/)
 (Desconcertos Editora, 2024). Depois de enumerar o que se
 avizinha como tragédia (calor intenso e mortífero, degelo, ciclones, fome, falta de água
