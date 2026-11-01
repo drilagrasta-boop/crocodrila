@@ -105,31 +105,31 @@ sobrevive porque alguém a sabe de cor e a canta.
 A letra abaixo é a da gravação indicada no fim, e pode diferir em detalhes do manuscrito
 de Mário. Mantive "Maróca" como aparece.
 
-> Quando da brisa no açoite a flor da noite se acurvou
-> Fui encontra coma a Maróca meu amor
-> Eu senti n'alma um golpe duro
-> Quando ao muro já no escuro
+> Quando da brisa no açoite a flor da noite se acurvou\
+> Fui encontra coma a Maróca meu amor\
+> Eu senti n'alma um golpe duro\
+> Quando ao muro já no escuro\
 > Meu olhar andou buscando a cara dela e não achou
 >
-> *Minha viola gemeu*
-> *Meu coração estremeceu*
-> *Minha viola quebrou*
+> *Minha viola gemeu*\
+> *Meu coração estremeceu*\
+> *Minha viola quebrou*\
 > *Meu coração me deixou*
 >
-> Minha Maróca resolveu prá gosto seu me abandonar
-> Porque o fadista nunca sabe trabalhar
-> Isto é besteira pois da flor
-> Que brilha e cheira a noite inteira
+> Minha Maróca resolveu prá gosto seu me abandonar\
+> Porque o fadista nunca sabe trabalhar\
+> Isto é besteira pois da flor\
+> Que brilha e cheira a noite inteira\
 > Vem depois a fruta que dá gosto de saborear
 >
-> *Minha viola gemeu*
-> *Meu coração estremeceu*
-> *Minha viola quebrou*
+> *Minha viola gemeu*\
+> *Meu coração estremeceu*\
+> *Minha viola quebrou*\
 > *Meu coração me deixou*
 >
-> Por causa dela sou um rapaz muito capaz de trabalhar
-> E todos os dias todas as noites capinar
-> Eu sei carpir porque minh'alma está arada e loteada
+> Por causa dela sou um rapaz muito capaz de trabalhar\
+> E todos os dias todas as noites capinar\
+> Eu sei carpir porque minh'alma está arada e loteada\
 > Capinada com as foiçadas desta luz do seu olhar
 
 ## Como decorar, sem pressa
