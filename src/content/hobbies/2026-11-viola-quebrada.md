@@ -106,7 +106,7 @@ A letra abaixo é a da gravação indicada no fim, e pode diferir em detalhes do
 de Mário. Mantive "Maróca" como aparece.
 
 > Quando da brisa no açoite a flor da noite se acurvou\
-> Fui encontra com a Maróca meu amor\
+> Fui encontrá coma a Maróca meu amor\
 > Eu senti n'alma um golpe duro\
 > Quando ao muro já no escuro\
 > Meu olhar andou buscando a cara dela e não achou
