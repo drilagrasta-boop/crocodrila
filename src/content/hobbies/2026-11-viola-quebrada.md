@@ -38,8 +38,7 @@ A canção escolhida é **"Viola quebrada"**, de Mário de Andrade. A letra e a 
 dele estão em domínio público desde 2016. As gravações
 e a harmonização de Villa-Lobos continuam protegidas.
 
-Uma correção importante sobre a ideia inicial: não é uma canção "colhida" do povo por
-ele. É uma **modinha composta pelo próprio Mário**, melodia e letra, praticamente a
+É uma **modinha composta pelo próprio Mário**, melodia e letra, praticamente a
 única canção que ele fez, na linguagem das modinhas caipiras que estudava. O manuscrito, sem data certa,
 está no arquivo do Instituto de Estudos Brasileiros da USP. Nenhuma fonte consegue dizer
 ao certo quando ela foi feita: sabe-se só que foi depois de 1913, ano da *Cabocla de
