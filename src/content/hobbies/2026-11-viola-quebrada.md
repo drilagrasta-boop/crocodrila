@@ -20,7 +20,7 @@ corpo: **a voz**, e uma canção que você sabe sem olhar.
 
 ## Por que decorar uma canção, e por que agora
 
-Nunca foi tão fácil ter qualquer letra. Basta pedir, e a máquina entrega o texto, a
+Nunca foi tão fácil ter qualquer letra à mão. Basta pedir, e a máquina entrega o texto, a
 cifra, a tradução e até uma versão cantada no estilo que você quiser. Só que uma letra
 que se acha em um segundo é uma letra que não fica em ninguém.
 
