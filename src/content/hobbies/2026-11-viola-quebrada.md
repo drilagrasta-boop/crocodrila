@@ -100,8 +100,9 @@ Colher canções foi um dos grandes trabalhos de Mário de Andrade.
 O que a Missão guardou em disco é a prova do que este mês propõe: uma canção que
 sobrevive porque alguém a sabe de cor e a canta.
 
-Essa mesma Missão reaparece num ensaio recente de Caetano Lagrasta, *Vesalius e Música:
-ensaio para poemas atonais* (Desconcertos Editora, 2024). Depois de enumerar o que se
+Essa mesma Missão reaparece num ensaio recente de [Caetano Lagrasta](https://www.google.com/search?q=vesalius+caetano+lagrasta), [*Vesalius e Música:
+ensaio para poemas atonais*](https://desconcertoseditora.com.br/produto/vesalius-e-musica-ensaio-para-poemas-atonais/)
+(Desconcertos Editora, 2024). Depois de enumerar o que se
 avizinha como tragédia (calor intenso e mortífero, degelo, ciclones, fome, falta de água
 potável), Lagrasta faz, no tom do poema de Drummond, uma pergunta que serve de epígrafe
 a este mês:
@@ -192,7 +193,7 @@ cantar só o refrão por cima. Errou? Ótimo, é assim que começa.
 
 ## Para ler
 
-- LAGRASTA, Caetano. *Vesalius e Música: ensaio para poemas atonais*. São Paulo:
+- LAGRASTA, Caetano. [*Vesalius e Música: ensaio para poemas atonais*](https://desconcertoseditora.com.br/produto/vesalius-e-musica-ensaio-para-poemas-atonais/). São Paulo:
   Desconcertos Editora, 2024. ISBN 978-65-87908-96-0.
 
 > **O convite do mês:** decore "Viola quebrada" ao longo de novembro e cante, de cor,
