@@ -35,7 +35,7 @@ vai saber uma só, de cor, e cantá-la para alguém.**
 ## A canção, e uma ressalva honesta
 
 A canção escolhida é **"Viola quebrada"**, de Mário de Andrade. A letra e a melodia
-dele estão em domínio público desde 2016, porque o autor morreu em 1945. As gravações
+dele estão em domínio público desde 2016. As gravações
 e a harmonização de Villa-Lobos continuam protegidas.
 
 Uma correção importante sobre a ideia inicial: não é uma canção "colhida" do povo por
