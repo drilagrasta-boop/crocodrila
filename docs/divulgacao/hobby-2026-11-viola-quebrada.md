@@ -8,7 +8,7 @@ Este arquivo fica em `docs/`, fora de `public/`, e não vai para o site.
 
 Dica: o LinkedIn tende a reduzir o alcance de posts com link no corpo. Se preferir, tire a linha do link, publique e cole o endereço no primeiro comentário.
 
-Sugestão de imagem: a arte da viola rachada (a mesma do cartão do hobby na página) ou um print do refrão em destaque. Ainda não existe cartão 1080x1080 para este hobby; o gerador `scripts/gerar-cartao-edicao.mjs` é específico das edições.
+Imagem: `hobby-2026-11-viola-quebrada.png` (1080x1080), nesta mesma pasta. Gerada por `scripts/gerar-cartao-hobby.mjs`, que serve para os próximos hobbies (os argumentos estão no cabeçalho do script). O `scripts/gerar-cartao-edicao.mjs` é só para as edições do radar.
 
 ---
 
