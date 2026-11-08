@@ -5,7 +5,7 @@ data: 2026-11-08
 resumo: "Diante da caixa de texto de um chatbot, quase todo mundo erra de um de dois jeitos: confia demais ou desiste cedo. Escrevi um folheto para os dois leitores, e ele acaba de sair no nº 4 do Ensaio Geral, com leitura gratuita."
 autor: "Adriana Aneli"
 linkedin: "https://www.linkedin.com/in/adriana-aneli-costa-lagrasta-40146916a/"
-nota: "Este ensaio divulga um livro meu, publicado na coleção Ensaio Geral, que não tem fins lucrativos. Declaro o interesse antes que alguém precise apontá-lo."
+nota: "Este ensaio divulga um livro meu, publicado na coleção Ensaio Geral, que não tem fins lucrativos."
 arte: "porta-entreaberta"
 rascunho: false
 ---
