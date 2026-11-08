@@ -230,6 +230,26 @@ export const ARTES_ENSAIO = {
     <line x1="153" y1="87" x2="172" y2="106" stroke="#1d2b24" stroke-width="3.4" stroke-linecap="round"/>
     <polyline points="129,72 136,80 149,63" fill="none" stroke="#9c4a2e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
   </svg>`,
+  // "O que escrever na caixa vazia" (Adriana Aneli): a caixa de texto vazia, com
+  // o cursor dourado, diante da porta entreaberta — "eu te levo até a porta;
+  // quem entra é você". A luz dourada sai pela fresta e chega até o chão.
+  'porta-entreaberta': `<svg width="200" height="160" viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M120,134 L150,134 L184,152 L112,152 Z" fill="#c49a3a" opacity="0.35"/>
+    <line x1="12" y1="134" x2="188" y2="134" stroke="#1d2b24" stroke-width="2" stroke-linecap="round"/>
+    <rect x="96" y="22" width="54" height="112" fill="#fffdf6" stroke="#1d2b24" stroke-width="2.4" stroke-linejoin="round"/>
+    <rect x="120" y="25" width="27" height="109" fill="#c49a3a" opacity="0.45"/>
+    <path d="M96,22 L122,30 L122,128 L96,134 Z" fill="#3c5a45" stroke="#1d2b24" stroke-width="2.4" stroke-linejoin="round"/>
+    <circle cx="116" cy="82" r="3" fill="#c49a3a" stroke="#1d2b24" stroke-width="1.4"/>
+    <g>
+      <rect x="18" y="62" width="58" height="28" rx="6" fill="#fffdf6" stroke="#1d2b24" stroke-width="2.2"/>
+      <path d="M30,90 L27,100 L40,90 Z" fill="#fffdf6" stroke="#1d2b24" stroke-width="2" stroke-linejoin="round"/>
+      <line x1="31" y1="69" x2="31" y2="83" stroke="#c49a3a" stroke-width="2.6" stroke-linecap="round"/>
+    </g>
+    <g stroke="#9c4a2e" stroke-width="2" stroke-linecap="round" fill="none">
+      <path d="M80,76 L90,76"/>
+      <polyline points="86,72 90,76 86,80" stroke-linejoin="round"/>
+    </g>
+  </svg>`,
 };
 
 export const ARTES_HOBBY = {
