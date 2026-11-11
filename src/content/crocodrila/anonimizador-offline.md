@@ -20,8 +20,9 @@ internet e sem gastar token**.
   conectores ("da", "de") e pronomes de tratamento ("Dr.", "Exmo."), pra não embaralhar.
 - **Dados estruturados ganham tarja com rótulo** — CPF, RG, CNPJ (inclusive o novo,
   alfanumérico), OAB, CRM e outros conselhos, PIS, título de eleitor, CTPS, cartão do SUS,
-  passaporte, placa e chassi, conta e agência, telefone, e-mail, CEP, perfil de rede social
-  e o número do endereço viram `[CPF]`, `[RG]`, `[EMAIL]` e por aí vai.
+  passaporte, registro de estrangeiro (RNM), CNH, Renavam, placa e chassi, conta e agência,
+  telefone, e-mail, CEP, perfil de rede social e o número do endereço viram `[CPF]`, `[RG]`,
+  `[EMAIL]` e por aí vai.
 - **Instituições ficam** — tribunais, órgãos, empresas, cidades, leis e datas continuam
   legíveis, pra peça não virar sopa de iniciais.
 - **Sigilo total, quando o texto vai sair da máquina** — uma opção a mais tarja também o
@@ -59,6 +60,18 @@ para Windows, com atalhos na Área de Trabalho: você arrasta o arquivo para a j
 pronto. O código foi escrito pela Crocodrila, a partir da ideia do Sistema Marmelstein.
 
 - [**Baixar o kit** (conversor-anonimizador-offline.zip, 17 MB)](/crocodrila/conversor-pdf-txt/conversor-anonimizador-offline.zip)
+
+**Atualizado em 11 de novembro de 2026.** A versão anterior deixava passar nomes, e a
+gente só descobriu num processo de verdade. Eram quatro situações. Nome completo em CAIXA
+ALTA que o detector confundia com nome de cidade ficava protegido como se fosse lugar. Nome
+com uma palavra igual a marca, mês ou termo forense saía inteiro (o sobrenome "Morais", por
+causa de "danos morais"). Sobrenome igual a palavra comum, como "Máximo", sobrava ao lado
+das iniciais. E, quando dois trechos de nome se sobrepunham, só o primeiro era trocado.
+Passavam também o e-mail em que o OCR troca o "@" por outro sinal, o CPF com espaço,
+vírgula ou quebra de linha no meio e o número de casa com quatro dígitos. Tudo isso está
+corrigido, e entraram tarjas novas para registro de estrangeiro, CNH e Renavam. Se você
+baixou o kit antes dessa data, baixe de novo, rode o instalador outra vez e reprocesse o
+que já anonimizou, em especial os documentos com nomes em CAIXA ALTA.
 
 Extraia o ZIP e siga o `COMECE-AQUI.txt`. A instalação usa a internet uma vez; depois,
 tudo roda offline.
