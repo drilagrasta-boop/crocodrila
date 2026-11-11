@@ -133,8 +133,6 @@ Acredito que as emoções também façam parte dessa equação. A IA pode falar 
 
 Ao mesmo tempo, acho que a segunda negação aparece justamente aí. Por mais tecnológica que seja, a IA é construída a partir de conhecimentos, referências e experiências humanas. E, para mim, é interessante perceber que, quanto mais essas ferramentas evoluem, mais elas nos fazem questionar aquilo que é próprio da nossa experiência. Talvez essa seja uma das reflexões mais importantes que levo tanto das conversas com meu pai quanto da minha prática como arquiteta.
 
-> A IA pode falar sobre sensações, reconhecer padrões e até sugerir soluções a partir do que aprendeu com experiências humanas, mas ela não vive nada disso.
-
 ---
 
 *Onde encontrar Mariana Duailibe: no Instagram da Duma Arquitetura, [@dumaarquitetura\_\_\_\_](https://www.instagram.com/dumaarquitetura____/), e no seu perfil pessoal, [@marianaduailibesb](https://www.instagram.com/marianaduailibesb/).*
