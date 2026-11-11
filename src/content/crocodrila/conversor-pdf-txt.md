@@ -63,10 +63,7 @@ aviso. Agora o carimbo é descontado antes da decisão e a folha passa pelo OCR.
 baixou o kit antes dessa data, baixe de novo, rode o instalador outra vez e reconverta os
 autos do e-SAJ que tinham páginas escaneadas.
 
-**Nova atualização em 11 de novembro de 2026.** Desta vez o conserto foi no anonimizador,
-que deixava passar nomes em CAIXA ALTA e sobrenomes iguais a palavras comuns. O que mudou
-está contado na [página dele](/crocodrila/anonimizador-offline). Vale baixar o kit de novo
-e reprocessar o que você já anonimizou.
+**Versão atualizada em 11 de novembro de 2026.**
 
 Para instalar, clique com o botão direito no ZIP, escolha **Extrair tudo** e abra o
 arquivo `COMECE-AQUI.txt`: são seis passos, do Python aos atalhos na Área de Trabalho. A
