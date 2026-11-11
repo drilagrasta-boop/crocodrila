@@ -15,7 +15,7 @@ rascunho: false
 
 *Mariana Duailibe é arquiteta e está à frente da Duma Arquitetura, escritório de arquitetura e interiores que, desde maio de 2026, mostra no Instagram projetos de quartos, cozinha, lavabo, bar, sala e escritório, ao lado de lições curtas sobre luz, cor e história do design. Aqui na Toca, onde cada conversa procura o que a IA aumenta e o que substitui, nos interessa o ponto de vista de quem desenha casas para outras pessoas viverem, porque é dentro de uma casa que a IA esbarra no gosto, no orçamento e na rotina de alguém.*
 
-*Fora do escritório, escreveu entre 2024 e o começo de 2026 a newsletter cool.lected, uma curadoria de moda, cultura e gastronomia. A primeira edição com esse nome, em agosto de 2025, propunha uma ideia simples: “desacelerar”, ir ao cinema numa quinta qualquer, “visitar uma exposição só porque sim”. Conversamos sobre moda, ofício e o que, num projeto, ainda depende de alguém.*
+*Fora do escritório, escreveu entre 2024 e o começo de 2026 a newsletter cool.lected, uma curadoria de moda, cultura e gastronomia. A primeira edição com esse nome, em agosto de 2025, propunha uma ideia simples: “desacelerar”, ir ao cinema numa quinta qualquer, “visitar uma exposição só porque sim”. Conversamos sobre moda, ofício e o que, num projeto, depende exclusivamente do olhar humano.*
 
 <figure class="foto">
 <img src="/entrevistas/mariana-duailibe.jpg" alt="Retrato de Mariana Duailibe: cabelos escuros e longos, gola alta preta, jaqueta jeans e casaco com gola de pelúcia clara, sorrindo de leve numa rua de casas baixas" style="max-width: 400px;" />
