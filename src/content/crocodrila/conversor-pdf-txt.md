@@ -53,7 +53,7 @@ Crocodrila. Vem tudo junto: o **conversor**, o [**anonimizador**](/crocodrila/an
 e uma terceira ferramenta, **Limpar Metadados**, que apaga do documento final os dados
 ocultos (autor, datas, revisões) antes de você enviar.
 
-- [**Baixar o kit** (conversor-anonimizador-offline.zip, 17 MB)](/crocodrila/conversor-pdf-txt/conversor-anonimizador-offline.zip)
+- [**Baixar o kit** (conversor-anonimizador-offline.zip, 16 MB)](/crocodrila/conversor-pdf-txt/conversor-anonimizador-offline.zip)
 
 **Atualizado em 7 de outubro de 2026.** A versão anterior do kit tinha um defeito sério
 com autos do e-SAJ. O tribunal grava em toda folha, inclusive na escaneada, um carimbo de
@@ -63,7 +63,7 @@ aviso. Agora o carimbo é descontado antes da decisão e a folha passa pelo OCR.
 baixou o kit antes dessa data, baixe de novo, rode o instalador outra vez e reconverta os
 autos do e-SAJ que tinham páginas escaneadas.
 
-**Versão atualizada em 11 de novembro de 2026.**
+**Versão atualizada em 16 de novembro de 2026.**
 
 Para instalar, clique com o botão direito no ZIP, escolha **Extrair tudo** e abra o
 arquivo `COMECE-AQUI.txt`: são seis passos, do Python aos atalhos na Área de Trabalho. A

@@ -59,7 +59,7 @@ O anonimizador vem no mesmo pacote do [Conversor PDF → TXT](/crocodrila/conver
 para Windows, com atalhos na Área de Trabalho: você arrasta o arquivo para a janela e
 pronto. O código foi escrito pela Crocodrila, a partir da ideia do Sistema Marmelstein.
 
-- [**Baixar o kit** (conversor-anonimizador-offline.zip, 17 MB)](/crocodrila/conversor-pdf-txt/conversor-anonimizador-offline.zip)
+- [**Baixar o kit** (conversor-anonimizador-offline.zip, 16 MB)](/crocodrila/conversor-pdf-txt/conversor-anonimizador-offline.zip)
 
 **Versão atualizada em 11 de novembro de 2026.**
 
