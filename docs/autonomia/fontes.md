@@ -91,7 +91,7 @@ dos quatro veículos assinados; no Brasil, MEC, CAPES e Cetic.br (TIC Educação
 | MediaNama (Índia) | https://www.medianama.com/tag/artificial-intelligence/ | Aberto nos 3 itens testados; há menção a conteúdo "premium" | agente | Jornalismo | Inglês | https://www.medianama.com/tag/artificial-intelligence/feed/ ; geral: https://www.medianama.com/feed/ | 23/11/2026 | URL da tag deduzida do feed, que funciona. |
 | TechCabal (África) | https://techcabal.com/ | Aberto (3 artigos, texto integral) | agente | Jornalismo | Inglês | https://techcabal.com/feed/ ; IA: https://techcabal.com/tag/artificial-intelligence/feed/ | 23/11/2026 | O feed `/category/ai/feed/` existe mas veio vazio; usar o da tag. Foco em startups; a cobertura de IA é esparsa. |
 
-## Dinheiro
+## Mercado
 
 | Fonte | URL | Acesso | Como ler | Tipo | Idioma | Feed | Última evidência | Observação |
 |---|---|---|---|---|---|---|---|---|

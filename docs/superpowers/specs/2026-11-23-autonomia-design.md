@@ -93,7 +93,7 @@ Poder e regras            rubricas da semana: só as que tiverem fato
 Praça pública
 Direitos
 Soberania
-Dinheiro
+Mercado
 Lado escuro
 Clima
 Ofício
@@ -111,7 +111,7 @@ Memória                   o que fica registrado para cobrar depois (fixa)
 | Praça pública | eleições, desinformação, partidos, erosão democrática | II e IV |
 | Direitos | dados pessoais, discriminação algorítmica, vigilância, medidas de exceção | V, VI e VII |
 | Soberania | geopolítica, chips, nuvem, infraestrutura nacional | VII e X |
-| Dinheiro | mercado, concentração, poder corporativo, investimento | IX |
+| Mercado | bolsa, concentração, poder corporativo, investimento | IX |
 | Lado escuro | vulnerabilidades, incidentes, panes | pedido do prof. Masseno |
 | Clima | energia e água dos data centers | VIII |
 | Ofício | trabalho e profissões | pedido da editora |
