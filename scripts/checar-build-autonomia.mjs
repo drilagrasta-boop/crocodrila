@@ -34,6 +34,7 @@ const ocultas = autonomia.filter((e) => !comRascunhos && e.rascunho);
 const lista = ler(join(DIST, 'autonomia', 'index.html'));
 exigir(lista !== null, 'falta dist/autonomia/index.html');
 exigir(lista?.includes(AVISO), 'a lista da AutonomIA não traz o aviso fixo');
+exigir(lista?.includes('Como é feita'), 'a página da seção não explica como a AutonomIA é feita');
 const home = ler(join(DIST, 'index.html'));
 exigir(home?.includes('href="/autonomia"'), 'o menu da home não tem link para /autonomia');
 
