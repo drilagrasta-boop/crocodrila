@@ -110,4 +110,26 @@ const ensaios = defineCollection({
   }),
 });
 
-export const collections = { edicoes, crocodrila, entrevistas, hobbies, ensaios };
+// ---------------------------------------------------------------------------
+// AUTONOMIA — a resenha crítica das quartas, assinada por Adriana Aneli.
+// Não é a edição de sábado (só fonte primária): aqui a imprensa entra como fonte,
+// e cada nota separa o fato da leitura. numero 0 = edição piloto.
+// Arquivos em src/content/autonomia/ (ex.: 2026-12-02-autonomia-001.md).
+// A estrutura do texto é conferida por scripts/checar-autonomia.mjs.
+// ---------------------------------------------------------------------------
+const autonomia = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/autonomia' }),
+  schema: z.object({
+    numero: z.number(),                 // 0 = piloto; 1, 2, 3...
+    titulo: z.string(),
+    data: z.coerce.date(),              // a quarta-feira de saída
+    periodo_inicio: z.coerce.date(),    // primeiro dia coberto (quarta anterior)
+    periodo_fim: z.coerce.date(),       // último dia coberto (terça)
+    resumo: z.string(),                 // 1–2 frases (lista, feed e preview)
+    destaques: z.array(z.string()).default([]),
+    autor: z.string().default('Adriana Aneli'),
+    rascunho: z.boolean().default(false), // true = não publica
+  }),
+});
+
+export const collections = { edicoes, crocodrila, entrevistas, hobbies, ensaios, autonomia };

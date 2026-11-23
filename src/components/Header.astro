@@ -2,8 +2,10 @@
 import Crocodrila from './Crocodrila.astro';
 const path = Astro.url.pathname;
 const isActive = (p: string) => path === p || (p !== '/' && path.startsWith(p));
-const nav = [
+// `html` é opcional: versão do rótulo com marcação (o "IA" verde da AutonomIA).
+const nav: { href: string; label: string; html?: string }[] = [
   { href: '/edicoes', label: 'Edições' },
+  { href: '/autonomia', label: 'AutonomIA', html: 'Autonom<b>IA</b>' },
   { href: '/entrevistas', label: 'Entrevistas' },
   { href: '/ensaios', label: 'Ensaios' },
   { href: '/hobbies', label: 'Habemos Hobby' },
@@ -24,7 +26,7 @@ const nav = [
     <nav class="nav" aria-label="Principal">
       {nav.map((item) => (
         <a href={item.href} class:list={['nav-link', { active: isActive(item.href) }]}>
-          {item.label}
+          {item.html ? <Fragment set:html={item.html} /> : item.label}
         </a>
       ))}
     </nav>
@@ -58,6 +60,8 @@ const nav = [
   .nav-link:hover { color: var(--ink); }
   .nav-link:hover::after, .nav-link.active::after { width: 100%; }
   .nav-link.active { color: var(--ink); }
+  /* :global porque o <b> entra por set:html e não recebe o escopo do componente */
+  .nav-link :global(b) { color: var(--jacare); font-weight: inherit; }
   .rss { color: var(--ink-faint); }
 
   /* No celular os sete links quebram em três linhas: o cabeçalho deixa de ser fixo
@@ -66,6 +70,7 @@ const nav = [
     .masthead { position: static; }
     .bar { padding-block: 0.55rem; }
     .brand-text { display: none; }
-    .nav { gap: 0.1rem 1rem; }
+    .nav { gap: 0.1rem 0.9rem; }
+    .nav-link { font-size: 0.72rem; }
   }
 </style>
