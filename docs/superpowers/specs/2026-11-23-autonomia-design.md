@@ -357,6 +357,12 @@ de higiene.
    na home, parágrafo na página Sobre, cartão de divulgação, imagem de compartilhamento
    própria, ajuste fino do menu no celular e o comando `/autonomia` consolidado em skill.
 3. **Documento em repositório público** [editora]: pode ser commitado como está.
+4. **Piloto** [editora, 23/11/2026, substitui o item 2 quanto ao número]: a edição de
+   quarta 25/11/2026 sai como **edição piloto**, pública no site e no feed, e o nº 1 fica
+   para quarta 02/12/2026. O piloto tem `numero: 0`, é exibido como "AutonomIA · edição
+   piloto" (sem "nº"), e traz no alto uma linha dizendo que é um ensaio de formato e que
+   críticas são bem-vindas. O rigor é o de qualquer edição: três paradas, fato separado
+   de leitura, conferência de fontes. Peças da segunda entrega podem faltar no piloto.
 
 ## 10. Verificação do mapa de fontes
 

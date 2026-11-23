@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Pôr no ar a AutonomIA, resenha semanal das quartas, como seção própria do site, com um roteiro de produção (`/autonomia`) e um verificador de estrutura, a tempo do nº 1 em 25/11/2026.
+**Goal:** Pôr no ar a AutonomIA, resenha semanal das quartas, como seção própria do site, com um roteiro de produção (`/autonomia`) e um verificador de estrutura, a tempo da edição piloto em 25/11/2026 e do nº 1 em 02/12/2026.
 
 **Architecture:** Uma coleção de conteúdo nova (`autonomia`) no Astro, com páginas de lista e de leitura no padrão de `src/pages/edicoes/`. A estrutura editorial (rubricas, notas, leitura) é uma convenção de Markdown conferida por um verificador em Node sem dependências novas. O roteiro semanal é uma skill pessoal fora do repositório, que usa o verificador e a skill `confere-fonte-primaria` existente.
 
@@ -72,7 +72,7 @@ Rubrica = `<p class="kicker">…</p>`. Nota = `## título` até o próximo `##` 
 
 ---
 
-# Fase 1: o mínimo para o nº 1 (até 25/11/2026)
+# Fase 1: o mínimo para a edição piloto (até 25/11/2026)
 
 ### Task 1: Verificador de estrutura da edição
 
@@ -160,14 +160,14 @@ git commit -m "feat(autonomia): verificador de estrutura da edição"
 - Create: `src/lib/autonomia.mjs`
 - Create: `src/pages/autonomia/index.astro`
 - Create: `src/pages/autonomia/[...slug].astro`
-- Create: `src/content/autonomia/2026-11-25-autonomia-001.md` (esqueleto, `rascunho: true`)
+- Create: `src/content/autonomia/2026-11-25-autonomia-000.md` (esqueleto, `rascunho: true`)
 - Modify: `src/components/Header.astro`
 - Modify: `.gitignore`
 - Test: `scripts/checar-build-autonomia.mjs`
 
 **Interfaces:**
 - Consumes: convenção de Markdown acima.
-- Produces: coleção `autonomia` com schema `numero: number`, `titulo: string`, `data: date`, `periodo_inicio: date`, `periodo_fim: date`, `resumo: string`, `destaques: string[]` (padrão `[]`), `autor: string` (padrão `'Adriana Aneli'`), `rascunho: boolean` (padrão `false`). `src/lib/autonomia.mjs` exporta `publicadas(entries)`: filtra `rascunho`, salvo quando `process.env.MOSTRAR_RASCUNHOS === '1'`, e ordena por `numero` decrescente; exporta `tituloItem(entry)`: `AutonomIA nº 001 · <titulo>`. Rotas: `/autonomia/` e `/autonomia/<id>/`.
+- Produces: coleção `autonomia` com schema `numero: number`, `titulo: string`, `data: date`, `periodo_inicio: date`, `periodo_fim: date`, `resumo: string`, `destaques: string[]` (padrão `[]`), `autor: string` (padrão `'Adriana Aneli'`), `rascunho: boolean` (padrão `false`). `src/lib/autonomia.mjs` exporta `publicadas(entries)`: filtra `rascunho`, salvo quando `process.env.MOSTRAR_RASCUNHOS === '1'`, e ordena por `numero` decrescente; exporta `tituloItem(entry)`: `AutonomIA nº 001 · <titulo>`, ou `AutonomIA · edição piloto · <titulo>` quando `numero` é 0. Rotas: `/autonomia/` e `/autonomia/<id>/`.
 
 - [ ] **Step 1: Escrever o teste de build que falha** em `scripts/checar-build-autonomia.mjs`: script Node que lê `dist/` e sai com código 1 na primeira falha. Aceita `--com-rascunhos`. O script não fixa nenhuma edição: lê o frontmatter de cada arquivo de `src/content/autonomia/` e separa as edições em rascunhos e publicadas, para continuar valendo depois que o nº 1 for publicado.
 
@@ -184,7 +184,7 @@ Asserções com `--com-rascunhos`: as da linha anterior valem para todas as edi�
 Run: `npm run build && node scripts/checar-build-autonomia.mjs`
 Expected: FAIL (`dist/autonomia/index.html` não existe)
 
-- [ ] **Step 3: Coleção, helper e esqueleto.** Acrescentar a coleção em `src/content.config.ts` com o schema das Interfaces e um comentário de cabeçalho no estilo dos existentes. Criar `src/lib/autonomia.mjs`. Criar o esqueleto do nº 1 na convenção, com uma nota de exemplo por rubrica fixa, `rascunho: true`, `titulo: "A definir"`. Acrescentar `docs/autonomia/cadernos/` ao `.gitignore`.
+- [ ] **Step 3: Coleção, helper e esqueleto.** Acrescentar a coleção em `src/content.config.ts` com o schema das Interfaces e um comentário de cabeçalho no estilo dos existentes. Criar `src/lib/autonomia.mjs`. Criar o esqueleto do piloto (`numero: 0`) na convenção, com uma nota de exemplo por rubrica fixa, `rascunho: true`, `titulo: "A definir"`. Acrescentar `docs/autonomia/cadernos/` ao `.gitignore`.
 
 - [ ] **Step 4: Páginas.** `index.astro` segue `src/pages/edicoes/index.astro` (mesma lista, sem agrupar por ano enquanto houver menos de 20 edições). `[...slug].astro` segue `src/pages/edicoes/[...slug].astro`, sem `SeloVolume` e sem bloco de PDF; o `<article>` leva a classe `autonomia`. Ambas usam `publicadas()`. Imagem de compartilhamento na Fase 1: `/og/site.png`.
 
@@ -193,7 +193,7 @@ Textos exatos:
 - Título da lista: `AutonomIA` (o `IA` final em `<b>` com `color: var(--jacare)`)
 - Linha de apoio: `A semana da IA, vista pelo que ela fez com o poder, os direitos e a democracia.`
 - Aviso fixo, na lista e no rodapé de cada edição: `A AutonomIA trabalha com imprensa e com documentos oficiais, sempre com link. O relato dos fatos vem separado da leitura, que é opinião assinada. Nada aqui é recomendação de investimento.`
-- Cabeçalho da edição: `AutonomIA nº 001`, a data por extenso e `Semana de 18 a 24 de novembro de 2026` (dos campos de período).
+- Cabeçalho da edição: `AutonomIA nº 001` (ou `AutonomIA · edição piloto` quando `numero` é 0), a data por extenso e `Semana de 18 a 24 de novembro de 2026` (dos campos de período).
 - Assinatura no rodapé da edição: `Adriana Aneli`.
 
 Estilo do bloco de leitura, só dentro de `.autonomia`: `.autonomia .prose blockquote` com fundo `var(--paper-deep)`, borda esquerda `var(--gold)`, fonte um ponto menor; o `**Leitura.**` em `var(--mono)`, caixa alta, `var(--gold-deep)`.
@@ -206,7 +206,7 @@ Run: `npm run build && node scripts/checar-build-autonomia.mjs`
 Expected: PASS
 Run: `MOSTRAR_RASCUNHOS=1 npm run build && node scripts/checar-build-autonomia.mjs --com-rascunhos`
 Expected: PASS
-Run: `node scripts/checar-autonomia.mjs src/content/autonomia/2026-11-25-autonomia-001.md`
+Run: `node scripts/checar-autonomia.mjs src/content/autonomia/2026-11-25-autonomia-000.md`
 Expected: código 0 (só avisos de tamanho)
 
 - [ ] **Step 7: Conferência visual.** `MOSTRAR_RASCUNHOS=1 npm run dev`, abrir `/autonomia/` e a edição em 1280 px e em 390 px de largura; conferir menu, bloco de leitura e aviso. Registrar no relato da tarefa o que foi visto.
@@ -229,7 +229,7 @@ git commit -m "feat(autonomia): coleção, páginas e item no menu"
 - Consumes: `publicadas`, `tituloItem` de `src/lib/autonomia.mjs`.
 - Produces: `/rss.xml` com itens das duas coleções, ordenados por `data` decrescente; itens da AutonomIA com `title` de `tituloItem` e `link` `/autonomia/<id>/`.
 
-- [ ] **Step 1: Estender o teste de build**, ainda derivando tudo do frontmatter. Nos dois modos: as datas dos itens de `dist/rss.xml` estão em ordem não crescente; todo item cujo link contém `/edicoes/` tem título começando por `Nº`; todo item cujo link contém `/autonomia/` tem título começando por `AutonomIA nº`; a quantidade de itens `/edicoes/` é igual à de edições de sábado publicadas. Sem a flag: nenhum rascunho da AutonomIA tem link no feed, e toda publicada tem. Com `--com-rascunhos`: toda edição da AutonomIA tem `<link>…/autonomia/<id>/</link>` no feed.
+- [ ] **Step 1: Estender o teste de build**, ainda derivando tudo do frontmatter. Nos dois modos: as datas dos itens de `dist/rss.xml` estão em ordem não crescente; todo item cujo link contém `/edicoes/` tem título começando por `Nº`; todo item cujo link contém `/autonomia/` tem título começando por `AutonomIA`; a quantidade de itens `/edicoes/` é igual à de edições de sábado publicadas. Sem a flag: nenhum rascunho da AutonomIA tem link no feed, e toda publicada tem. Com `--com-rascunhos`: toda edição da AutonomIA tem `<link>…/autonomia/<id>/</link>` no feed.
 
 - [ ] **Step 2: Rodar e ver falhar**
 
@@ -306,12 +306,12 @@ git commit -m "docs(autonomia): mapa de fontes e registro de Memória"
 
 - [ ] **Step 2: Verificar que a skill carrega.** Em sessão nova no projeto, a lista de skills mostra `autonomia`; conferir que o frontmatter é YAML válido (`python -c "import yaml,sys; yaml.safe_load(open(sys.argv[1],encoding='utf-8').read().split('---')[1])" <caminho>`).
 
-### Task 6: Produzir e publicar o nº 1
+### Task 6: Produzir e publicar a edição piloto
 
 Tarefa editorial, conduzida pelo roteiro da Tarefa 5 com a editora. Não é delegável a subagente de implementação.
 
 **Files:**
-- Modify: `src/content/autonomia/2026-11-25-autonomia-001.md`
+- Modify: `src/content/autonomia/2026-11-25-autonomia-000.md`
 - Modify: `docs/autonomia/memoria.md`
 - Create (não versionado): `docs/autonomia/cadernos/2026-11-25-*.md`
 
@@ -323,7 +323,7 @@ Tarefa editorial, conduzida pelo roteiro da Tarefa 5 com a editora. Não é dele
 
 ---
 
-# Fase 2: depois do nº 1
+# Fase 2: depois do piloto, antes do nº 1 (02/12/2026)
 
 ### Task 7: Bloco na home e parágrafo na página Sobre
 
