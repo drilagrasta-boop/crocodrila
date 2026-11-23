@@ -360,7 +360,31 @@ de higiene.
 
 ## 10. Verificação do mapa de fontes
 
-A incorporar quando a verificação terminar.
+Verificação feita por agente em 23/11/2026, fonte a fonte, na web. A tabela completa (URL,
+evidência de atividade, acesso, feed, tipo, idioma) é a base de `docs/autonomia/fontes.md`.
+O que segue é o relato do agente; itens marcados "não confirmado" na tabela precisam de
+nova tentativa, de preferência pelo navegador, antes de serem dados como mortos.
+
+- **75 fontes testadas**: 65 ativas, com item datado nos 60 dias anteriores; 1 quase parada
+  (DigiChina, último item em 23/07/2026); 9 sem atividade confirmada, quase todas porque o
+  site bloqueou o teste automático (Conselho da Europa, V-Dem, Carnegie, Reuters, OIT,
+  NBER, AIE, TSE, ITS Rio).
+- **Fechados**: Financial Times, Bloomberg, The Information e Caixin. Não testáveis por
+  bloqueio: Politico, South China Morning Post, The Atlantic, Expresso, Reuters. Acesso
+  limitado ou misto: Wired, MIT Technology Review, The Verge, Valor, Público, Observador,
+  Jornal Económico, 404 Media.
+- **Mudanças de nome**: o Euractiv foi relançado como Rapporteur em 28/09/2026 (é o
+  rapporteur.com que aparece na amostra do professor Masseno); AI Snake Oil e "AI as
+  Normal Technology" são hoje a mesma newsletter.
+- **Marco legal da IA no Brasil**: o PL 2338/2023 se acompanha pela ficha de tramitação da
+  Câmara dos Deputados; a situação e as datas se leem lá a cada edição, nunca deste
+  documento.
+- **Acréscimos sugeridos pelo agente** (15): Cetic.br, OBIA, feeds da Agência Câmara e da
+  Agência Senado, DigiLabour, *desinformante, Al Sur, Derechos Digitales, ILIA, Research
+  ICT Africa, Paradigm Initiative, Internet Freedom Foundation, China Law Translate, AI
+  Safety in China, SMEX e ChatGPT Is Eating the World.
+- **Lacunas que ficaram**: países do Golfo e fontes sindicais (UNI, ITUC, CUT, DIEESE não
+  puderam ser verificadas). Ficam como pendência do mapa.
 
 ### 10.1 Amostra das fontes do professor Masseno (23/11/2026)
 
