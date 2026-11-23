@@ -56,6 +56,33 @@ for (const e of ocultas) {
   exigir(!lista?.includes(e.id), `rascunho publicado: ${e.id} está na lista da seção`);
 }
 
+// --- Feed ---------------------------------------------------------------------
+// Um feed só para o site: edições de sábado e AutonomIA, em ordem de data.
+const rss = ler(join(DIST, 'rss.xml'));
+exigir(rss !== null, 'falta dist/rss.xml');
+if (rss) {
+  const itens = [...rss.matchAll(/<item>([\s\S]*?)<\/item>/g)].map((m) => ({
+    titulo: m[1].match(/<title>([\s\S]*?)<\/title>/)?.[1] ?? '',
+    link: m[1].match(/<link>([\s\S]*?)<\/link>/)?.[1] ?? '',
+    data: new Date(m[1].match(/<pubDate>([\s\S]*?)<\/pubDate>/)?.[1] ?? NaN),
+  }));
+  const sabado = colecao('src/content/edicoes').filter((e) => !e.rascunho);
+  const deSabado = itens.filter((i) => i.link.includes('/edicoes/'));
+  const deQuarta = itens.filter((i) => i.link.includes('/autonomia/'));
+
+  exigir(deSabado.length === sabado.length, `feed com ${deSabado.length} edições de sábado; o site tem ${sabado.length}`);
+  exigir(deSabado.every((i) => i.titulo.startsWith('Nº')), 'feed: edição de sábado com título fora do padrão "Nº"');
+  exigir(deQuarta.every((i) => i.titulo.startsWith('AutonomIA')), 'feed: item da AutonomIA sem "AutonomIA" no início do título');
+  exigir(itens.every((i) => !Number.isNaN(i.data.getTime())), 'feed: item sem data válida');
+  exigir(itens.every((i, n) => n === 0 || itens[n - 1].data >= i.data), 'feed fora de ordem de data');
+  for (const e of visiveis) {
+    exigir(deQuarta.some((i) => i.link.endsWith(`/autonomia/${e.id}/`)), `feed: falta ${e.id}`);
+  }
+  for (const e of ocultas) {
+    exigir(!rss.includes(e.id), `rascunho publicado: ${e.id} está no feed`);
+  }
+}
+
 // --- Resultado --------------------------------------------------------------
 const modo = comRascunhos ? 'com rascunhos' : 'produção';
 if (falhas.length) {
