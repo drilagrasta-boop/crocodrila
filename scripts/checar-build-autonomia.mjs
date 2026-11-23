@@ -53,6 +53,7 @@ for (const e of visiveis) {
   // O e-mail tem de estar no bloco de assinatura da edição (o rodapé geral do site tem outro).
   const assina = html.match(/<div[^>]*class="assina[\s"][\s\S]*?<\/div>/)?.[0] ?? '';
   exigir(/href="mailto:[^"@\s]+@[^"\s]+"/.test(assina), `${e.id}: falta o e-mail de contato da editora junto da assinatura`);
+  exigir(/class="assina-bio[\s"][^>]*>[^<]{60,}/.test(assina), `${e.id}: falta a mini bio da editora junto da assinatura`);
   exigir(lista?.includes(`/autonomia/${e.id}`), `${e.id}: não está na lista da seção`);
 }
 for (const e of ocultas) {
