@@ -97,6 +97,7 @@ Dinheiro
 Lado escuro
 Clima
 Ofício
+Formação
 Arte e cultura
 Papo Amarelo              Brasil (fixa)
 Memória                   o que fica registrado para cobrar depois (fixa)
@@ -114,11 +115,12 @@ Memória                   o que fica registrado para cobrar depois (fixa)
 | Lado escuro | vulnerabilidades, incidentes, panes | pedido do prof. Masseno |
 | Clima | energia e água dos data centers | VIII |
 | Ofício | trabalho e profissões | pedido da editora |
+| Formação | escola, universidade, ensino, treinamento de quem entra na profissão | pedido da editora (23/11/2026) |
 | Arte e cultura | criação, direito autoral, linguagem | pedido da editora |
 
 Regras **[proposta]**:
 
-- Três rubricas são fixas: "Como IA dizendo...", "Papo Amarelo" e "Memória". As nove
+- Três rubricas são fixas: "Como IA dizendo...", "Papo Amarelo" e "Memória". As dez
   temáticas aparecem só quando a semana trouxe fato que mereça.
 - Total de 8 a 12 notas por edição, contadas as do Papo Amarelo.
 - **Protagonistas mundiais** [editora]: a varredura cobre Estados Unidos, China, União
@@ -187,6 +189,7 @@ aceita pela editora quanto ao princípio]**. Cada nota passa por uma ou duas:
 | Qual é o custo material? | Bini |
 | Que afeto a notícia mobiliza? | Safatle |
 | Como isso se vê de fora do Ocidente? | Jabbour |
+| Quem aprende o ofício, e quem é selecionado, quando a máquina faz o trabalho de entrada? | Maltese, sobre Bourdieu |
 
 Autor só é nomeado quando a nota precisa dele. Antes de atribuir ideia a autor, o roteiro
 confere a ideia nos fichamentos e textos-base da editora, que estão na máquina dela, na

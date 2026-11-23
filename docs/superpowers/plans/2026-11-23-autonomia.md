@@ -15,7 +15,7 @@
 - Trabalhar na ramificação `autonomia`. **Nenhum push e nenhum merge na `main` sem aval explícito da editora** (o push na `main` publica o site).
 - O repositório é público: `docs/autonomia/cadernos/` fica no `.gitignore`; caminhos locais das pastas de estudo da editora não entram em arquivo versionado.
 - Nada muda nas edições de sábado: coleção `edicoes`, suas páginas e seu fluxo ficam intactos, salvo os pontos nomeados neste plano (menu, feed, página Inscreva-se).
-- Nomes de rubrica, exatos: fixas `Como IA dizendo...`, `Papo Amarelo`, `Memória`; temáticas `Poder e regras`, `Praça pública`, `Direitos`, `Soberania`, `Dinheiro`, `Lado escuro`, `Clima`, `Ofício`, `Arte e cultura`.
+- Nomes de rubrica, exatos: fixas `Como IA dizendo...`, `Papo Amarelo`, `Memória`; temáticas `Poder e regras`, `Praça pública`, `Direitos`, `Soberania`, `Dinheiro`, `Lado escuro`, `Clima`, `Ofício`, `Formação`, `Arte e cultura`.
 - Tamanhos: 8 a 12 notas por edição; 80 a 150 palavras por nota; abertura de até 150 palavras.
 - Assinatura: `Adriana Aneli`. Numeração própria a partir de 1. Arquivo: `src/content/autonomia/AAAA-MM-DD-autonomia-NNN.md`.
 - Sem dependência nova em `package.json`. Sem emoji no conteúdo.
@@ -260,7 +260,7 @@ git commit -m "feat(autonomia): feed único e texto da inscrição"
 - Produces: `fontes.md` com uma tabela por frente de coleta, colunas `Fonte | URL | Acesso | Como ler | Tipo | Idioma | Observação`; `memoria.md` com tabela `Edição | Registro | Quem | Fonte | Cobrar em | Estado`.
 
 - [ ] **Step 1: Montar `fontes.md`** a partir da verificação de 23/11/2026 (arquivo `autonomia-fontes-verificadas.md` no scratchpad da sessão de desenho; se não existir mais, refazer a verificação antes de escrever, sem preencher de memória). Regras:
-  - frentes: as nove rubricas temáticas, mais `Brasil (Papo Amarelo)`, `Vozes críticas`, `Imprensa lusófona`, `Assinaturas da editora`, `Frente Masseno`;
+  - frentes: as dez rubricas temáticas, mais `Brasil (Papo Amarelo)`, `Vozes críticas`, `Imprensa lusófona`, `Assinaturas da editora`, `Frente Masseno`;
   - coluna `Como ler`: `agente` (web aberta), `navegador` (site que barra robô ou exige login da editora);
   - `Assinaturas da editora`: The New York Times, El País, Folha de S.Paulo, O Estado de S. Paulo, todas `navegador`;
   - `Frente Masseno`: a página de atividades do LinkedIn do professor, `navegador`, só leitura, mais os veículos da seção 10.1 do spec;
@@ -315,7 +315,7 @@ Tarefa editorial, conduzida pelo roteiro da Tarefa 5 com a editora. Não é dele
 - Modify: `docs/autonomia/memoria.md`
 - Create (não versionado): `docs/autonomia/cadernos/2026-11-25-*.md`
 
-- [ ] **Step 1:** Rodar o roteiro dos passos 0 a 5, janela de 18 a 24/11/2026. Os dois itens indicados pelo professor Masseno (Politico, 19/11, sobre panes; Jornal Económico, sobre governança e direitos humanos) e os dois temas da crítica (vulnerabilidades; cotações do setor e estreia das ações da Anthropic) entram como candidatos obrigatórios da triagem. **Parada 1.**
+- [ ] **Step 1:** Rodar o roteiro dos passos 0 a 5, janela de 18 a 24/11/2026. Os dois itens indicados pelo professor Masseno (Politico, 19/11, sobre panes; Jornal Económico, sobre governança e direitos humanos), o ensaio "The Training Crisis" do Center on the Legal Profession de Harvard (indicado pela editora, para a rubrica Formação) e os dois temas da crítica (vulnerabilidades; cotações do setor e estreia das ações da Anthropic) entram como candidatos obrigatórios da triagem. **Parada 1.**
 - [ ] **Step 2:** Redação e **Parada 2**.
 - [ ] **Step 3:** Higiene e conferência (passos 7 e 8) até APROVADA.
 - [ ] **Step 4:** **Parada 3:** prévia local; com o aval da editora, tirar `rascunho`, `npm run build` (sem a variável de ambiente), `node scripts/checar-build-autonomia.mjs` (sem a flag: a edição agora conta como publicada e tem de estar no site e no feed), commit na `autonomia`, merge na `main` e push.
