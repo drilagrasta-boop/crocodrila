@@ -24,7 +24,9 @@ const NOTAS_MIN = 8, NOTAS_MAX = 12;
 const PALAVRAS_NOTA_MIN = 80, PALAVRAS_NOTA_MAX = 150;
 const PALAVRAS_ABERTURA_MAX = 150;
 
-const KICKER = /<p class="kicker">([\s\S]*?)<\/p>/g;
+// Tolerante a aspas simples, espaços, outros atributos e outras classes: o navegador
+// mostra tudo isso como rubrica, então o verificador também tem de enxergar.
+const KICKER = /<p\s[^>]*class\s*=\s*["'][^"']*\bkicker\b[^"']*["'][^>]*>([\s\S]*?)<\/p>/g;
 const LINK = /\[[^\]]+\]\(https?:\/\/[^)\s]+\)/;
 
 // Aproxima grafias: caixa, acento, reticências tipográficas e espaços.
@@ -55,10 +57,17 @@ function rubricasDe(corpo) {
 function notasDe(texto) {
   return texto.split(/^## +/m).slice(1).map((bloco) => {
     const [titulo, ...resto] = bloco.split('\n');
-    const linhas = resto.join('\n').split('\n');
-    const citacao = linhas.filter((l) => l.trimStart().startsWith('>')).join('\n');
-    const fato = linhas.filter((l) => !l.trimStart().startsWith('>')).join('\n');
-    return { titulo: titulo.trim(), fato, citacao };
+    // No Markdown, a linha não vazia logo depois de uma linha de citação continua a
+    // citação ("continuação preguiçosa"), mesmo sem o ">" na frente.
+    const citacao = [];
+    const fato = [];
+    let dentroDaCitacao = false;
+    for (const l of resto) {
+      if (l.trimStart().startsWith('>')) dentroDaCitacao = true;
+      else if (l.trim() === '') dentroDaCitacao = false;
+      (dentroDaCitacao ? citacao : fato).push(l);
+    }
+    return { titulo: titulo.trim(), fato: fato.join('\n'), citacao: citacao.join('\n') };
   });
 }
 
@@ -109,7 +118,14 @@ export function checarEdicao(markdown) {
     }
 
     if (nome === MEMORIA) {
-      const itens = texto.split('\n').filter((l) => /^\s*-\s+/.test(l));
+      // Um registro pode ocupar mais de uma linha: a continuação se junta ao item.
+      const itens = [];
+      let aberto = false;
+      for (const l of texto.split('\n')) {
+        if (/^\s*-\s+/.test(l)) { itens.push(l); aberto = true; }
+        else if (l.trim() === '') aberto = false;
+        else if (aberto) itens[itens.length - 1] += ` ${l.trim()}`;
+      }
       if (itens.length === 0) erros.push(`"${MEMORIA}" precisa de ao menos um registro em lista.`);
       itens.filter((i) => !LINK.test(i)).forEach((i) =>
         erros.push(`"${MEMORIA}": registro sem link para a fonte: ${i.trim().slice(0, 60)}`));

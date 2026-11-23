@@ -179,3 +179,63 @@ test('Formação é rubrica temática da casa', () => {
   const md = edicaoValida(9).replace(kicker('Dinheiro'), kicker('Formação'));
   assert.deepEqual(checarEdicao(md).erros, []);
 });
+
+// --- Achados da revisão final: Markdown realista que o verificador lia errado ---
+
+test('kicker com marcação variante ainda é reconhecido como rubrica', () => {
+  const variantes = [
+    `<p class='kicker'>Clima</p>\n\n`,
+    `<p class="kicker" >Clima</p>\n\n`,
+    `<p class="kicker" id="x">Clima</p>\n\n`,
+    `<p  class="kicker destaque">Clima</p>\n\n`,
+  ];
+  for (const v of variantes) {
+    // rubrica Clima aberta sem nenhuma nota: tem de ser erro, não silêncio
+    const md = edicaoValida(9).replace(kicker('Papo Amarelo'), v + kicker('Papo Amarelo'));
+    const r = checarEdicao(md);
+    assert.ok(r.erros.some((e) => e.includes('Clima')), `${v.trim()}: ${r.erros.join(' | ')}`);
+  }
+  const errada = edicaoValida(9).replace(kicker('Dinheiro'), `<p class='kicker'>Dinheiros</p>\n\n`);
+  assert.ok(checarEdicao(errada).erros.some((e) => e.includes('Dinheiros')));
+});
+
+test('Leitura quebrada em duas linhas continua sendo Leitura: link nela não vale como fonte do fato', () => {
+  const ruim = nota('Nota Z', {
+    fato: `${palavras(100)} sem fonte nenhuma.`,
+    leitura: '> **Leitura.** Uma opinião longa que quebra de linha\ne continua aqui com [link](https://exemplo.org/l).',
+  });
+  const md = montar({
+    tematicas: [['Dinheiro', [ruim, ...Array.from({ length: 7 }, (_, i) => nota(`Nota ${i + 1}`))]]],
+    papo: [nota('Nota brasileira')],
+  });
+  assert.ok(checarEdicao(md).erros.some((e) => e.includes('Nota Z') && e.includes('link')));
+});
+
+test('fato em dois parágrafos, com o link no segundo, é aceito', () => {
+  const boa = nota('Nota W', {
+    fato: `${palavras(50)} primeiro parágrafo.\n\n${palavras(50)} segundo o [Veículo](https://exemplo.org/w).`,
+  });
+  const md = montar({
+    tematicas: [['Dinheiro', [boa, ...Array.from({ length: 7 }, (_, i) => nota(`Nota ${i + 1}`))]]],
+    papo: [nota('Nota brasileira')],
+  });
+  assert.deepEqual(checarEdicao(md).erros, []);
+});
+
+test('registro de Memória em duas linhas, com o link na segunda, é aceito', () => {
+  const md = montar({
+    tematicas: [['Dinheiro', Array.from({ length: 8 }, (_, i) => nota(`Nota ${i + 1}`))]],
+    papo: [nota('Nota brasileira')],
+    mem: `${kicker('Memória')}- Registro longo que quebra de linha,\n  a cobrar em 10/12, com [fonte](https://exemplo.org/m).\n- Outro registro curto, com [fonte](https://exemplo.org/n).\n`,
+  });
+  assert.deepEqual(checarEdicao(md).erros, []);
+});
+
+test('registro de Memória em duas linhas sem link continua sendo erro', () => {
+  const md = montar({
+    tematicas: [['Dinheiro', Array.from({ length: 8 }, (_, i) => nota(`Nota ${i + 1}`))]],
+    papo: [nota('Nota brasileira')],
+    mem: `${kicker('Memória')}- Registro longo que quebra de linha,\n  e segue sem fonte.\n`,
+  });
+  assert.ok(checarEdicao(md).erros.some((e) => e.includes('Memória')));
+});
