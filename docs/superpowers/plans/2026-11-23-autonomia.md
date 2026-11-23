@@ -169,16 +169,15 @@ git commit -m "feat(autonomia): verificador de estrutura da edição"
 - Consumes: convenção de Markdown acima.
 - Produces: coleção `autonomia` com schema `numero: number`, `titulo: string`, `data: date`, `periodo_inicio: date`, `periodo_fim: date`, `resumo: string`, `destaques: string[]` (padrão `[]`), `autor: string` (padrão `'Adriana Aneli'`), `rascunho: boolean` (padrão `false`). `src/lib/autonomia.mjs` exporta `publicadas(entries)`: filtra `rascunho`, salvo quando `process.env.MOSTRAR_RASCUNHOS === '1'`, e ordena por `numero` decrescente; exporta `tituloItem(entry)`: `AutonomIA nº 001 · <titulo>`. Rotas: `/autonomia/` e `/autonomia/<id>/`.
 
-- [ ] **Step 1: Escrever o teste de build que falha** em `scripts/checar-build-autonomia.mjs`: script Node que lê `dist/` e sai com código 1 na primeira falha. Aceita `--com-rascunhos`.
+- [ ] **Step 1: Escrever o teste de build que falha** em `scripts/checar-build-autonomia.mjs`: script Node que lê `dist/` e sai com código 1 na primeira falha. Aceita `--com-rascunhos`. O script não fixa nenhuma edição: lê o frontmatter de cada arquivo de `src/content/autonomia/` e separa as edições em rascunhos e publicadas, para continuar valendo depois que o nº 1 for publicado.
 
 Asserções sem a flag (build de produção):
 - existe `dist/autonomia/index.html` e contém o texto do aviso fixo (Step 4);
 - `dist/index.html` contém `href="/autonomia"`;
-- **não** existe `dist/autonomia/2026-11-25-autonomia-001/index.html`;
-- `dist/sitemap-0.xml` não contém `autonomia-001`.
+- para cada rascunho: **não** existe `dist/autonomia/<id>/index.html` e `dist/sitemap-0.xml` não contém `<id>`;
+- para cada publicada: existe `dist/autonomia/<id>/index.html`, com `Como IA dizendo...`, `Papo Amarelo`, `Memória` e um `<blockquote>` dentro de `.autonomia`.
 
-Asserções com `--com-rascunhos`:
-- existe `dist/autonomia/2026-11-25-autonomia-001/index.html`, contém `Como IA dizendo...`, `Papo Amarelo`, `Memória`, e a classe do bloco de leitura.
+Asserções com `--com-rascunhos`: as da linha anterior valem para todas as edições, rascunho ou não.
 
 - [ ] **Step 2: Rodar e ver falhar**
 
@@ -230,7 +229,7 @@ git commit -m "feat(autonomia): coleção, páginas e item no menu"
 - Consumes: `publicadas`, `tituloItem` de `src/lib/autonomia.mjs`.
 - Produces: `/rss.xml` com itens das duas coleções, ordenados por `data` decrescente; itens da AutonomIA com `title` de `tituloItem` e `link` `/autonomia/<id>/`.
 
-- [ ] **Step 1: Estender o teste de build.** Sem a flag: `dist/rss.xml` não contém `/autonomia/`, e o primeiro `<item>` continua sendo a edição nº 26. Com `--com-rascunhos`: `dist/rss.xml` contém `<link>…/autonomia/2026-11-25-autonomia-001/</link>` e `AutonomIA nº 001`; esse item vem antes do da edição de 21/11; todo item cujo link contém `/edicoes/` tem título começando por `Nº`; as datas dos itens estão em ordem não crescente.
+- [ ] **Step 1: Estender o teste de build**, ainda derivando tudo do frontmatter. Nos dois modos: as datas dos itens de `dist/rss.xml` estão em ordem não crescente; todo item cujo link contém `/edicoes/` tem título começando por `Nº`; todo item cujo link contém `/autonomia/` tem título começando por `AutonomIA nº`; a quantidade de itens `/edicoes/` é igual à de edições de sábado publicadas. Sem a flag: nenhum rascunho da AutonomIA tem link no feed, e toda publicada tem. Com `--com-rascunhos`: toda edição da AutonomIA tem `<link>…/autonomia/<id>/</link>` no feed.
 
 - [ ] **Step 2: Rodar e ver falhar**
 
@@ -319,7 +318,7 @@ Tarefa editorial, conduzida pelo roteiro da Tarefa 5 com a editora. Não é dele
 - [ ] **Step 1:** Rodar o roteiro dos passos 0 a 5, janela de 18 a 24/11/2026. Os dois itens indicados pelo professor Masseno (Politico, 19/11, sobre panes; Jornal Económico, sobre governança e direitos humanos) e os dois temas da crítica (vulnerabilidades; cotações do setor e estreia das ações da Anthropic) entram como candidatos obrigatórios da triagem. **Parada 1.**
 - [ ] **Step 2:** Redação e **Parada 2**.
 - [ ] **Step 3:** Higiene e conferência (passos 7 e 8) até APROVADA.
-- [ ] **Step 4:** **Parada 3:** prévia local; com o aval da editora, tirar `rascunho`, build, `node scripts/checar-build-autonomia.mjs --com-rascunhos` (agora sem a variável de ambiente, a edição é pública), commit na `autonomia`, merge na `main` e push.
+- [ ] **Step 4:** **Parada 3:** prévia local; com o aval da editora, tirar `rascunho`, `npm run build` (sem a variável de ambiente), `node scripts/checar-build-autonomia.mjs` (sem a flag: a edição agora conta como publicada e tem de estar no site e no feed), commit na `autonomia`, merge na `main` e push.
 - [ ] **Step 5:** Conferir no ar `https://crocodrila.netlify.app/autonomia/` e o feed. Gravar os registros de Memória. Avisar a editora de que o envio pelo Buttondown é com ela.
 
 ---
