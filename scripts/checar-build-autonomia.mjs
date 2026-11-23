@@ -11,6 +11,7 @@ import { join } from 'node:path';
 const comRascunhos = process.argv.includes('--com-rascunhos');
 const DIST = 'dist';
 const AVISO = 'Nada aqui é recomendação de investimento.';
+const DECLARACAO = 'modelo de IA da Anthropic';
 
 const falhas = [];
 const exigir = (cond, msg) => { if (!cond) falhas.push(msg); };
@@ -48,6 +49,7 @@ for (const e of visiveis) {
   exigir(/<article[^>]*class="[^"]*\bautonomia\b/.test(html), `${e.id}: falta a classe "autonomia" no artigo`);
   exigir(html.includes('<blockquote'), `${e.id}: nenhum bloco de Leitura na página`);
   exigir(html.includes(AVISO), `${e.id}: a página não traz o aviso fixo`);
+  exigir(html.includes(DECLARACAO), `${e.id}: a página não traz a declaração de uso de IA`);
   // Toda edição sai assinada e com o contato da editora para críticas.
   exigir(/class="assina-nomes[^"]*"[^>]*>\s*Adriana Aneli/.test(html), `${e.id}: falta a assinatura "Adriana Aneli"`);
   // O e-mail tem de estar no bloco de assinatura da edição (o rodapé geral do site tem outro).

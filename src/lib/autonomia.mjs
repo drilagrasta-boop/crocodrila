@@ -6,6 +6,12 @@ export const AVISO_AUTONOMIA =
   'O relato dos fatos vem separado da leitura, que é opinião assinada. ' +
   'Nada aqui é recomendação de investimento.';
 
+// Declaração de uso de IA, exibida no rodapé de toda edição (decisão da editora, 23/11/2026).
+// Importa em especial quando a edição trata da própria Anthropic.
+export const DECLARACAO_IA =
+  'Esta edição foi preparada com o auxílio do Claude, modelo de IA da Anthropic, na coleta, ' +
+  'na leitura das fontes e no rascunho. A escolha das notas, a leitura crítica e a palavra final são da editora.';
+
 // Contato da editora, exibido junto da assinatura em toda edição (pedido dela, 23/11/2026).
 export const CONTATO_AUTONOMIA = 'drilagrasta@gmail.com';
 

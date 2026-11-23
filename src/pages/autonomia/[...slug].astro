@@ -1,7 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { getCollection, render } from 'astro:content';
-import { publicadas, rotuloNumero, tituloItem, semana, AVISO_AUTONOMIA, CONTATO_AUTONOMIA, BIO_AUTONOMIA } from '../../lib/autonomia.mjs';
+import { publicadas, rotuloNumero, tituloItem, semana, AVISO_AUTONOMIA, CONTATO_AUTONOMIA, BIO_AUTONOMIA, DECLARACAO_IA } from '../../lib/autonomia.mjs';
 
 export async function getStaticPaths() {
   const ordenadas = publicadas(await getCollection('autonomia'));
@@ -71,6 +71,7 @@ const { numero, titulo, data, periodo_inicio, periodo_fim, resumo, destaques, au
         </p>
       </div>
       <p class="aviso measure">{AVISO_AUTONOMIA}</p>
+      <p class="aviso measure">{DECLARACAO_IA}</p>
       <hr class="rule" />
       <nav class="prevnext" aria-label="Navegação entre edições da AutonomIA">
         {anterior ? (
