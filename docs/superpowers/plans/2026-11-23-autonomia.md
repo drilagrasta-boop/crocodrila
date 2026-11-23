@@ -287,12 +287,12 @@ git commit -m "docs(autonomia): mapa de fontes e registro de Memória"
 ### Task 5: Roteiro `/autonomia` (primeira versão)
 
 **Files:**
-- Create: `C:\Users\Dr Caetano\.claude\skills\autonomia\SKILL.md` (fora do repositório; sem commit)
+- Create: `~/.claude/skills/autonomia/SKILL.md` (fora do repositório; sem commit)
 
 **Interfaces:**
 - Consumes: `scripts/checar-autonomia.mjs`, `MOSTRAR_RASCUNHOS`, `docs/autonomia/fontes.md`, `docs/autonomia/memoria.md`, skill `confere-fonte-primaria`.
 
-- [ ] **Step 1: Escrever `SKILL.md`** no molde de `C:\Users\Dr Caetano\.claude\skills\carta-circular\SKILL.md`: frontmatter com `name: autonomia` e `description` que dispare em "rodar a AutonomIA", "edição de quarta", "resenha da semana", "/autonomia"; regras gerais da seção 6.4 do spec; passos 0 a 11 da seção 6.1, cada um com o comando ou arquivo exato deste plano. Conteúdo obrigatório:
+- [ ] **Step 1: Escrever `SKILL.md`** no molde de `~/.claude/skills/carta-circular/SKILL.md`: frontmatter com `name: autonomia` e `description` que dispare em "rodar a AutonomIA", "edição de quarta", "resenha da semana", "/autonomia"; regras gerais da seção 6.4 do spec; passos 0 a 11 da seção 6.1, cada um com o comando ou arquivo exato deste plano. Conteúdo obrigatório:
   - as três paradas, com a frase "não siga sem o aval da editora";
   - regra de fontes (4.4), eixo crítico (tabela de 4.5) e rubricas (4.2) transcritos do spec;
   - caminho completo da pasta do Master, para a conferência de autor (só aqui, nunca no repositório);
@@ -356,7 +356,7 @@ Tarefa editorial, conduzida pelo roteiro da Tarefa 5 com a editora. Não é dele
 ### Task 9: Revisão do roteiro com as lições do nº 1
 
 **Files:**
-- Modify: `C:\Users\Dr Caetano\.claude\skills\autonomia\SKILL.md`
+- Modify: `~/.claude/skills/autonomia/SKILL.md`
 - Modify: `docs/autonomia/fontes.md`
 
 - [ ] **Step 1:** Com a editora, listar o que travou ou sobrou no nº 1 (fontes mortas, frentes lentas, passos fora de ordem, tempo gasto por parada).

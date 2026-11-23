@@ -241,7 +241,7 @@ conteúdo em Markdown, deploy na Netlify a cada push).
 
 ## 6. O roteiro semanal (`/autonomia`)
 
-Um comando pessoal em `C:\Users\Dr Caetano\.claude\skills\autonomia\SKILL.md`, no molde do
+Um comando pessoal em `~/.claude/skills/autonomia/SKILL.md`, no molde do
 `/carta-circular`, que conduz a edição com a editora no comando.
 
 ### 6.1 Passos

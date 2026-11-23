@@ -48,6 +48,11 @@ for (const e of visiveis) {
   exigir(/<article[^>]*class="[^"]*\bautonomia\b/.test(html), `${e.id}: falta a classe "autonomia" no artigo`);
   exigir(html.includes('<blockquote'), `${e.id}: nenhum bloco de Leitura na página`);
   exigir(html.includes(AVISO), `${e.id}: a página não traz o aviso fixo`);
+  // Toda edição sai assinada e com o contato da editora para críticas.
+  exigir(/class="assina-nomes[^"]*"[^>]*>\s*Adriana Aneli/.test(html), `${e.id}: falta a assinatura "Adriana Aneli"`);
+  // O e-mail tem de estar no bloco de assinatura da edição (o rodapé geral do site tem outro).
+  const assina = html.match(/<div[^>]*class="assina[\s"][\s\S]*?<\/div>/)?.[0] ?? '';
+  exigir(/href="mailto:[^"@\s]+@[^"\s]+"/.test(assina), `${e.id}: falta o e-mail de contato da editora junto da assinatura`);
   exigir(lista?.includes(`/autonomia/${e.id}`), `${e.id}: não está na lista da seção`);
 }
 for (const e of ocultas) {

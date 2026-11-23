@@ -6,6 +6,9 @@ export const AVISO_AUTONOMIA =
   'O relato dos fatos vem separado da leitura, que é opinião assinada. ' +
   'Nada aqui é recomendação de investimento.';
 
+// Contato da editora, exibido junto da assinatura em toda edição (pedido dela, 23/11/2026).
+export const CONTATO_AUTONOMIA = 'drilagrasta@gmail.com';
+
 // Rascunho só aparece na prévia local: MOSTRAR_RASCUNHOS=1 npm run dev (ou build).
 // Na Netlify a variável não existe, então rascunho nunca vai ao ar.
 const mostrarRascunhos = () => process.env.MOSTRAR_RASCUNHOS === '1';
