@@ -239,3 +239,14 @@ test('registro de Memória em duas linhas sem link continua sendo erro', () => {
   });
   assert.ok(checarEdicao(md).erros.some((e) => e.includes('Memória')));
 });
+
+test('Fé e razão é rubrica temática da casa', () => {
+  const md = edicaoValida(9).replace(kicker('Mercado'), kicker('Fé e razão'));
+  assert.deepEqual(checarEdicao(md).erros, []);
+});
+
+test('Fé e razão com grafia variante é erro que nomeia a esperada', () => {
+  const md = edicaoValida(9).replace(kicker('Mercado'), kicker('Fé e Razão'));
+  const r = checarEdicao(md);
+  assert.ok(r.erros.some((e) => e.includes('"Fé e Razão"') && e.includes('"Fé e razão"')), r.erros.join(' | '));
+});

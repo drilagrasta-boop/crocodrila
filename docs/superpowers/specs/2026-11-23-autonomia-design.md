@@ -116,11 +116,12 @@ Memória                   o que fica registrado para cobrar depois (fixa)
 | Clima | energia e água dos data centers | VIII |
 | Ofício | trabalho e profissões | pedido da editora |
 | Formação | escola, universidade, ensino, treinamento de quem entra na profissão | pedido da editora (23/11/2026) |
+| Fé e razão | filosofia e religião diante da IA; fontes do Vaticano e de outras tradições | pedido da editora (23/11/2026) |
 | Arte e cultura | criação, direito autoral, linguagem | pedido da editora |
 
 Regras **[proposta]**:
 
-- Três rubricas são fixas: "Como IA dizendo...", "Papo Amarelo" e "Memória". As dez
+- Três rubricas são fixas: "Como IA dizendo...", "Papo Amarelo" e "Memória". As onze
   temáticas aparecem só quando a semana trouxe fato que mereça.
 - Total de 8 a 12 notas por edição, contadas as do Papo Amarelo.
 - **Protagonistas mundiais** [editora]: a varredura cobre Estados Unidos, China, União

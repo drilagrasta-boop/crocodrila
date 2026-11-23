@@ -15,7 +15,7 @@
 - Trabalhar na ramificação `autonomia`. **Nenhum push e nenhum merge na `main` sem aval explícito da editora** (o push na `main` publica o site).
 - O repositório é público: `docs/autonomia/cadernos/` fica no `.gitignore`; caminhos locais das pastas de estudo da editora não entram em arquivo versionado.
 - Nada muda nas edições de sábado: coleção `edicoes`, suas páginas e seu fluxo ficam intactos, salvo os pontos nomeados neste plano (menu, feed, página Inscreva-se).
-- Nomes de rubrica, exatos: fixas `Como IA dizendo...`, `Papo Amarelo`, `Memória`; temáticas `Poder e regras`, `Praça pública`, `Direitos`, `Soberania`, `Mercado`, `Lado escuro`, `Clima`, `Ofício`, `Formação`, `Arte e cultura`.
+- Nomes de rubrica, exatos: fixas `Como IA dizendo...`, `Papo Amarelo`, `Memória`; temáticas `Poder e regras`, `Praça pública`, `Direitos`, `Soberania`, `Mercado`, `Lado escuro`, `Clima`, `Ofício`, `Formação`, `Fé e razão`, `Arte e cultura`.
 - Tamanhos: 8 a 12 notas por edição; 80 a 150 palavras por nota; abertura de até 150 palavras.
 - Assinatura: `Adriana Aneli`. Numeração própria a partir de 1. Arquivo: `src/content/autonomia/AAAA-MM-DD-autonomia-NNN.md`.
 - Sem dependência nova em `package.json`. Sem emoji no conteúdo.

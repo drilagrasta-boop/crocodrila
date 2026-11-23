@@ -52,6 +52,20 @@ verificadas. Pontos de partida, todos `a reconferir`: Times Higher Education; Ce
 Legal Profession, de Harvard (série "AI and the Legal Profession"); cobertura de educação
 dos quatro veículos assinados; no Brasil, MEC, CAPES e Cetic.br (TIC Educação).
 
+## Fé e razão
+
+Rubrica acrescentada em 23/11/2026, a pedido da editora: aspectos filosóficos e religiosos
+ligados à IA. Só a primeira linha foi lida; as demais são pontos de partida, `a reconferir`.
+
+| Fonte | URL | Acesso | Como ler | Tipo | Idioma | Observação |
+|---|---|---|---|---|---|---|
+| Vatican News (português) | https://www.vaticannews.va/pt.html | aberto | navegador | Jornalismo oficial da Santa Sé | Português | lido em 23/11/2026 pelo navegador da editora; recusa leitura automática? a reconferir |
+| Santa Sé: documentos e discursos do Papa | https://www.vatican.va/ | a reconferir | a reconferir | Primária | vários | encíclica *Magnifica humanitas* e discursos sobre IA: localizar os endereços oficiais |
+| Dicastério para o Serviço do Desenvolvimento Humano Integral | a reconferir | a reconferir | a reconferir | Primária | vários | sede da comissão interdicasterial sobre IA, segundo o Vatican News |
+| Imprensa sobre religião e IA (ex.: cobertura do Politico sobre os bispos americanos) | a reconferir | a reconferir | a reconferir | Jornalismo | Inglês | pista vinda da frente Masseno |
+
+Lacuna: outras tradições religiosas e fontes de filosofia ainda não mapeadas.
+
 ## Poder e regras
 
 | Fonte | URL | Acesso | Como ler | Tipo | Idioma | Feed | Última evidência | Observação |
