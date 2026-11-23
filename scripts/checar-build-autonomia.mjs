@@ -65,6 +65,18 @@ for (const e of ocultas) {
   exigir(!lista?.includes(e.id), `rascunho publicado: ${e.id} está na lista da seção`);
 }
 
+// --- Parágrafos justificados (pedido da editora) -------------------------------
+// O estilo da página de leitura sai num arquivo CSS em dist/_astro ou embutido no HTML.
+if (visiveis.length > 0) {
+  const pastaCss = join(DIST, '_astro');
+  const css = existsSync(pastaCss)
+    ? readdirSync(pastaCss).filter((f) => f.endsWith('.css')).map((f) => readFileSync(join(pastaCss, f), 'utf8')).join('\n')
+    : '';
+  const htmlEdicao = ler(join(DIST, 'autonomia', visiveis[0].id, 'index.html')) ?? '';
+  exigir(/\.autonomia[^{}]*\.prose p[^{}]*\{[^}]*text-align:\s*justify/.test(css + htmlEdicao),
+    'os parágrafos da edição da AutonomIA não estão justificados');
+}
+
 // --- Feed ---------------------------------------------------------------------
 // Um feed só para o site: edições de sábado e AutonomIA, em ordem de data.
 const rss = ler(join(DIST, 'rss.xml'));

@@ -111,6 +111,16 @@ const { numero, titulo, data, periodo_inicio, periodo_fim, resumo, destaques, au
 
   .ed-body { margin-top: 2.4rem; }
 
+  /* Parágrafos justificados, com hifenização para não abrir buracos entre as palavras
+     (pedido da editora; vale só para a AutonomIA, não para as edições de sábado). */
+  .autonomia :global(.prose p),
+  .autonomia :global(.prose li) {
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+  .autonomia :global(.prose p.kicker) { text-align: left; hyphens: manual; }
+
   /* A Leitura: opinião assinada, visualmente separada do relato do fato. */
   .autonomia :global(.prose blockquote) {
     background: var(--paper-deep);
