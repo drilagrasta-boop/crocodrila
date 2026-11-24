@@ -7,7 +7,7 @@ const expediente = [
     sigla: 'AA',
     nome: 'Adriana Aneli',
     funcao: 'Edição',
-    bio: 'Formada em Direito e servidora do Tribunal de Justiça de São Paulo, onde ocupa o cargo de assistente jurídico. É Master em <i>Teoria Critica della Società</i>, especialista em Legal Operations, Dados, IA e Alta Performance Jurídica e pós-graduada em Inteligência Artificial Generativa no Direito.',
+    bio: 'Formada em Direito e servidora do Tribunal de Justiça de São Paulo, onde ocupa o cargo de assistente jurídico. É pós-graduada em Sociologia, Política e História e em Inteligência Artificial Generativa no Direito, Master em <i>Teoria Critica della Società</i> e especialista em Legal Operations, Dados, IA e Alta Performance Jurídica.',
   },
   {
     sigla: 'DM',
@@ -29,6 +29,11 @@ const expediente = [
     href: '/entrevistas/2026-07-manuel-david-masseno',
   },
 ];
+
+// âncora de cada nome do expediente (ex.: /sobre#caetano-lagrasta-neto),
+// usada pelo campo `perfil` dos ensaios para ligar o autor à sua minibio
+const ancora = (nome) =>
+  nome.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 ---
 <Base title="Sobre" description="Como nasceu a newsletter Condenados à Atualização em IA, e quem a faz." image="/og/site.png" imageWidth={800} imageHeight={800}>
   <section class="wrap sobre rise">
@@ -122,7 +127,7 @@ const expediente = [
 
     <ul class="expediente" aria-label="Expediente">
       {expediente.map((p) => (
-        <li class="exp-item">
+        <li class="exp-item" id={ancora(p.nome)}>
           <span class="exp-sigla mono" aria-hidden="true">{p.sigla}</span>
           <div class="exp-body">
             <p class="exp-nome">
