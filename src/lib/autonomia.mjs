@@ -15,13 +15,6 @@ export const DECLARACAO_IA =
 // Contato da editora, exibido junto da assinatura em toda edição (pedido dela, 23/11/2026).
 export const CONTATO_AUTONOMIA = 'drilagrasta@gmail.com';
 
-// Mini bio exibida ao final de toda edição. É o mesmo texto do expediente em
-// src/pages/sobre.astro: se mudar lá, mude aqui.
-export const BIO_AUTONOMIA =
-  'Formada em Direito e servidora do Tribunal de Justiça de São Paulo, onde ocupa o cargo de ' +
-  'assistente jurídico. É Master em Teoria Crítica della Società, especialista em Legal Operations, ' +
-  'Dados, IA e Alta Performance Jurídica e pós-graduada em Inteligência Artificial Generativa no Direito.';
-
 // Rascunho só aparece na prévia local: MOSTRAR_RASCUNHOS=1 npm run dev (ou build).
 // Na Netlify a variável não existe, então rascunho nunca vai ao ar.
 const mostrarRascunhos = () => process.env.MOSTRAR_RASCUNHOS === '1';

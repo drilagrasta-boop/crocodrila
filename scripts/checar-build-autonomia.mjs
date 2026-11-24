@@ -70,6 +70,20 @@ exigir(home?.includes('href="/autonomia"'), 'o menu da home não tem link para /
   exigir(duas.includes('href="/autonomia"') && /quarta/i.test(duas), 'a capa não explica a AutonomIA de quarta');
 }
 
+// --- Sobre e edições de sábado -------------------------------------------------
+{
+  const sobre = ler(join(DIST, 'sobre', 'index.html')) ?? '';
+  exigir(sobre.includes('class="tlink" href="/autonomia"'), 'a página Sobre não apresenta a AutonomIA');
+  // Na edição de sábado mais recente, as chamadas do quadro levam a seções que existem.
+  const sabados = colecao('src/content/edicoes').filter((e) => !e.rascunho).map((e) => e.id).sort();
+  const recente = sabados.at(-1);
+  const pagina = recente ? ler(join(DIST, 'edicoes', recente, 'index.html')) ?? '' : '';
+  const quadro = pagina.match(/<aside[^>]*class="sumario[\s\S]*?<\/aside>/)?.[0] ?? '';
+  const alvos = [...quadro.matchAll(/href="#([^"]+)"/g)].map((m) => m[1]);
+  if (recente) exigir(alvos.length > 0, `${recente}: nenhuma chamada do quadro leva ao texto`);
+  for (const alvo of alvos) exigir(pagina.includes(`id="${alvo}"`), `${recente}: chamada aponta para "#${alvo}", que não existe`);
+}
+
 // --- Páginas de leitura -----------------------------------------------------
 const sitemap = ler(join(DIST, 'sitemap-0.xml')) ?? '';
 for (const e of visiveis) {
@@ -88,7 +102,7 @@ for (const e of visiveis) {
   // O e-mail tem de estar no bloco de assinatura da edição (o rodapé geral do site tem outro).
   const assina = html.match(/<div[^>]*class="assina[\s"][\s\S]*?<\/div>/)?.[0] ?? '';
   exigir(/href="mailto:[^"@\s]+@[^"\s]+"/.test(assina), `${e.id}: falta o e-mail de contato da editora junto da assinatura`);
-  exigir(/class="assina-bio[\s"][^>]*>[^<]{60,}/.test(assina), `${e.id}: falta a mini bio da editora junto da assinatura`);
+  exigir(!html.includes('assina-bio'), `${e.id}: a mini bio voltou ao fim da edição (ela fica só no expediente)`);
   exigir(lista?.includes(`/autonomia/${e.id}`), `${e.id}: não está na lista da seção`);
   // Quadro "Nesta edição": cada chamada com nota vira link, e todo link cai numa nota que existe.
   const sumario = html.match(/<aside[^>]*class="sumario[\s\S]*?<\/aside>/)?.[0] ?? '';
