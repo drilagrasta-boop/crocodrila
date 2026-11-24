@@ -49,6 +49,8 @@ exigir(home?.includes('href="/autonomia"'), 'o menu da home não tem link para /
     exigir(bloco?.includes(`href="/autonomia/${recente}"`), `a capa não leva à AutonomIA mais recente (${recente})`);
     exigir(bloco?.includes('href="/autonomia"'), 'o bloco da capa não leva à página da seção');
     exigir(bloco?.includes('class="feature-card') && bloco?.includes('feature-num'), 'na capa, a chamada da AutonomIA não tem o mesmo desenho da chamada de sábado');
+    exigir(home?.includes('dossie-autonomia'), 'o topo da capa não traz o selo da AutonomIA');
+    exigir(home?.includes('href="#autonomia-recente"') && bloco?.includes('id="autonomia-recente"'), 'o topo da capa não tem o botão da última AutonomIA');
     const iUltima = home?.indexOf('id="ultima"') ?? -1;
     exigir(iUltima === -1 || (home?.indexOf('autonomia-home') ?? -1) > iUltima, 'na capa, a AutonomIA vem antes da edição de sábado');
   } else {

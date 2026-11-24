@@ -2,7 +2,8 @@
 import Base from '../layouts/Base.astro';
 import Crocodrila from '../components/Crocodrila.astro';
 import { getCollection } from 'astro:content';
-import { publicadas, rotuloNumero, semana } from '../lib/autonomia.mjs';
+import { publicadas } from '../lib/autonomia.mjs';
+import { ARTE_AUTONOMIA } from '../lib/og/artes.mjs';
 
 const fmt = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'long', year: 'numeric', timeZone: 'UTC' });
 const pad = (n: number) => String(n).padStart(3, '0');
@@ -50,26 +51,25 @@ const iniciais = (nome: string) => nome.split(/\s+/).slice(0, 2).map((p) => p[0]
           <span class="hero-em">trabalho de detetive.</span>
         </h1>
         <p class="hero-lead measure">
-          É muita informação e, junto, muito ruído. Toda semana a gente garimpa as
-          novidades que realmente importam — direto da fonte — e entrega filtrado.
-          Você lê em dez minutos o que levaria a semana inteira pra rastrear.
+          É muita informação e, junto, muito ruído. Toda semana a gente garimpa as novidades
+          direto da fonte e entrega filtrado. Você lê em dez minutos o que levaria a semana
+          inteira pra rastrear.
         </p>
         <ul class="hero-duas measure">
           <li>
             <span class="label">Aos sábados</span>
             <a class="tlink" href="/edicoes">Condenados à Atualização em IA</a>: a newsletter
-            técnica. As novidades da semana que realmente importam, garimpadas direto na fonte
-            primária e entregues filtradas, para ler em dez minutos.
+            técnica. As novidades da semana direto da fonte primária.
           </li>
           <li>
             <span class="label">Às quartas</span>
             <a class="tlink" href="/autonomia">Autonom<b class="ia">IA</b></a>: a resenha crítica.
-            A imprensa do mundo e do Brasil lida por eixos, do poder ao mercado, da escola à
-            arte, com o Brasil sempre presente e o fato separado da leitura, que é assinada.
+            A imprensa do mundo e do Brasil lida por eixos, do poder ao mercado, da escola à arte.
           </li>
         </ul>
         <div class="hero-cta">
-          <a href="#ultima" class="btn btn--jacare">Ler a última edição →</a>
+          <a href="#ultima" class="btn btn--jacare">Ler a última Condenados →</a>
+          {autonomiaRecente && <a href="#autonomia-recente" class="btn btn--jacare">Ler a última AutonomIA →</a>}
           <a href="/sobre" class="btn btn--ghost">Como nasceu</a>
         </div>
       </div>
@@ -87,6 +87,14 @@ const iniciais = (nome: string) => nome.split(/\s+/).slice(0, 2).map((p) => p[0]
             <span class="stamp">Autos · Vol. 1</span>
             <p class="dossie-meta mono">CONDENADOS À<br />ATUALIZAÇÃO<br />EM I.A.</p>
           </div>
+        )}
+        {autonomiaRecente && (
+          <a href={`/autonomia/${autonomiaRecente.id}`} class="dossie-mark dossie-link dossie-autonomia" aria-label="Abrir a AutonomIA mais recente">
+            <div class="dossie-arte" set:html={ARTE_AUTONOMIA} />
+            <span class="stamp">Resenha · {autonomiaRecente.data.numero === 0 ? 'Piloto' : `Nº ${pad(autonomiaRecente.data.numero)}`}</span>
+            <p class="dossie-meta mono">AUTONOMIA<br />TODA QUARTA</p>
+            <span class="dossie-go mono">abrir a edição →</span>
+          </a>
         )}
       </aside>
     </div>
@@ -118,7 +126,7 @@ const iniciais = (nome: string) => nome.split(/\s+/).slice(0, 2).map((p) => p[0]
 
   <!-- ================= AUTONOMIA ================= -->
   {autonomiaRecente && (
-    <section class="wrap feature autonomia-home">
+    <section id="autonomia-recente" class="wrap feature autonomia-home">
       <div class="feature-tag"><span class="label"><a href="/autonomia">Autonom<b class="ia">IA</b></a> · às quartas · edição mais recente</span></div>
       <a href={`/autonomia/${autonomiaRecente.id}`} class="feature-card">
         <div class="feature-num mono">{autonomiaRecente.data.numero === 0 ? 'Piloto' : `Nº ${pad(autonomiaRecente.data.numero)}`}<span class="feature-year">/{autonomiaRecente.data.data.getFullYear()}</span></div>
@@ -275,7 +283,9 @@ const iniciais = (nome: string) => nome.split(/\s+/).slice(0, 2).map((p) => p[0]
   @media (max-width: 640px) { .hero-lead, .hero-duas li { text-align: left; } }
   .hero-cta { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 2rem; }
 
-  .hero-side { display: flex; justify-content: center; }
+  .hero-side { display: flex; flex-direction: column; align-items: stretch; gap: 1.2rem; }
+  .dossie-arte { width: 124px; }
+  .dossie-arte :global(svg) { width: 100%; height: auto; display: block; }
   .dossie-mark {
     display: flex; flex-direction: column; align-items: center; gap: 0.9rem;
     padding: 1.8rem 2rem; border: 1.5px solid var(--line-strong); border-radius: var(--radius);
@@ -315,7 +325,7 @@ const iniciais = (nome: string) => nome.split(/\s+/).slice(0, 2).map((p) => p[0]
 
   @media (max-width: 680px) {
     .hero-grid { grid-template-columns: 1fr; }
-    .hero-side { order: -1; justify-content: flex-start; }
+    .hero-side { order: -1; flex-direction: row; flex-wrap: wrap; align-items: flex-start; }
     .feature-card { grid-template-columns: 1fr; }
     .feature-num { border-right: 0; border-bottom: 1px solid var(--line-strong); padding-right: 0; padding-bottom: 0.8rem; display: flex; align-items: baseline; gap: 0.8rem; }
     .feature-year { margin-top: 0; }
