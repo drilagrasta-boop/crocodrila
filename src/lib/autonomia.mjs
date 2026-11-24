@@ -12,6 +12,10 @@ export const DECLARACAO_IA =
   'Esta edição foi preparada com o auxílio do Claude, modelo de IA da Anthropic, na coleta, ' +
   'na leitura das fontes e no rascunho. A escolha das notas, a leitura crítica e a palavra final são da editora.';
 
+// Despedida ao fim de toda edição, no molde da edição de sábado. Não fala em "sete dias"
+// porque o recorte pode ser maior (o piloto cobriu dez).
+export const FECHO_AUTONOMIA = 'A resenha desta quarta termina aqui. Até a próxima!';
+
 // Contato da editora, exibido junto da assinatura em toda edição (pedido dela, 23/11/2026).
 export const CONTATO_AUTONOMIA = 'drilagrasta@gmail.com';
 

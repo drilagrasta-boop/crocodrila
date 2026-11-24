@@ -96,6 +96,7 @@ for (const e of visiveis) {
   exigir(/<article[^>]*class="[^"]*\bautonomia\b/.test(html), `${e.id}: falta a classe "autonomia" no artigo`);
   exigir(html.includes('<blockquote'), `${e.id}: nenhum bloco de Leitura na página`);
   exigir(html.includes(AVISO), `${e.id}: a página não traz o aviso fixo`);
+  exigir(html.includes('termina aqui. Até a próxima!'), `${e.id}: falta a linha de despedida ao fim do texto`);
   exigir(html.includes(DECLARACAO), `${e.id}: a página não traz a declaração de uso de IA`);
   // Toda edição sai assinada e com o contato da editora para críticas.
   exigir(/class="assina-nomes[^"]*"[^>]*>\s*Adriana Aneli/.test(html), `${e.id}: falta a assinatura "Adriana Aneli"`);

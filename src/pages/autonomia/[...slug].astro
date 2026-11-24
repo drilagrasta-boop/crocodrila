@@ -2,7 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import SeloAutonomia from '../../components/SeloAutonomia.astro';
 import { getCollection, render } from 'astro:content';
-import { publicadas, rotuloNumero, tituloItem, semana, AVISO_AUTONOMIA, CONTATO_AUTONOMIA, DECLARACAO_IA } from '../../lib/autonomia.mjs';
+import { publicadas, rotuloNumero, tituloItem, semana, AVISO_AUTONOMIA, CONTATO_AUTONOMIA, DECLARACAO_IA, FECHO_AUTONOMIA } from '../../lib/autonomia.mjs';
 
 export async function getStaticPaths() {
   const ordenadas = publicadas(await getCollection('autonomia'));
@@ -61,6 +61,8 @@ const chamadas = destaques.map((d) => {
     <div class="wrap ed-body">
       <div class="prose">
         <Content />
+        <hr />
+        <p class="fecho"><em>{FECHO_AUTONOMIA}</em></p>
       </div>
     </div>
 
@@ -119,6 +121,7 @@ const chamadas = destaques.map((d) => {
   .sumario ul { margin-top: 0.7rem; padding-left: 1.1em; display: flex; flex-direction: column; gap: 0.35rem; }
   .sumario li { color: var(--ink-soft); }
   .sumario li::marker { color: var(--jacare); }
+  .autonomia :global(.prose) .fecho { text-align: left; }
   .sumario a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--line-strong); }
   .sumario a:hover { color: var(--jacare-deep); border-bottom-color: var(--jacare); }
   /* ao chegar pelo link, o título da nota não fica colado no topo da janela */
