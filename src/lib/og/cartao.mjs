@@ -41,6 +41,24 @@ export async function gerarSeloComemorativo(numero, arteDataUri, legenda, largur
   return new Resvg(svg, { fitTo: { mode: 'width', value: largura } }).render().asPng();
 }
 
+// Selo da AutonomIA: a Crocodrila lendo o jornal no carimbo tracejado, com o nome
+// (o "IA" em verde, como no site) e um rótulo curto: "PILOTO", "Nº 001", "TODA QUARTA".
+export async function gerarSeloAutonomia(rotulo, arteDataUri, largura = 800) {
+  const nome = { fontFamily: 'JetBrains Mono', fontWeight: 500, fontSize: 58, letterSpacing: 7 };
+  const arvore = el('div', { display: 'flex', width: 800, height: 800, backgroundColor: C.papel, alignItems: 'center', justifyContent: 'center' }, [
+    el('div', { display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: 640, height: 640, border: `9px dashed ${C.terracota}`, borderRadius: 9999, transform: 'rotate(-6deg)' }, [
+      { type: 'img', props: { src: arteDataUri, width: 320, height: 288, style: {} } },
+      el('div', { display: 'flex', marginTop: 14 }, [
+        texto({ ...nome, color: C.terracota }, 'AUTONOM'),
+        texto({ ...nome, color: C.jacare }, 'IA'),
+      ]),
+      texto({ fontFamily: 'JetBrains Mono', fontWeight: 500, fontSize: 28, letterSpacing: 6, color: C.terracota, marginTop: 10 }, rotulo.toUpperCase()),
+    ]),
+  ]);
+  const svg = await satori(arvore, { width: 800, height: 800, fonts: carregarFontes() });
+  return new Resvg(svg, { fitTo: { mode: 'width', value: largura } }).render().asPng();
+}
+
 export async function gerarArte(arteDataUri, largura, altura) {
   const arvore = el('div', { display: 'flex', width: 800, height: 800, backgroundColor: C.papel, alignItems: 'center', justifyContent: 'center' }, [
     { type: 'img', props: { src: arteDataUri, width: largura, height: altura, style: {} } },

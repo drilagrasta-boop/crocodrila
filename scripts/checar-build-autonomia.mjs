@@ -84,12 +84,20 @@ exigir(home?.includes('href="/autonomia"'), 'o menu da home não tem link para /
   for (const alvo of alvos) exigir(pagina.includes(`id="${alvo}"`), `${recente}: chamada aponta para "#${alvo}", que não existe`);
 }
 
+// --- Imagem de compartilhamento ----------------------------------------------
+// Ao compartilhar um link da AutonomIA, a imagem é o selo dela (não o do site).
+const imagemOg = (html) => html?.match(/<meta property="og:image" content="[^"]*?(\/og\/[^"]+)"/)?.[1] ?? null;
+exigir(imagemOg(lista) === '/og/autonomia.png', 'a página da seção não compartilha o selo da AutonomIA');
+exigir(existsSync(join(DIST, 'og', 'autonomia.png')), 'falta a imagem dist/og/autonomia.png');
+
 // --- Páginas de leitura -----------------------------------------------------
 const sitemap = ler(join(DIST, 'sitemap-0.xml')) ?? '';
 for (const e of visiveis) {
   const html = ler(join(DIST, 'autonomia', e.id, 'index.html'));
   exigir(html !== null, `falta a página de ${e.id}`);
   if (!html) continue;
+  exigir(imagemOg(html) === `/og/autonomia/${e.id}.png`, `${e.id}: a página não compartilha o selo da própria edição`);
+  exigir(existsSync(join(DIST, 'og', 'autonomia', `${e.id}.png`)), `${e.id}: falta a imagem de compartilhamento`);
   for (const fixa of ['Como IA dizendo...', 'Papo Amarelo', 'Memória']) {
     exigir(html.includes(fixa), `${e.id}: a página não mostra a rubrica "${fixa}"`);
   }
@@ -115,6 +123,7 @@ for (const e of visiveis) {
 }
 for (const e of ocultas) {
   exigir(!existsSync(join(DIST, 'autonomia', e.id, 'index.html')), `rascunho publicado: ${e.id} tem página`);
+  exigir(!existsSync(join(DIST, 'og', 'autonomia', `${e.id}.png`)), `rascunho publicado: ${e.id} tem imagem de compartilhamento`);
   exigir(!sitemap.includes(e.id), `rascunho publicado: ${e.id} está no sitemap`);
   exigir(!lista?.includes(e.id), `rascunho publicado: ${e.id} está na lista da seção`);
 }

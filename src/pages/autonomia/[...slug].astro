@@ -29,7 +29,7 @@ const chamadas = destaques.map((d) => {
   return { texto: d.texto, alvo: nota.slug };
 });
 ---
-<Base title={tituloItem(entry)} description={resumo} image="/og/site.png" imageWidth={800} imageHeight={800}>
+<Base title={tituloItem(entry)} description={resumo} image={`/og/autonomia/${entry.id}.png`} imageWidth={800} imageHeight={800}>
   <article class="ed autonomia">
     <header class="wrap ed-head rise">
       <a href="/autonomia" class="back mono">← todas as edições da AutonomIA</a>
