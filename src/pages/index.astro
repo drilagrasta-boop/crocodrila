@@ -281,6 +281,10 @@ const iniciais = (nome: string) => nome.split(/\s+/).slice(0, 2).map((p) => p[0]
   .hero-duas { list-style: none; padding: 0; margin-top: 1.6rem; display: grid; gap: 0.9rem; border-left: 3px solid var(--gold); padding-left: 1.1rem; color: var(--ink-soft); font-size: 1.02rem; }
   .hero-duas .label { display: block; margin-bottom: 0.15rem; }
   .hero-duas .ia { color: var(--jacare); }
+  /* parágrafos justificados na abertura da capa; em tela estreita voltam à esquerda */
+  .hero-lead, .hero-duas li { text-align: justify; hyphens: manual; }
+  .hero-duas .label { text-align: left; }
+  @media (max-width: 640px) { .hero-lead, .hero-duas li { text-align: left; } }
   .hero-cta { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 2rem; }
 
   .hero-side { display: flex; justify-content: center; }
