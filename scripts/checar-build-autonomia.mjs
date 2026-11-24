@@ -22,7 +22,12 @@ function colecao(pasta) {
   return readdirSync(pasta).filter((f) => f.endsWith('.md')).map((f) => {
     const texto = readFileSync(join(pasta, f), 'utf8');
     const front = texto.match(/^---\r?\n([\s\S]*?)\r?\n---/)?.[1] ?? '';
-    return { id: f.replace(/\.md$/, ''), rascunho: /^rascunho:\s*true\s*$/m.test(front) };
+    return {
+      id: f.replace(/\.md$/, ''),
+      rascunho: /^rascunho:\s*true\s*$/m.test(front),
+      // chamadas do quadro "Nesta edição" que apontam para uma nota
+      chamadasComNota: (front.match(/^\s+nota:\s*\S/gm) ?? []).length,
+    };
   });
 }
 
@@ -85,6 +90,13 @@ for (const e of visiveis) {
   exigir(/href="mailto:[^"@\s]+@[^"\s]+"/.test(assina), `${e.id}: falta o e-mail de contato da editora junto da assinatura`);
   exigir(/class="assina-bio[\s"][^>]*>[^<]{60,}/.test(assina), `${e.id}: falta a mini bio da editora junto da assinatura`);
   exigir(lista?.includes(`/autonomia/${e.id}`), `${e.id}: não está na lista da seção`);
+  // Quadro "Nesta edição": cada chamada com nota vira link, e todo link cai numa nota que existe.
+  const sumario = html.match(/<aside[^>]*class="sumario[\s\S]*?<\/aside>/)?.[0] ?? '';
+  const alvos = [...sumario.matchAll(/href="#([^"]+)"/g)].map((m) => m[1]);
+  exigir(alvos.length === e.chamadasComNota, `${e.id}: ${e.chamadasComNota} chamada(s) apontam para nota, mas o quadro tem ${alvos.length} link(s)`);
+  for (const alvo of alvos) {
+    exigir(html.includes(`id="${alvo}"`), `${e.id}: a chamada aponta para "#${alvo}", que não existe na página`);
+  }
 }
 for (const e of ocultas) {
   exigir(!existsSync(join(DIST, 'autonomia', e.id, 'index.html')), `rascunho publicado: ${e.id} tem página`);

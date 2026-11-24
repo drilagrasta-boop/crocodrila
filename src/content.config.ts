@@ -126,7 +126,8 @@ const autonomia = defineCollection({
     periodo_inicio: z.coerce.date(),    // primeiro dia coberto (quarta anterior)
     periodo_fim: z.coerce.date(),       // último dia coberto (terça)
     resumo: z.string(),                 // 1–2 frases (lista, feed e preview)
-    destaques: z.array(z.string()).default([]),
+    // chamada do quadro "Nesta edição": texto simples, ou texto + título exato da nota para onde leva
+    destaques: z.array(z.union([z.string(), z.object({ texto: z.string(), nota: z.string() })])).default([]),
     autor: z.string().default('Adriana Aneli'),
     rascunho: z.boolean().default(false), // true = não publica
   }),

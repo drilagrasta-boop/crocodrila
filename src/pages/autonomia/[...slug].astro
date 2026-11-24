@@ -17,10 +17,17 @@ export async function getStaticPaths() {
 }
 
 const { entry, anterior, proxima } = Astro.props;
-const { Content } = await render(entry);
+const { Content, headings } = await render(entry);
 
 const fmt = new Intl.DateTimeFormat('pt-BR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
 const { numero, titulo, data, periodo_inicio, periodo_fim, resumo, destaques, autor } = entry.data;
+// Cada chamada do quadro "Nesta edição" leva à nota de mesmo título, quando ela é indicada.
+const chamadas = destaques.map((d) => {
+  if (typeof d === 'string') return { texto: d, alvo: null };
+  const nota = headings.find((h) => h.depth === 2 && h.text.trim() === d.nota.trim());
+  if (!nota) throw new Error(`AutonomIA ${entry.id}: a chamada aponta para a nota "${d.nota}", que não existe`);
+  return { texto: d.texto, alvo: nota.slug };
+});
 ---
 <Base title={tituloItem(entry)} description={resumo} image="/og/site.png" imageWidth={800} imageHeight={800}>
   <article class="ed autonomia">
@@ -44,7 +51,7 @@ const { numero, titulo, data, periodo_inicio, periodo_fim, resumo, destaques, au
         <aside class="sumario">
           <span class="label">Nesta edição</span>
           <ul>
-            {destaques.map((d) => <li>{d}</li>)}
+            {chamadas.map((c) => <li>{c.alvo ? <a href={`#${c.alvo}`}>{c.texto}</a> : c.texto}</li>)}
           </ul>
         </aside>
       )}
@@ -113,6 +120,10 @@ const { numero, titulo, data, periodo_inicio, periodo_fim, resumo, destaques, au
   .sumario ul { margin-top: 0.7rem; padding-left: 1.1em; display: flex; flex-direction: column; gap: 0.35rem; }
   .sumario li { color: var(--ink-soft); }
   .sumario li::marker { color: var(--jacare); }
+  .sumario a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--line-strong); }
+  .sumario a:hover { color: var(--jacare-deep); border-bottom-color: var(--jacare); }
+  /* ao chegar pelo link, o título da nota não fica colado no topo da janela */
+  .autonomia :global(.prose h2) { scroll-margin-top: 5.5rem; }
   .ed-topo { display: flex; align-items: flex-start; justify-content: space-between; gap: clamp(1.2rem, 4vw, 3rem); }
   .ed-topo-texto { min-width: 0; }
   @media (max-width: 640px) { .ed-topo :global(.selo-autonomia) { display: none; } }
