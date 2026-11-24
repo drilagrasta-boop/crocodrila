@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import SeloAutonomia from '../../components/SeloAutonomia.astro';
 import { getCollection, render } from 'astro:content';
 import { publicadas, rotuloNumero, tituloItem, semana, AVISO_AUTONOMIA, CONTATO_AUTONOMIA, BIO_AUTONOMIA, DECLARACAO_IA } from '../../lib/autonomia.mjs';
 
@@ -25,14 +26,19 @@ const { numero, titulo, data, periodo_inicio, periodo_fim, resumo, destaques, au
   <article class="ed autonomia">
     <header class="wrap ed-head rise">
       <a href="/autonomia" class="back mono">← todas as edições da AutonomIA</a>
-      <div class="ed-meta">
-        <span class="ed-numero mono">Autonom<b>IA</b> · {rotuloNumero(numero)}</span>
-        <span class="dot">·</span>
-        <time class="mono" datetime={data.toISOString()}>{fmt.format(data)}</time>
+      <div class="ed-topo">
+        <div class="ed-topo-texto">
+          <div class="ed-meta">
+            <span class="ed-numero mono">Autonom<b>IA</b> · {rotuloNumero(numero)}</span>
+            <span class="dot">·</span>
+            <time class="mono" datetime={data.toISOString()}>{fmt.format(data)}</time>
+          </div>
+          <h1 class="ed-title">{titulo}</h1>
+          <p class="ed-dateline mono">{semana(periodo_inicio, periodo_fim)}</p>
+          <p class="ed-resumo measure">{resumo}</p>
+        </div>
+        <SeloAutonomia rotulo={numero === 0 ? 'piloto' : `nº ${String(numero).padStart(3, '0')}`} />
       </div>
-      <h1 class="ed-title">{titulo}</h1>
-      <p class="ed-dateline mono">{semana(periodo_inicio, periodo_fim)}</p>
-      <p class="ed-resumo measure">{resumo}</p>
 
       {destaques.length > 0 && (
         <aside class="sumario">
@@ -107,6 +113,9 @@ const { numero, titulo, data, periodo_inicio, periodo_fim, resumo, destaques, au
   .sumario ul { margin-top: 0.7rem; padding-left: 1.1em; display: flex; flex-direction: column; gap: 0.35rem; }
   .sumario li { color: var(--ink-soft); }
   .sumario li::marker { color: var(--jacare); }
+  .ed-topo { display: flex; align-items: flex-start; justify-content: space-between; gap: clamp(1.2rem, 4vw, 3rem); }
+  .ed-topo-texto { min-width: 0; }
+  @media (max-width: 640px) { .ed-topo :global(.selo-autonomia) { display: none; } }
   .ed-head .rule { margin-top: 2.4rem; }
 
   .ed-body { margin-top: 2.4rem; }

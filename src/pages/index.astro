@@ -58,16 +58,14 @@ const iniciais = (nome: string) => nome.split(/\s+/).slice(0, 2).map((p) => p[0]
           <li>
             <span class="label">Aos sábados</span>
             <a class="tlink" href="/edicoes">Condenados à Atualização em IA</a>: a newsletter
-            técnica. O que mudou na semana, direto da fonte primária.
+            técnica. As novidades da semana que realmente importam, garimpadas direto na fonte
+            primária e entregues filtradas, para ler em dez minutos.
           </li>
           <li>
             <span class="label">Às quartas</span>
             <a class="tlink" href="/autonomia">Autonom<b class="ia">IA</b></a>: a resenha crítica.
-            A imprensa do mundo e do Brasil lida com outro olhar, por eixos que entram conforme
-            a semana: poder e regras, direitos, soberania, mercado, o lado escuro da tecnologia,
-            clima, trabalho, formação, fé e razão, arte e cultura. O Brasil tem seção fixa, o
-            Papo Amarelo, e a Memória guarda o que foi prometido, para cobrar depois. Em cada
-            nota, o fato vem separado da leitura, que é assinada.
+            A imprensa do mundo e do Brasil lida por eixos, do poder ao mercado, da escola à
+            arte, com o Brasil sempre presente e o fato separado da leitura, que é assinada.
           </li>
         </ul>
         <div class="hero-cta">
@@ -106,11 +104,6 @@ const iniciais = (nome: string) => nome.split(/\s+/).slice(0, 2).map((p) => p[0]
           <time class="label" datetime={ultima.data.data.toISOString()}>{fmt.format(ultima.data.data)}</time>
           <h2 class="feature-title">{ultima.data.titulo}</h2>
           <p class="feature-resumo">{ultima.data.resumo}</p>
-          {ultima.data.destaques.length > 0 && (
-            <ul class="feature-bullets">
-              {ultima.data.destaques.slice(0, 4).map((d) => <li>{d}</li>)}
-            </ul>
-          )}
           <span class="feature-go mono">Abrir a edição completa →</span>
         </div>
       </a>
@@ -133,11 +126,6 @@ const iniciais = (nome: string) => nome.split(/\s+/).slice(0, 2).map((p) => p[0]
           <time class="label" datetime={autonomiaRecente.data.data.toISOString()}>{fmt.format(autonomiaRecente.data.data)}</time>
           <h2 class="feature-title">{autonomiaRecente.data.titulo}</h2>
           <p class="feature-resumo">{autonomiaRecente.data.resumo}</p>
-          {autonomiaRecente.data.destaques.length > 0 && (
-            <ul class="feature-bullets">
-              {autonomiaRecente.data.destaques.slice(0, 4).map((d) => <li>{d}</li>)}
-            </ul>
-          )}
           <span class="feature-go mono">Abrir a edição completa →</span>
         </div>
       </a>

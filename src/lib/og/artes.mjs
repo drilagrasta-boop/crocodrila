@@ -359,3 +359,76 @@ export const ARTES_HOBBY = {
     </g>
   </svg>`,
 };
+
+// Selo da AutonomIA (nov/2026, a pedido da editora): a Crocodrila de óculos, sentada numa
+// pilha de jornais, lendo o jornal aberto, com um café ao lado. Desenho próprio, no traço
+// e nas cores do mascote.
+export const ARTE_AUTONOMIA = `<svg width="200" height="180" viewBox="0 0 200 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <ellipse cx="106" cy="170" rx="84" ry="5" fill="#e4d6b5"/>
+  <!-- rabo -->
+  <path d="M130,108 Q168,118 176,150 Q180,163 196,159 Q193,170 178,169 Q160,168 152,142 Q146,130 126,134 Z" fill="#3c5a45"/>
+  <path d="M136,111 Q167,121 175,150 Q179,162 194,160" stroke="#c49a3a" stroke-width="2.4" stroke-linecap="round" fill="none" opacity="0.92"/>
+  <!-- pilha de jornais (o assento) -->
+  <g fill="#fffdf6" stroke="#1d2b24" stroke-width="2" stroke-linejoin="round">
+    <rect x="94" y="156" width="58" height="12" rx="1.5"/>
+    <rect x="90" y="144" width="60" height="12" rx="1.5"/>
+    <rect x="95" y="132" width="54" height="12" rx="1.5"/>
+  </g>
+  <g stroke="#3c5a45" stroke-width="1.6" stroke-linecap="round">
+    <line x1="100" y1="162" x2="128" y2="162"/><line x1="96" y1="150" x2="118" y2="150"/><line x1="101" y1="138" x2="132" y2="138"/>
+  </g>
+  <g stroke="#9c4a2e" stroke-width="1.6" stroke-linecap="round">
+    <line x1="134" y1="162" x2="146" y2="162"/><line x1="124" y1="150" x2="144" y2="150"/>
+  </g>
+  <!-- tronco -->
+  <path d="M104,74 Q95,102 104,134 L140,134 Q147,102 134,72 Q118,64 104,74 Z" fill="#3c5a45"/>
+  <!-- perna: coxa, canela e pé -->
+  <polyline points="120,126 78,124 73,160" fill="none" stroke="#1d2b24" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="120,126 78,124 73,160" fill="none" stroke="#3c5a45" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+  <ellipse cx="63" cy="164" rx="13" ry="6" fill="#3c5a45" stroke="#1d2b24" stroke-width="1.8"/>
+  <g stroke="#1d2b24" stroke-width="1.2" stroke-linecap="round">
+    <line x1="54" y1="163" x2="54" y2="168"/><line x1="59" y1="162" x2="59" y2="169"/>
+  </g>
+  <!-- jornal aberto -->
+  <g transform="rotate(-7 63 107)">
+    <rect x="36" y="80" width="54" height="54" rx="1.5" fill="#fffdf6" stroke="#1d2b24" stroke-width="2.2" stroke-linejoin="round"/>
+    <line x1="63" y1="80" x2="63" y2="134" stroke="#1d2b24" stroke-width="1.2"/>
+    <rect x="41" y="86" width="44" height="5" rx="1" fill="#9c4a2e"/>
+    <g stroke="#3c5a45" stroke-width="1.8" stroke-linecap="round">
+      <line x1="41" y1="98" x2="58" y2="98"/><line x1="41" y1="104" x2="58" y2="104"/><line x1="41" y1="110" x2="58" y2="110"/>
+      <line x1="41" y1="116" x2="58" y2="116"/><line x1="41" y1="122" x2="58" y2="122"/><line x1="41" y1="128" x2="52" y2="128"/>
+      <line x1="68" y1="116" x2="85" y2="116"/><line x1="68" y1="122" x2="85" y2="122"/><line x1="68" y1="128" x2="79" y2="128"/>
+    </g>
+    <rect x="68" y="97" width="17" height="13" fill="#c49a3a" stroke="#1d2b24" stroke-width="1.2"/>
+  </g>
+  <!-- braço e mãos -->
+  <polyline points="112,90 100,118 88,108" fill="none" stroke="#1d2b24" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="112,90 100,118 88,108" fill="none" stroke="#3c5a45" stroke-width="8.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <ellipse cx="36" cy="112" rx="5.5" ry="4.2" fill="#3c5a45" stroke="#1d2b24" stroke-width="1.6" transform="rotate(-20 36 112)"/>
+  <circle cx="112" cy="90" r="7" fill="#3c5a45"/>
+  <!-- cabeça -->
+  <g transform="translate(16 0)">
+    <path d="M114,74 L114,42 L104,28 L92,38 L46,44 L42,52 L46,58 L96,62 L100,76 Z" fill="#3c5a45"/>
+    <polyline points="114,48 104,28 92,38" fill="none" stroke="#c49a3a" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" opacity="0.92"/>
+    <g fill="#f2e9d2" stroke="#1d2b24" stroke-width="0.6">
+      <path d="M50,52 L53,58 L56,52 Z"/><path d="M57,52 L60,58 L63,52 Z"/><path d="M64,52 L67,58 L70,52 Z"/>
+      <path d="M71,52 L74,58 L77,52 Z"/><path d="M78,52 L81,58 L84,52 Z"/><path d="M85,52 L88,57 L91,52 Z"/>
+    </g>
+    <path d="M45,52 L94,52" stroke="#1d2b24" stroke-width="1.6" stroke-linecap="round"/>
+    <ellipse cx="49" cy="47" rx="2.4" ry="1.6" fill="#1d2b24"/>
+    <circle cx="100" cy="41" r="5.2" fill="#c49a3a"/>
+    <circle cx="99" cy="42.6" r="2.2" fill="#1d2b24"/>
+    <circle cx="98" cy="40" r="0.9" fill="#f2e9d2"/>
+    <!-- óculos de leitura -->
+    <circle cx="100" cy="41" r="8.6" fill="#fffdf6" fill-opacity="0.28" stroke="#1d2b24" stroke-width="1.8"/>
+    <path d="M108.4,40 L114,44" stroke="#1d2b24" stroke-width="1.8" stroke-linecap="round"/>
+    <path d="M91.6,41 L86,43" stroke="#1d2b24" stroke-width="1.8" stroke-linecap="round"/>
+  </g>
+  <!-- xícara de café -->
+  <path d="M19,154 h17 v9 a5,5 0 0 1 -5,5 h-7 a5,5 0 0 1 -5,-5 Z" fill="#9c4a2e" stroke="#1d2b24" stroke-width="1.8" stroke-linejoin="round"/>
+  <path d="M36,157 q7,0 7,4 q0,4 -7,4" fill="none" stroke="#1d2b24" stroke-width="1.8" stroke-linecap="round"/>
+  <g fill="none" stroke="#c49a3a" stroke-width="1.8" stroke-linecap="round">
+    <path d="M24,149 q-3,-4 0,-8 q3,-4 0,-8"/>
+    <path d="M31,149 q-3,-4 0,-8 q3,-4 0,-7"/>
+  </g>
+</svg>`;
