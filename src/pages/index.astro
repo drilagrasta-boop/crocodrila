@@ -54,6 +54,19 @@ const iniciais = (nome: string) => nome.split(/\s+/).slice(0, 2).map((p) => p[0]
           novidades que realmente importam — direto da fonte — e entrega filtrado.
           Você lê em dez minutos o que levaria a semana inteira pra rastrear.
         </p>
+        <ul class="hero-duas measure">
+          <li>
+            <span class="label">Aos sábados</span>
+            <a class="tlink" href="/edicoes">Condenados à Atualização em IA</a>: a newsletter
+            técnica. O que mudou na semana, direto da fonte primária.
+          </li>
+          <li>
+            <span class="label">Às quartas</span>
+            <a class="tlink" href="/autonomia">Autonom<b class="ia">IA</b></a>: a resenha crítica.
+            A imprensa do mundo e do Brasil lida com outro olhar: o que a IA fez com o poder,
+            os direitos e o mercado. O fato vem separado da leitura, que é assinada.
+          </li>
+        </ul>
         <div class="hero-cta">
           <a href="#ultima" class="btn btn--jacare">Ler a última edição →</a>
           <a href="/sobre" class="btn btn--ghost">Como nasceu</a>
@@ -83,7 +96,7 @@ const iniciais = (nome: string) => nome.split(/\s+/).slice(0, 2).map((p) => p[0]
   <!-- ================= ÚLTIMA EDIÇÃO ================= -->
   {ultima && (
     <section id="ultima" class="wrap feature">
-      <div class="feature-tag"><span class="label">Edição mais recente</span></div>
+      <div class="feature-tag"><span class="label"><a href="/edicoes">Condenados à Atualização em IA</a> · aos sábados · edição mais recente</span></div>
       <a href={`/edicoes/${ultima.id}`} class="feature-card">
         <div class="feature-num mono">Nº {pad(ultima.data.numero)}<span class="feature-year">/{ultima.data.data.getFullYear()}</span></div>
         <div class="feature-body">
@@ -109,19 +122,21 @@ const iniciais = (nome: string) => nome.split(/\s+/).slice(0, 2).map((p) => p[0]
 
   <!-- ================= AUTONOMIA ================= -->
   {autonomiaRecente && (
-    <section class="wrap autonomia-home">
-      <div class="sec-head">
-        <div>
-          <span class="label eyebrow">Toda quarta · resenha crítica</span>
-          <h2>Autonom<b class="ia">IA</b></h2>
+    <section class="wrap feature autonomia-home">
+      <div class="feature-tag"><span class="label"><a href="/autonomia">Autonom<b class="ia">IA</b></a> · às quartas · edição mais recente</span></div>
+      <a href={`/autonomia/${autonomiaRecente.id}`} class="feature-card">
+        <div class="feature-num mono">{autonomiaRecente.data.numero === 0 ? 'Piloto' : `Nº ${pad(autonomiaRecente.data.numero)}`}<span class="feature-year">/{autonomiaRecente.data.data.getFullYear()}</span></div>
+        <div class="feature-body">
+          <time class="label" datetime={autonomiaRecente.data.data.toISOString()}>{fmt.format(autonomiaRecente.data.data)}</time>
+          <h2 class="feature-title">{autonomiaRecente.data.titulo}</h2>
+          <p class="feature-resumo">{autonomiaRecente.data.resumo}</p>
+          {autonomiaRecente.data.destaques.length > 0 && (
+            <ul class="feature-bullets">
+              {autonomiaRecente.data.destaques.slice(0, 4).map((d) => <li>{d}</li>)}
+            </ul>
+          )}
+          <span class="feature-go mono">Abrir a edição completa →</span>
         </div>
-        <a href="/autonomia" class="tlink mono sec-link">todas as edições →</a>
-      </div>
-      <a href={`/autonomia/${autonomiaRecente.id}`} class="au-card">
-        <span class="label">{rotuloNumero(autonomiaRecente.data.numero)} · {semana(autonomiaRecente.data.periodo_inicio, autonomiaRecente.data.periodo_fim)}</span>
-        <h3 class="au-titulo">{autonomiaRecente.data.titulo}</h3>
-        <p class="au-resumo muted">{autonomiaRecente.data.resumo}</p>
-        <span class="au-go mono">ler a AutonomIA →</span>
       </a>
     </section>
   )}
@@ -260,6 +275,9 @@ const iniciais = (nome: string) => nome.split(/\s+/).slice(0, 2).map((p) => p[0]
   .hero-title { margin-top: 1.1rem; }
   .hero-em { color: var(--jacare); font-style: italic; }
   .hero-lead { margin-top: 1.6rem; font-size: clamp(1.1rem, 1rem + 0.6vw, 1.35rem); color: var(--ink-soft); }
+  .hero-duas { list-style: none; padding: 0; margin-top: 1.6rem; display: grid; gap: 0.9rem; border-left: 3px solid var(--gold); padding-left: 1.1rem; color: var(--ink-soft); font-size: 1.02rem; }
+  .hero-duas .label { display: block; margin-bottom: 0.15rem; }
+  .hero-duas .ia { color: var(--jacare); }
   .hero-cta { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 2rem; }
 
   .hero-side { display: flex; justify-content: center; }
@@ -308,15 +326,11 @@ const iniciais = (nome: string) => nome.split(/\s+/).slice(0, 2).map((p) => p[0]
     .feature-year { margin-top: 0; }
   }
 
-  /* AutonomIA na capa */
-  .autonomia-home { margin-top: clamp(3.5rem, 8vw, 6rem); }
-  .autonomia-home h2 .ia { color: var(--jacare); }
-  .au-card { display: block; text-decoration: none; color: inherit; border: 1px solid var(--line-strong); border-left: 4px solid var(--jacare); border-radius: var(--radius); background: #fffdf6; padding: clamp(1.3rem, 3.5vw, 2.2rem); transition: transform .2s ease, box-shadow .2s ease; }
-  .au-card:hover { transform: translateY(-3px); box-shadow: 0 1px 0 var(--ink), 0 22px 44px -30px rgba(27,26,22,.55); }
-  .au-titulo { margin-top: 0.35rem; font-size: clamp(1.5rem, 1.2rem + 1.4vw, 2.2rem); }
-  .au-resumo { margin-top: 0.7rem; max-width: 62ch; }
-  .au-go { display: inline-block; margin-top: 1rem; font-size: 0.8rem; color: var(--jacare-deep); }
-  .au-card:hover .au-go { text-decoration: underline; }
+  /* AutonomIA na capa: mesmo cartão da edição de sábado */
+  .autonomia-home { margin-top: clamp(2.5rem, 6vw, 4rem); }
+  .feature-tag a { color: inherit; text-decoration: none; }
+  .feature-tag a:hover { text-decoration: underline; }
+  .feature-tag .ia { color: var(--jacare); }
 
   /* seção genérica */
   .sec-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; margin-bottom: 1.6rem; }

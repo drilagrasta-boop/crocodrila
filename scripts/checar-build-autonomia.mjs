@@ -48,11 +48,19 @@ exigir(home?.includes('href="/autonomia"'), 'o menu da home não tem link para /
     exigir(bloco !== null, 'a capa do site não apresenta a AutonomIA');
     exigir(bloco?.includes(`href="/autonomia/${recente}"`), `a capa não leva à AutonomIA mais recente (${recente})`);
     exigir(bloco?.includes('href="/autonomia"'), 'o bloco da capa não leva à página da seção');
+    exigir(bloco?.includes('class="feature-card') && bloco?.includes('feature-num'), 'na capa, a chamada da AutonomIA não tem o mesmo desenho da chamada de sábado');
     const iUltima = home?.indexOf('id="ultima"') ?? -1;
     exigir(iUltima === -1 || (home?.indexOf('autonomia-home') ?? -1) > iUltima, 'na capa, a AutonomIA vem antes da edição de sábado');
   } else {
     exigir(bloco === null, 'a capa mostra o bloco da AutonomIA sem edição publicada');
   }
+}
+
+// A abertura da capa explica as duas publicações: a de sábado e a de quarta.
+{
+  const duas = home?.match(/<ul[^>]*class="[^"]*\bhero-duas\b[\s\S]*?<\/ul>/)?.[0] ?? '';
+  exigir(duas.includes('href="/edicoes"') && /s[áa]bado/i.test(duas), 'a capa não explica a newsletter de sábado');
+  exigir(duas.includes('href="/autonomia"') && /quarta/i.test(duas), 'a capa não explica a AutonomIA de quarta');
 }
 
 // --- Páginas de leitura -----------------------------------------------------
