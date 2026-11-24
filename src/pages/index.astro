@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import Crocodrila from '../components/Crocodrila.astro';
 import { getCollection } from 'astro:content';
+import { publicadas, rotuloNumero, semana } from '../lib/autonomia.mjs';
 
 const fmt = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'long', year: 'numeric', timeZone: 'UTC' });
 const pad = (n: number) => String(n).padStart(3, '0');
@@ -12,6 +13,9 @@ const edicoes = (await getCollection('edicoes'))
 
 const ultima = edicoes[0];
 const anteriores = edicoes.slice(1, 6);
+
+// AutonomIA: a edição de quarta mais recente (rascunho só aparece na prévia local).
+const autonomiaRecente = publicadas(await getCollection('autonomia'))[0];
 
 const projetos = (await getCollection('crocodrila'))
   .sort((a, b) => a.data.ordem - b.data.ordem);
@@ -100,6 +104,25 @@ const iniciais = (nome: string) => nome.split(/\s+/).slice(0, 2).map((p) => p[0]
   {!ultima && (
     <section class="wrap feature">
       <p class="muted">A primeira edição entra no ar em breve. Enquanto isso, dá uma olhada na <a class="tlink" href="/crocodrila">Crocodrila</a>.</p>
+    </section>
+  )}
+
+  <!-- ================= AUTONOMIA ================= -->
+  {autonomiaRecente && (
+    <section class="wrap autonomia-home">
+      <div class="sec-head">
+        <div>
+          <span class="label eyebrow">Toda quarta · resenha crítica</span>
+          <h2>Autonom<b class="ia">IA</b></h2>
+        </div>
+        <a href="/autonomia" class="tlink mono sec-link">todas as edições →</a>
+      </div>
+      <a href={`/autonomia/${autonomiaRecente.id}`} class="au-card">
+        <span class="label">{rotuloNumero(autonomiaRecente.data.numero)} · {semana(autonomiaRecente.data.periodo_inicio, autonomiaRecente.data.periodo_fim)}</span>
+        <h3 class="au-titulo">{autonomiaRecente.data.titulo}</h3>
+        <p class="au-resumo muted">{autonomiaRecente.data.resumo}</p>
+        <span class="au-go mono">ler a AutonomIA →</span>
+      </a>
     </section>
   )}
 
@@ -284,6 +307,16 @@ const iniciais = (nome: string) => nome.split(/\s+/).slice(0, 2).map((p) => p[0]
     .feature-num { border-right: 0; border-bottom: 1px solid var(--line-strong); padding-right: 0; padding-bottom: 0.8rem; display: flex; align-items: baseline; gap: 0.8rem; }
     .feature-year { margin-top: 0; }
   }
+
+  /* AutonomIA na capa */
+  .autonomia-home { margin-top: clamp(3.5rem, 8vw, 6rem); }
+  .autonomia-home h2 .ia { color: var(--jacare); }
+  .au-card { display: block; text-decoration: none; color: inherit; border: 1px solid var(--line-strong); border-left: 4px solid var(--jacare); border-radius: var(--radius); background: #fffdf6; padding: clamp(1.3rem, 3.5vw, 2.2rem); transition: transform .2s ease, box-shadow .2s ease; }
+  .au-card:hover { transform: translateY(-3px); box-shadow: 0 1px 0 var(--ink), 0 22px 44px -30px rgba(27,26,22,.55); }
+  .au-titulo { margin-top: 0.35rem; font-size: clamp(1.5rem, 1.2rem + 1.4vw, 2.2rem); }
+  .au-resumo { margin-top: 0.7rem; max-width: 62ch; }
+  .au-go { display: inline-block; margin-top: 1rem; font-size: 0.8rem; color: var(--jacare-deep); }
+  .au-card:hover .au-go { text-decoration: underline; }
 
   /* seção genérica */
   .sec-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; margin-bottom: 1.6rem; }

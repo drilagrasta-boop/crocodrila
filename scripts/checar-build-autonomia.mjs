@@ -38,6 +38,23 @@ exigir(lista?.includes('Como é feita'), 'a página da seção não explica como
 const home = ler(join(DIST, 'index.html'));
 exigir(home?.includes('href="/autonomia"'), 'o menu da home não tem link para /autonomia');
 
+// --- Capa do site -------------------------------------------------------------
+// A capa apresenta a AutonomIA mais recente, logo depois da edição de sábado; sem edição
+// publicada, o bloco some (rascunho nunca aparece na capa de produção).
+{
+  const bloco = home?.match(/<section[^>]*class="[^"]*\bautonomia-home\b[\s\S]*?<\/section>/)?.[0] ?? null;
+  if (visiveis.length > 0) {
+    const recente = visiveis.map((e) => e.id).sort().at(-1);
+    exigir(bloco !== null, 'a capa do site não apresenta a AutonomIA');
+    exigir(bloco?.includes(`href="/autonomia/${recente}"`), `a capa não leva à AutonomIA mais recente (${recente})`);
+    exigir(bloco?.includes('href="/autonomia"'), 'o bloco da capa não leva à página da seção');
+    const iUltima = home?.indexOf('id="ultima"') ?? -1;
+    exigir(iUltima === -1 || (home?.indexOf('autonomia-home') ?? -1) > iUltima, 'na capa, a AutonomIA vem antes da edição de sábado');
+  } else {
+    exigir(bloco === null, 'a capa mostra o bloco da AutonomIA sem edição publicada');
+  }
+}
+
 // --- Páginas de leitura -----------------------------------------------------
 const sitemap = ler(join(DIST, 'sitemap-0.xml')) ?? '';
 for (const e of visiveis) {
