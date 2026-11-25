@@ -117,6 +117,7 @@ Memória                   o que fica registrado para cobrar depois (fixa)
 | Clima | energia e água dos data centers | VIII |
 | Ofício | trabalho e profissões | pedido da editora |
 | Formação | escola, universidade, ensino, treinamento de quem entra na profissão | pedido da editora (23/11/2026) |
+| Ciência e informação | matemática, ciência da informação e o fazer científico diante da IA; recorte da confiança e da autoridade do saber, não o técnico | sugestão de leitor acolhida pela editora (25/11/2026) |
 | Fé e razão | filosofia e religião diante da IA; fontes do Vaticano e de outras tradições | pedido da editora (23/11/2026) |
 | Arte e cultura | criação, direito autoral, linguagem | pedido da editora |
 
@@ -125,7 +126,7 @@ Regras **[proposta]**:
 - Quatro rubricas são fixas: "Como IA dizendo...", "Contraponto" (acrescentada em 25/11/2026: uma
   nota sobre o que a semana mostrou fora do avanço da IA; desde 25/11/2026, a pedido da
   editora, vem depois do Papo Amarelo, como fecho da edição, e antes da Memória),
-  "Papo Amarelo" e "Memória". As onze
+  "Papo Amarelo" e "Memória". As doze
   temáticas aparecem só quando a semana trouxe fato que mereça.
 - Total de 8 a 12 notas por edição, contadas as do Papo Amarelo.
 - **Protagonistas mundiais** [editora]: a varredura cobre Estados Unidos, China, União

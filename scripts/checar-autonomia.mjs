@@ -18,7 +18,8 @@ import { pathToFileURL } from 'node:url';
 export const RUBRICAS_FIXAS = ['Como IA dizendo...', 'Contraponto', 'Papo Amarelo', 'Memória'];
 export const RUBRICAS_TEMATICAS = [
   'Poder e regras', 'Praça pública', 'Direitos', 'Soberania', 'Mercado',
-  'Lado escuro', 'Clima', 'Ofício', 'Formação', 'Fé e razão', 'Arte e cultura',
+  'Lado escuro', 'Clima', 'Ofício', 'Formação', 'Ciência e informação', 'Fé e razão',
+  'Arte e cultura',
 ];
 const [ABERTURA, CONTRAPONTO, PAPO, MEMORIA] = RUBRICAS_FIXAS;
 const TODAS = [...RUBRICAS_FIXAS, ...RUBRICAS_TEMATICAS];

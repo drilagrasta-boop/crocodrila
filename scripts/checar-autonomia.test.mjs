@@ -294,3 +294,16 @@ test('Fé e razão com grafia variante é erro que nomeia a esperada', () => {
   const r = checarEdicao(md);
   assert.ok(r.erros.some((e) => e.includes('"Fé e Razão"') && e.includes('"Fé e razão"')), r.erros.join(' | '));
 });
+
+// "Ciência e informação": rubrica temática pedida pela editora em 25/11/2026 (sugestão de
+// leitor): matemática, ciência da informação e o fazer científico diante da IA.
+test('Ciência e informação é rubrica temática da casa', () => {
+  const md = edicaoValida(9).replace(kicker('Mercado'), kicker('Ciência e informação'));
+  assert.deepEqual(checarEdicao(md).erros, []);
+});
+
+test('Ciência e informação com grafia variante é erro que nomeia a esperada', () => {
+  const md = edicaoValida(9).replace(kicker('Mercado'), kicker('Ciência e Informação'));
+  const r = checarEdicao(md);
+  assert.ok(r.erros.some((e) => e.includes('"Ciência e Informação"') && e.includes('"Ciência e informação"')), r.erros.join(' | '));
+});
