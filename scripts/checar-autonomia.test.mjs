@@ -33,10 +33,12 @@ function montar({ ab = abertura(), tematicas, papo, contra = [nota('Nota de cont
   const blocoContra = contra === null ? '' : kicker('Contraponto') + contra.join('');
   const blocoPapo = kicker('Papo Amarelo') + papo.join('');
   const corpo = ordem === 'memoria-antes'
-    ? ab + blocosTematicos + blocoContra + mem + '\n' + blocoPapo
+    ? ab + blocosTematicos + blocoPapo + mem + '\n' + blocoContra
     : ordem === 'contraponto-antes'
       ? ab + blocoContra + blocosTematicos + blocoPapo + mem
-      : ab + blocosTematicos + blocoContra + blocoPapo + mem;
+      : ordem === 'contraponto-antes-do-papo'
+        ? ab + blocosTematicos + blocoContra + blocoPapo + mem
+        : ab + blocosTematicos + blocoPapo + blocoContra + mem;
   return FRONT + '\n' + corpo;
 }
 
@@ -46,7 +48,8 @@ const edicaoValida = (n) => montar({
   papo: [nota('Nota brasileira')],
 });
 
-// Contraponto: rubrica fixa (pedido da editora em 25/11/2026), logo antes do Papo Amarelo.
+// Contraponto: rubrica fixa (pedido da editora em 25/11/2026). Desde 25/11/2026 vem depois do
+// Papo Amarelo e logo antes da Memória, como fecho da edição (pedido da editora).
 test('falta o Contraponto: é erro', () => {
   const md = montar({
     tematicas: [['Mercado', Array.from({ length: 8 }, (_, i) => nota(`Nota ${i + 1}`))]],
@@ -56,7 +59,16 @@ test('falta o Contraponto: é erro', () => {
   assert.ok(checarEdicao(md).erros.some((e) => e.includes('Contraponto')), checarEdicao(md).erros.join(' | '));
 });
 
-test('Contraponto fora do lugar é erro: ele vem logo antes do Papo Amarelo', () => {
+test('Contraponto antes do Papo Amarelo (a ordem antiga) é erro', () => {
+  const md = montar({
+    tematicas: [['Mercado', Array.from({ length: 7 }, (_, i) => nota(`Nota ${i + 1}`))]],
+    papo: [nota('Nota brasileira')],
+    ordem: 'contraponto-antes-do-papo',
+  });
+  assert.ok(checarEdicao(md).erros.some((e) => e.includes('Contraponto')), checarEdicao(md).erros.join(' | '));
+});
+
+test('Contraponto fora do lugar é erro: ele vem logo depois do Papo Amarelo', () => {
   const md = montar({
     tematicas: [['Mercado', Array.from({ length: 7 }, (_, i) => nota(`Nota ${i + 1}`))]],
     papo: [nota('Nota brasileira')],

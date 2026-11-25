@@ -100,6 +100,7 @@ Ofício
 Formação
 Arte e cultura
 Papo Amarelo              Brasil (fixa)
+Contraponto               o avesso do avanço da IA; fecho da edição (fixa)
 Memória                   o que fica registrado para cobrar depois (fixa)
 ```
 
@@ -122,7 +123,8 @@ Memória                   o que fica registrado para cobrar depois (fixa)
 Regras **[proposta]**:
 
 - Quatro rubricas são fixas: "Como IA dizendo...", "Contraponto" (acrescentada em 25/11/2026: uma
-  nota sobre o que a semana mostrou fora do avanço da IA, logo antes do Papo Amarelo),
+  nota sobre o que a semana mostrou fora do avanço da IA; desde 25/11/2026, a pedido da
+  editora, vem depois do Papo Amarelo, como fecho da edição, e antes da Memória),
   "Papo Amarelo" e "Memória". As onze
   temáticas aparecem só quando a semana trouxe fato que mereça.
 - Total de 8 a 12 notas por edição, contadas as do Papo Amarelo.
