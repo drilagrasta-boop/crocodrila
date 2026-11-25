@@ -21,7 +21,7 @@ export const CONTATO_AUTONOMIA = 'drilagrasta@gmail.com';
 
 // Agradecimento genérico ao grupo que indica leituras, sem nomear quem enviou (pedido da
 // editora, 25/11/2026). Entra a partir do nº 1; o piloto saiu sem as indicações do grupo.
-export const AGRADECIMENTO_AUTONOMIA = 'Esta edição contou com as indicações do grupo Ideia.';
+export const AGRADECIMENTO_AUTONOMIA = 'Esta edição contou com as indicações do IDEIA – Instituto Direito e Inteligência Artificial.';
 export const AGRADECIMENTO_DESDE = 1;
 
 // Rascunho só aparece na prévia local: MOSTRAR_RASCUNHOS=1 npm run dev (ou build).
