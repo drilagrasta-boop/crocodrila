@@ -13,7 +13,8 @@ import { readFileSync } from 'node:fs';
 import { pathToFileURL } from 'node:url';
 
 // "Contraponto" é fixa desde o piloto (pedido da editora, 25/11/2026): o que a semana
-// mostrou fora do avanço da IA. Vem logo antes do Papo Amarelo e leva nota, como as temáticas.
+// mostrou fora do avanço da IA. Leva nota, como as temáticas. Desde 25/11/2026 vem depois do
+// Papo Amarelo e logo antes da Memória, como fecho da edição (pedido da editora).
 export const RUBRICAS_FIXAS = ['Como IA dizendo...', 'Contraponto', 'Papo Amarelo', 'Memória'];
 export const RUBRICAS_TEMATICAS = [
   'Poder e regras', 'Praça pública', 'Direitos', 'Soberania', 'Mercado',
@@ -92,17 +93,17 @@ export function checarEdicao(markdown) {
     if (nomes.filter((n) => n === nome).length > 1) erros.push(`Rubrica "${nome}" aparece mais de uma vez.`);
   }
 
-  // 2. As fixas, na ordem: abertura primeiro; Contraponto, Papo Amarelo e Memória no fim.
+  // 2. As fixas, na ordem: abertura primeiro; Papo Amarelo, Contraponto e Memória no fim.
   for (const fixa of RUBRICAS_FIXAS) {
     if (!nomes.includes(fixa)) erros.push(`Falta a rubrica fixa "${fixa}".`);
   }
   if (RUBRICAS_FIXAS.every((f) => nomes.includes(f))) {
     if (nomes[0] !== ABERTURA) erros.push(`"${ABERTURA}" deve ser a primeira rubrica.`);
-    if (nomes.at(-2) !== PAPO || nomes.at(-1) !== MEMORIA) {
-      erros.push(`"${PAPO}" e "${MEMORIA}" devem ser as duas últimas rubricas, nessa ordem.`);
+    if (nomes.at(-2) !== CONTRAPONTO || nomes.at(-1) !== MEMORIA) {
+      erros.push(`"${CONTRAPONTO}" e "${MEMORIA}" devem ser as duas últimas rubricas, nessa ordem.`);
     }
-    if (nomes.at(-3) !== CONTRAPONTO) {
-      erros.push(`"${CONTRAPONTO}" deve vir logo antes de "${PAPO}".`);
+    if (nomes.at(-3) !== PAPO) {
+      erros.push(`"${CONTRAPONTO}" deve vir logo depois de "${PAPO}".`);
     }
   }
 
