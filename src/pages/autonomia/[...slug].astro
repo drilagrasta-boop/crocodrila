@@ -2,7 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import SeloAutonomia from '../../components/SeloAutonomia.astro';
 import { getCollection, render } from 'astro:content';
-import { publicadas, rotuloNumero, tituloItem, semana, AVISO_AUTONOMIA, CONTATO_AUTONOMIA, DECLARACAO_IA, FECHO_AUTONOMIA } from '../../lib/autonomia.mjs';
+import { publicadas, rotuloNumero, tituloItem, semana, AVISO_AUTONOMIA, CONTATO_AUTONOMIA, DECLARACAO_IA, FECHO_AUTONOMIA, AGRADECIMENTO_AUTONOMIA, AGRADECIMENTO_DESDE } from '../../lib/autonomia.mjs';
 
 export async function getStaticPaths() {
   const ordenadas = publicadas(await getCollection('autonomia'));
@@ -83,6 +83,7 @@ const chamadas = destaques.map((d) => {
         <p class="assina-contato">
           Críticas e sugestões: <a class="tlink" href={`mailto:${CONTATO_AUTONOMIA}`}>{CONTATO_AUTONOMIA}</a>
         </p>
+        {numero >= AGRADECIMENTO_DESDE && <p class="assina-contato">{AGRADECIMENTO_AUTONOMIA}</p>}
       </div>
       <p class="aviso measure">{AVISO_AUTONOMIA}</p>
       <p class="aviso measure">{DECLARACAO_IA}</p>
