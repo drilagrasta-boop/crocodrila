@@ -177,6 +177,17 @@ Lacuna: outras tradições religiosas e fontes de filosofia ainda não mapeadas.
 | Expresso | https://expresso.pt/ | Não confirmado (403). Conhecimento prévio: exclusivos para assinantes | navegador (a reconferir) | Jornalismo | Português (PT) | https://feeds.feedburner.com/expresso-geral (geral) | 23/11/2026 | A página `expresso.pt/inteligencia-artificial` devolveu 403; existência não confirmada. |
 | Observador | https://observador.pt/seccao/tecnologia/inteligencia-artificial/ | Misto: dois itens abertos, um marcado como não gratuito | agente | Jornalismo | Português (PT) | https://observador.pt/feed/ (geral) | 23/11/2026 | O feed no caminho da seção de IA devolve o feed geral. |
 
+## Contraponto
+
+Rubrica fixa desde o piloto: o que a semana mostrou fora do avanço da IA. A editora costuma
+indicar o tema; as fontes abaixo são as que sustentaram o piloto.
+
+| Fonte | URL | Acesso | Como ler | Tipo | Idioma | Feed | Última evidência | Observação |
+|---|---|---|---|---|---|---|---|---|
+| BBC News Brasil | https://www.bbc.com/portuguese | Aberto | agente pelo script de leitura da conferência; a ferramenta comum de leitura é recusada pelo site | Jornalismo | Português (BR) | Não conferido | 20/11/2026 | Reportagem sobre os awá isolados, lida em 25/11/2026. |
+| Funai — notícias e notas oficiais | https://www.gov.br/funai/pt-br/assuntos/noticias | Aberto | navegador ou script de leitura | Primária | Português (BR) | Não conferido | 17/11/2026 | Nota oficial sobre os awá na Terra Indígena Arariboia, lida em 25/11/2026. Dá a posição do governo quando a imprensa só a resume. |
+| Survival Brasil | https://www.survivalbrasil.org/ | Aberto (não lido diretamente) | só pista | Primária (sociedade civil) | Português (BR) | Não conferido | não confirmada | Origem de boa parte do que a BBC relata sobre povos isolados; no piloto entrou só por meio da BBC. |
+
 ## Brasil (Papo Amarelo)
 
 | Fonte | URL | Acesso | Como ler | Tipo | Idioma | Feed | Última evidência | Observação |
@@ -187,6 +198,8 @@ Lacuna: outras tradições religiosas e fontes de filosofia ainda não mapeadas.
 | MCTI — Plano Brasileiro de IA | Notícias: https://www.gov.br/mcti/pt-br/acompanhe-o-mcti/noticias ; PBIA: https://www.gov.br/mcti/pt-br/acompanhe-o-mcti/transformacaodigital/plano-brasileiro-de-inteligencia-artificial | Aberto | agente | Primária | Português (BR) | Não encontrado | 22/11/2026 | O link da página do PBIA consta no menu do MCTI, mas a página em si caiu por erro de conexão; conteúdo não conferido. |
 | CNJ — IA no Judiciário | https://www.cnj.jus.br/sistemas/plataforma-sinapses/inteligencia-artificial/ ; notícias: https://www.cnj.jus.br/tag/inteligencia-artificial/ | Aberto | agente | Primária | Português (BR) | Não encontrado (os endereços `/feed/` redirecionam para páginas HTML) | 22/10/2026 | Não consegui ler o conteúdo da página de IA nesta sessão; referências a resoluções não conferidas. |
 | TSE | https://www.tse.jus.br/comunicacao/noticias | Aberto (conhecimento prévio) | navegador (a reconferir) | Primária | Português (BR) | Não confirmado | não confirmada | Página temática da biblioteca: https://www.tse.jus.br/institucional/catalogo-de-publicacoes/arquivos/tema-eleitoral-inteligencia-artificial-e-eleicoes (localizada por busca, não aberta). |
+| Agência Brasil (EBC) | https://agenciabrasil.ebc.com.br/ | Aberto | agente | Jornalismo (agência pública) | Português (BR) | Não conferido | 16/11/2026 | Registra notas que os ministérios dão à imprensa e não publicam no próprio site: no piloto, a nota do MDIC sobre a regra americana dos chips só apareceu aqui. Consultar antes de escrever que o governo não se manifestou. |
+| MDIC — notícias | https://www.gov.br/mdic/pt-br/assuntos/noticias | Aberto | navegador (listagem por mês: `/noticias/AAAA/<mês por extenso>`) | Primária | Português (BR) | Não conferido | 24/11/2026 | Listagem de novembro de 2026 lida em 25/11/2026. |
 | STF | https://noticias.stf.jus.br/ | Aberto | agente | Primária | Português (BR) | https://noticias.stf.jus.br/feed/ | 10/11/2026 | Não achei página dedicada à IA do tribunal (dois endereços tentados dão 404). Há notícias sobre a MARIA e sobre tentativa de manipular a IA com comandos ocultos em processo (datas não confirmadas). |
 | JOTA | https://www.jota.info/tudo-sobre/inteligencia-artificial | Não conclusivo: `isAccessibleForFree: true`, mas o HTML trouxe menos de 100 palavras por artigo. Conhecimento prévio: JOTA PRO é pago | agente | Jornalismo | Português (BR) | https://www.jota.info/feed | 23/11/2026 | Tem página temática de IA. |
 | Núcleo Jornalismo | https://nucleo.jor.br/ | Aberto (3 itens, texto integral) | agente | Jornalismo | Português (BR) | https://nucleo.jor.br/rss/ ; reportagens: https://nucleo.jor.br/reportagem/rss/ | 19/11/2026 | — |
