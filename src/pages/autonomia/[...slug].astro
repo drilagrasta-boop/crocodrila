@@ -1,0 +1,189 @@
+---
+import Base from '../../layouts/Base.astro';
+import SeloAutonomia from '../../components/SeloAutonomia.astro';
+import { getCollection, render } from 'astro:content';
+import { publicadas, rotuloNumero, tituloItem, semana, AVISO_AUTONOMIA, CONTATO_AUTONOMIA, DECLARACAO_IA, FECHO_AUTONOMIA } from '../../lib/autonomia.mjs';
+
+export async function getStaticPaths() {
+  const ordenadas = publicadas(await getCollection('autonomia'));
+  return ordenadas.map((entry, i) => ({
+    params: { slug: entry.id },
+    props: {
+      entry,
+      anterior: ordenadas[i + 1] ?? null, // número menor
+      proxima: ordenadas[i - 1] ?? null,   // número maior
+    },
+  }));
+}
+
+const { entry, anterior, proxima } = Astro.props;
+const { Content, headings } = await render(entry);
+
+const fmt = new Intl.DateTimeFormat('pt-BR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+const { numero, titulo, data, periodo_inicio, periodo_fim, resumo, destaques, autor } = entry.data;
+// Cada chamada do quadro "Nesta edição" leva à nota de mesmo título, quando ela é indicada.
+const chamadas = destaques.map((d) => {
+  if (typeof d === 'string') return { texto: d, alvo: null };
+  const nota = headings.find((h) => h.depth === 2 && h.text.trim() === d.nota.trim());
+  if (!nota) throw new Error(`AutonomIA ${entry.id}: a chamada aponta para a nota "${d.nota}", que não existe`);
+  return { texto: d.texto, alvo: nota.slug };
+});
+---
+<Base title={tituloItem(entry)} description={resumo} image={`/og/autonomia/${entry.id}.png`} imageWidth={800} imageHeight={800}>
+  <article class="ed autonomia">
+    <header class="wrap ed-head rise">
+      <a href="/autonomia" class="back mono">← todas as edições da AutonomIA</a>
+      <div class="ed-topo">
+        <div class="ed-topo-texto">
+          <div class="ed-meta">
+            <span class="ed-numero mono">Autonom<b>IA</b> · {rotuloNumero(numero)}</span>
+            <span class="dot">·</span>
+            <time class="mono" datetime={data.toISOString()}>{fmt.format(data)}</time>
+          </div>
+          <h1 class="ed-title">{titulo}</h1>
+          <p class="ed-dateline mono">{semana(periodo_inicio, periodo_fim)}</p>
+          <p class="ed-resumo measure">{resumo}</p>
+        </div>
+        <SeloAutonomia rotulo={numero === 0 ? 'piloto' : `nº ${String(numero).padStart(3, '0')}`} />
+      </div>
+
+      {destaques.length > 0 && (
+        <aside class="sumario">
+          <span class="label">Nesta edição</span>
+          <ul>
+            {chamadas.map((c) => <li>{c.alvo ? <a href={`#${c.alvo}`}>{c.texto}</a> : c.texto}</li>)}
+          </ul>
+        </aside>
+      )}
+      <hr class="rule" />
+    </header>
+
+    <div class="wrap ed-body">
+      <div class="prose">
+        <Content />
+        <hr />
+        <p class="fecho"><em>{FECHO_AUTONOMIA}</em></p>
+      </div>
+    </div>
+
+    <aside class="wrap ed-cta-wrap">
+      <div class="ed-cta">
+        <div>
+          <span class="label eyebrow">Não perca a próxima</span>
+          <p class="ed-cta-text">A newsletter Condenados à Atualização em IA, aos sábados, e a AutonomIA, às quartas, direto na sua caixa. Sem rastreador, sem ruído.</p>
+        </div>
+        <a href="/assinar" class="btn btn--jacare">Inscreva-se →</a>
+      </div>
+    </aside>
+
+    <footer class="wrap ed-foot">
+      <div class="assina">
+        <span class="label">Resenha e leitura</span>
+        <p class="assina-nomes">{autor}</p>
+        <p class="assina-contato">
+          Críticas e sugestões: <a class="tlink" href={`mailto:${CONTATO_AUTONOMIA}`}>{CONTATO_AUTONOMIA}</a>
+        </p>
+      </div>
+      <p class="aviso measure">{AVISO_AUTONOMIA}</p>
+      <p class="aviso measure">{DECLARACAO_IA}</p>
+      <hr class="rule" />
+      <nav class="prevnext" aria-label="Navegação entre edições da AutonomIA">
+        {anterior ? (
+          <a href={`/autonomia/${anterior.id}`} class="pn pn-prev">
+            <span class="label">← Edição anterior</span>
+            <span class="pn-title">{rotuloNumero(anterior.data.numero)} · {anterior.data.titulo}</span>
+          </a>
+        ) : <span></span>}
+        {proxima && (
+          <a href={`/autonomia/${proxima.id}`} class="pn pn-next">
+            <span class="label">Próxima edição →</span>
+            <span class="pn-title">{rotuloNumero(proxima.data.numero)} · {proxima.data.titulo}</span>
+          </a>
+        )}
+      </nav>
+    </footer>
+  </article>
+</Base>
+
+<style>
+  .ed-head { padding-top: clamp(2rem, 5vw, 3.5rem); }
+  .back { display: inline-block; color: var(--ink-faint); text-decoration: none; font-size: 0.78rem; margin-bottom: 1.6rem; }
+  .back:hover { color: var(--jacare); }
+  .ed-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 0.6rem; font-size: 0.78rem; color: var(--ink-faint); }
+  .ed-numero { color: var(--ink); letter-spacing: 0.08em; }
+  .ed-numero b { color: var(--jacare); font-weight: inherit; }
+  .dot { color: var(--line-strong); }
+  .ed-title { margin-top: 1rem; }
+  .ed-dateline { margin-top: 0.9rem; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--carimbo); }
+  .ed-resumo { margin-top: 1.1rem; font-size: clamp(1.15rem, 1rem + 0.7vw, 1.45rem); color: var(--ink-soft); font-style: italic; }
+
+  .sumario { margin-top: 2rem; padding: 1.3rem 1.5rem; background: #fffdf6; border: 1px solid var(--line); border-left: 3px solid var(--jacare); border-radius: var(--radius); max-width: var(--measure); }
+  .sumario ul { margin-top: 0.7rem; padding-left: 1.1em; display: flex; flex-direction: column; gap: 0.35rem; }
+  .sumario li { color: var(--ink-soft); }
+  .sumario li::marker { color: var(--jacare); }
+  .autonomia :global(.prose) .fecho { text-align: left; }
+  .sumario a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--line-strong); }
+  .sumario a:hover { color: var(--jacare-deep); border-bottom-color: var(--jacare); }
+  /* ao chegar pelo link, o título da nota não fica colado no topo da janela */
+  .autonomia :global(.prose h2) { scroll-margin-top: 5.5rem; }
+  .ed-topo { display: flex; align-items: flex-start; justify-content: space-between; gap: clamp(1.2rem, 4vw, 3rem); }
+  .ed-topo-texto { min-width: 0; }
+  @media (max-width: 640px) { .ed-topo :global(.selo-autonomia) { display: none; } }
+  .ed-head .rule { margin-top: 2.4rem; }
+
+  .ed-body { margin-top: 2.4rem; }
+
+  /* Parágrafos justificados (pedido da editora; vale só para a AutonomIA, não para as edições
+     de sábado). Sem hifenização automática: ela segue as regras do português e quebra mal os
+     nomes estrangeiros que enchem estas notas (OpenAI, Nasdaq, Anthropic). Para não abrir
+     buracos entre as palavras, em tela estreita o texto volta a alinhar à esquerda. */
+  .autonomia :global(.prose p),
+  .autonomia :global(.prose li) {
+    text-align: justify;
+    hyphens: manual;
+    -webkit-hyphens: manual;
+  }
+  .autonomia :global(.prose p.kicker) { text-align: left; }
+  @media (max-width: 640px) {
+    .autonomia :global(.prose p),
+    .autonomia :global(.prose li) { text-align: left; }
+  }
+
+  /* A Leitura: opinião assinada, visualmente separada do relato do fato. */
+  .autonomia :global(.prose blockquote) {
+    background: var(--paper-deep);
+    border-left: 3px solid var(--gold);
+    padding: 0.85rem 1.1rem;
+    font-size: 0.95em;
+    font-style: normal;
+    color: var(--ink-soft);
+    border-radius: 0 var(--radius) var(--radius) 0;
+  }
+  .autonomia :global(.prose blockquote p) { margin: 0; }
+  .autonomia :global(.prose blockquote strong:first-child) {
+    font-family: var(--mono);
+    font-size: 0.72em;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    margin-right: 0.35em;
+  }
+
+  .ed-cta-wrap { margin-top: 3.2rem; }
+  .ed-cta { display: flex; align-items: center; justify-content: space-between; gap: 1.4rem; flex-wrap: wrap; padding: clamp(1.4rem, 4vw, 2rem) clamp(1.5rem, 4vw, 2.2rem); border: 1.5px solid var(--jacare); border-radius: var(--radius); background: #fffdf6; }
+  .ed-cta-text { margin-top: 0.4rem; color: var(--ink-soft); max-width: 46ch; }
+  .ed-cta .btn { white-space: nowrap; flex: none; }
+  @media (max-width: 520px) { .ed-cta { flex-direction: column; align-items: flex-start; } }
+
+  .ed-foot { margin-top: 3.5rem; }
+  .assina { margin-bottom: 1.2rem; text-align: center; }
+  .assina-nomes { font-family: var(--display); font-size: 1.15rem; margin-top: 0.4rem; }
+  .assina-contato { margin-top: 0.5rem; font-size: 0.88rem; color: var(--ink-soft); }
+  .aviso { margin: 0 auto 1.6rem; text-align: center; font-size: 0.85rem; color: var(--ink-faint); }
+  .prevnext { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 1.6rem; }
+  .pn { display: flex; flex-direction: column; gap: 0.4rem; padding: 1.1rem 1.3rem; border: 1px solid var(--line-strong); border-radius: var(--radius); text-decoration: none; color: inherit; transition: border-color .15s ease, transform .15s ease; }
+  .pn:hover { border-color: var(--jacare); transform: translateY(-2px); }
+  .pn-next { text-align: right; }
+  .pn-title { font-family: var(--display); font-size: 1.05rem; }
+  @media (max-width: 560px) { .prevnext { grid-template-columns: 1fr; } .pn-next { text-align: left; } }
+</style>

@@ -17,3 +17,6 @@ npm-debug.log*
 # os
 .DS_Store
 Thumbs.db
+
+# cadernos de coleta da AutonomIA: ficam só na máquina da editora
+docs/autonomia/cadernos/

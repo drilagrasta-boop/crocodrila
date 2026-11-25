@@ -1,0 +1,20 @@
+---
+// Selo da AutonomIA: a Crocodrila lendo o jornal, dentro do carimbo tracejado da casa.
+import { ARTE_AUTONOMIA } from '../lib/og/artes.mjs';
+interface Props { rotulo?: string }
+const { rotulo = 'toda quarta' } = Astro.props;
+---
+<div class="selo-autonomia" aria-hidden="true">
+  <div class="arte" set:html={ARTE_AUTONOMIA} />
+  <span class="mono">AUTONOM<b>IA</b> · {rotulo.toUpperCase()}</span>
+</div>
+<style>
+  .selo-autonomia { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.15rem;
+    width: 172px; height: 172px; flex: none;
+    border: 2.5px dashed var(--carimbo); border-radius: 50%;
+    color: var(--carimbo); transform: rotate(-6deg); }
+  .selo-autonomia span { font-size: 0.56rem; letter-spacing: 0.14em; white-space: nowrap; }
+  .selo-autonomia b { color: var(--jacare); }
+  .arte { width: 112px; }
+  .arte :global(svg) { width: 100%; height: auto; display: block; }
+</style>

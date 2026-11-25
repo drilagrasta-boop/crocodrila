@@ -1,0 +1,87 @@
+---
+import Base from '../../layouts/Base.astro';
+import SeloAutonomia from '../../components/SeloAutonomia.astro';
+import { getCollection } from 'astro:content';
+import { publicadas, rotuloNumero, AVISO_AUTONOMIA } from '../../lib/autonomia.mjs';
+
+const fmt = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'short', year: 'numeric', timeZone: 'UTC' });
+const edicoes = publicadas(await getCollection('autonomia'));
+---
+<Base title="AutonomIA" description="Toda quarta, a semana da IA vista pelo que ela fez com o poder, os direitos e a democracia. Resenha crítica assinada por Adriana Aneli." image="/og/autonomia.png" imageWidth={800} imageHeight={800}>
+  <section class="wrap head rise">
+    <div class="topo">
+      <div>
+        <span class="label eyebrow">Toda quarta</span>
+        <h1>Autonom<b class="ia">IA</b></h1>
+        <p class="measure lead">A semana da IA, vista pelo que ela fez com o poder, os direitos e a democracia.</p>
+        <p class="measure nome">O nome guarda a pergunta de fundo: quanta autonomia nos resta, para pensar, crer, trabalhar e decidir, agora que autônomas são as máquinas?</p>
+      </div>
+      <SeloAutonomia />
+    </div>
+    <p class="measure aviso">{AVISO_AUTONOMIA}</p>
+    {edicoes.length > 0 && (
+      <p class="mono total">{edicoes.length} {edicoes.length === 1 ? 'edição publicada' : 'edições publicadas'}</p>
+    )}
+  </section>
+
+  <section class="wrap como">
+    <span class="label">Como é feita</span>
+    <p class="measure">
+      As pistas chegam das conversas dos nossos grupos e de uma varredura semanal na imprensa
+      de vários países, em relatórios e em páginas oficiais. Reportagem entra com veículo e
+      data; quando existe um documento por trás dela, vou até ele. Cada nota separa o que
+      aconteceu do que eu penso a respeito. As leituras partem de algumas perguntas: quem
+      trabalha e não aparece, de onde vem o valor e quem fica com ele, quem paga a conta, o que
+      nos apresentam como inevitável. Antes de publicar, uma conferência separada da
+      redação verifica se cada fonte diz mesmo o que a nota afirma. A coleta, o rascunho e a
+      conferência contam com o auxílio de IA; a escolha das notas, a leitura e a palavra final
+      são minhas.
+    </p>
+  </section>
+
+  <section class="wrap lista">
+    {edicoes.length === 0 && <p class="muted">A primeira edição sai numa quarta próxima. Volte em breve.</p>}
+    {edicoes.length > 0 && (
+      <ul class="ed-list">
+        {edicoes.map((e) => (
+          <li class="ed-row">
+            <a href={`/autonomia/${e.id}`} class="ed-link">
+              <span class="ed-num mono">{rotuloNumero(e.data.numero)}</span>
+              <span class="ed-info">
+                <span class="ed-title">{e.data.titulo}</span>
+                <span class="ed-resumo muted">{e.data.resumo}</span>
+              </span>
+              <time class="ed-date mono" datetime={e.data.data.toISOString()}>{fmt.format(e.data.data)}</time>
+            </a>
+          </li>
+        ))}
+      </ul>
+    )}
+  </section>
+</Base>
+
+<style>
+  .head { padding-top: clamp(2.4rem, 6vw, 4rem); }
+  .head h1 { margin-top: 0.6rem; }
+  .ia { color: var(--jacare); font-weight: inherit; }
+  .lead { margin-top: 1rem; font-size: 1.2rem; color: var(--ink-soft); }
+  .topo { display: flex; align-items: center; justify-content: space-between; gap: clamp(1.2rem, 4vw, 3rem); }
+  @media (max-width: 640px) { .topo :global(.selo-autonomia) { display: none; } }
+  .nome { margin-top: 0.8rem; font-style: italic; color: var(--ink-soft); }
+  .aviso { margin-top: 1.2rem; padding-left: 1rem; border-left: 3px solid var(--gold); font-size: 0.92rem; color: var(--ink-faint); }
+  .total { margin-top: 1.4rem; font-size: 0.74rem; color: var(--jacare); letter-spacing: 0.1em; text-transform: uppercase; }
+
+  .como { margin-top: clamp(1.8rem, 4vw, 2.6rem); }
+  .como p { margin-top: 0.6rem; color: var(--ink-soft); }
+  .lista { margin-top: clamp(2.2rem, 5vw, 3.2rem); }
+  .ed-list { list-style: none; padding: 0; border-top: 1px solid var(--line-strong); }
+  .ed-row { border-bottom: 1px solid var(--line); }
+  .ed-link { display: grid; grid-template-columns: auto 1fr auto; gap: clamp(0.8rem, 3vw, 2rem); align-items: baseline; padding: 1.2rem 0.4rem; text-decoration: none; color: inherit; transition: background .15s ease, padding .15s ease; }
+  .ed-link:hover { background: var(--paper-deep); padding-inline: 1rem; }
+  .ed-num { font-size: 0.95rem; color: var(--jacare); font-weight: 500; white-space: nowrap; }
+  .ed-info { display: flex; flex-direction: column; gap: 0.25rem; }
+  .ed-title { font-family: var(--display); font-size: 1.3rem; }
+  .ed-resumo { font-size: 0.95rem; max-width: 62ch; }
+  .ed-date { font-size: 0.72rem; color: var(--ink-faint); white-space: nowrap; }
+  @media (max-width: 600px) { .ed-link { grid-template-columns: auto 1fr; } .ed-date { display: none; } }
+</style>

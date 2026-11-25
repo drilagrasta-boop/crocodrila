@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import SeloVolume from '../../components/SeloVolume.astro';
+import { ligarChamadas, secoesDoMarkdown } from '../../lib/chamadas.mjs';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -17,7 +18,13 @@ export async function getStaticPaths() {
 }
 
 const { entry, anterior, proxima } = Astro.props;
-const { Content } = await render(entry);
+const { Content, headings } = await render(entry);
+// Chamadas do quadro "Nesta edição": cada uma leva à seção que trata dela, quando dá para
+// deduzir com segurança (src/lib/chamadas.mjs). As demais ficam como texto.
+const secoes = secoesDoMarkdown(entry.body ?? '');
+const titulos = headings.filter((h) => h.depth === 2 || h.depth === 3);
+const ligacoes = titulos.length === secoes.length ? ligarChamadas(entry.data.destaques, secoes) : [];
+const chamadas = entry.data.destaques.map((texto, i) => ({ texto, alvo: ligacoes[i] != null ? titulos[ligacoes[i]].slug : null }));
 
 const fmt = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'long', year: 'numeric', timeZone: 'UTC' });
 const pad = (n: number) => String(n).padStart(3, '0');
@@ -44,7 +51,7 @@ const pad = (n: number) => String(n).padStart(3, '0');
         <aside class="sumario">
           <span class="label">Nesta edição</span>
           <ul>
-            {entry.data.destaques.map((d) => <li>{d}</li>)}
+            {chamadas.map((c) => <li>{c.alvo ? <a href={`#${c.alvo}`}>{c.texto}</a> : c.texto}</li>)}
           </ul>
         </aside>
       )}
@@ -124,6 +131,9 @@ const pad = (n: number) => String(n).padStart(3, '0');
   .sumario ul { margin-top: 0.7rem; padding-left: 1.1em; display: flex; flex-direction: column; gap: 0.35rem; }
   .sumario li { color: var(--ink-soft); }
   .sumario li::marker { color: var(--jacare); }
+  .sumario a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--line-strong); }
+  .sumario a:hover { color: var(--jacare-deep); border-bottom-color: var(--jacare); }
+  .ed :global(.prose h2), .ed :global(.prose h3) { scroll-margin-top: 5.5rem; }
   .ed-pdf { display: flex; align-items: center; gap: 0.9rem; flex-wrap: wrap; margin-top: 1.8rem; }
   .ed-pdf-nota { font-size: 0.7rem; color: var(--ink-faint); letter-spacing: 0.04em; }
   .ed-head .rule { margin-top: 2.4rem; }

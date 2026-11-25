@@ -2,6 +2,8 @@
 import Base from '../layouts/Base.astro';
 import Crocodrila from '../components/Crocodrila.astro';
 import { getCollection } from 'astro:content';
+import { publicadas } from '../lib/autonomia.mjs';
+import { ARTE_AUTONOMIA } from '../lib/og/artes.mjs';
 
 const fmt = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'long', year: 'numeric', timeZone: 'UTC' });
 const pad = (n: number) => String(n).padStart(3, '0');
@@ -12,6 +14,9 @@ const edicoes = (await getCollection('edicoes'))
 
 const ultima = edicoes[0];
 const anteriores = edicoes.slice(1, 6);
+
+// AutonomIA: a edição de quarta mais recente (rascunho só aparece na prévia local).
+const autonomiaRecente = publicadas(await getCollection('autonomia'))[0];
 
 const projetos = (await getCollection('crocodrila'))
   .sort((a, b) => a.data.ordem - b.data.ordem);
@@ -40,18 +45,31 @@ const iniciais = (nome: string) => nome.split(/\s+/).slice(0, 2).map((p) => p[0]
   <section class="hero wrap rise">
     <div class="hero-grid">
       <div class="hero-main">
-        <span class="label eyebrow">Newsletter semanal · fontes primárias</span>
+        <span class="label eyebrow">Newsletter aos sábados · resenha às quartas</span>
         <h1 class="hero-title">
           Acompanhar IA virou<br />
           <span class="hero-em">trabalho de detetive.</span>
         </h1>
         <p class="hero-lead measure">
-          É muita informação e, junto, muito ruído. Toda semana a gente garimpa as
-          novidades que realmente importam — direto da fonte — e entrega filtrado.
-          Você lê em dez minutos o que levaria a semana inteira pra rastrear.
+          É muita informação e, junto, muito ruído. Toda semana a gente garimpa as novidades
+          direto da fonte e entrega filtrado. Você lê em dez minutos o que levaria a semana
+          inteira pra rastrear.
         </p>
+        <ul class="hero-duas measure">
+          <li>
+            <span class="label">Aos sábados</span>
+            <a class="tlink" href="/edicoes">Condenados à Atualização em IA</a>: a newsletter
+            técnica. As novidades da semana direto da fonte primária.
+          </li>
+          <li>
+            <span class="label">Às quartas</span>
+            <a class="tlink" href="/autonomia">Autonom<b class="ia">IA</b></a>: a resenha crítica.
+            A imprensa do mundo e do Brasil lida por eixos, do poder ao mercado, da escola à arte.
+          </li>
+        </ul>
         <div class="hero-cta">
-          <a href="#ultima" class="btn btn--jacare">Ler a última edição →</a>
+          <a href="#ultima" class="btn btn--jacare">Ler a última Condenados →</a>
+          {autonomiaRecente && <a href="#autonomia-recente" class="btn btn--jacare">Ler a última AutonomIA →</a>}
           <a href="/sobre" class="btn btn--ghost">Como nasceu</a>
         </div>
       </div>
@@ -70,6 +88,14 @@ const iniciais = (nome: string) => nome.split(/\s+/).slice(0, 2).map((p) => p[0]
             <p class="dossie-meta mono">CONDENADOS À<br />ATUALIZAÇÃO<br />EM I.A.</p>
           </div>
         )}
+        {autonomiaRecente && (
+          <a href={`/autonomia/${autonomiaRecente.id}`} class="dossie-mark dossie-link dossie-autonomia" aria-label="Abrir a AutonomIA mais recente">
+            <div class="dossie-arte" set:html={ARTE_AUTONOMIA} />
+            <span class="stamp">Resenha · {autonomiaRecente.data.numero === 0 ? 'Piloto' : `Nº ${pad(autonomiaRecente.data.numero)}`}</span>
+            <p class="dossie-meta mono">AUTONOMIA<br />TODA QUARTA</p>
+            <span class="dossie-go mono">abrir a edição →</span>
+          </a>
+        )}
       </aside>
     </div>
   </section>
@@ -79,18 +105,13 @@ const iniciais = (nome: string) => nome.split(/\s+/).slice(0, 2).map((p) => p[0]
   <!-- ================= ÚLTIMA EDIÇÃO ================= -->
   {ultima && (
     <section id="ultima" class="wrap feature">
-      <div class="feature-tag"><span class="label">Edição mais recente</span></div>
+      <div class="feature-tag"><span class="label"><a href="/edicoes">Condenados à Atualização em IA</a> · aos sábados · edição mais recente</span></div>
       <a href={`/edicoes/${ultima.id}`} class="feature-card">
         <div class="feature-num mono">Nº {pad(ultima.data.numero)}<span class="feature-year">/{ultima.data.data.getFullYear()}</span></div>
         <div class="feature-body">
           <time class="label" datetime={ultima.data.data.toISOString()}>{fmt.format(ultima.data.data)}</time>
           <h2 class="feature-title">{ultima.data.titulo}</h2>
           <p class="feature-resumo">{ultima.data.resumo}</p>
-          {ultima.data.destaques.length > 0 && (
-            <ul class="feature-bullets">
-              {ultima.data.destaques.slice(0, 4).map((d) => <li>{d}</li>)}
-            </ul>
-          )}
           <span class="feature-go mono">Abrir a edição completa →</span>
         </div>
       </a>
@@ -100,6 +121,22 @@ const iniciais = (nome: string) => nome.split(/\s+/).slice(0, 2).map((p) => p[0]
   {!ultima && (
     <section class="wrap feature">
       <p class="muted">A primeira edição entra no ar em breve. Enquanto isso, dá uma olhada na <a class="tlink" href="/crocodrila">Crocodrila</a>.</p>
+    </section>
+  )}
+
+  <!-- ================= AUTONOMIA ================= -->
+  {autonomiaRecente && (
+    <section id="autonomia-recente" class="wrap feature autonomia-home">
+      <div class="feature-tag"><span class="label"><a href="/autonomia">Autonom<b class="ia">IA</b></a> · às quartas · edição mais recente</span></div>
+      <a href={`/autonomia/${autonomiaRecente.id}`} class="feature-card">
+        <div class="feature-num mono">{autonomiaRecente.data.numero === 0 ? 'Piloto' : `Nº ${pad(autonomiaRecente.data.numero)}`}<span class="feature-year">/{autonomiaRecente.data.data.getFullYear()}</span></div>
+        <div class="feature-body">
+          <time class="label" datetime={autonomiaRecente.data.data.toISOString()}>{fmt.format(autonomiaRecente.data.data)}</time>
+          <h2 class="feature-title">{autonomiaRecente.data.titulo}</h2>
+          <p class="feature-resumo">{autonomiaRecente.data.resumo}</p>
+          <span class="feature-go mono">Abrir a edição completa →</span>
+        </div>
+      </a>
     </section>
   )}
 
@@ -237,9 +274,18 @@ const iniciais = (nome: string) => nome.split(/\s+/).slice(0, 2).map((p) => p[0]
   .hero-title { margin-top: 1.1rem; }
   .hero-em { color: var(--jacare); font-style: italic; }
   .hero-lead { margin-top: 1.6rem; font-size: clamp(1.1rem, 1rem + 0.6vw, 1.35rem); color: var(--ink-soft); }
+  .hero-duas { list-style: none; padding: 0; margin-top: 1.6rem; display: grid; gap: 0.9rem; border-left: 3px solid var(--gold); padding-left: 1.1rem; color: var(--ink-soft); font-size: 1.02rem; }
+  .hero-duas .label { display: block; margin-bottom: 0.15rem; }
+  .hero-duas .ia { color: var(--jacare); }
+  /* parágrafos justificados na abertura da capa; em tela estreita voltam à esquerda */
+  .hero-lead, .hero-duas li { text-align: justify; hyphens: manual; }
+  .hero-duas .label { text-align: left; }
+  @media (max-width: 640px) { .hero-lead, .hero-duas li { text-align: left; } }
   .hero-cta { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 2rem; }
 
-  .hero-side { display: flex; justify-content: center; }
+  .hero-side { display: flex; flex-direction: column; align-items: stretch; gap: 1.2rem; }
+  .dossie-arte { width: 124px; }
+  .dossie-arte :global(svg) { width: 100%; height: auto; display: block; }
   .dossie-mark {
     display: flex; flex-direction: column; align-items: center; gap: 0.9rem;
     padding: 1.8rem 2rem; border: 1.5px solid var(--line-strong); border-radius: var(--radius);
@@ -279,11 +325,17 @@ const iniciais = (nome: string) => nome.split(/\s+/).slice(0, 2).map((p) => p[0]
 
   @media (max-width: 680px) {
     .hero-grid { grid-template-columns: 1fr; }
-    .hero-side { order: -1; justify-content: flex-start; }
+    .hero-side { order: -1; flex-direction: row; flex-wrap: wrap; align-items: flex-start; }
     .feature-card { grid-template-columns: 1fr; }
     .feature-num { border-right: 0; border-bottom: 1px solid var(--line-strong); padding-right: 0; padding-bottom: 0.8rem; display: flex; align-items: baseline; gap: 0.8rem; }
     .feature-year { margin-top: 0; }
   }
+
+  /* AutonomIA na capa: mesmo cartão da edição de sábado */
+  .autonomia-home { margin-top: clamp(2.5rem, 6vw, 4rem); }
+  .feature-tag a { color: inherit; text-decoration: none; }
+  .feature-tag a:hover { text-decoration: underline; }
+  .feature-tag .ia { color: var(--jacare); }
 
   /* seção genérica */
   .sec-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; margin-bottom: 1.6rem; }
