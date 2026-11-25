@@ -27,7 +27,9 @@ const fmt = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'long', ye
         <span class="mono en-autor">
           {entry.data.linkedin
             ? <a href={entry.data.linkedin} target="_blank" rel="noopener noreferrer">{entry.data.autor}</a>
-            : entry.data.autor}
+            : entry.data.perfil
+              ? <a href={entry.data.perfil}>{entry.data.autor}</a>
+              : entry.data.autor}
         </span>
         {entry.data.papel && <span class="dot">·</span>}
         {entry.data.papel && <span class="mono">{entry.data.papel}</span>}
@@ -77,7 +79,7 @@ const fmt = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'long', ye
 
   .nota { margin-top: 1.8rem; padding: 1.1rem 1.3rem; background: var(--paper-deep); border-left: 3px solid var(--gold); border-radius: var(--radius); max-width: var(--measure); }
   .nota .label { display: block; color: var(--gold-deep); margin-bottom: 0.35rem; }
-  .nota p { font-size: 0.95rem; color: var(--ink-soft); }
+  .nota p { font-size: 0.95rem; color: var(--ink-soft); text-align: justify; -webkit-hyphens: auto; hyphens: auto; }
 
   .en-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.4rem; }
   .en-head .rule { margin-top: 2.2rem; }

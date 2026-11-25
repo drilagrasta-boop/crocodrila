@@ -250,6 +250,48 @@ export const ARTES_ENSAIO = {
       <polyline points="86,72 90,76 86,80" stroke-linejoin="round"/>
     </g>
   </svg>`,
+  // "O arcaico como germe do futuro" (Caetano Lagrasta Neto): o feixe dourado do
+  // LiDAR desce do avião, atravessa a copa e devolve em pontos, no chão, o
+  // geoglifo que a mata escondia; à direita, os cordões de nós de um khipu —
+  // a contagem antiga ao lado da que lê o terreno hoje.
+  'laser-sob-a-mata': `<svg width="200" height="160" viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M66,30 L46,112 L120,112 L94,30 Z" fill="#c49a3a" opacity="0.22"/>
+    <g fill="#fffdf6" stroke="#1d2b24" stroke-width="2" stroke-linejoin="round">
+      <path d="M68,22 L92,22 L98,26 L92,30 L68,30 Z"/>
+      <path d="M78,22 L84,12 L88,12 L86,22 Z"/>
+    </g>
+    <g stroke="#c49a3a" stroke-width="1.6" stroke-linecap="round" opacity="0.9">
+      <line x1="80" y1="30" x2="52" y2="112"/>
+      <line x1="80" y1="30" x2="83" y2="112"/>
+      <line x1="80" y1="30" x2="114" y2="112"/>
+    </g>
+    <g fill="#3c5a45" stroke="#1d2b24" stroke-width="1.8" stroke-linejoin="round">
+      <path d="M14,76 q8,-14 18,-6 q6,-12 18,-4 q8,-10 18,0 q8,-8 16,2 q8,-10 18,-2 q8,-8 16,4 l0,8 l-104,0 Z" opacity="0.92"/>
+    </g>
+    <line x1="10" y1="122" x2="140" y2="122" stroke="#1d2b24" stroke-width="2" stroke-linecap="round"/>
+    <g fill="#1d2b24">
+      <circle cx="56" cy="114" r="1.6"/><circle cx="62" cy="111" r="1.6"/><circle cx="70" cy="109" r="1.6"/>
+      <circle cx="78" cy="108" r="1.6"/><circle cx="86" cy="108" r="1.6"/><circle cx="94" cy="109" r="1.6"/>
+      <circle cx="102" cy="111" r="1.6"/><circle cx="108" cy="114" r="1.6"/>
+      <circle cx="60" cy="117" r="1.6"/><circle cx="104" cy="117" r="1.6"/>
+    </g>
+    <ellipse cx="82" cy="115" rx="16" ry="4" fill="none" stroke="#9c4a2e" stroke-width="2.2"/>
+    <g stroke="#1d2b24" stroke-width="2" stroke-linecap="round">
+      <line x1="150" y1="40" x2="190" y2="40"/>
+    </g>
+    <g stroke="#c49a3a" stroke-width="2" stroke-linecap="round">
+      <line x1="156" y1="40" x2="156" y2="104"/>
+      <line x1="166" y1="40" x2="166" y2="92"/>
+      <line x1="176" y1="40" x2="176" y2="112"/>
+      <line x1="186" y1="40" x2="186" y2="84"/>
+    </g>
+    <g fill="#9c4a2e" stroke="#1d2b24" stroke-width="1.2">
+      <circle cx="156" cy="60" r="3"/><circle cx="156" cy="84" r="3"/>
+      <circle cx="166" cy="70" r="3"/>
+      <circle cx="176" cy="56" r="3"/><circle cx="176" cy="76" r="3"/><circle cx="176" cy="98" r="3"/>
+      <circle cx="186" cy="64" r="3"/>
+    </g>
+  </svg>`,
 };
 
 export const ARTES_HOBBY = {

@@ -99,6 +99,7 @@ const ensaios = defineCollection({
     autor: z.string().default('Adriana Aneli'),
     papel: z.string().optional(),       // quem é o autor convidado (ex.: "juíza do trabalho, TRT-2")
     linkedin: z.string().url().optional(), // perfil do autor convidado, se houver
+    perfil: z.string().startsWith('/').optional(), // link interno para a minibio (ex.: "/sobre#caetano-lagrasta-neto"); usado quando não há linkedin
     tags: z.array(z.string()).default([]),
     // aviso ao leitor no alto do texto (ex.: conflito de interesse declarado)
     nota: z.string().optional(),
