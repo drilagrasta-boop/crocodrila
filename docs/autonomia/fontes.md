@@ -52,6 +52,15 @@ verificadas. Pontos de partida, todos `a reconferir`: Times Higher Education; Ce
 Legal Profession, de Harvard (série "AI and the Legal Profession"); cobertura de educação
 dos quatro veículos assinados; no Brasil, MEC, CAPES e Cetic.br (TIC Educação).
 
+## Ciência e informação
+
+Rubrica acrescentada em 25/11/2026: sugestão de leitor (incluir Ciência da Informação e
+Matemática), acolhida pela editora numa rubrica só. Frente ainda sem fontes verificadas.
+Pontos de partida, todos `a reconferir`: Quanta Magazine; Retraction Watch; a seção de
+notícias da Nature; IFLA (federação internacional de bibliotecas); no Brasil, IBICT, SciELO,
+IMPA e Sociedade Brasileira de Matemática. Na matemática, cuidado com a sobreposição com a
+Condenados de sábado: aqui entra a pergunta sobre confiança e autoridade, não a técnica.
+
 ## Fé e razão
 
 Rubrica acrescentada em 23/11/2026, a pedido da editora: aspectos filosóficos e religiosos
