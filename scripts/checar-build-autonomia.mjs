@@ -98,7 +98,7 @@ for (const e of visiveis) {
   if (!html) continue;
   exigir(imagemOg(html) === `/og/autonomia/${e.id}.png`, `${e.id}: a página não compartilha o selo da própria edição`);
   exigir(existsSync(join(DIST, 'og', 'autonomia', `${e.id}.png`)), `${e.id}: falta a imagem de compartilhamento`);
-  for (const fixa of ['Como IA dizendo...', 'Papo Amarelo', 'Memória']) {
+  for (const fixa of ['Como IA dizendo...', 'Contraponto', 'Papo Amarelo', 'Memória']) {
     exigir(html.includes(fixa), `${e.id}: a página não mostra a rubrica "${fixa}"`);
   }
   exigir(/<article[^>]*class="[^"]*\bautonomia\b/.test(html), `${e.id}: falta a classe "autonomia" no artigo`);

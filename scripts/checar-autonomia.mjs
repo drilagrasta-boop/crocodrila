@@ -12,12 +12,14 @@
 import { readFileSync } from 'node:fs';
 import { pathToFileURL } from 'node:url';
 
-export const RUBRICAS_FIXAS = ['Como IA dizendo...', 'Papo Amarelo', 'Memória'];
+// "Contraponto" é fixa desde o piloto (pedido da editora, 25/11/2026): o que a semana
+// mostrou fora do avanço da IA. Vem logo antes do Papo Amarelo e leva nota, como as temáticas.
+export const RUBRICAS_FIXAS = ['Como IA dizendo...', 'Contraponto', 'Papo Amarelo', 'Memória'];
 export const RUBRICAS_TEMATICAS = [
   'Poder e regras', 'Praça pública', 'Direitos', 'Soberania', 'Mercado',
   'Lado escuro', 'Clima', 'Ofício', 'Formação', 'Fé e razão', 'Arte e cultura',
 ];
-const [ABERTURA, PAPO, MEMORIA] = RUBRICAS_FIXAS;
+const [ABERTURA, CONTRAPONTO, PAPO, MEMORIA] = RUBRICAS_FIXAS;
 const TODAS = [...RUBRICAS_FIXAS, ...RUBRICAS_TEMATICAS];
 
 const NOTAS_MIN = 8, NOTAS_MAX = 12;
@@ -90,7 +92,7 @@ export function checarEdicao(markdown) {
     if (nomes.filter((n) => n === nome).length > 1) erros.push(`Rubrica "${nome}" aparece mais de uma vez.`);
   }
 
-  // 2. As três fixas, na ordem: abertura primeiro; Papo Amarelo e Memória no fim.
+  // 2. As fixas, na ordem: abertura primeiro; Contraponto, Papo Amarelo e Memória no fim.
   for (const fixa of RUBRICAS_FIXAS) {
     if (!nomes.includes(fixa)) erros.push(`Falta a rubrica fixa "${fixa}".`);
   }
@@ -98,6 +100,9 @@ export function checarEdicao(markdown) {
     if (nomes[0] !== ABERTURA) erros.push(`"${ABERTURA}" deve ser a primeira rubrica.`);
     if (nomes.at(-2) !== PAPO || nomes.at(-1) !== MEMORIA) {
       erros.push(`"${PAPO}" e "${MEMORIA}" devem ser as duas últimas rubricas, nessa ordem.`);
+    }
+    if (nomes.at(-3) !== CONTRAPONTO) {
+      erros.push(`"${CONTRAPONTO}" deve vir logo antes de "${PAPO}".`);
     }
   }
 

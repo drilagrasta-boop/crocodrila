@@ -27,19 +27,51 @@ const memoria = () =>
   `${kicker('Memória')}- Registro novo, a cobrar em 10/12, com [fonte](https://exemplo.org/m).\n`;
 
 // Monta uma edição: `tematicas` é lista de [rubrica, [notas...]]; `papo` é a lista de notas do Papo Amarelo.
-function montar({ ab = abertura(), tematicas, papo, mem = memoria(), ordem } = {}) {
+// `contra` é a lista de notas do Contraponto (null tira a rubrica); `ordem` desloca blocos.
+function montar({ ab = abertura(), tematicas, papo, contra = [nota('Nota de contraponto')], mem = memoria(), ordem } = {}) {
   const blocosTematicos = tematicas.map(([r, notas]) => kicker(r) + notas.join('')).join('');
+  const blocoContra = contra === null ? '' : kicker('Contraponto') + contra.join('');
   const blocoPapo = kicker('Papo Amarelo') + papo.join('');
   const corpo = ordem === 'memoria-antes'
-    ? ab + blocosTematicos + mem + '\n' + blocoPapo
-    : ab + blocosTematicos + blocoPapo + mem;
+    ? ab + blocosTematicos + blocoContra + mem + '\n' + blocoPapo
+    : ordem === 'contraponto-antes'
+      ? ab + blocoContra + blocosTematicos + blocoPapo + mem
+      : ab + blocosTematicos + blocoContra + blocoPapo + mem;
   return FRONT + '\n' + corpo;
 }
 
-// n notas no total: n-1 em "Mercado", 1 no Papo Amarelo.
+// n notas no total: n-2 em "Mercado", 1 no Contraponto, 1 no Papo Amarelo.
 const edicaoValida = (n) => montar({
-  tematicas: [['Mercado', Array.from({ length: n - 1 }, (_, i) => nota(`Nota ${i + 1}`))]],
+  tematicas: [['Mercado', Array.from({ length: n - 2 }, (_, i) => nota(`Nota ${i + 1}`))]],
   papo: [nota('Nota brasileira')],
+});
+
+// Contraponto: rubrica fixa (pedido da editora em 25/11/2026), logo antes do Papo Amarelo.
+test('falta o Contraponto: é erro', () => {
+  const md = montar({
+    tematicas: [['Mercado', Array.from({ length: 8 }, (_, i) => nota(`Nota ${i + 1}`))]],
+    papo: [nota('Nota brasileira')],
+    contra: null,
+  });
+  assert.ok(checarEdicao(md).erros.some((e) => e.includes('Contraponto')), checarEdicao(md).erros.join(' | '));
+});
+
+test('Contraponto fora do lugar é erro: ele vem logo antes do Papo Amarelo', () => {
+  const md = montar({
+    tematicas: [['Mercado', Array.from({ length: 7 }, (_, i) => nota(`Nota ${i + 1}`))]],
+    papo: [nota('Nota brasileira')],
+    ordem: 'contraponto-antes',
+  });
+  assert.ok(checarEdicao(md).erros.some((e) => e.includes('Contraponto')), checarEdicao(md).erros.join(' | '));
+});
+
+test('Contraponto sem nota é erro', () => {
+  const md = montar({
+    tematicas: [['Mercado', Array.from({ length: 8 }, (_, i) => nota(`Nota ${i + 1}`))]],
+    papo: [nota('Nota brasileira')],
+    contra: [],
+  });
+  assert.ok(checarEdicao(md).erros.some((e) => e.includes('Contraponto')), checarEdicao(md).erros.join(' | '));
 });
 
 test('edição válida não tem erros', () => {

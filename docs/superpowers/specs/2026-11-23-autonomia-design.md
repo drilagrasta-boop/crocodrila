@@ -121,7 +121,9 @@ Memória                   o que fica registrado para cobrar depois (fixa)
 
 Regras **[proposta]**:
 
-- Três rubricas são fixas: "Como IA dizendo...", "Papo Amarelo" e "Memória". As onze
+- Quatro rubricas são fixas: "Como IA dizendo...", "Contraponto" (acrescentada em 25/11/2026: uma
+  nota sobre o que a semana mostrou fora do avanço da IA, logo antes do Papo Amarelo),
+  "Papo Amarelo" e "Memória". As onze
   temáticas aparecem só quando a semana trouxe fato que mereça.
 - Total de 8 a 12 notas por edição, contadas as do Papo Amarelo.
 - **Protagonistas mundiais** [editora]: a varredura cobre Estados Unidos, China, União
