@@ -63,7 +63,7 @@ aviso. Agora o carimbo é descontado antes da decisão e a folha passa pelo OCR.
 baixou o kit antes dessa data, baixe de novo, rode o instalador outra vez e reconverta os
 autos do e-SAJ que tinham páginas escaneadas.
 
-**Versão atualizada em 16 de novembro de 2026.**
+**Versão atualizada em 26 de novembro de 2026.**
 
 Para instalar, clique com o botão direito no ZIP, escolha **Extrair tudo** e abra o
 arquivo `COMECE-AQUI.txt`: são seis passos, do Python aos atalhos na Área de Trabalho. A

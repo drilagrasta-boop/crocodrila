@@ -61,7 +61,9 @@ pronto. O código foi escrito pela Crocodrila, a partir da ideia do Sistema Marm
 
 - [**Baixar o kit** (conversor-anonimizador-offline.zip, 16 MB)](/crocodrila/conversor-pdf-txt/conversor-anonimizador-offline.zip)
 
-**Versão atualizada em 11 de novembro de 2026.**
+**Versão atualizada em 26 de novembro de 2026.** A anterior podia ficar horas parada, sem
+terminar, quando o documento trazia a palavra "CPF" seguida de um campo em branco. Se a
+janela do anonimizador travou com você, baixe o kit de novo e rode o instalador outra vez.
 
 Extraia o ZIP e siga o `COMECE-AQUI.txt`. A instalação usa a internet uma vez; depois,
 tudo roda offline.
