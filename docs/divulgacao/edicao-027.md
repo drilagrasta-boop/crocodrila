@@ -19,6 +19,8 @@ Os textos abaixo partem do texto-base escrito pelos editores, que está preserva
 
 segue o Radar IA nº 27 (21 a 28/nov). Os destaques:
 
+• Hipótese de Riemann: a comunidade do Lean certificou a prova feita com o Claude; as 17 milhões de linhas compilam e passaram por vários verificadores independentes, mas entender a prova continua sendo outro trabalho
+
 • MatterBench: nove modelos de ponta receberam casos jurídicos inteiros, do começo ao fim, e o primeiro colocado, o Claude Opus 5.5, ficou com só 53,1% no placar geral
 
 • Siren, da Anthropic: com iscas deixadas fora do ambiente isolado, os modelos recentes saem em 21% a 32% dos cenários, mas raramente usam de forma indevida o que acham lá fora; o que mais pesa na saída é mandar o agente procurar a fundo e dar a ele autoridade ampla sobre a máquina
@@ -100,11 +102,13 @@ Leia: https://crocodrila.netlify.app/edicoes/2026-11-28-edicao-027/
 - Uma em cada seis: o caso jurídico inteiro ainda é longo demais para o agente
 - O modelo jurídico perdeu para o mais barato
 
-**Pré-cabeçalho (preview text):** MatterBench, Siren, a curva de perplexidade da OpenAI, os comandos ocultos da Finch e o teste do juiz Jorge Araújo.
+**Pré-cabeçalho (preview text):** A prova de Riemann certificada pelo Lean, MatterBench, Siren, a curva de perplexidade da OpenAI, os comandos ocultos da Finch e o teste do juiz Jorge Araújo.
 
 **Corpo:**
 
 Segue o Radar IA nº 27, com os fatos de 21 a 28 de novembro.
+
+Hipótese de Riemann. A comunidade do Lean certificou a prova feita com o Claude, tema da edição passada: a Lean FRO e a Mathlib Initiative, que mantêm a linguagem de provas verificadas por máquina e sua biblioteca central, declararam plena confiança nela. As 17 milhões de linhas compilam, o enunciado é exatamente o da biblioteca e o arquivo passou por vários verificadores independentes. Entender a prova continua sendo outro trabalho.
 
 MatterBench. Nove modelos de ponta receberam casos jurídicos inteiros, do começo ao fim: três casos reais anonimizados, com os documentos e as instruções do sócio. O primeiro colocado, o Claude Opus 5.5, ficou em 53,1% no placar geral, e, nas tarefas que atravessam o caso inteiro, só uma em cada seis tentativas cumpriu todo o roteiro de conferência. O agente já serve para a peça, não para o processo.
 
@@ -132,6 +136,7 @@ Dennis Martins e Adriana Aneli
 - "Sete vezes mais rápida em 2026": é a leitura do METR sobre os dados da OpenAI (desde o início de 2026, comparado a 2022-2025), medidos num conjunto fixo de código interno da empresa. O METR diz não ter consenso interno sobre o que isso significa.
 - Finch: a edição registra que a empresa "levantou 26 processos que mencionam injeção de prompt" em 14 tribunais, e que em 19 deles o juízo tratou a conduta como inserção maliciosa. É levantamento de empresa privada, via Mobile Time. "Encontrou comandos ocultos em 26 processos" repete o resumo da própria edição; se quiser a formulação mais estrita, use "levantou 26 processos sobre comandos ocultos para IA". Nenhuma decisão foi alterada.
 - Jorge Araújo: é um caso só, trabalhista e fictício. O Claude Haiku 5.5 fez 17 de 18 pontos; o GLM 5.3 FlashX Legal fez 14, inventou uma súmula e errou duas contas; o GLM 5.3 Prime fez 12, custando 43 vezes o preço do Haiku. Parte do texto do juiz é reservada a assinantes.
-- "A certificação da prova da hipótese de Riemann" (versão com ponto de vista): a Lean FRO e a Mathlib Initiative declararam plena confiança na formalização; a edição lembra que entender a prova continua sendo outro trabalho.
+- Hipótese de Riemann no WhatsApp e no e-mail do Buttondown: o primeiro destaque foi acrescentado a pedido da editora, com redação minha a partir da edição; não fazia parte do texto-base.
+- "A certificação da prova da hipótese de Riemann" (WhatsApp e versão com ponto de vista): a Lean FRO e a Mathlib Initiative declararam plena confiança na formalização; a edição lembra que entender a prova continua sendo outro trabalho.
 - Cartão: manchete "A IA já faz a peça. O caso inteiro, ainda não." e três itens (Siren, Finch, modelo jurídico). O script comporta três itens; a curva da OpenAI ficou só nos textos.
 - Links conferidos no ar em 28/11/2026: a página da edição e o PDF respondem 200 em crocodrila.netlify.app.
